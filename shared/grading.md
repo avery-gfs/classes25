@@ -6,10 +6,9 @@ more formal set of expectations for my classes, as I myself work to learn and
 improve as a teacher.
 
 - 40% Participation
-- 40% Classwork:
-  - 20% Effective work
-  - 20% Completion of assignments
-- 20% Quizzes
+- 30% Effective work
+- 20% Completion of assignments
+- 10% Quizzes
 
 ## Participation
 
@@ -47,9 +46,7 @@ improve as a teacher.
   and presentations. Do not use social media, go on youtube, or play games
   during class.
 
-## Classwork
-
-### Effective work
+## Effective work
 
 I won't assign homework for this class; you will have sufficient time in class
 to complete assignments. I ask therefore that you make effective use of your
@@ -58,7 +55,7 @@ your partners stay on-task. Please do not use class time to work on assignments
 for other classes unless you have already finished all of your classwork. Ensure
 that you have disabled any built-in AI features in your coding environment.
 
-### Completion of assignments
+## Completion of assignments
 
 You should try to create working solutions to all of the assigned problems for
 this class. Additionally, make sure that you understand and can explain all of
