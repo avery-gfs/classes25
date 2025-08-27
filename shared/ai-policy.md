@@ -19,8 +19,8 @@ will make it hard to get comfortable doing math.
 this class. While I won't impose a total ban on AI, I will be raising my
 expectations for the understanding that students have of the code they write and
 present. Note that **AI tools which are built in to your coding environment,
-like Replit AI, are banned**, and must be disabled in order to receive credit
-for classwork.
+like Replit AI and Github copilot, are banned**, and must be disabled in order
+to receive credit for classwork.
 
 There were times last year when students wrote and presented code that they did
 not understand, either because of ineffective collaboration with classmates or
