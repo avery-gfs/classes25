@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "fmt": "npx prettier --write --prose-wrap always ."
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
+  }
+}
