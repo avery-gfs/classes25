@@ -17,11 +17,12 @@ improve as a teacher.
   Please limit conversations to library-level volume when working and
   collaborating on classwork.
 
-- Silence during lecture and presentations
+- Attention during lecture and presentations
 
   It's difficult to present to an audience when you can hear other people
   talking, so please refrain from conversations while I'm lecturing. Definitely
-  do not talk when your classmates are presenting to the class.
+  do not talk when your classmates are presenting to the class. Put computers
+  away during lectures and presentations.
 
 - Ask questions, ask for help
 
@@ -40,20 +41,15 @@ improve as a teacher.
   Be kind to your classmates. Keep conversations respectful and appropriate. If
   I ask you to end a topic of conversation, please do so.
 
-- Use computers for classwork
-
-  Please only use computers for classwork. Put computers away during lectures
-  and presentations. Do not use social media, go on youtube, or play games
-  during class.
-
 ## Effective work
 
 I won't assign homework for this class; you will have sufficient time in class
 to complete assignments. I ask therefore that you make effective use of your
 time in class. You are welcome to collaborate with others so long as you and
 your partners stay on-task. Please do not use class time to work on assignments
-for other classes unless you have already finished all of your classwork. Ensure
-that you have disabled any built-in AI features in your coding environment.
+for other classes unless you have already finished all of your classwork. Do not
+use social media, go on youtube, or play games during class. Ensure that you
+have disabled any built-in AI features in your coding environment.
 
 ## Completion of assignments
 
