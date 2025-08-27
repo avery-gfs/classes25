@@ -44,7 +44,8 @@ improve as a teacher.
 - Use computers for classwork
 
   Please only use computers for classwork. Put computers away during lectures
-  and presentations. Do not use social media or youtube during class.
+  and presentations. Do not use social media, go on youtube, or play games
+  during class.
 
 ## Classwork
 
