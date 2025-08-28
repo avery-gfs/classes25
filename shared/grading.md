@@ -5,6 +5,8 @@ that went best were the ones with the most structure. This year I'm laying out a
 more formal set of expectations for my classes, as I myself work to learn and
 improve as a teacher.
 
+Class grade breakdown:
+
 - 40% Participation
 - 30% Effective work
 - 20% Completion of assignments
