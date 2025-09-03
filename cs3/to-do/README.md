@@ -1,15 +1,16 @@
+- Maze do now
 - Teacher intro
 - Student intro
   - Favorite spot to take visitors in Philadelphia
-  
+
 - Demo
   - Maze
   - Towers
 
 - Class intro
-  - Theory vs practice
-  - CS vs programming
-  - Easy problems w/ hard solutions vs hard problems w/ easy solutions
+  - Practice vs theory
+  - Programming vs CS
+  - Hard problems w/ easy solutions vs easy problems w/ hard solutions
 
 - Grading policy
 - Google classroom
@@ -17,6 +18,7 @@
 - Python setup
 
 - To-do list review problem
+  - How to assign a variable?
   - How to make an empty list?
   - How to loop forever?
   - How to print insert a variable or expression into a string?
