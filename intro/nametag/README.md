@@ -2,6 +2,8 @@
 - Student intro
   - Favorite spot to take visitors in Philadelphia
 
+- Class intro
+
 - Python demo
   - Orbits
   - Football data
