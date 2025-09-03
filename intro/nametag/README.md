@@ -19,5 +19,9 @@
     - Delete column
     - Delete line
     - Misspell command name
+  - `basic.show_leds`
+  - `while True`
+  - Whitespace
+  - Indent command
 
 - Share nametags
