@@ -1,17 +1,32 @@
-- Quiz
+**Review**
+
+- What is the purpose of the `draw` function in gamelab?
+- How do we decide what code to put before the `draw` function and what to put inside it?
+
+**Concepts**
+
+- 1D character controls
+- Randomized spawning
+- Text display
+- Declaring variables
+- Scoring with counter pattern
+
+---
+
+**Review**
+
+- What are the dimensions of the game screen in GameLab?
+- Where on the game screen is the coordinate (0, 0)?
+- What code could we use to adjust the size of a sprite?
+
+**Concepts**
 
 - Sprite velocity
-- Background
-- Draw function
-- More sprites
+- `background` and why we need it
+- `function draw`
+- Multiple sprites
 - Sprite position
 - Conditionals
-
-- Quiz
-
-- 2D Character controls
-- Randomized spawning
-- More sprites
 
 ---
 
@@ -32,5 +47,6 @@
 
 - World coordinates
 - Position
-- Scale
-- Sprites
+- `createSprite`
+- `setAnimation`
+- `sprite.scale`
