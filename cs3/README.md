@@ -1,18 +1,18 @@
+**Fibonacci Generator**
+
+[Problem](fibonacci/iterative/)
+
 **Tilings Generator**
 
-- [Problem](tiles/iterative)
+[Problem](tiles/iterative)
 
 ---
 
 **Fibonacci Sequence**
 
-- [Definition](https://en.wikipedia.org/wiki/Fibonacci_sequence)
+https://en.wikipedia.org/wiki/Fibonacci_sequence
 
 **Tilings proof**
-
-**Fibonacci Generator**
-
-- [Problem](fibonacci/iterative/)
 
 ---
 
@@ -28,7 +28,6 @@
 
 - 12(3)4 proof
 - Chessboard proof
-- Tilings proof
 
 ---
 

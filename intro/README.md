@@ -9,9 +9,13 @@
 - Images demo
 - Microbit demo
 
-[**Grading policy**](../shared/grading.md)
+**Grading policy**
 
-[**MakeCode editor**](https://makecode.microbit.org/)
+[Link](../shared/grading.md
+
+**MakeCode editor**
+
+https://makecode.microbit.org/
 
 **Nametag assignment**
 

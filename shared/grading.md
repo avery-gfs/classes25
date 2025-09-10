@@ -7,10 +7,9 @@ improve as a teacher.
 
 Class grade breakdown:
 
-- 40% Participation
+- 50% Participation
 - 30% Effective work
 - 20% Completion of assignments
-- 10% Quizzes
 
 ## Participation
 
@@ -60,8 +59,3 @@ this class. Additionally, make sure that you understand and can explain all of
 the code that you write for this class, particularly if you work in
 collaboration with others. A problem is not solved if you can't explain your
 solution.
-
-## Quizzes
-
-Quizzes will be given at the end of units, and will cover the broad concepts
-from the unit. I don't plan on making them especially hard.

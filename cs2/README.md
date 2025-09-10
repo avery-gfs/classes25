@@ -1,5 +1,3 @@
-**Review**
-
 **Pixels**
 
 - What are pixels?
@@ -34,35 +32,41 @@ https://www.w3schools.com/python/python_exercises.asp
 
 ---
 
-## Intro
-
-- Teacher intro
-- Student intro + icebreaker
-
-## Class Contents
+**Class intro**
 
 - Practical, project based, applications
 - Data focused
+- Orbits demo
+- Images demo
+- Football demo
 
-## Demos
+**Grading policy**
 
-- Orbits
-- Images
-- Football
+- [Link](../shared/grading.md)
 
-## [Grading policy](../shared/grading.md)
-
-## [AI policy](../shared/ai.md)
-
-## [Survey](https://forms.gle/tgcC4tt2r1d9Q3SZA)
-
-## Python Install
+**Python setup**
 
 - [Idle](https://www.python.org/downloads/)
 - [VSCode](https://code.visualstudio.com/) +
   [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-## [Dog years](dog-years)
+**Install Python libraries**
+
+- [Command](../shared/install-python-libraries)
+
+**Review**
+
+- Define a variable
+- Make an empty list
+- Make an infinite loop
+- Print out `Hello <name>` based on the value in the variable `name`
+- Get a name string from the user as input and print out `Hello <name>`
+- Clear the console
+- Check if a value is in a list
+- Add a value to a list
+- Remove a value from a list
+
+**Dog years**
 
 - `input`
 - Converting strings to numbers with `int`

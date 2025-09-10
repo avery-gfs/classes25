@@ -5,6 +5,3 @@
 print("Your age (years): ")
 print("Your dog's age (years): ")
 print("Your dog's age (dog-years): ")
-
-# Challenge: calculate your approximate age in months, days, hours,
-# minutes, and seconds

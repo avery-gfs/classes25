@@ -41,10 +41,13 @@
 
 **Flappy bird concepts brainstorm**
 
-[**Grading policy**](../shared/grading.md)
+**Grading policy**
 
-[**Game lab**](https://studio.code.org/projects/gamelab/new)
+[Link](../shared/grading.md)
 
+**Game lab**
+
+- https://studio.code.org/projects/gamelab/new
 - World coordinates
 - Position
 - `createSprite`
