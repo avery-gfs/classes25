@@ -1,42 +1,29 @@
-**Pixels**
+**PIL intro**
 
-![](images/colors/bird.png)
+- https://pillow.readthedocs.io/en/stable/reference/Image.html
 
-- What are pixels?
-- [Raster graphics](https://en.wikipedia.org/wiki/Raster_graphics)
-- Image dimensions
-- Image coordinate system
-  - [Top-left origin](https://dsp.stackexchange.com/questions/35925/why-do-we-use-the-top-left-corner-as-the-origin-in-image-processing)
-  - Zero-indexed
+- Dimensions
 
-![](images/colors/Rgb-raster-image.png)
+  ```py
+  im.height # image height in pixels
+  im.width # image width in pixels
+  ```
 
-![](images/colors/pixel-coordinates.png)
+- Get pixel value:
 
-**Colors**
+  ```py
+  (r, g, b) = im.getpixel((x, y)) # get rgb values at position x, y
+  ```
 
-![](images/colors/Pixel_geometry_01_Pengo.jpg)
+- Set pixel value:
 
-- [Subpixels](https://en.wikipedia.org/wiki/Subpixel_rendering)
-- [RGB color model](https://en.wikipedia.org/wiki/RGB_color_model)
-- `(r, g, b)` notation
-- https://rgbcolorpicker.com/
+  ```py
+  im.putpixel((x, y), (r, g, b)) # set rgb values at position x, y
+  ```
 
-**Grayscale**
+**Relative / perceptual luminance**
 
-Grayscale https://en.wikipedia.org/wiki/Grayscale
-
-![](images/colors/grayscale.png)
-
-**Color intuition**
-
-![](images/colors/the_dress.jpg)
-
-**Colors worksheet**
-
-**Python review**
-
-https://www.w3schools.com/python/python_exercises.asp
+https://en.wikipedia.org/wiki/Relative_luminance
 
 ---
 
