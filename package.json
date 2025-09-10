@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "push": "git add . && git commit -m 'update' && git push",
+    "push": "git add . && git status && git commit -m 'update' && git push",
     "fmt": "npx prettier --write --prose-wrap always ."
   },
   "dependencies": {
