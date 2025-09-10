@@ -46,7 +46,7 @@
 
 **Grading policy**
 
-[Link](../shared/grading.md
+[Link](../shared/grading.md)
 
 **MakeCode editor**
 
