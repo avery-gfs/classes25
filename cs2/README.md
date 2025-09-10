@@ -1,5 +1,7 @@
 **Pixels**
 
+![](images/colors/bird.png)
+
 - What are pixels?
 - [Raster graphics](https://en.wikipedia.org/wiki/Raster_graphics)
 - Image dimensions
@@ -17,7 +19,12 @@
 - [RGB color model](https://en.wikipedia.org/wiki/RGB_color_model)
 - `(r, g, b)` notation
 - https://rgbcolorpicker.com/
-- Grayscale https://en.wikipedia.org/wiki/Grayscale
+
+**Grayscale**
+
+Grayscale https://en.wikipedia.org/wiki/Grayscale
+
+![](images/colors/grayscale.png)
 
 **Color intuition**
 
