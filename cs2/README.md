@@ -4,11 +4,10 @@
 - [Raster graphics](https://en.wikipedia.org/wiki/Raster_graphics)
 - Image dimensions
 - Image coordinate system
-
   - [Top-left origin](https://dsp.stackexchange.com/questions/35925/why-do-we-use-the-top-left-corner-as-the-origin-in-image-processing)
   - Zero-indexed
 
-  ![](images/colors/pixel-coordinates.png)
+![](images/colors/pixel-coordinates.png)
 
 **Colors**
 
