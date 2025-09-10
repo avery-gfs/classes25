@@ -10,9 +10,8 @@
 
 - What is a command?
 - What is a program? Sequence of commands
-- `on start` block
+- `on start` and `forever`
 - What happens if we leave out on start block?
-- `Forever`
 - Command arguments
 - Data types
 - What is a string?
