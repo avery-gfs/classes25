@@ -40,6 +40,48 @@ https://www.w3schools.com/python/python_exercises.asp
 
 ---
 
+**Pixels**
+
+![](images/bird.png)
+
+- What are pixels?
+- [Raster graphics](https://en.wikipedia.org/wiki/Raster_graphics)
+- Image dimensions
+- Image coordinate system
+  - [Top-left origin](https://dsp.stackexchange.com/questions/35925/why-do-we-use-the-top-left-corner-as-the-origin-in-image-processing)
+  - Zero-indexed
+
+![](images/colors/Rgb-raster-image.png)
+
+![](images/colors/pixel-coordinates.png)
+
+**Colors**
+
+![](images/colors/Pixel_geometry_01_Pengo.jpg)
+
+- [Subpixels](https://en.wikipedia.org/wiki/Subpixel_rendering)
+- [RGB color model](https://en.wikipedia.org/wiki/RGB_color_model)
+- `(r, g, b)` notation
+- https://rgbcolorpicker.com/
+
+**Grayscale**
+
+Grayscale https://en.wikipedia.org/wiki/Grayscale
+
+![](images/grayscale/grayscale.png)
+
+**Color intuition**
+
+![](images/colors/the_dress.jpg)
+
+**Colors worksheet**
+
+**Python review**
+
+https://www.w3schools.com/python/python_exercises.asp
+
+---
+
 **Class intro**
 
 - Practical, project based, applications
