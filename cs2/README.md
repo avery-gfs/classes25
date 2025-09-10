@@ -12,9 +12,9 @@
 
 **Colors**
 
-- [Subpixels](https://en.wikipedia.org/wiki/Subpixel_rendering)
-  ![](images/colors/Pixel_geometry_01_Pengo.jpg)
+![](images/colors/Pixel_geometry_01_Pengo.jpg)
 
+- [Subpixels](https://en.wikipedia.org/wiki/Subpixel_rendering)
 - [RGB color model](https://en.wikipedia.org/wiki/RGB_color_model)
 - `(r, g, b)` notation
 - https://rgbcolorpicker.com/
