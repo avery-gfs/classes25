@@ -52,6 +52,6 @@
 
 https://makecode.microbit.org/
 
-**Nametag assignment**
+**Nametag**
 
 - `basic.show_leds`
