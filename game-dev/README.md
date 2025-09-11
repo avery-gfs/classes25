@@ -5,7 +5,7 @@
 
 **Concepts**
 
-[Demo](game-lab/controls-collisions)
+[Demo](game-lab/controls)
 
 - 1D character controls
 - Randomized spawning
