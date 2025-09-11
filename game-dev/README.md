@@ -5,11 +5,14 @@
 
 **Concepts**
 
+[Demo](game-lab/controls-collisions)
+
 - 1D character controls
 - Randomized spawning
 - Text display
 - Declaring variables
 - Scoring with counter pattern
+- Boundaries
 
 ---
 
@@ -19,7 +22,9 @@
 - Where on the game screen is the coordinate (0, 0)?
 - What code could we use to adjust the size of a sprite?
 
-**Concepts**
+**Movement**
+
+[Demo](game-lab/movement)
 
 - Sprite velocity
 - `background` and why we need it
@@ -46,6 +51,8 @@
 [Link](../shared/grading.md)
 
 **Game lab**
+
+[Demo](game-lab/intro)
 
 - https://studio.code.org/projects/gamelab/new
 - World coordinates
