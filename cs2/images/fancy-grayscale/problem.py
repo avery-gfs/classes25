@@ -1,4 +1,4 @@
-# Convert an image to grayscale
+# Convert an image to grayscale using the relative luminance formula
 
 from PIL import Image
 

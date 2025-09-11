@@ -2,6 +2,20 @@
 
 https://en.wikipedia.org/wiki/Relative_luminance
 
+$$Y = 0.2126 * R + 0.7152 * G + 0.0722 * B$$
+
+**Fancy grayscale**
+
+[Problem](images/fancy-grayscale)
+
+**Inverted**
+
+[Problem](images/inverted)
+
+**Scaled**
+
+[Problem](images/scaled)
+
 ---
 
 **PIL intro**
