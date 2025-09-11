@@ -25,6 +25,10 @@
 
 https://en.wikipedia.org/wiki/Relative_luminance
 
+**Grayscale problem**
+
+**Greenish problem**
+
 ---
 
 **Pixels**
@@ -103,7 +107,7 @@ https://www.w3schools.com/python/python_exercises.asp
 - Add a value to a list
 - Remove a value from a list
 
-**Dog years**
+**Dog years problem**
 
 - `input`
 - Converting strings to numbers with `int`
