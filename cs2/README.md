@@ -92,8 +92,7 @@ Set `r = 255`.
 
 - https://en.wikipedia.org/wiki/Grayscale
 - `r`, `g`, and `b` are all equal
-
-$$y = \frac{r + g + b}{3}$$
+- $$y = \frac{r + g + b}{3}$$
 
 ![](images/grayscale/grayscale.png)
 
