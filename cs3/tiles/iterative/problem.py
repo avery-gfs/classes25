@@ -55,7 +55,7 @@ def showTiling(board):
 
 	return "\n".join(rows)
 
-print(getTilings(6))
+print(getTilings(4))
 
-for tiling in getTilings(6):
+for tiling in getTilings(4):
 	print(showTiling(tiling))
