@@ -1,3 +1,11 @@
+# Get the list of all possible tiling strings for a board with width n.
+# Tiling strings are made of up digits `1` and `2`, where `1` represents
+# a single vertical tile and `2` represents two horizontal tiles.
+#
+# getTilings(4) should return
+#
+# ['1111', '112', '121', '211', '22']
+
 def getTilings(n):
 	# Your code goes here
 	return ["1211"]
@@ -46,6 +54,8 @@ def showTiling(board):
 	rows[2] += "┘"
 
 	return "\n".join(rows)
+
+print(getTilings(6))
 
 for tiling in getTilings(6):
 	print(showTiling(tiling))

@@ -4,6 +4,9 @@
 
 **Tilings Generator**
 
+- `1` and `2` representation
+- Generate tiling strings for length `4` manually
+
 [Problem](tiles/iterative)
 
 ---
