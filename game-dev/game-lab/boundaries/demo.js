@@ -21,6 +21,22 @@ function draw() {
   if (player.x > 400) {
     player.x = 0;
   }
+
+  // if (player.x < 0) {
+  //   player.x = 0;
+  // }
+    
+  // if (player.x > 400) {
+  //   player.x = 400;
+  // }
+  
+  // if (player.x < 0) {
+  //   player.velocityX *= -1;
+  // }
+    
+  // if (player.x > 400) {
+  //   player.velocityX *= -1;
+  // }
   
   drawSprites();
 }

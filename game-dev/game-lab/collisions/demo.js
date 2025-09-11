@@ -21,8 +21,13 @@ function draw() {
     player.velocityX = 3;
   }
   
-  player.x = Math.min(400, player.x);
-  player.y = Math.min(400, player.y);
+  if (player.x < 0) {
+    player.x = 400;
+  }
+    
+  if (player.x > 400) {
+    player.x = 0;
+  }
   
   if (goal.y > 400) {
     goal.y = 0;

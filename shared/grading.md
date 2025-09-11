@@ -18,6 +18,12 @@ Class grade breakdown:
   Please limit conversations to library-level volume when working and
   collaborating on classwork.
 
+- Leaving the classroom
+
+  You are welcome to go to the bathroom or to get water during class, but make
+  to let me know before you leave the room. If you need to leave, please try to
+  do so during the classwork portion of class, rather than during lecture.
+
 - Attention during lecture and presentations
 
   It's difficult to present to an audience when you can hear other people

@@ -37,7 +37,7 @@
 
 **Graphing calculator story**
   
-![](nametag/calculator.jpg)
+![](game-lab/intro/calculator.jpg)
 
 **Class intro**
 
