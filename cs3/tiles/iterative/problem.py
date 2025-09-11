@@ -8,7 +8,7 @@
 
 def getTilings(n):
 	# Your code goes here
-	return ["1211"]
+	return ["121"]
 
 def getMiddle(left, right):
 	match (left, right):
