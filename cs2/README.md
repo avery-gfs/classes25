@@ -1,7 +1,7 @@
 **Relative / perceptual luminance**
 
 - https://en.wikipedia.org/wiki/Relative_luminance
-- $$y = 0.2126 * r + 0.7152 * g + 0.0722 * b$$
+- $$y = 0.2126 \dot r + 0.7152 \dot g + 0.0722 \dot b$$
 
 **Fancy grayscale**
 
