@@ -1,6 +1,6 @@
 # Calculate the nth fibonacci number
 #
-# fibonacci(5) should return 21
+# fibonacci(8) should return 21
 
 def fibonacci(n):
 	# Your code goes here
