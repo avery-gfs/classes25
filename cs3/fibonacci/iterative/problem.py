@@ -3,7 +3,14 @@
 # fibonacci(8) should return 21
 
 def fibonacci(n):
-	# Your code goes here
-	return 1
+	old = 0
+	current = 1
+
+	for i in range(n - 1):
+		new = # ??
+		old = # ??
+		current = # ??
+
+	return current
 
 print(fibonacci(8))

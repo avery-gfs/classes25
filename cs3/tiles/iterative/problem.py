@@ -7,8 +7,15 @@
 # ['1111', '112', '121', '211', '22']
 
 def getTilings(n):
-	# Your code goes here
-	return ["121"]
+	oldTilings = [""]
+	tilings = ["1"]
+
+	for i in range(n - 1):
+		newTilings = []
+
+		# Your code goes here
+
+	return tilings
 
 def getMiddle(left, right):
 	match (left, right):
