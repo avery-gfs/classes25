@@ -18,7 +18,7 @@ will make it hard to get comfortable doing math.
 **I'm strongly encouraging you to steer clear of AI tools** for your work in
 this class. While I won't impose a total ban on AI, I will be raising my
 expectations for the understanding that students have of the code they write and
-present. Note that **AI tools which are built in to your coding environment,
+present. Note that **AI tools which are built into your coding environment,
 like Replit AI and Github copilot, are banned**, and must be disabled in order
 to receive credit for classwork.
 
@@ -28,6 +28,6 @@ poor use of outside resources, including AI. Learning to use resources --
 whether they be your peers, tutorials, documentation, or AI tools -- in a way
 that furthers your learning is an important part of becoming an effective
 programmer. I think that using AI as a learning tool, rather than a
-give-me-the-answer tool, is a particularly hard for new software developers to
+give-me-the-answer tool, is particularly hard for new software developers to
 pull off. I hope that this new guidance will promote deeper understanding of our
 subject while preparing students for real-world software work.
