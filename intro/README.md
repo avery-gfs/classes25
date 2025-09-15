@@ -1,3 +1,29 @@
+**Review**
+
+**Variables**
+
+- What is a variable?
+- Counter demo
+
+**Rock paper scissors demo**
+
+- Random
+- Conditionals
+- Comparisons
+- Add your own images
+
+![](rock-paper-scossors/rps.png)
+
+**Dice problem**
+
+Make a digital die that display a random roll when you shake your microbit.
+
+![](dice/faces.png)
+
+![](dice/5.png)
+
+---
+
 **Connecting the microbit**
 
 - Sending code
@@ -22,14 +48,6 @@
 **Commands overview**
 
 - Basics
-- Variables
-- Random
-- Conditionals
-- Comparisons
-
-**Rock paper scissors demo**
-
-**Dice problem**
 
 ---
 

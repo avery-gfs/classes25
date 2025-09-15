@@ -1,3 +1,28 @@
+```py
+bestScore = 0 # Keep track of the highest score
+bestWord = None # Keep track of the highest scoring word
+
+# Find the word with the highest Scrabble score
+
+for word in words:
+    score = 0
+
+    # Loop through each letter in the current word
+    for letter in word:
+        score += letterPoints[letter]
+
+    # Alternatively, we could use:
+    # score = sum(letterPoints[letter] for letter in word)
+
+    if score > bestScore:
+        bestScore = score
+        bestWord = word
+        
+print(bestWord)
+```
+
+---
+
 **Fibonacci Generator**
 
 [Problem](fibonacci/iterative/)
