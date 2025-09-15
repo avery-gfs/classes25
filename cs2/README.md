@@ -5,15 +5,15 @@
 
 **Fancy grayscale**
 
-[Problem](images/fancy-grayscale)
+- *Problem*
 
 **Inverted**
 
-[Problem](images/inverted)
+- *Problem*
 
 **Scaled**
 
-[Problem](images/scaled)
+- *Problem*
 
 ---
 
@@ -69,11 +69,11 @@ Set `r = 255`.
 
 **Grayscale**
 
-[Problem](images/grayscale)
+- *Problem*
 
 **Greenish**
 
-[Problem](images/greenish)
+- *Problem*
 
 ---
 
@@ -114,6 +114,8 @@ Set `r = 255`.
 ![](images/colors/the_dress.jpg)
 
 **Colors worksheet**
+
+- *Worksheet*
 
 **Python review**
 
@@ -157,8 +159,7 @@ https://www.w3schools.com/python/python_exercises.asp
 
 **Dog years**
 
-[Problem](dog-years)
-
+- *Problem*
 - `input`
 - Converting strings to numbers with `int`
 - Math operators
