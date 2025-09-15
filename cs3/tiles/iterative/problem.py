@@ -1,22 +1,3 @@
-# Get the list of all possible tiling strings for a board with width n.
-# Tiling strings are made of up digits `1` and `2`, where `1` represents
-# a single vertical tile and `2` represents two horizontal tiles.
-#
-# getTilings(4) should return
-#
-# ['1111', '112', '121', '211', '22']
-
-def getTilings(n):
-	oldTilings = [""]
-	tilings = ["1"]
-
-	for i in range(n - 1):
-		newTilings = []
-
-		# Your code goes here
-
-	return tilings
-
 def getMiddle(left, right):
 	match (left, right):
 		case ("1", "1"):
@@ -28,7 +9,7 @@ def getMiddle(left, right):
 		case ("2", "2"):
 			return "┼"
 
-# print(showTiling("122112")) will display
+# showTiling("122112") will return
 #
 # ┌─┬───┬───┬─┬─┬───┐
 # │ ├───┼───┤ │ ├───┤
@@ -62,7 +43,23 @@ def showTiling(board):
 
 	return "\n".join(rows)
 
-print(getTilings(4))
+# Get the list of all possible tiling strings for a board with width n.
+# Tiling strings are made of up digits `1` and `2`, where `1` represents
+# a single vertical tile and `2` represents two horizontal tiles.
+#
+# getTilings(4) should return
+#
+# ['1111', '112', '121', '211', '22']
 
-for tiling in getTilings(4):
+def getTilings(n):
+	tileSets = [[""], ["1"]]
+
+	# Your code goes here
+
+	return tileSets[n]
+
+tilings = getTilings(4)
+print(tilings)
+
+for tiling in tilings:
 	print(showTiling(tiling))

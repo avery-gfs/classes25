@@ -1,16 +1,12 @@
 # Calculate the nth fibonacci number
 #
-# fibonacci(8) should return 21
+# fibonacci(10) should return 55
 
 def fibonacci(n):
-	old = 0
-	current = 1
+	seq = [0, 1]
 
-	for i in range(n - 1):
-		new = # ??
-		old = # ??
-		current = # ??
+	# Your code goes here
 
-	return current
+	return seq[n]
 
-print(fibonacci(8))
+print(fibonacci(10))

@@ -1,4 +1,4 @@
-```py
+<!-- ```py
 bestScore = 0 # Keep track of the highest score
 bestWord = None # Keep track of the highest scoring word
 
@@ -20,17 +20,13 @@ for word in words:
         
 print(bestWord)
 ```
-
----
-
-**Fibonacci Generator**
-
-[Problem](fibonacci/iterative/)
+ -->
 
 **Tilings Generator**
 
 - `1` and `2` representation
-- Generate tiling strings for length `4` manually
+- *Practice worksheet*
+- *Problem*
 
 ```
 ┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
@@ -59,42 +55,20 @@ print(bestWord)
   2   2       2       2
 ```
 
-[Problem](tiles/iterative)
-
 ---
 
 **Fibonacci Sequence**
 
 https://en.wikipedia.org/wiki/Fibonacci_sequence
 
+**Fibonacci Generator**
+
+- Negative list indices
+- *Problem*
+
 **Tilings proof**
 
-```
-┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
-│ │ │ │ │ = │ │ + │ │ │ │
-└─┴─┴─┴─┘   └─┘   └─┴─┴─┘
-   2x4              2x3
-
-┌─┬─┬───┐   ┌─┐   ┌─┬───┐
-│ │ ├───┤ = │ │ + │ ├───┤
-└─┴─┴───┘   └─┘   └─┴───┘
-   2x4              2x3
-
-┌─┬───┬─┐   ┌─┐   ┌───┬─┐
-│ ├───┤ │ = │ │ + ├───┤ │
-└─┴───┴─┘   └─┘   └───┴─┘
-   2x4              2x3
-
-┌───┬─┬─┐   ┌───┐   ┌─┬─┐
-├───┤ │ │ = ├───┤ + │ │ │
-└───┴─┴─┘   └───┘   └─┴─┘
-   2x4               2x2
-
-┌───┬───┐   ┌───┐   ┌───┐
-├───┼───┤ = ├───┤ + ├───┤
-└───┴───┘   └───┘   └───┘
-   2x4               2x2
-```
+- *Proof*
 
 ---
 
@@ -106,10 +80,10 @@ https://en.wikipedia.org/wiki/Fibonacci_sequence
 - Can ask about the Python language, CS theory, or general problem-solving
 - Cannot involve third-party libraries
 
-**Proving properties of systems**
+**Proving properties using invariants**
 
-- 12(3)4 proof
-- Chessboard proof
+- *12(3)4 proof*
+- *Chessboard proof*
 
 ---
 
@@ -151,4 +125,4 @@ https://en.wikipedia.org/wiki/Fibonacci_sequence
 
 **To do**
 
-- [Problem](to-do)
+- *Problem*
