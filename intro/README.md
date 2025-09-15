@@ -1,5 +1,3 @@
-**Review**
-
 **Variables**
 
 - What is a variable?
