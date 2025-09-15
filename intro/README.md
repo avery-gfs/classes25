@@ -12,13 +12,13 @@
 - Comparisons
 - Add your own images
 
-![](rock-paper-scossors/rps.png)
+![](rock-paper-scissors/rps.png)
 
 **Dice problem**
 
 Make a digital die that display a random roll when you shake your microbit.
 
-![](dice/faces.png)
+![](dice/faces.jpg)
 
 ![](dice/5.png)
 
