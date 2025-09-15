@@ -8,13 +8,13 @@
 - Random
 - Conditionals
 - Comparisons
-- Add your own images
+- *Add your own images*
 
 ![](rock-paper-scissors/rps.png)
 
 **Dice problem**
 
-Make a digital die that display a random roll when you shake your microbit.
+*Make a digital die that display a random roll when you shake your microbit.*
 
 ![](dice/faces.jpg)
 
@@ -24,7 +24,7 @@ Make a digital die that display a random roll when you shake your microbit.
 
 **Connecting the microbit**
 
-- Sending code
+- *Sending code*
 - Errors
 - Restarting code
 
@@ -71,3 +71,4 @@ https://makecode.microbit.org/
 **Nametag**
 
 - `basic.show_leds`
+- *Problem*
