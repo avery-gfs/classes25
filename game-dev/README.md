@@ -1,3 +1,10 @@
+- player stop no button press
+- gravity
+- config variables
+- functions
+
+---
+
 **Review**
 
 - What is the purpose of the `draw` function in gamelab?

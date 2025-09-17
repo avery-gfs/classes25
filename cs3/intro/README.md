@@ -1,7 +1,5 @@
 ## Do Now: Solve the Maze
 
-![](maze.png)
-
 ---
 
 ## What is CS3

@@ -1,17 +1,3 @@
-**Variables**
-
-- What is a variable?
-- Counter demo
-
-**Rock paper scissors demo**
-
-- Random
-- Conditionals
-- Comparisons
-- *Add your own images*
-
-![](rock-paper-scissors/rps.png)
-
 **Dice problem**
 
 *Make a digital die that display a random roll when you shake your microbit.*
@@ -21,6 +7,21 @@
 ![](dice/5.png)
 
 ---
+
+**Variables**
+
+- What is a variable?
+- Counter demo
+
+**Rock paper scissors demo**
+
+- Conditionals
+- Comparisons
+- Start with hard coded choice, then random
+- Random
+- *Add your own images*
+
+![](rock-paper-scissors/rps.png)
 
 **Connecting the microbit**
 

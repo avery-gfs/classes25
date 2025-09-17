@@ -52,11 +52,8 @@ def showTiling(board):
 # ['1111', '112', '121', '211', '22']
 
 def getTilings(n):
-	tileSets = [[""], ["1"]]
-
 	# Your code goes here
-
-	return tileSets[n]
+	pass
 
 tilings = getTilings(4)
 print(tilings)
