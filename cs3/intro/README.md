@@ -1,14 +1,10 @@
 ## Do Now: Solve the Maze
 
----
-
 ## What is CS3
 
 - Practice vs theory
 - Programming vs CS
 - Hard problems w/ easy solutions vs easy problems w/ hard solutions
-
----
 
 ## Demo Projects
 
@@ -16,13 +12,9 @@
 - Towers
 - VM
 
----
-
 ## Grading policy
 
 [Link](../shared/grading.md)
-
----
 
 ## Python setup
 
@@ -35,8 +27,6 @@ VSCode:
 - [VSCode](https://code.visualstudio.com/)
 - [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
----
-
 ## Review
 
 - Define a variable
@@ -48,8 +38,6 @@ VSCode:
 - Add a value to a list
 - Remove a value from a list
 
----
-
 ## Clearing the Console
 
 ```py
@@ -58,8 +46,6 @@ import os
 os.system("clear") # MacOS and Linux
 os.system("cls")   # Windows
 ```
-
----
 
 ## To Do List
 
