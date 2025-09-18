@@ -18,33 +18,39 @@ votes["strawberry"] # 1
 ## Add a value
 
 ```py
-votes["mint"] = 1 # votes = { "strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1 }
+votes["mint"] = 1
+
+# votes = { "strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1 }
 ```
 
 ## Update a value
 
 ```py
-votes["strawberry"] = 2 # votes = { "strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1 }
+votes["strawberry"] = 2
+
+# votes = { "strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1 }
 ```
 
 ## Increment a value
 
 ```py
-votes["chocolate"] += 1 # votes = { "strawberry": 2, "chocolate": 2, "vanilla": 1, "mint": 1 }
+votes["chocolate"] += 1
+
+# votes = { "strawberry": 2, "chocolate": 2, "vanilla": 1, "mint": 1 }
 ```
 
 ## Iterate over keys
 
 ```py
+for flavor in votes:
+    print(flavor, votes[flavor])
+
 # Prints:
 #
 # strawberry 2
 # chocolate 2
 # vanilla 1
 # mint 1
-
-for flavor in votes:
-    print(flavor, votes[flavor])
 ```
 
 ## Check membership
@@ -85,7 +91,7 @@ y:  4, z: 10
 
 ## Alice in Wonderland
 
-```
+```txt
 chapter i down the rabbit hole alice was beginning to get very tired
 of sitting by her sister on the bank and of having nothing to do once
 or twice she had peeped into the book her sister was reading but it
