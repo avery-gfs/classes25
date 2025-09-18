@@ -26,10 +26,16 @@
 
 ## Black and White
 
+<img width="450" src="bird.png" />
+<img width="450" src="black-white.png" />
+
 - Black `(0, 0, 0)`
 - White `(255, 255, 255)`
 
 ## Simple Grayscale
+
+<img width="450" src="bird.png" />
+<img width="450" src="grayscale.png" />
 
 - https://en.wikipedia.org/wiki/Grayscale
 - `r`, `g`, and `b` are all equal
@@ -37,14 +43,13 @@
 
 ## Better Grayscale
 
+<img width="450" src="bird.png" />
+<img width="450" src="better-grayscale.png" />
+
 - Relative / perceptual luminance
 - https://en.wikipedia.org/wiki/Relative_luminance
 
 $$l = 0.2126 \cdot r + 0.7152 \cdot g + 0.0722 \cdot b$$
-
-## Color Distance
-
-$$distance =\sqrt{(R_2 - R_1)^{2} + (G_2 - G_1)^{2} + (B_2 - B_1)^{2}}$$
 
 ## PIL / Pillow
 
@@ -84,6 +89,10 @@ color = im.getpixel((x, y))
 
 (r, g, b) = color
 ```
+
+## Color Distance
+
+$$distance =\sqrt{(R_2 - R_1)^{2} + (G_2 - G_1)^{2} + (B_2 - B_1)^{2}}$$
 
 ## Color Palettes
 
