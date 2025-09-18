@@ -1,4 +1,4 @@
-# Convert an image to grayscale
+# Convert an image to black and white
 
 from PIL import Image
 
@@ -12,13 +12,9 @@ for y in range(im.height):
   for x in range(im.width):
     (r, g, b) = im.getpixel((x, y))
 
-    average = round((r + g + b) / 3)
-
-    r = average
-    g = average
-    b = average
-
+    # Your code goes here
+    
     output.putpixel((x, y), (r, g, b))
 
 # Save output image
-output.save("grayscale.png")
+output.save("black-white.png")
