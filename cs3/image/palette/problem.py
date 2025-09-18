@@ -38,9 +38,11 @@ endesga16 = [
 
 for y in range(im.height):
 	for x in range(im.width):
+        color = im.getpixel((x, y))
+
 		# Your code goes here
-		
-		pass
+
+        output.putpixel((x, y), bestColor)
 
 # Save output image
 output.save("palette.png")

@@ -1,41 +1,41 @@
 ## Advanced Image Processing
 
-![](bird.png)
+![](notes/bird.png)
 
 ## Image Coordinates
 
-![](coordinates.png)
+![](notes/coordinates.png)
 
 - Zero-indexed
 - [Top-left origin](https://dsp.stackexchange.com/questions/35925/why-do-we-use-the-top-left-corner-as-the-origin-in-image-processing)
 
 ## Pixels
 
-![](bird.png)
+![](notes/bird.png)
 
 ## Subpixels
 
-![](Pixel_geometry_01_Pengo.jpg)
+![](notes/Pixel_geometry_01_Pengo.jpg)
 
 ## Color Channels
 
-![](Rgb-raster-image.png)
+![](notes/Rgb-raster-image.png)
 
 - `(r, g, b)` notation
 - https://rgbcolorpicker.com/
 
 ## Black and White
 
-<img width="450" src="bird.png" />
-<img width="450" src="black-white.png" />
+<img width="450" src="notes/bird.png" />
+<img width="450" src="notes/black-white.png" />
 
 - Black `(0, 0, 0)`
 - White `(255, 255, 255)`
 
 ## Simple Grayscale
 
-<img width="450" src="bird.png" />
-<img width="450" src="grayscale.png" />
+<img width="450" src="notes/bird.png" />
+<img width="450" src="notes/grayscale.png" />
 
 - https://en.wikipedia.org/wiki/Grayscale
 - `r`, `g`, and `b` are all equal
@@ -43,8 +43,8 @@
 
 ## Better Grayscale
 
-<img width="450" src="bird.png" />
-<img width="450" src="better-grayscale.png" />
+<img width="450" src="notes/bird.png" />
+<img width="450" src="notes/better-grayscale.png" />
 
 - Relative / perceptual luminance
 - https://en.wikipedia.org/wiki/Relative_luminance
