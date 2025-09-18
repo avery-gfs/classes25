@@ -17,7 +17,7 @@ for word in words:
     if score > bestScore:
         bestScore = score
         bestWord = word
-        
+
 print(bestWord)
 ```
  -->
@@ -25,8 +25,8 @@ print(bestWord)
 **Tilings Generator**
 
 - `1` and `2` representation
-- *Practice worksheet*
-- *Problem*
+- _Practice worksheet_
+- _Problem_
 
 ```
 ┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
@@ -64,11 +64,11 @@ https://en.wikipedia.org/wiki/Fibonacci_sequence
 **Fibonacci Generator**
 
 - Negative list indices
-- *Problem*
+- _Problem_
 
 **Tilings proof**
 
-- *Proof*
+- _Proof_
 
 ---
 
@@ -82,5 +82,5 @@ https://en.wikipedia.org/wiki/Fibonacci_sequence
 
 **Proving properties using invariants**
 
-- *12(3)4 proof*
-- *Chessboard proof*
+- _12(3)4 proof_
+- _Chessboard proof_

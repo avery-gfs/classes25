@@ -18,9 +18,9 @@ will make it hard to get comfortable doing math.
 **I'm strongly encouraging you to steer clear of AI tools** for your work in
 this class. While I won't impose a total ban on AI, I will be raising my
 expectations for the understanding that students have of the code they write and
-present. Note that **AI tools which are built into your coding environment,
-like Replit AI and Github copilot, are banned**, and must be disabled in order
-to receive credit for classwork.
+present. Note that **AI tools which are built into your coding environment, like
+Replit AI and Github copilot, are banned**, and must be disabled in order to
+receive credit for classwork.
 
 There were times last year when students wrote and presented code that they did
 not understand, either because of ineffective collaboration with classmates or

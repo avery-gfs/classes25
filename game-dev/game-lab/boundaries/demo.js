@@ -5,19 +5,19 @@ player.velocityX = -3;
 
 function draw() {
   background("white");
-  
+
   if (keyDown("left")) {
     player.velocityX = -3;
   }
-  
+
   if (keyDown("right")) {
     player.velocityX = 3;
   }
-  
+
   if (player.x < 0) {
     player.x = 400;
   }
-    
+
   if (player.x > 400) {
     player.x = 0;
   }
@@ -25,18 +25,18 @@ function draw() {
   // if (player.x < 0) {
   //   player.x = 0;
   // }
-    
+
   // if (player.x > 400) {
   //   player.x = 400;
   // }
-  
+
   // if (player.x < 0) {
   //   player.velocityX *= -1;
   // }
-    
+
   // if (player.x > 400) {
   //   player.velocityX *= -1;
   // }
-  
+
   drawSprites();
 }

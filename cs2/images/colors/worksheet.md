@@ -23,6 +23,7 @@
 
 **What color is the light-blue on the GFS website?**
 
-**What are the background colors of the squares labelled A and B on the checkerboard image?**
+**What are the background colors of the squares labelled A and B on the
+checkerboard image?**
 
 ![](checker_shadow_illusion.png)

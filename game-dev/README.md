@@ -8,7 +8,8 @@
 **Review**
 
 - What is the purpose of the `draw` function in gamelab?
-- How do we decide what code to put before the `draw` function and what to put inside it?
+- How do we decide what code to put before the `draw` function and what to put
+  inside it?
 
 **Concepts**
 
@@ -43,7 +44,7 @@
 ---
 
 **Graphing calculator story**
-  
+
 ![](game-lab/intro/calculator.jpg)
 
 **Class intro**

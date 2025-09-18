@@ -1,6 +1,6 @@
 **Dice problem**
 
-*Make a digital die that display a random roll when you shake your microbit.*
+_Make a digital die that display a random roll when you shake your microbit._
 
 ![](dice/faces.jpg)
 
@@ -19,13 +19,13 @@
 - Comparisons
 - Start with hard coded choice, then random
 - Random
-- *Add your own images*
+- _Add your own images_
 
 ![](rock-paper-scissors/rps.png)
 
 **Connecting the microbit**
 
-- *Sending code*
+- _Sending code_
 - Errors
 - Restarting code
 
@@ -51,7 +51,7 @@
 ---
 
 **Graphing calculator story**
-  
+
 ![](nametag/calculator.jpg)
 
 **Class intro**
@@ -72,4 +72,4 @@ https://makecode.microbit.org/
 **Nametag**
 
 - `basic.show_leds`
-- *Problem*
+- _Problem_

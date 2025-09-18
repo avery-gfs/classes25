@@ -16,7 +16,7 @@ for y in range(im.height):
     (r, g, b) = im.getpixel((x, y))
 
     # Your code goes here
-    
+
     output.putpixel((x, y), (r, g, b))
 
 # Save output image
@@ -61,9 +61,7 @@ https://en.wikipedia.org/wiki/Relative_luminance
 
 ## Inverted
 
-$$r = 255 - r$$
-$$g = 255 - g$$
-$$b = 255 - b$$
+$$r = 255 - r$$ $$g = 255 - g$$ $$b = 255 - b$$
 
 <img width="450" src="/images/bird.png" />
 
@@ -102,8 +100,8 @@ Set `r = 255`.
 
 **Grayscale**
 
-- *Problem*
+- _Problem_
 
 **Greenish**
 
-- *Problem*
+- _Problem_

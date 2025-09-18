@@ -5,15 +5,15 @@
 
 **Fancy grayscale**
 
-- *Problem*
+- _Problem_
 
 **Inverted**
 
-- *Problem*
+- _Problem_
 
 **Scaled**
 
-- *Problem*
+- _Problem_
 
 ---
 
@@ -56,7 +56,7 @@ for y in range(im.height):
     (r, g, b) = im.getpixel((x, y))
 
     # Your code goes here
-    
+
     output.putpixel((x, y), (r, g, b))
 
 # Save output image
@@ -69,11 +69,11 @@ Set `r = 255`.
 
 **Grayscale**
 
-- *Problem*
+- _Problem_
 
 **Greenish**
 
-- *Problem*
+- _Problem_
 
 ---
 
@@ -115,7 +115,7 @@ Set `r = 255`.
 
 **Colors worksheet**
 
-- *Worksheet*
+- _Worksheet_
 
 **Python review**
 
@@ -159,7 +159,7 @@ https://www.w3schools.com/python/python_exercises.asp
 
 **Dog years**
 
-- *Problem*
+- _Problem_
 - `input`
 - Converting strings to numbers with `int`
 - Math operators
