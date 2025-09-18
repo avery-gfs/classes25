@@ -17,4 +17,4 @@ for y in range(im.height):
     output.putpixel((x, y), (r, g, b))
 
 # Save output image
-output.save("grayscale.png")
+output.save("better-grayscale.png")

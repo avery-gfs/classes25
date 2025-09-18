@@ -42,6 +42,10 @@
 
 $$l = 0.2126 \cdot r + 0.7152 \cdot g + 0.0722 \cdot b$$
 
+## Color Distance
+
+$$distance =\sqrt{(R_2 - R_1)^{2} + (G_2 - G_1)^{2} + (B_2 - B_1)^{2}}$$
+
 ## PIL / Pillow
 
 https://pillow.readthedocs.io/en/stable/reference/Image.html
@@ -65,4 +69,44 @@ for y in range(im.height):
 
 # Save output image
 output.save("grayscale.png")
+```
+
+## Tuples
+
+```py
+(r, g, b) = im.getpixel((x, y))
+```
+
+```py
+color = im.getpixel((x, y))
+
+# ...
+
+(r, g, b) = color
+```
+
+## Color Palettes
+
+- https://rgbcolorpicker.com/
+- https://lospec.com/palette-list/endesga-16
+
+![](palette/palette.png)
+
+## Scrabble Code
+
+```py
+bestWord = None # Keep track of the highest scoring word
+bestScore = 0   # Keep track of the score of bestWord
+
+# Find the word with the highest Scrabble score
+
+for word in words:
+    score = 0
+
+    for letter in word:
+        score += letterPoints[letter]
+
+    if score > bestScore:
+        bestScore = score
+        bestWord = word
 ```

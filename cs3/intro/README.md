@@ -9,7 +9,7 @@
 ## Demo Projects
 
 - Maze
-- Towers
+- Tower
 - VM
 
 ## Grading policy

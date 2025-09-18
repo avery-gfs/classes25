@@ -45,7 +45,7 @@ output.save("grayscale.png")
 
 ---
 
-## Fancy grayscale
+## Better grayscale
 
 Relative / perceptual luminance
 
@@ -55,7 +55,7 @@ https://en.wikipedia.org/wiki/Relative_luminance
 
 <img width="450" src="/images/grayscale/grayscale.png" />
 
-<img width="450" src="/images/fancy-grayscale/fancy-grayscale.png" />
+<img width="450" src="/images/better-grayscale/better-grayscale.png" />
 
 ---
 
@@ -66,6 +66,17 @@ $$r = 255 - r$$ $$g = 255 - g$$ $$b = 255 - b$$
 <img width="450" src="/images/bird.png" />
 
 <img width="450" src="/images/inverted/inverted.png" />
+
+---
+
+## Black and White
+
+- Black `(0, 0, 0)`
+- White `(255, 255, 255)`
+
+<img width="450" src="/images/bird.png" />
+
+<img width="450" src="/images/black-white/black-white.png" />
 
 ---
 
