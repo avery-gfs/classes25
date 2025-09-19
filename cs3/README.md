@@ -22,6 +22,7 @@ print(bestWord)
 ```
  -->
 
+<!-- 
 **Tilings Generator**
 
 - `1` and `2` representation
@@ -53,34 +54,302 @@ print(bestWord)
 ├───┼───┤ = ├───┤ + ├───┤
 └───┴───┘   └───┘   └───┘
   2   2       2       2
-```
+``` -->
 
 ---
 
-**Fibonacci Sequence**
+Sorting
+
+---
+
+## Tiles Proof
+
+---
+
+## Tail recursion
+
+---
+
+## Factorial
+
+$$
+n! = \prod_{i=1}^{n} i
+$$
+
+```txt
+n! = n * (n - 1) * ... * 1
+```
+
+```txt
+0! = 1
+```
+
+```txt
+5! = 5 * 4 * 3 * 2 * 1 = 120
+```
+
+## Iterative Functions
+
+```py
+def factorial(n):
+  result = 1
+
+  for i in range(1, n + 1):
+    result *= i
+
+  return result
+
+print(factorial(10)) # Prints 3628800
+```
+
+## Recursive Functions
+
+```txt
+0! = 1
+n! = n * (n - 1)!
+```
+
+Recursive functions: functions which call themselves
+
+```py
+def factorial(n):
+  if n == 0:
+    return 1
+
+  return n * factorial(n - 1)
+
+print(factorial(10)) # Prints 3628800
+```
+
+## Base Case
+
+```py
+def factorial(n):
+  if n == 0:
+    return 1
+
+  return n * factorial(n - 1)
+
+print(factorial(10)) # Prints 3628800
+```
+
+Case in which the function doesn't call itself recursively
+
+```txt
+0! = 1
+```
+
+```py
+if n == 0:
+  return 1
+```
+
+## Recursive Case
+
+```py
+def factorial(n):
+  if n == 0:
+    return 1
+
+  return n * factorial(n - 1)
+
+print(factorial(10)) # Prints 3628800
+```
+
+Case in which the function calls itself recursively
+
+```txt
+n! = n * (n - 1)!
+```
+
+```py
+return n * factorial(n - 1)
+```
+
+## Fibonacci is Recursive
+
+```txt
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...
+```
+
+$$
+F_0 = 0
+$$
+
+$$
+F_1 = 1
+$$
+
+$$
+F_n = F_{n - 1} + F_{n - 2}
+$$
+
+## Default Parameters
+
+```py
+def total(numbers, index = 0):
+  # ...
+```
+
+## Recursive Functions
+
+Problem
+
+---
+
+## Fibonacci Sequence
 
 https://en.wikipedia.org/wiki/Fibonacci_sequence
 
-**Fibonacci Generator**
+$$
+F_0 = 0
+$$
 
-- Negative list indices
-- _Problem_
+$$
+F_1 = 1
+$$
 
-**Tilings proof**
+$$
+F_n = F_{n - 1} + F_{n - 2}
+$$
 
-- _Proof_
+```txt
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...
+```
+
+## Fibonacci Worksheet
+
+```txt
+┌──────────┬──────────┬──────────┐
+│   oldF   │ currentF │   newF   │
+╞══════════╪══════════╪══════════╡
+│    0     │    1     │    1     │
+├──────────┼──────────┼──────────┤
+│    1     │    1     │    2     │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+├──────────┼──────────┼──────────┤
+│          │          │          │
+└──────────┴──────────┴──────────┘
+```
+
+## Fibonacci Generator
+
+Problem
 
 ---
 
-**Make a programming quiz question**
+## `12(3)4` Puzzle
 
-- Can be true/false, multiple choice, or short response
-- It must be an original question
-- It must have a concrete, known answer
-- Can ask about the Python language, CS theory, or general problem-solving
-- Cannot involve third-party libraries
+Starting with a number `n`, you have two choices:
 
-**Proving properties using invariants**
+1. You can subtract `3` from `n`:
 
-- _12(3)4 proof_
-- _Chessboard proof_
+```txt
+n = n - 3
+```
+
+2. You can multiply `n` by `2`:
+
+```txt
+n = n * 2
+```
+
+You may repeat this process as many times as you like.
+
+Starting from `n = 1`, can you reach `n = 24`? Either find a sequence of
+transitions using the rules above that gets you from `1` to `24`, or prove that
+none exists.
+
+_Hint: Look for a pattern in what numbers can and can't be reached starting from
+`1` using these rules. Prove that this pattern always holds no matter how many
+times the rules are applied._
+
+## Chessboard Tiling Puzzle
+
+<img src="assets/board.png" height="250px" />
+
+You have a chessboard (an `8x8` grid of checkered light and dark squares) which
+is missing its two dark corner squares, leaving `62` squares remaining. Can you
+tile this board with `2x1` tiles? Provide a tiling, or a proof that none exists.
+
+_In this problem, "tiling" means covering the board with tiles so that each tile
+covers two squares, each square is covered by a tile, and no tiles overlap or
+hang off the edge of the board._
+
+_Hint: use the fact that checkered pattern to your advantage._
+
+---
+
+## Demo Projects
+
+- Maze
+- Tower
+- VM
+
+## What is CS3
+
+- Practice vs theory
+- Programming vs CS
+- Hard problems w/ easy solutions vs easy problems w/ hard solutions
+
+## Grading policy
+
+[Link](../shared/grading.md)
+
+## Python setup
+
+Idle:
+
+- [Idle](https://www.python.org/downloads/)
+
+VSCode:
+
+- [VSCode](https://code.visualstudio.com/)
+- [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+## Review
+
+- Define a variable
+- Make an empty list
+- Make an infinite loop
+- Print out `Hello <name>` based on the value in the variable `name`
+- Get a name string from the user as input and print out `Hello <name>`
+- Check if a value is in a list
+- Add a value to a list
+- Remove a value from a list
+
+## To Do List
+
+```txt
+['walk dog', 'water plants', 'shopping', 'homework']
+Tasks remaining: 4
+Enter task: 
+```
+
+- Display a list of tasks to the user (starts out empty) and the number of tasks
+
+- Get a task name as input from the user, then
+  - If the task exists in the task list, remove it
+  - If the task doesn't exist in the task list, add it
+
+- Clear the console
+
+  ```py
+  import os
+
+  os.system("clear") # MacOS and Linux
+  os.system("cls")   # Windows
+  ```
+
+- Repeat forever

@@ -11,8 +11,9 @@ output = Image.new(im.mode, im.size)
 # https://en.wikipedia.org/wiki/Color_difference
 
 def distance(c1, c2):
-	# Your code goes here
-	pass
+    (r1, g1, b1) = c1
+    (r2, g2, b2) = c2
+    return math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2)
 
 # https://rgbcolorpicker.com/
 # https://lospec.com/palette-list/endesga-16
@@ -37,11 +38,18 @@ endesga16 = [
 ]
 
 for y in range(im.height):
-	for x in range(im.width):
+    for x in range(im.width):
         color = im.getpixel((x, y))
 
-		# Your code goes here
+        bestColor = endesga16[0]
+        minDist = distance(color, endesga16[0])
 
+        # Look through the colors in palette, and find
+        # the one that is closest to the current pixel color
+
+        # Your code goes here
+
+        # Use this closest palette color in the output image
         output.putpixel((x, y), bestColor)
 
 # Save output image
