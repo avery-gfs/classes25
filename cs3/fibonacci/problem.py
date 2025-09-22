@@ -6,7 +6,11 @@ def fibonacci(n):
 	if n == 0:
 		return 0
 		
+	oldF = 0
+	currentF = 1
+	
 	# Your code goes here
-	pass
+
+	return currentF
 
 print(fibonacci(10))

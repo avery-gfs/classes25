@@ -1,7 +1,19 @@
 <!-- ```py
 bestScore = 0 # Keep track of the highest score
 bestWord = None # Keep track of the highest scoring word
+---
 
+Sorting
+
+---
+
+## Tiles Proof
+
+---
+
+## Tail recursion
+
+---
 # Find the word with the highest Scrabble score
 
 for word in words:
@@ -56,7 +68,7 @@ print(bestWord)
   2   2       2       2
 ``` -->
 
----
+<!-- ---
 
 Sorting
 
@@ -68,7 +80,7 @@ Sorting
 
 ## Tail recursion
 
----
+--- -->
 
 ## Factorial
 
@@ -193,8 +205,6 @@ def total(numbers, index = 0):
 
 ## Recursive Functions
 
-Problem
-
 ---
 
 ## Fibonacci Sequence
@@ -219,33 +229,7 @@ $$
 
 ## Fibonacci Worksheet
 
-```txt
-┌──────────┬──────────┬──────────┐
-│   oldF   │ currentF │   newF   │
-╞══════════╪══════════╪══════════╡
-│    0     │    1     │    1     │
-├──────────┼──────────┼──────────┤
-│    1     │    1     │    2     │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-├──────────┼──────────┼──────────┤
-│          │          │          │
-└──────────┴──────────┴──────────┘
-```
-
 ## Fibonacci Generator
-
-Problem
 
 ---
 
@@ -329,27 +313,4 @@ VSCode:
 - Add a value to a list
 - Remove a value from a list
 
-## To Do List
-
-```txt
-['walk dog', 'water plants', 'shopping', 'homework']
-Tasks remaining: 4
-Enter task: 
-```
-
-- Display a list of tasks to the user (starts out empty) and the number of tasks
-
-- Get a task name as input from the user, then
-  - If the task exists in the task list, remove it
-  - If the task doesn't exist in the task list, add it
-
-- Clear the console
-
-  ```py
-  import os
-
-  os.system("clear") # MacOS and Linux
-  os.system("cls")   # Windows
-  ```
-
-- Repeat forever
+## To-do List

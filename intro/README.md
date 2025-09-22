@@ -1,37 +1,50 @@
-**Dice problem**
+## Rock Paper Scissors Review
 
-_Make a digital die that display a random roll when you shake your microbit._
+## Morse Code
 
-![](dice/faces.jpg)
+<img src="assets/morse-chart.png" height="500px" />
 
-![](dice/5.png)
+## Morse Worksheet
+
+## Morse Brainstorm
+
+What commands do we need to make microbit display morse code?
+
+## Morse Demo
+
+## Telegraph Exercise
+
+I'll transmit a word, see who can decode it first
 
 ---
 
-**Variables**
+## Variables
 
-- What is a variable?
-- Counter demo
+What is a variable?
 
-**Rock paper scissors demo**
+## Counter
+
+## Rock Paper Scissors Demo
 
 - Conditionals
 - Comparisons
-- Start with hard coded choice, then random
+- Hard coded choice
 - Random
-- _Add your own images_
 
-![](rock-paper-scissors/rps.png)
+![](assets/rps.png)
 
-**Connecting the microbit**
+## Add Images
 
-- _Sending code_
-- Errors
-- Restarting code
+## Dice problem
 
-**Share nametags**
+Make a digital die that display a random roll when you shake your microbit.
 
-**Program structure**
+<img src="assets/dice-faces.jpg" height="250px" />
+<img src="assets/dice-5.png" height="250px" />
+
+---
+
+## Program Structure
 
 - What is a command?
 - What is a program? Sequence of commands
@@ -44,32 +57,40 @@ _Make a digital die that display a random roll when you shake your microbit._
 - Copy commands
 - Deleting commands
 
-**Commands overview**
+## Commands Overview
 
-- Basics
+## Connecting the microbit
+
+- Sending code
+- Errors
+- Restarting code
+
+## Share Nametags
 
 ---
 
-**Graphing calculator story**
+## Graphing calculator story
 
-![](nametag/calculator.jpg)
+![](assets/calculator.jpg)
 
-**Class intro**
+## Python Projects
 
-- Orbits demo
-- Sports data demo
-- Images demo
-- Microbit demo
+- Orbits
+- Sports data
+- Images
+- Microbit
 
-**Grading policy**
+## Grading policy
 
 [Link](../shared/grading.md)
 
-**MakeCode editor**
+## MakeCode Editor
 
 https://makecode.microbit.org/
 
-**Nametag**
+## Jumping Jacks Demo
 
-- `basic.show_leds`
-- _Problem_
+## Nametag
+
+- `on start`
+- `show leds`
