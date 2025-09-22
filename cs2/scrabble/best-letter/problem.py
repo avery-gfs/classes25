@@ -40,7 +40,10 @@ bestScores = {} # Keep track of the scores for bestWords
 # Find the word with the highest Scrabble score
 
 for word in words:
-    pass # Your code goes here!
+    firstLetter = word[0]
+    score = 0
+    
+    # Your code goes here!
 
 for letter in bestScores:
     print(letter, bestWords[letter], bestScores[letter])
