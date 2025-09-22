@@ -13,17 +13,12 @@
 - (127, 127, 127)
 - (0, 78, 90)
 - (203, 78, 32)
-
-**What are the grayscale versions of the following colors?**
-
-- (21, 126, 235)
-- (28, 66, 10)
-- (240, 155, 170)
-- (150, 146, 147)
+- (255, 53, 156)
+- (184, 129, 35)
+- (191, 204, 168)
+- (34, 65, 69)
 
 **What color is the light-blue on the GFS website?**
 
 **What are the background colors of the squares labelled A and B on the
 checkerboard image?**
-
-![](checker_shadow_illusion.png)

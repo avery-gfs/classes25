@@ -12,11 +12,7 @@ scaledHeight = round(im.height * scale)
 # Make blank output image with the scaled width and height
 output = Image.new(im.mode, (scaledWidth, scaledHeight))
 
-for y in range(im.height):
-  for x in range(im.width):
-    (r, g, b) = im.getpixel((x, y))
-
-    output.putpixel((x, y), (r, g, b))
+# Your code goes here
 
 # Save output image
 output.save("scaled.png")
