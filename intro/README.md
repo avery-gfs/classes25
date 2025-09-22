@@ -2,6 +2,8 @@
 
 ## Morse Code
 
+https://www.youtube.com/watch?v=QmNNjH8e4G8
+
 <img src="assets/morse-chart.png" height="500px" />
 
 ## Morse Worksheet
