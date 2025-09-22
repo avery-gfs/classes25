@@ -206,7 +206,8 @@ oh dear i shall be late when she thought it over afterwards it...
 
 ## Impossible Colors
 
-![](assets/eclipse-shrink.svg)
+
+<img height="550" src="assets/eclipse-shrink.svg" />
 
 ## Colors Worksheet
 
