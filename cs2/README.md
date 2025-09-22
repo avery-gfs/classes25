@@ -190,7 +190,8 @@ oh dear i shall be late when she thought it over afterwards it...
 
 ## Subpixels
 
-![](assets/Pixel_geometry_01_Pengo.jpg)
+<img height="300" src="assets/Pixel_geometry_01_Pengo.jpg" />
+<img height="300" src="assets/Cone-fundamentals-with-srgb-spectrum.svg" />
 
 ## Color Channels
 
@@ -199,9 +200,13 @@ oh dear i shall be late when she thought it over afterwards it...
 - `(r, g, b)` notation
 - https://rgbcolorpicker.com/
 
-## Color intuition
+## Color Intuition
 
 ![](assets/the_dress.jpg)
+
+## Impossible Colors
+
+![](assets/eclipse-shrink.svg)
 
 ## Colors Worksheet
 
