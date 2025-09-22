@@ -1,38 +1,51 @@
-- player stop no button press
-- gravity
-- config variables
-- functions
+## Bounce
+
+- Multi-user input
+- Bouncing Collisions
 
 ---
 
-**Review**
+## Gravity
 
-- What is the purpose of the `draw` function in gamelab?
+- Stop movement when button isn't pressed
+- Gravity
+- Config variables
+- Functions
+
+---
+
+## Boundary
+
+- Boundaries
+  - Stop
+  - Loop
+  - Bounce
+
+---
+
+## Review
+
+- What is the purpose of the `draw` function in GameLab?
 - How do we decide what code to put before the `draw` function and what to put
   inside it?
 
-**Concepts**
-
-[Demo](game-lab/controls)
+## Collisions
 
 - 1D character controls
 - Randomized spawning
 - Text display
 - Declaring variables
 - Scoring with counter pattern
-- Boundaries
 
 ---
 
-**Review**
+## Review
 
 - What are the dimensions of the game screen in GameLab?
-- Where on the game screen is the coordinate (0, 0)?
+- Where on the game screen is the coordinate `(0, 0)`?
 - What code could we use to adjust the size of a sprite?
 
-**Movement**
-
-[Demo](game-lab/movement)
+## Movement
 
 - Sprite velocity
 - `background` and why we need it
@@ -43,26 +56,27 @@
 
 ---
 
-**Graphing calculator story**
+## Graphing Calculator Story
 
-![](game-lab/intro/calculator.jpg)
+![](assets/calculator.jpg)
 
-**Class intro**
+## Demo Projects
 
-- Flappy bird demo
+- Flappy bird
 - Jacky
 
-**Flappy bird concepts brainstorm**
+## Flappy Bird Concepts Brainstorm
 
-**Grading policy**
+## Grading policy
 
 [Link](../shared/grading.md)
 
-**Game lab**
+## Game Lab Intro
 
-[Demo](game-lab/intro)
+https://studio.code.org/projects/gamelab/new
 
-- https://studio.code.org/projects/gamelab/new
+## Sprites
+
 - World coordinates
 - Position
 - `createSprite`
