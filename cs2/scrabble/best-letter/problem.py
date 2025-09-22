@@ -40,7 +40,6 @@ bestScores = {} # Keep track of the scores for bestWords
 # Find the word with the highest Scrabble score
 
 for word in words:
-    firstLetter = word[0]
     score = 0
     
     # Your code goes here!
