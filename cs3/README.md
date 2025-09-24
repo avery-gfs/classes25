@@ -1,3 +1,5 @@
+## Sorting
+
 ## Recursion
 
 What does this code do?
@@ -299,44 +301,7 @@ VSCode:
 
 ## To-do List
 
-<!--
-  ```py
-  bestScore = 0 # Keep track of the highest score
-  bestWord = None # Keep track of the highest scoring word
-  ---
-
-  Sorting
-
-  ---
-
-  ## Tiles Proof
-
-  ---
-
-  ## Tail recursion
-
-  ---
-  # Find the word with the highest Scrabble score
-
-  for word in words:
-      score = 0
-
-      # Loop through each letter in the current word
-      for letter in word:
-          score += letterPoints[letter]
-
-      # Alternatively, we could use:
-      # score = sum(letterPoints[letter] for letter in word)
-
-      if score > bestScore:
-          bestScore = score
-          bestWord = word
-
-  print(bestWord)
-  ```
-   -->
-
-  <!-- 
+<!-- 
   **Tilings Generator**
 
   - `1` and `2` representation
@@ -368,19 +333,9 @@ VSCode:
   ├───┼───┤ = ├───┤ + ├───┤
   └───┴───┘   └───┘   └───┘
     2   2       2       2
-  ``` -->
-
-  <!-- ---
-
-  Sorting
-
-  ---
+  ```
 
   ## Tiles Proof
 
-  ---
-
   ## Tail recursion
-
-  ---
--->
+ -->
