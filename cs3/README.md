@@ -1,86 +1,65 @@
-<!-- ```py
-bestScore = 0 # Keep track of the highest score
-bestWord = None # Keep track of the highest scoring word
----
+## Recursion
 
-Sorting
+What does this code do?
 
----
+```py
+def hello():
+  print("Hello world!")
 
-## Tiles Proof
-
----
-
-## Tail recursion
-
----
-# Find the word with the highest Scrabble score
-
-for word in words:
-    score = 0
-
-    # Loop through each letter in the current word
-    for letter in word:
-        score += letterPoints[letter]
-
-    # Alternatively, we could use:
-    # score = sum(letterPoints[letter] for letter in word)
-
-    if score > bestScore:
-        bestScore = score
-        bestWord = word
-
-print(bestWord)
+hello()
 ```
- -->
 
-<!-- 
-**Tilings Generator**
+## Recursion (continued)
 
-- `1` and `2` representation
-- _Practice worksheet_
-- _Problem_
+What does this code do?
 
+```py
+def hello():
+  print("Hello world!")
+  hello()
+
+hello()
 ```
-┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
-│ │ │ │ │ = │ │ + │ │ │ │
-└─┴─┴─┴─┘   └─┘   └─┴─┴─┘
- 1 1 1 1     1     1 1 1
 
-┌─┬─┬───┐   ┌─┐   ┌─┬───┐
-│ │ ├───┤ = │ │ + │ ├───┤
-└─┴─┴───┘   └─┘   └─┴───┘
- 1 1  2      1     1  2
+## Recursion (continued)
 
-┌─┬───┬─┐   ┌─┐   ┌───┬─┐
-│ ├───┤ │ = │ │ + ├───┤ │
-└─┴───┴─┘   └─┘   └───┴─┘
- 1  2  1     1      2  1
+What does this code do?
 
-┌───┬─┬─┐   ┌───┐   ┌─┬─┐
-├───┤ │ │ = ├───┤ + │ │ │
-└───┴─┴─┘   └───┘   └─┴─┘
-  2  1 1      2      1 1
+```py
+def hello():
+  hello()
+  print("Hello world!")
 
-┌───┬───┐   ┌───┐   ┌───┐
-├───┼───┤ = ├───┤ + ├───┤
-└───┴───┘   └───┘   └───┘
-  2   2       2       2
-``` -->
+hello()
+```
 
-<!-- ---
+## Recursion (continued)
 
-Sorting
+What does this code do?
 
----
+```py
+def hello(n):
+  if n < 10:
+    print("Hello world!")
+    hello(n + 1)
 
-## Tiles Proof
+hello(0)
+```
 
----
+## Recursion (continued)
 
-## Tail recursion
+What does this code do?
 
---- -->
+```py
+def hello(n):
+  if n < 10:
+    print("Hello world!")
+    hello(n + 1)
+  else:
+    print("Done")
+
+hello(0)
+```
 
 ## Factorial
 
@@ -178,6 +157,18 @@ n! = n * (n - 1)!
 return n * factorial(n - 1)
 ```
 
+## Recursive Summation
+
+```py
+def summation(n):
+  if n == 0:
+    return 0
+
+  return n + summation(n - 1)
+
+print(summation(10)) # Prints 55
+```
+
 ## Fibonacci is Recursive
 
 ```txt
@@ -195,13 +186,6 @@ $$
 $$
 F_n = F_{n - 1} + F_{n - 2}
 $$
-
-## Default Parameters
-
-```py
-def total(numbers, index = 0):
-  # ...
-```
 
 ## Recursive Functions
 
@@ -314,3 +298,89 @@ VSCode:
 - Remove a value from a list
 
 ## To-do List
+
+<!--
+  ```py
+  bestScore = 0 # Keep track of the highest score
+  bestWord = None # Keep track of the highest scoring word
+  ---
+
+  Sorting
+
+  ---
+
+  ## Tiles Proof
+
+  ---
+
+  ## Tail recursion
+
+  ---
+  # Find the word with the highest Scrabble score
+
+  for word in words:
+      score = 0
+
+      # Loop through each letter in the current word
+      for letter in word:
+          score += letterPoints[letter]
+
+      # Alternatively, we could use:
+      # score = sum(letterPoints[letter] for letter in word)
+
+      if score > bestScore:
+          bestScore = score
+          bestWord = word
+
+  print(bestWord)
+  ```
+   -->
+
+  <!-- 
+  **Tilings Generator**
+
+  - `1` and `2` representation
+  - _Practice worksheet_
+  - _Problem_
+
+  ```
+  ┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
+  │ │ │ │ │ = │ │ + │ │ │ │
+  └─┴─┴─┴─┘   └─┘   └─┴─┴─┘
+   1 1 1 1     1     1 1 1
+
+  ┌─┬─┬───┐   ┌─┐   ┌─┬───┐
+  │ │ ├───┤ = │ │ + │ ├───┤
+  └─┴─┴───┘   └─┘   └─┴───┘
+   1 1  2      1     1  2
+
+  ┌─┬───┬─┐   ┌─┐   ┌───┬─┐
+  │ ├───┤ │ = │ │ + ├───┤ │
+  └─┴───┴─┘   └─┘   └───┴─┘
+   1  2  1     1      2  1
+
+  ┌───┬─┬─┐   ┌───┐   ┌─┬─┐
+  ├───┤ │ │ = ├───┤ + │ │ │
+  └───┴─┴─┘   └───┘   └─┴─┘
+    2  1 1      2      1 1
+
+  ┌───┬───┐   ┌───┐   ┌───┐
+  ├───┼───┤ = ├───┤ + ├───┤
+  └───┴───┘   └───┘   └───┘
+    2   2       2       2
+  ``` -->
+
+  <!-- ---
+
+  Sorting
+
+  ---
+
+  ## Tiles Proof
+
+  ---
+
+  ## Tail recursion
+
+  ---
+-->

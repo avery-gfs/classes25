@@ -29,16 +29,16 @@ print(power2(10)) # Should print 1024
 
 # Calculate the sum of the numbers in a list recursively
 
-def total(numbers, index = 0):
+def total(numbers, index):
 	# Your code goes here
 	pass
 
-print(total([1, 2, 3, 4, 5])) # Should print 15
+print(total([1, 2, 3, 4, 5], 0)) # Should print 15
 
 # Check if a list of items contains a value recursively
 
-def contains(items, value, index = 0):
+def contains(items, value, index):
 	# Your code goes here
 	pass
 
-print(contains(["a", "s", "d", "f"], "d")) # Should print True
+print(contains(["a", "s", "d", "f"], "d", 0)) # Should print True

@@ -14,6 +14,15 @@ https://www.w3schools.com/python/python_ref_dictionary.asp
 ## Get
 
 ```py
+votes = { "strawberry": 7 }
+
+votes.get("strawberry", 0) # 7
+votes.get("banana", 0)     # 0
+```
+
+## Using Get
+
+```py
 votes = { "strawberry": 1 }
 
 while True: # Loop forever
@@ -44,6 +53,8 @@ while True: # Loop forever
 
 Use more dictionaries!
 
+`bestWords`
+
 ```ptls
 {
   'c': 'contemptuously',
@@ -54,6 +65,8 @@ Use more dictionaries!
   ...
 }
 ```
+
+`bestScores`
 
 ```ptls
 {
@@ -102,6 +115,8 @@ votes["strawberry"] = 2
 
 # votes = { "strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1 }
 ```
+
+A dictionary can only contain a single entry for a given key.
 
 ## Increment a value
 
@@ -179,6 +194,25 @@ oh dear i shall be late when she thought it over afterwards it...
 ```
 
 ## Scrabble Best Word
+
+You can use a `for` loop to loop over the characters in a string.
+
+```py
+word = "chapter"
+
+for c in word:
+  print(c)
+
+# Prints:
+# 
+# c
+# h
+# a
+# p
+# t
+# e
+# r
+```
 
 ---
 
