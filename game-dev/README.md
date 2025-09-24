@@ -2,12 +2,11 @@
 
 - Multi-user input
 - Bouncing Collisions
+- Why is ball slower when it moves horizontally?
 
 1. Two sprites with separate controls
-1. Ball with movement, bouncing off walls
-1. Ball bouncing off sprites
-
-- Why is ball slower when it moves horizontally?
+2. Ball with movement, bouncing off walls
+3. Ball bouncing off sprites
 
 ---
 
