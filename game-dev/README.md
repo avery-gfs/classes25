@@ -3,6 +3,12 @@
 - Multi-user input
 - Bouncing Collisions
 
+1. Two sprites with separate controls
+1. Ball with movement, bouncing off walls
+1. Ball bouncing off sprites
+
+- Why is ball slower when it moves horizontally?
+
 ---
 
 ## Gravity

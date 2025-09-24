@@ -204,7 +204,7 @@ for c in word:
   print(c)
 
 # Prints:
-# 
+#
 # c
 # h
 # a
@@ -261,7 +261,6 @@ for c in word:
 ![](assets/the_dress.jpg)
 
 ## Impossible Colors
-
 
 <img height="550" src="assets/eclipse-shrink.svg" />
 
@@ -374,7 +373,6 @@ VSCode:
 
 - [VSCode](https://code.visualstudio.com/)
 - [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-
 
 ## Review
 

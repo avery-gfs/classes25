@@ -10,9 +10,9 @@ var score = 0;
 
 function draw() {
   background("white");
-  
+
   goal.velocityY = goal.velocityY + 0.5;
-  
+
   if (keyDown("left")) {
     player.velocityX = -8;
   } else if (keyDown("right")) {
@@ -26,15 +26,15 @@ function draw() {
     goal.x = randomNumber(0, 400);
     goal.velocityY = 5;
   }
-  
+
   if (goal.isTouching(player)) {
     goal.y = 0;
     goal.velocityY = 5;
     goal.x = randomNumber(0, 400);
     score += 1;
   }
-  
+
   text(score, 10, 10);
-  
+
   drawSprites();
 }
