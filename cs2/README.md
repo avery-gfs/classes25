@@ -42,7 +42,29 @@ while True: # Loop forever
 
 ## Scrabble Best Alphabet
 
-Use two dictionaries!
+Use more dictionaries!
+
+```ptls
+{
+  'c': 'contemptuously',
+  'i': 'inquisitively',
+  'd': 'difficulty',
+  't': 'thoughtfully',
+  'r': 'refreshments',
+  ...
+}
+```
+
+```ptls
+{
+  'c': 23,
+  'i': 28,
+  'd': 22,
+  't': 25,
+  'r': 20,
+  ...
+}
+```
 
 ## Challenge: Scrabble Lookup
 
