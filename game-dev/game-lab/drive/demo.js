@@ -1,67 +1,44 @@
-var ballSpeed = 5;
+var rocket = createSprite(200, 200);
+rocket.setAnimation("rocket3_1");
+rocket.scale = 0.2;
 
-var ball = createSprite(200, 200);
-ball.setAnimation("soccer_bw_1");
-ball.scale = 0.1;
-ball.velocityX = -ballSpeed;
-ball.velocityY = -ballSpeed;
-
-var player1 = createSprite(370, 200);
-player1.setAnimation("chick_1_1");
-player1.scale = 0.1;
-
-var player2 = createSprite(30, 200);
-player2.setAnimation("cuteanimals_rooster_hello_1");
-player2.scale = 0.1;
+var speed = 0;
 
 function draw() {
   background("white");
-
+  
   if (keyDown("up")) {
-    player1.velocityY = -4;
-  } else if (keyDown("down")) {
-    player1.velocityY = 4;
+    if (speed < 40) {
+      speed += 1; 
+    }
   } else {
-    player1.velocityY = 0;
+    speed *= 0.9;
   }
-
-  if (keyDown("w")) {
-    player2.velocityY = -4;
-  } else if (keyDown("s")) {
-    player2.velocityY = 4;
-  } else {
-    player2.velocityY = 0;
+  
+  if (keyDown("left")) {
+    rocket.rotation -= 5;
   }
-
-  if (player1.isTouching(ball)) {
-    ball.velocityX = -ballSpeed;
-    ball.velocityY = player1.velocityY;
+  
+  if (keyDown("right")) {
+    rocket.rotation += 5;
   }
-
-  if (player2.isTouching(ball)) {
-    ball.velocityX = ballSpeed;
-    ball.velocityY = player2.velocityY;
+  
+  if (rocket.x < -40) {
+    rocket.x = 400;
   }
-
-  if (ball.x < 0) {
-    ball.velocityX *= -1;
-    ball.x = 0;
+  
+  if (rocket.x > 440) {
+    rocket.x = 0;
+  }  
+  
+  if (rocket.y < -40) {
+    rocket.y = 400;
   }
-
-  if (ball.x > 400) {
-    ball.x = 400;
-    ball.velocityX *= -1;
+  
+  if (rocket.y > 440) {
+    rocket.y = 0;
   }
-
-  if (ball.y < 0) {
-    ball.y = 0;
-    ball.velocityY *= -1;
-  }
-
-  if (ball.y > 400) {
-    ball.y = 400;
-    ball.velocityY *= -1;
-  }
-
+  
+  rocket.setSpeedAndDirection(speed, rocket.rotation);
   drawSprites();
 }
