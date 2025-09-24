@@ -10,10 +10,12 @@ output = Image.new(im.mode, im.size)
 # Calculate color distance between two colors
 # https://en.wikipedia.org/wiki/Color_difference
 
+
 def distance(c1, c2):
     (r1, g1, b1) = c1
     (r2, g2, b2) = c2
     return math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2)
+
 
 # https://rgbcolorpicker.com/
 # https://lospec.com/palette-list/endesga-16

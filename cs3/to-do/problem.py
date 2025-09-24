@@ -10,7 +10,7 @@
 #   os.system("cls")   # Windows
 #
 # - Repeat forever
-# 
+#
 # ['walk dog', 'water plants', 'shopping', 'homework']
 # Tasks remaining: 4
 # Enter task:

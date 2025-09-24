@@ -301,7 +301,7 @@ VSCode:
 
 ## To-do List
 
-<!-- 
+<!--
   **Tilings Generator**
 
   - `1` and `2` representation

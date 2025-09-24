@@ -1,7 +1,7 @@
 {
   "scripts": {
     "push": "git add . && git status && git commit -m 'update' && git push",
-    "fmt": "npx prettier --write --prose-wrap always ."
+    "fmt": "npx prettier --write --prose-wrap always .; python3 -m black ."
   },
   "dependencies": {
     "prettier": "^3.6.2"
