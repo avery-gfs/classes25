@@ -114,6 +114,20 @@ def hello(n):
 hello(0)
 ```
 
+## Recursion (continued)
+
+What does this code do?
+
+```py
+def hello(n):
+  if n < 10:
+    print("Hello world!")
+    hello(n + 1)
+    print("Goodbye")
+
+hello(0)
+```
+
 ## Factorial
 
 $$
