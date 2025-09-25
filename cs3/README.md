@@ -1,8 +1,55 @@
-## Sorting
+## Default Params
 
-## Cartesian
+```py
+def greet(name, greeting="Hello"):
+  print(f"{greeting} {name}!")
 
-## Sorting
+greet("Avery")
+greet("Avery", "Hi")
+```
+
+## Recursive Fibonacci
+
+```py
+def factorial(n):
+  if n == 0:
+    return 1
+
+  return n * factorial(n - 1)
+
+print(factorial(10)) # Prints 3628800
+```
+
+## Tail Recursion
+
+```py
+def factorial(n, result):
+  if n == 0:
+    return result
+
+  return factorial(n - 1, n * result)
+
+print(factorial(10, 1)) # Prints 3628800
+```
+
+- Still has base case and recursive case
+- Uses an _accumulator_ (result) parameter, which get's returned at the end
+
+https://en.wikipedia.org/wiki/Recursion_(computer_science)#Tail-recursive_functions
+
+## Tail Recursion (Continued)
+
+```py
+def factorial(n, result=1):
+  if n == 0:
+    return result
+
+  return factorial(n - 1, n * result)
+
+print(factorial(10)) # Prints 3628800
+```
+
+---
 
 ## Recursion
 
@@ -195,6 +242,8 @@ $$
 
 ## Recursive Functions
 
+Challenge: recursive minimum
+
 ---
 
 ## Fibonacci Sequence
@@ -304,6 +353,12 @@ VSCode:
 - Remove a value from a list
 
 ## To-do List
+
+<!--   ## Sorting
+
+  ## Cartesian
+
+  ## Sorting -->
 
 <!--
   **Tilings Generator**
