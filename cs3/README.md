@@ -1,3 +1,9 @@
+<!-- ## Sorting
+
+## Cartesian
+
+## Sorting -->
+
 ## Default Params
 
 ```py
@@ -367,12 +373,6 @@ VSCode:
 - Remove a value from a list
 
 ## To-do List
-
-<!--   ## Sorting
-
-  ## Cartesian
-
-  ## Sorting -->
 
 <!--
   **Tilings Generator**
