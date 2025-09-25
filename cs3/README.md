@@ -4,8 +4,8 @@
 def greet(name, greeting="Hello"):
   print(f"{greeting} {name}!")
 
-greet("Avery")
-greet("Avery", "Hi")
+greet("Avery")       # Prints "Hello Avery!"
+greet("Avery", "Hi") # Prints "Hi Avery!"
 ```
 
 ## Recursive Fibonacci

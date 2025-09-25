@@ -1,7 +1,10 @@
 def factorial(n):
     # Calculate the factorial of `n` recursively
 
-    pass  # Your code goes here
+    if n == 0:
+        return 1
+
+    return n * factorial(n - 1)
 
 
 print(factorial(10))  # Should print 3628800
