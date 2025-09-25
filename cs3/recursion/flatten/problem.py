@@ -3,7 +3,9 @@
 #
 # Hint: look into `isinstance` and `list.extend`
 
-def flatten(nested):
-    pass # Your code goes here
 
-print(flatten([1, [2, 3], [4, [5, 6]], 7])) # Should print [1, 2, 3, 4, 5, 6, 7]
+def flatten(nested):
+    pass  # Your code goes here
+
+
+print(flatten([1, [2, 3], [4, [5, 6]], 7]))  # Should print [1, 2, 3, 4, 5, 6, 7]
