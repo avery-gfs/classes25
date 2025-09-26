@@ -4,12 +4,11 @@ Print a bar chart based on the numbers in the list `numbers` where each number
 For the numbers `[1, 4, 2, 7, 3]` the output should be:
 
 ```txt
-
-X
-X
-X
-X X
-X XX
-XXXX
+   X
+   X
+   X
+ X X
+ X XX
+ XXXX
 XXXXX
 ```
