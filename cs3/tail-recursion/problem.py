@@ -1,7 +1,10 @@
 def factorial(n, result=1):
     # Calculate the factorial of `n` using tail recursion
 
-    pass  # Your code goes here
+    if n == 0:
+        return result
+
+    return factorial(n - 1, result * n)
 
 
 print(factorial(10))  # Should print 3628800
@@ -22,7 +25,7 @@ def total(numbers, index=0, result=0):
     pass  # Your code goes here
 
 
-print(total([1, 2, 3, 4, 5]))  # Should print 15
+print(total([5, 6, 7, 8, 9]))  # Should print 35
 
 
 def minimum(numbers, index=0, result=None):

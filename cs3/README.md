@@ -14,7 +14,7 @@ greet("Avery")       # Prints "Hello Avery!"
 greet("Avery", "Hi") # Prints "Hi Avery!"
 ```
 
-## Recursive Fibonacci
+## Recursive Factorial
 
 ```py
 def factorial(n):
@@ -43,7 +43,22 @@ print(factorial(10, 1)) # Prints 3628800
 
 https://en.wikipedia.org/wiki/Recursion_(computer_science)#Tail-recursive_functions
 
-## Tail Recursion (Continued)
+```txt
+factorial(10, 1)
+factorial(9, 10 * 1)
+factorial(8, 10 * 9 * 1)
+factorial(7, 10 * 9 * 8 * 1)
+factorial(6, 10 * 9 * 8 * 7 * 1)
+factorial(5, 10 * 9 * 8 * 7 * 6 * 1)
+factorial(4, 10 * 9 * 8 * 7 * 6 * 5 * 1)
+factorial(3, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 1)
+factorial(2, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 1)
+factorial(1, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+factorial(0, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1)
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1
+```
+
+## Tail Recursion Default Params
 
 ```py
 def factorial(n, result=1):
@@ -53,6 +68,37 @@ def factorial(n, result=1):
   return factorial(n - 1, n * result)
 
 print(factorial(10)) # Prints 3628800
+```
+
+## Tail Recursion With Lists
+
+```py
+def total(numbers, index=0, result=0):
+    # Calculate the sum of the numbers in a list recursively
+    # ...
+```
+
+```txt
+total([5, 6, 7, 8, 9], 0, 0)
+total([5, 6, 7, 8, 9], 1, 5 + 0)
+total([5, 6, 7, 8, 9], 2, 5 + 6 + 0)
+total([5, 6, 7, 8, 9], 3, 5 + 6 + 7 + 0)
+total([5, 6, 7, 8, 9], 4, 5 + 6 + 7 + 8 + 0)
+total([5, 6, 7, 8, 9], 5, 5 + 6 + 7 + 8 + 9 + 0)
+5 + 6 + 7 + 8 + 9 + 0
+```
+
+## Why No Tail Recursive Fibonacci?
+
+```py
+def fibonacci(n):
+    if n == 0:
+        return 0
+
+    if n == 1:
+        return 1
+
+    return fibonacci(n - 1) + fibonacci(n - 2)
 ```
 
 ---
@@ -134,22 +180,32 @@ def hello(n):
 hello(0)
 ```
 
-## Factorial
+## Koan
 
-$$
-n! = \prod_{i=1}^{n} i
-$$
+> To understand recursion, you must first understand recursion.
+
+## Factorial Definition
 
 ```txt
-n! = n * (n - 1) * ... * 1
+factorial(0) = 1
+factorial(n) = n * (n - 1) * ... * 1
 ```
 
 ```txt
-0! = 1
+factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
+```
+
+$n!$ = `factorial(n)`
+
+## Recursive Factorial
+
+```txt
+factorial(0) = 1
+factorial(n) = n * factorial(n - 1)
 ```
 
 ```txt
-5! = 5 * 4 * 3 * 2 * 1 = 120
+factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
 ```
 
 ## Iterative Functions
@@ -168,13 +224,6 @@ print(factorial(10)) # Prints 3628800
 
 ## Recursive Functions
 
-```txt
-0! = 1
-n! = n * (n - 1)!
-```
-
-Recursive functions: functions which call themselves
-
 ```py
 def factorial(n):
   if n == 0:
@@ -183,6 +232,23 @@ def factorial(n):
   return n * factorial(n - 1)
 
 print(factorial(10)) # Prints 3628800
+```
+
+Recursive functions: functions which call themselves
+
+```txt
+factorial(10)
+10 * factorial(9)
+10 * 9 * factorial(8)
+10 * 9 * 8 * factorial(7)
+10 * 9 * 8 * 7 * factorial(6)
+10 * 9 * 8 * 7 * 6 * factorial(5)
+10 * 9 * 8 * 7 * 6 * 5 * factorial(4)
+10 * 9 * 8 * 7 * 6 * 5 * 4 * factorial(3)
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * factorial(2)
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * factorial(1)
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * factorial(0)
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1
 ```
 
 ## Base Case
@@ -230,6 +296,10 @@ n! = n * (n - 1)!
 return n * factorial(n - 1)
 ```
 
+## Visualizing Recursion
+
+https://pythontutor.com/render.html#mode=display
+
 ## Recursive Summation
 
 ```py
@@ -240,6 +310,21 @@ def summation(n):
   return n + summation(n - 1)
 
 print(summation(10)) # Prints 55
+```
+
+```txt
+summation(10)
+10 + summation(9)
+10 + 9 + summation(8)
+10 + 9 + 8 + summation(7)
+10 + 9 + 8 + 7 + summation(6)
+10 + 9 + 8 + 7 + 6 + summation(5)
+10 + 9 + 8 + 7 + 6 + 5 + summation(4)
+10 + 9 + 8 + 7 + 6 + 5 + 4 + summation(3)
+10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + summation(2)
+10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + summation(1)
+10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 + summation(0)
+10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 + 0
 ```
 
 ## Fibonacci is Recursive
@@ -259,6 +344,26 @@ $$
 $$
 F_n = F_{n - 1} + F_{n - 2}
 $$
+
+<img src="assets/fibonacci-tree.png" height="300px" />
+
+## Recursion With Lists
+
+```py
+def total(numbers, index):
+    # Calculate the sum of the numbers in a list recursively
+    # ...
+```
+
+```txt
+total([5, 6, 7, 8, 9], 0)
+5 + total([5, 6, 7, 8, 9], 1)
+5 + 6 + total([5, 6, 7, 8, 9], 2)
+5 + 6 + 7 + total([5, 6, 7, 8, 9], 3)
+5 + 6 + 7 + 8 + total([5, 6, 7, 8, 9], 4)
+5 + 6 + 7 + 8 + 9 + total([5, 6, 7, 8, 9], 5)
+5 + 6 + 7 + 8 + 9 + 0
+```
 
 ## Recursive Functions
 

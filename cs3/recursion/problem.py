@@ -35,7 +35,7 @@ def total(numbers, index):
     pass  # Your code goes here
 
 
-print(total([1, 2, 3, 4, 5], 0))  # Should print 15
+print(total([5, 6, 7, 8, 9]))  # Should print 35
 
 
 def contains(items, value, index):
