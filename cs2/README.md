@@ -317,14 +317,6 @@ color = im.getpixel((x, y))
 r = 255
 ```
 
-## Black and White
-
-<img width="450" src="images/bird.png" />
-<img width="450" src="images/black-white/black-white.png" />
-
-- Black `(0, 0, 0)`
-- White `(255, 255, 255)`
-
 ## Simple Grayscale
 
 <img width="450" src="images/bird.png" />
@@ -332,7 +324,7 @@ r = 255
 
 - https://en.wikipedia.org/wiki/Grayscale
 - `r`, `g`, and `b` are all equal
-- $$y = \frac{r + g + b}{3}$$
+- $$l = \frac{r + g + b}{3}$$
 
 ## Better Grayscale
 
@@ -343,6 +335,14 @@ r = 255
 - https://en.wikipedia.org/wiki/Relative_luminance
 
 $$l = 0.2126 \cdot r + 0.7152 \cdot g + 0.0722 \cdot b$$
+
+## Black and White
+
+<img width="450" src="images/bird.png" />
+<img width="450" src="images/black-white/black-white.png" />
+
+- Black `(0, 0, 0)`
+- White `(255, 255, 255)`
 
 ---
 

@@ -334,6 +334,8 @@ _Hint: use the fact that checkered pattern to your advantage._
 
 ---
 
+## Maze Worksheet
+
 ## Demo Projects
 
 - Maze
