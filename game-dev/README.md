@@ -1,3 +1,15 @@
+## Drive
+
+- Rotation
+- `console.log`
+- `setSpeedAndDirection`
+- `sprite.getSpeed()`
+- Exponential friction
+- Exponential friction limits
+- Extra board padding
+
+---
+
 ## Bounce
 
 - Multi-user input
