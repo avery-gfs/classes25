@@ -1,3 +1,18 @@
+## Team Building
+
+Hobbies, sports, siblings, future study.
+
+## Platform
+
+- Lateral
+- Jumping
+- Gravity
+- Ground collision
+- Platform collision
+- Camera tracking
+
+---
+
 ## Drive
 
 - Rotation
