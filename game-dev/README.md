@@ -5,7 +5,6 @@
 - `setSpeedAndDirection`
 - `sprite.getSpeed()`
 - Exponential friction
-- Exponential friction limits
 - Extra board padding
 
 ---

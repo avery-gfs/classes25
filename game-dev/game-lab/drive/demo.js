@@ -16,28 +16,30 @@ function draw() {
   }
 
   if (keyDown("left")) {
-    rocket.rotation -= 5;
+    rocket.rotationSpeed = -5;
+  } else if (keyDown("right")) {
+    rocket.rotationSpeed = 5;
+  } else {
+    rocket.rotationSpeed = 0;
   }
 
-  if (keyDown("right")) {
-    rocket.rotation += 5;
+  if (rocket.x < -25) {
+    rocket.x = 425;
   }
 
-  if (rocket.x < -40) {
-    rocket.x = 400;
+  if (rocket.x > 425) {
+    rocket.x = -25;
   }
 
-  if (rocket.x > 440) {
-    rocket.x = 0;
+  if (rocket.y < -25) {
+    rocket.y = 425;
   }
 
-  if (rocket.y < -40) {
-    rocket.y = 400;
+  if (rocket.y > 425) {
+    rocket.y = -25;
   }
 
-  if (rocket.y > 440) {
-    rocket.y = 0;
-  }
+  // console.log(rocket.rotation, speed);
 
   rocket.setSpeedAndDirection(speed, rocket.rotation);
   drawSprites();
