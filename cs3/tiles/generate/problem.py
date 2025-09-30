@@ -62,6 +62,14 @@ def getTilings(n):
     #   - Get the tiling strings for `n - 1` and prefix each with a `1`
     #   - Get the tiling strings for `n - 2` and prefix each with a `2`
     #   - Result is combination of these new strings
+    #
+    # getTilings(0) # [""]
+    # getTilings(1) # ["1"]
+    # getTilings(2) # ["11", "2"]
+    # getTilings(3) # ["111", "12", "21"]
+    # getTilings(4) # ["1111", "112", "121", "211", "22"]
+    # getTilings(5) # ["11111", "1112", "1121", "1211", "122", "2111", "212", "221"]
+    # ...
 
     # Your code goes here
     pass

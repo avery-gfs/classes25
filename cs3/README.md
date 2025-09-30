@@ -17,7 +17,9 @@
 
 Worksheet
 
-## Tilings Generator
+## Tiling Representation
+
+`1` and `2` representation
 
 ```txt
 ┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
@@ -44,6 +46,18 @@ Worksheet
 ├───┼───┤ = ├───┤ + ├───┤
 └───┴───┘   └───┘   └───┘
   2   2       2       2
+```
+
+## Tiling String Generation
+
+```py
+getTilings(0) # [""]
+getTilings(1) # ["1"]
+getTilings(2) # ["11", "2"]
+getTilings(3) # ["111", "12", "21"]
+getTilings(4) # ["1111", "112", "121", "211", "22"]
+getTilings(5) # ["11111", "1112", "1121", "1211", "122", "2111", "212", "221"]
+# ...
 ```
 
 ---
