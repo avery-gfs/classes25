@@ -10,10 +10,6 @@ function draw() {
 
   player.collide(platform);
 
-  if (keyDown("space")) {
-    player.velocityY = -5;
-  }
-
   if (keyDown("left")) {
     player.velocityX = -5;
   } else if (keyDown("right")) {
@@ -23,14 +19,14 @@ function draw() {
   }
 
   if (keyDown("space")) {
-    player.velocityY = -15;
+    player.velocityY = -12;
   }
+
+  player.velocityY += 1;
 
   if (player.y > 380) {
     player.y = 380;
   }
-
-  player.velocityY += 1;
 
   camera.x = player.x;
 

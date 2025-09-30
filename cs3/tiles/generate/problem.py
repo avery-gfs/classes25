@@ -56,6 +56,13 @@ def showTiling(board):
 
 
 def getTilings(n):
+    # Base cases: [""] and ["1"]
+    #
+    # Recursive case:
+    #   - Get the tiling strings for `n - 1` and prefix each with a `1`
+    #   - Get the tiling strings for `n - 2` and prefix each with a `2`
+    #   - Result is combination of these new strings
+
     # Your code goes here
     pass
 

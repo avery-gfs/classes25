@@ -4,6 +4,110 @@
 
 ## Sorting -->
 
+## Tiling Representation
+
+`1` and `2` representation
+
+```txt
+┌─┐  ┌───┐
+│ │  ├───┤
+└─┘  └───┘
+ 1     2
+```
+
+Worksheet
+
+## Tilings Generator
+
+```txt
+┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
+│ │ │ │ │ = │ │ + │ │ │ │
+└─┴─┴─┴─┘   └─┘   └─┴─┴─┘
+ 1 1 1 1     1     1 1 1
+
+┌─┬─┬───┐   ┌─┐   ┌─┬───┐
+│ │ ├───┤ = │ │ + │ ├───┤
+└─┴─┴───┘   └─┘   └─┴───┘
+ 1 1  2      1     1  2
+
+┌─┬───┬─┐   ┌─┐   ┌───┬─┐
+│ ├───┤ │ = │ │ + ├───┤ │
+└─┴───┴─┘   └─┘   └───┴─┘
+ 1  2  1     1      2  1
+
+┌───┬─┬─┐   ┌───┐   ┌─┬─┐
+├───┤ │ │ = ├───┤ + │ │ │
+└───┴─┴─┘   └───┘   └─┴─┘
+  2  1 1      2      1 1
+
+┌───┬───┐   ┌───┐   ┌───┐
+├───┼───┤ = ├───┤ + ├───┤
+└───┴───┘   └───┘   └───┘
+  2   2       2       2
+```
+
+---
+
+## Tiles Puzzle
+
+<img src="assets/tiles.png" />
+
+There are `3` distinct ways to tile a `2x3` board with `2x1` tiles.
+
+How many distinct ways are there to tile `2x10` board with `2x1` tiles? Find a
+proof for the correctness of your answer.
+
+## Solution
+
+```txt
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...
+```
+
+$$
+F_0 = 0
+$$
+
+$$
+F_1 = 1
+$$
+
+$$
+F_n = F_{n - 1} + F_{n - 2}
+$$
+
+<img src="assets/fibonacci-tree.png" height="300px" />
+
+## Tiles Proof
+
+```txt
+┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
+│ │ │ │ │ = │ │ + │ │ │ │
+└─┴─┴─┴─┘   └─┘   └─┴─┴─┘
+   2x4              2x3
+
+┌─┬─┬───┐   ┌─┐   ┌─┬───┐
+│ │ ├───┤ = │ │ + │ ├───┤
+└─┴─┴───┘   └─┘   └─┴───┘
+   2x4              2x3
+
+┌─┬───┬─┐   ┌─┐   ┌───┬─┐
+│ ├───┤ │ = │ │ + ├───┤ │
+└─┴───┴─┘   └─┘   └───┴─┘
+   2x4              2x3
+
+┌───┬─┬─┐   ┌───┐   ┌─┬─┐
+├───┤ │ │ = ├───┤ + │ │ │
+└───┴─┴─┘   └───┘   └─┴─┘
+   2x4               2x2
+
+┌───┬───┐   ┌───┐   ┌───┐
+├───┼───┤ = ├───┤ + ├───┤
+└───┴───┘   └───┘   └───┘
+   2x4               2x2
+```
+
+---
+
 ## Default Params
 
 ```py
@@ -40,8 +144,7 @@ print(factorial(10, 1)) # Prints 3628800
 
 - Still has base case and recursive case
 - Uses an _accumulator_ (result) parameter, which get's returned at the end
-
-https://en.wikipedia.org/wiki/Recursion_(computer_science)#Tail-recursive_functions
+- https://en.wikipedia.org/wiki/Recursion_(computer_science)#Tail-recursive_functions
 
 ```txt
 factorial(10, 1)
@@ -70,7 +173,7 @@ def factorial(n, result=1):
 print(factorial(10)) # Prints 3628800
 ```
 
-## Tail Recursion With Lists
+## Tail Recursion with Lists
 
 ```py
 def total(numbers, index=0, result=0):
@@ -480,42 +583,3 @@ VSCode:
 - Remove a value from a list
 
 ## To-do List
-
-<!--
-  **Tilings Generator**
-
-  - `1` and `2` representation
-  - _Practice worksheet_
-  - _Problem_
-
-  ```
-  ┌─┬─┬─┬─┐   ┌─┐   ┌─┬─┬─┐
-  │ │ │ │ │ = │ │ + │ │ │ │
-  └─┴─┴─┴─┘   └─┘   └─┴─┴─┘
-   1 1 1 1     1     1 1 1
-
-  ┌─┬─┬───┐   ┌─┐   ┌─┬───┐
-  │ │ ├───┤ = │ │ + │ ├───┤
-  └─┴─┴───┘   └─┘   └─┴───┘
-   1 1  2      1     1  2
-
-  ┌─┬───┬─┐   ┌─┐   ┌───┬─┐
-  │ ├───┤ │ = │ │ + ├───┤ │
-  └─┴───┴─┘   └─┘   └───┴─┘
-   1  2  1     1      2  1
-
-  ┌───┬─┬─┐   ┌───┐   ┌─┬─┐
-  ├───┤ │ │ = ├───┤ + │ │ │
-  └───┴─┴─┘   └───┘   └─┴─┘
-    2  1 1      2      1 1
-
-  ┌───┬───┐   ┌───┐   ┌───┐
-  ├───┼───┤ = ├───┤ + ├───┤
-  └───┴───┘   └───┘   └───┘
-    2   2       2       2
-  ```
-
-  ## Tiles Proof
-
-  ## Tail recursion
- -->
