@@ -94,7 +94,7 @@ class Rectangle:
     self.height = height
 ```
 
-Linus Chen-Plotkin:
+Linus:
 
 > When we make an object in Python and assign it to a variable, we can use that
 > variable name to access the fields and methods of the object. For example, if
