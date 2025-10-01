@@ -77,6 +77,8 @@ print(r.area())      # 12
 print(r.perimeter()) # 14
 ```
 
+Why use methods vs extra fields?
+
 ## Mutation
 
 ```py
