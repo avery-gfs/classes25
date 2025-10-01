@@ -1,6 +1,113 @@
+<!-- circle rectangle square height duration instanceof -->
+
 ## Functions Review
 
 https://www.w3schools.com/python/python_functions.asp
+
+## Object Oriented Programming
+
+Objects are **data** + **functionality**.
+
+We use classes to make objects.
+
+## Init
+
+https://www.w3schools.com/python/python_classes.asp
+
+```py
+class Rectangle:
+  def __init__(self, width, height):
+    self.width = width
+    self.height = height
+```
+
+```py
+r = Rectangle(3, 4)
+print(r.width)  # 3
+print(r.height) # 4
+```
+
+## Terms
+
+- **Objects**: Structures that combine data and functionality (methods)
+- **Methods**: Functions that are attached to a value
+- **Classes**: The categories that objects belong to
+- **Instance**: An object is an "instance" of a class if the object belongs to
+  that class category
+- **Fields**: Variables that are stored inside an object
+
+## Repr
+
+```py
+class Rectangle:
+  def __init__(self, width, height):
+    self.width = width
+    self.height = height
+
+  def __repr__(self):
+    return f"Rectangle({self.width}, {self.height})"
+```
+
+```py
+r = Rectangle(3, 4)
+print(r) # Rectangle(3, 4)
+```
+
+## Methods
+
+```py
+class Rectangle:
+  def __init__(self, width, height):
+    self.width = width
+    self.height = height
+
+  def __repr__(self):
+    return f"Rectangle({self.width}, {self.height})"
+
+  def area(self):
+    return self.width * self.height
+
+  def perimeter(self):
+    return 2 * (self.width + self.height)
+```
+
+```py
+r = Rectangle(3, 4)
+print(r.area())      # 12
+print(r.perimeter()) # 14
+```
+
+## Mutation
+
+```py
+r = Rectangle(3, 4)
+r.width = 5
+print(r.area()) # ??
+```
+
+## Self
+
+```py
+class Rectangle:
+  def __init__(self, width, height):
+    self.width = width
+    self.height = height
+```
+
+Linus Chen-Plotkin:
+
+> When we make an object in Python and assign it to a variable, we can use that
+> variable name to access the fields and methods of the object. For example, if
+> we made a new `Point` object `p = Point(5, 0)` then we can access `p.x`,
+> `p.y`, `p.distanceTo(...)`, etc. **But** when we write methods for the `Point`
+> class, we don't know ahead of time what our point variable going to be named,
+> so we have to use the special placeholder name `self` instead.
+
+Avery:
+
+> `self` is a design flaw.
+
+---
 
 ## More Dictionary Methods
 
