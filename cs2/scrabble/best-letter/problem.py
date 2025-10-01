@@ -40,18 +40,24 @@ bestScores = {}  # Keep track of the scores for bestWords
 # Find the word with the highest Scrabble score
 
 for word in words:
-    # Score variable for the current word
     score = 0
 
-    # Loop through each letter in the current word
-    # Look up the points for the letter and add it to the word score
-
-    # Your code goes here
+    for letter in word:
+        score += letterPoints[letter]
 
     # After summing the points for each letter, get the first letter
-    # of the word. Check if the word score is greater than the current
-    # best word score for that starting letter, and if so update the
-    # best score and best word for that letter accordingly
+    # of the word.
+    #
+    #   - If this is the first word we've seen that starts with this
+    #     first letter, then update bestWord and bestScore to contain
+    #     this word and its score
+    #
+    #   - If we already have a best word that starts with this first
+    #     letter, check if the score for this word is better than the
+    #     score for the old best word. If it is then update bestWord
+    #     and bestScore to contain this new word and its score
+
+    firstLetter = word[0]
 
     # Your code goes here
 
