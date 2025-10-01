@@ -4,9 +4,39 @@
 
 https://www.w3schools.com/python/python_functions.asp
 
+```py
+def greeting(name, school):
+  return f"Hello {name} from {school}!"
+
+print(greeting("Avery", "gfs")) # "Hello Avery from gfs!"
+```
+
+Early returns
+
+```py
+def smallest(a, b):
+  if a < b:
+    return a
+
+  return b
+
+print(smallest(3, 4))
+```
+
 ## Object Oriented Programming
 
 Objects are **data** + **functionality**.
+
+```py
+nums = [1, 2, 3, 4]
+print(nums)          # [1, 2, 3, 4]
+print(nums[0])       # [1]
+
+nums.append(5)
+print(nums)          # [1, 2, 3, 4, 5]
+
+print(nums.index(2)) # 1
+```
 
 We use classes to make objects.
 
