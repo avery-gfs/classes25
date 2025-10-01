@@ -6,88 +6,6 @@
 
 ---
 
-## Cartesian Product
-
-<img src="assets/cartesian1.png" />
-
-What is the size of a cartesian product?
-
-## Card Deck
-
-<img src="assets/52-card-deck.png" />
-
-## Set Deck
-
-<img src="assets/PNG-Promo-Z1.webp" />
-
-## Generating
-
-```py
-suits = ["C", "D", "H", "S"]
-ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-for suit in suits:
-  for rank in ranks:
-    print(suit, rank)
-```
-
-```txt
-C A
-C 2
-C 3
-C 4
-C 5
-C 6
-C 7
-C 8
-C 9
-C 10
-C J
-C Q
-C K
-D A
-D 2
-D 3
-D 4
-D 5
-...
-```
-
-## Generating
-
-```py
-suits = ["C", "D", "H", "S"]
-ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-
-for rank in ranks:
-  for suit in suits:
-    print(suit, rank)
-```
-
-```txt
-C A
-D A
-H A
-S A
-C 2
-D 2
-H 2
-S 2
-C 3
-D 3
-H 3
-S 3
-C 4
-D 4
-H 4
-S 4
-C 5
-D 5
-...
-```
-
----
-
 ## Tiling Representation
 
 `1` and `2` representation
@@ -202,6 +120,88 @@ $$
 ├───┼───┤ = ├───┤ + ├───┤
 └───┴───┘   └───┘   └───┘
    2x4               2x2
+```
+
+---
+
+## Cartesian Product
+
+<img src="assets/cartesian1.png" />
+
+What is the size of a cartesian product?
+
+## Card Deck
+
+<img src="assets/52-card-deck.png" />
+
+## Set Deck
+
+<img src="assets/PNG-Promo-Z1.webp" />
+
+## Generating
+
+```py
+suits = ["C", "D", "H", "S"]
+ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+for suit in suits:
+  for rank in ranks:
+    print(suit, rank)
+```
+
+```txt
+C A
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+C 10
+C J
+C Q
+C K
+D A
+D 2
+D 3
+D 4
+D 5
+...
+```
+
+## Generating
+
+```py
+suits = ["C", "D", "H", "S"]
+ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+for rank in ranks:
+  for suit in suits:
+    print(suit, rank)
+```
+
+```txt
+C A
+D A
+H A
+S A
+C 2
+D 2
+H 2
+S 2
+C 3
+D 3
+H 3
+S 3
+C 4
+D 4
+H 4
+S 4
+C 5
+D 5
+...
 ```
 
 ---
