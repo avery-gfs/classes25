@@ -2,7 +2,7 @@
 
 ## Sorting -->
 
-https://en.wikipedia.org/wiki/Selection_sort
+<!-- https://en.wikipedia.org/wiki/Selection_sort -->
 
 ---
 
@@ -10,9 +10,15 @@ https://en.wikipedia.org/wiki/Selection_sort
 
 <img src="assets/cartesian1.png" />
 
+What is the size of a cartesian product?
+
 ## Card Deck
 
 <img src="assets/52-card-deck.png" />
+
+## Set Deck
+
+<img src="assets/PNG-Promo-Z1.webp" />
 
 ## Generating
 
@@ -79,10 +85,6 @@ C 5
 D 5
 ...
 ```
-
-## Set Deck
-
-<img src="assets/PNG-Promo-Z1.webp" />
 
 ---
 
