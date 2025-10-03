@@ -32,9 +32,9 @@ shapes = ["diamond", "squiggle", "oval"]
 shadings = ["solid", "striped", "open"]
 colors = ["red", "green", "purple"]
 
-# Generate a list of each unique SET card
+# Use the product function to generate a list of each unique SET card
 
-set_deck = []  # Your code goes here
+set_deck = product(counts, shapes)  # Your code goes here
 
 for card in set_deck:
     print(card)

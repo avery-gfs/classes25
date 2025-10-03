@@ -1,4 +1,36 @@
-## Ad Blocking (or, the fight for the internet)
+how are things created toaster
+
+https://www.youtube.com/watch?v=5ODzO7Lz_pw
+
+emergence
+
+https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+bible as programming
+
+religion technology
+
+bicycle
+
+transistors
+
+already there
+
+free will
+
+superintelligence
+
+turing test
+
+chinese room
+
+Thamus Thoth AI memory without intelligence
+
+practices
+
+E acc
+
+<!-- ## Ad Blocking (or, the fight for the internet)
 
 https://www.kingarthurbaking.com/recipes/new-england-anadama-bread-recipe
 
@@ -50,3 +82,4 @@ https://www.amazon.com/
   - https://uploads4.wikiart.org/images/alphonse-mucha/biscuits-champagne-lef%C3%A8vre-utile-1896.jpg
   - https://www.smbc-comics.com/comics/20120112.gif
   - https://www.construction-physics.com/p/the-rise-and-fall-of-the-mail-order
+ -->
