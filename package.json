@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "push": "npm run fmt && git add . && git status && git commit -m 'update' && git push",
+    "push": "./push",
     "fmt": "npx prettier --write --prose-wrap always .; ruff format . --no-respect-gitignore"
   },
   "dependencies": {

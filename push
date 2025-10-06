@@ -1,0 +1,10 @@
+npm run fmt
+git status
+git add .
+git commit -m "update"
+git push
+git checkout solutions
+git merge main
+git add "**/solved.py"
+git commit -m "update"
+git push
