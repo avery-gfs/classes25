@@ -224,6 +224,13 @@ Use more dictionaries!
 
 ## Challenge: Scrabble Lookup
 
+```txt
+Enter letters: football
+['football', 'tablespoonful']
+tablespoonful
+20
+```
+
 ---
 
 ## Dictionaries
@@ -471,9 +478,11 @@ r = 255
 <img width="450" src="images/better-grayscale/better-grayscale.png" />
 
 - Relative / perceptual luminance
-- https://en.wikipedia.org/wiki/Relative_luminance
+- https://brandonrohrer.com/convert_rgb_to_grayscale.html
 
-$$l = 0.2126 \cdot r + 0.7152 \cdot g + 0.0722 \cdot b$$
+Linear approximation for gamma-compressed channel values:
+
+$$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 ## Black and White
 

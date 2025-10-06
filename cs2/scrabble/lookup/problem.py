@@ -30,19 +30,27 @@ letterPoints = {
     "z": 10,
 }
 
+letters = input("Enter letters: ")
+
+# Get a list of words that contains all of the letters in letters,
+# accounting for numbers of duplicates
+
+matches = []
+
+# Your code goes here
+
+print(matches)
+
 bestWord = None
 bestScore = 0
 
-letters = input("Enter letters: ")
+# Find the highest scoring word in matches
 
-# Find the highest scoring word in words that contains all of
-# the letters in letters, accounting for numbers of duplicates
-#
+# Your code goes here
+
 # Enter letters: football
 # tablespoonful
 # 20
-
-# Your code goes here
 
 print(bestWord)
 print(bestScore)
