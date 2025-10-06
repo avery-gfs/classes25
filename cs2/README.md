@@ -454,6 +454,8 @@ EEEEEEEEEEEEEEEO-```````````
 
 </div>
 
+<img width="300" src="images/ascii/dali.jpg" style="position: absolute; top: 0; right: 0;" />
+
 ---
 
 ## Image Coordinates
