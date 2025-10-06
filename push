@@ -1,10 +1,11 @@
 npm run fmt
-git status
 git add .
+git status
 git commit -m "update"
 git push
 git checkout solutions
 git merge main
 git add "**/solved.py"
+git status
 git commit -m "update"
 git push
