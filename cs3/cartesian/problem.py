@@ -38,3 +38,19 @@ set_deck = product(counts, shapes)  # Your code goes here
 
 for card in set_deck:
     print(card)
+
+# ----------------------------------------
+
+# Implement a function that takes a list of lists, and returns the
+# cartesian product of all of the lists. You may assume that
+# `itemsList` is not empty.
+
+
+def multiProduct(itemsLists):
+    return []  # Your code goes here
+
+
+set_deck = multiProduct([counts, shapes, shadings, colors])
+
+for card in set_deck:
+    print(card)
