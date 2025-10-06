@@ -1,4 +1,30 @@
-<!-- circle rectangle square height duration instanceof -->
+<!-- height duration instanceof -->
+
+mul, div instanceof
+
+---
+
+```py
+class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
+
+    def __repr__(self):
+        return f"{self.num}/{self.den}"
+
+    def __mul__(self, other):
+        num = self.num * other.num
+        den = self.den * other.den
+        return Fraction(num, den)
+
+a = Fraction(5, 20)
+
+print(a) # 5/20
+print(a * Fraction(2, 3)) #10/60
+```
+
+---
 
 ## Functions Review
 
