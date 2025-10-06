@@ -383,78 +383,69 @@ for c in word:
 
 ## Challenge: Ascii
 
-<div style="font-size: 9px !important; font-weight: bold;">
+<div style="font-size: 11px !important; font-weight: bold;">
 
-`````````````````````````txt
-OEEEEEEEEEEEEEEEEEEEEOOc+:~~~-''''''''''`'````````'--~:<eOOEOOOOOOOOOOOOEEe-
-EEEEEEEEEEEEEEEEEEEOOec+:~~~~--''''`````````````````````'~+<eOEEEEEOOOOOOOO<
-EEEEEEEEEEEEEEEEEOOOec<+::~~~~-'''''````````````````````````-~+eOEEEOEEEOOec`
-EEEEEEEEEEEEEEEEEOeeccc<:::::~~--''````````````     ```````````':ceeOEEEEOe<`
-EEEEEEEEEEEEEEEOOOeecccc<+::+:~--'`````````````        ``````````'-':<OEEEO+
-EEEEEEEEEEEEEEEOOOeeeccc<<+:+:---''`````````           ````````````'''-+OEEc:`
-EEEEEEEEEEEEEEEEOOOeOec<++++:~~~-'''`````````             `````````````'-eEOEe'
-EEEEEEEEEEEEEEEOOOeecc<<<+++:::~---'`````              `  ``````````````'~OEEE:
-EEEEEEEEEEEEEOOeeccc<<+++++:::~~---'''```````          `````````````````''+OOE<`
-EEEEEEEEEEEEOeeccccc<<+<++:+::~~--''''``````````       `````````````````''~eEOc:
-EEEEEEEEEEOOeeccccc+<++<+::++:~~--''''````         `````````````````````'--<EOe:
-EEEEEEEEOOOeeecc<<<++<+++++:++:~------~~'``         ```````````````'''''--~<OOc~`
-EEOEOOOOOOOeeecc<++++<++<<c<ccccccceOOecc+:'```` ```   `````````````'''-~~:+Oeee<~`
-OEOOOOOOOOeecccc<+<<+++<ceOOOOOOOOOOeeeeeeeOc<+~````````````````````'''-~:++ee<<eec'
-OOEOOOOOOOeecc<<c<<+<<cceeeecc<<+::~-----~:eEEEOc<:-````````````````''-~~:++cc+cceO-
-OOEEEOOOOeecc<++<<+<ceecceecccccccc<<+:--'-:eOOOOOOe<~'''```````````''-~~++<Oecce:`
-OOEEEOOeeecc<<++++<+eecccceeeeeOOOOOOOee<:-'-+cOOeeec<+~''`'''``'``''''--:+cOEEO:``
-OOEEEOOecec<+++:~::~e<+<<ceeOOOOOeee<:~+cEOc:''~cOeeeec:'''-''''''''`'''-~:cc:~-`
-OOEEEOeecee<++::~~''e~~++<<<<ee+cEEEcO~  'eEEe+~~cOeec+~--~--------~~~~~~~:`
-eOOEOOeeceec<+::~~--c'`-''--~cOc:+eOEO:```:eeOOecce<+~---~:::+<ccceeeeOeccc`
-eeOOOOOeeOOecc<+~~-~c'````'-':eOe<+++~'''-'~eeOOec<:'```-:+ceOOOEEEEEEEEEEO:`
-eeOOOOOOeOOeec<+::~~e-`````''''~+cecc<+:::~~~-~~+~:~'```':eEEOOOOOOOOOeceOE<
-eeOeeOOOOOOOeec<++:~e~```````'````'''--~~-~~'`'--'--'` `-cEOOOOOeec<+:::<Oe-
-eeeeeeeOOOOOOeec<+::c+'''``````''---'--~~:~'``'``'---```-:+cOOe<+~:eOe<<e+`
-OeeeeeeeOOOOOeeec<<++c---''`````'-~~::~--```````'--~-'``'~~:eOOcO< `eEEc'
-OeeeeeeeOOOOOeec<<<+:c+---'''`````       ```````'-~--` `'~--~<OOOc--eEc`
-OeeeeeeeeOOOOeeec<<<++e~~--''`````      ```''''`'---'  `-:~~+++<+~:+:`
-OeOeeeeeeeeOOecccc<<<+e<~~-~-'```````  ```''-'''---'`  `~:+:::<eeec-
-Oeeeeeeeeeeeeeec<<+++:+O:~~~-''`````````-~::~-~~~-'`````~:+<<~-+eO~
-Oeeeeeeeeeeeeeec<++:::~+O:---'''```'''-~:+~--~::~-'`` ``-:~cec<<<c`
-OOeeeeeccceeeeec<++:::~~+O+--''''--~~~:<+~-''-:~-'``  `'-~~::++++:
-OOOeeeccccceeeeccc++:::~~+O<----~~~-'-ce<+:~-~:~-'` ```'~~~~~~~~:'
-OOOeeecccccccceeeecc<++~~~:Oc~~~~'```'eEOOOOOeee+~-````'~~~~~~:+~
-OOOOeeccccc<c<cccccceec<:~-~ee:'''````~eOEEEEEEEOe<<+:::+::::+c~                   ``
-EEOOOeeccc<<<<<<+++++<ceec+~~OO<~-''''''-:cOEEEEEEOOOeee++++<c-                 `-'
-EEEOOeecc<<+<+++::~~---~<eOOeOEEOe<~-'''''~<OEEEEEEEOec<+<ce<`               `~~`
-EEEEOOecc<<<<+++:~~---''-~+ceEEEEEEOe<++++:+OEEEEEEEec<ccee+              `-~'
-EEEEEOOeccc<<<<++:~~---~~:+<ceOEEEEEEEEOOecceOEEEEEOecccee-            `'-'`
-EEEEEOOOeeecc<<<++:::::+<<+<+<cOEEEEOOOe<+c+<OEOOOOecccec`        ``''-`
-EEEEEEEOOeeecccc<<<+::~--'-~~~'-+<ceOEEOe<:~~cOEEOec<ce+    `'-~~~-'`
-EEEEEEEEOOOOeeeccc<<+:~----~++:~---~:<eOEEEEOOEEEEEOOOOccc<+:-`
-EEEEEEEEEOOOOeeccc<c<+::::::+<<<+::~--~~:<ceOEEEEEEOe-''``
-EEEEEEEEEEEEOOOec<+<<<+~:++<<<ceOOOOeec++++<ceEEEEEc`
-EEEEEEEEEEEEEEOOec<+:::~---~~~~:+<ceeOEEEOeeeeceeee`
-EEEEEEEEEEEEEEEEOOec<:~-'''''````'-~:+<ceOOOec<cce'
-EEEEEEEEEEEEEEEEEEOOec<+~--'''``''-----~+cccceeOe'
-EEEEEEEEEEEEEEEEEEEEEOeec+:~~-----~~-~~~:++<eOO<`
-EEEEEEEEEEEEEEEEEEEEEEEEOOec<<::++++:+++:~:eOc'
-EEEEEEEEEEEEEEEEEEEEEEEEEEEOOOOOeeccccc<<<c:`
-EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEOOOOe<-
-EEEEEEEEEEEEEEEEEEEEEEEOec+:---~+<<<+:-`
-EEEEEEEEEEEEEEEEEEEOc:-``
-EEEEEEEEEEEEEEEEe+-```  `
-EEEEEEEEEEEEOc+-````````
-EEEEEEEEEEEE+``````````
-EEEEEEOEEEEE+``````````
-EEEEEEEEEEEEc``````````
-OEEEEEEEEEEEe'```~<~````
-OEEEEEEEEEEEe`':eEB+`````
-EEEEEEEEEEEEc+OEEEe``````
-EEEEEEEEEEEEEEEEEE-```````
-EEEEEEEEEEEEEEEEE+`````````
-EEEEEEEEEEEEEEEEc``````````
-EEEEEEEEEEEEEEEO-```````````
-`````````````````````````
+````````````````````````````````````````txt
+ ```````````````````````````````````````--~~---'''``'~~~:~-```   ```````````````
+```````````````````````````````````'-+eOEEEEEEEEOOOOEEEEEEEOec+~`` `````````    ``````
+``````````````````````````````'~<cOEEEEEEEEEEEEEEEEEEOEEEEEEEEEEOc~````````````````````
+````````````````````````````-+eOEEEEEEEEOEEOOEOOOOOOOOOOOOEEEEEEEEEO<-````````````````     `
+``````````````````````````:cOOOOEEEEEEEEEEOeOOOEOOOOOOOOEEOOOOEEEEEEEEe:``````````````````````
+```````````````````````':ceeOEEEEEEOOOOOOOOOOOOOOOeeeeceOOOOOOOEEEEEEEEEO-````````````````````
+``````````````````````~ceOOEEEEEEEEEEOeeOOec<+::::~~~~:::+ceeOOOOOOOOOEEEE:```````  ``    ``
+````````````````````'+OEEEEEEEEEEEEEOOOOO<:~--''-'''''''''-::+ceOOOOOOOOOOO-``````
+```````````````````-eEEEEEEEEEEEEEEOOOOe+~---''''''''''''''''''-~+ceOOOOOOO+``````
+``````````````````~OEEEEEEEEEEEEEEEOOec+~-----'''''''``'''```''''''-~<eeOEE<'``````
+`````````````````:OEEEEEEEEEEEEEEEOOe<+::~~-~~--''''''`````````''''''--~+cOc:``````` `
+````````````````:EEEEEEEEEEEEEEEEOOec<+++::~~~--''`'''````````'''''''-----:OE~```````` ``
+```````````````+EEEEEEEEEEEEEEEEEOOec<<<+::~~~~---''``````````'''''''-----~+O+````````````
+`````````````-eEEEEEEEEEEEEEEEEEEEOec<++::~~~~~~---'''``''````''''--------~~<<'```````````
+````````````:OEEEEEEEEEEEEEEEEEEEOc<+:::~~~~~~~~--'-'```'''''`''''------~~~~+<-````````````
+```````````+EEEEEEEEEEEEEEEEEEEOe<++:::~~~~~~~~~--'---'``````''''-------~~~:+cc+'`````````
+`````````'<EEEEEOec<<cOEEEOOOOec<<++:::~~~~:::++++<ccc<<:--''''''-------~~:++cee~````````
+`````````<EEEEOcceeee+-~<eeeccc<<+++::~~~~:+cccc<<<<+<+<eOec+:~----------~:+<<:'```````
+````````:EEEEc~:++<<eEO:-:cecccc<+::::~:::+<<<++++:::~~-~cOOOec+:~-~~~~-~~~:++-'````
+`````'`'cEEEE+--:::~-<Ec:+<OOcc<<::~~~~~:+c++<<ceeecc<cc+~~<cccc<:~~~~~~~~~::-```
+```````-eEEEEc'-::~-'-ce+<cOOec+++:~~----+c:+<ceceOe<'`:Oe<:+cc<+~:::++<cceeec'``
+```````~OEEEEE~-+~~~:cEO+~+eOe<++<:~~--''~+----<<+cee~``:cee<<:-'-:<ceOOEEOOOE~
+```````-cEEEEEc~+'~~~:c+`'~<ecc<+<<::~--'~:``''~+<<<+~~~~::::~~'`'+OOeeecc++c+`
+``````'`-<EEEEE+<-``'~cc'':+cccc<cc<+:~---+````'''-~~~~~~-'-----'':cOe<:-<Oc-
+'````````':eEEEe:<<+-~<<::+<<<<<cccc<+:~~-+-'```''-~~~~~-''''-~~''-:<eec`~e-
+``'`'`````'+OeOEc~+<:~--~+<<+++<<ccc<<+::~:+-''''''``````''''-~-'`-::+<+:~`
+```````-+cOEOc<cEO:~-----:<<<<++<<cc<<+:::~<:---'````````-------``-++:+e:
+`''-:<eOEEOEEO<+cEEOeceOe+c<<<+++<<cc<++::::c~~-''`````'~~~~~~-'``-:c<++`
+<ceOEEOOOOOOOEe+:+<eeeeEecc<<<<++++<<<+::~~~:c~--'''--~::~--:~-'``-~:++:`
+OOOOOOOOOOOOOOEe+:~--':OOccc<<++++++<<++:~~~~~c+---~~-:<+:~~::-'`'-~::+-            ``
+OOOOOOOOOOOOOOeOe+~--'~OOeecc<+++::++++++++:~~~<<~~-'`~eOEEOOOc+:::+++~           `'`
+OOOOOOOOOOOOOOe-ee+~-'~OOOeecc<++:::::++::++++:-+e:-'''-:<eEEEEOecc<<~         `''`
+OOOOOOOOOOOOOOO~`ec:---eOOOOeec<+:::::::~~~~~:<ccOOe<:~-~~:eEEEEe<<c-        `'`
+OOOOOOOOOOOOOOOe``c<~--<OOEEOOec<+:::::~~-----~:<eOEEEOeec<cOEEOc<<'     ``''`
+OOOOOOOOOOOOOOOO< 'e+~-:OOEEEEOec<++::::~~~~~::+++ceOOOOc++:eOOec<'``'--''`
+OOOOOOOOOOOOOOOOO- -e+~~eeOEEEEOOe<++++:::::~~--~~~~:+<eOOeeOEEOe<++~'`
+OOOOEOOOOOOOOOOOOe` -e+:<eeOEEEEEOec<<<++++:~~~~::++:::::+<cOEEe`
+OOOOEOOOOOOOOOOOOE+  ~e++eeOEEEEEEEOeec<++::::~:::+<ceeOeecccee~
+OOOOOEOOOOOOOOOOOOO-  ~e<eOOEEEEEEEEEOOec<+:~----'''-~:+<ceccc+
+OOOOOEOOOOOOOOOOOOEc   ~eeOOOEEEEEEEEEEEEOec+:~---''--~~~:+ce:`
+OOOOOEOOOOOOOOOOOOOO-   ~eOOOEEEEEEEEEEEEEEEOec<+:::::::++++'
+OOOOOOOOOOOOOOOOOOOE<````~OOOEEEEEEEEEEEEEEEEEEEEOOOOeccc+'
+OOOOOOEOOOOOOOOOOOOOO'````:OOEEEEEEEEEEEEEEEEOe<++:+<<+:'`
+OOOOOOEOOOOOOOOOOOOOE:```'-cEEEEEEEEEEEEEOc:-``
+OOOOOOEOOOOOOOOOOOOOE<``'-~+eEEEEEEEEEO<~````````````
+OOOOOOEEOOOOOOOOOOOOOO-''-~+eOEEEEOe<~```````````````
+OOOOOOEEOOOOOOOOOOOOOO+-~~:+cOOEOO-````````````````````
+OOOOOOEEOOOOOOOOOOOOOEc''-~+<cOEOE:``-c~````````````````
+OOOOOOOEOOOOOOOOOOOOOOO'``'-~<OEOE<`<EE-```````````````````
+OOOOOOOEOOOOOOOOOOOOOOO~```':eEOEEeeEEc`````````````````````
+OOOOOOOEOOOOOOOOOOOOOOE:``~cOEOEEEEEEE-`````````````````````````
+OOOOOOEEOOOOOOOOOOOOOOE<:eeeOOEEEEEEEc``````````````````````````
+OOOOOOOEOOOOOOOOOOOOOOOOEOeOOEEEEEEEE~````````````````````````````
+OOOOOOEEOOOOOOOOOOOOOOOOOeeOEEEEEEEEe`````````````````````````````` `
+'cOOOOEEEOOOOOOOOOOOOOOOOeeeEEEEEEEE:``````````````````````````````````
+````````````````````````````````````````
 
 </div>
 
-<img width="300" src="images/ascii/dali.jpg" style="position: absolute; top: 0; right: 0;" />
+<img width="300" src="images/ascii/dali.webp" style="position: absolute; top: 0; right: 0;" />
 
 ---
 
