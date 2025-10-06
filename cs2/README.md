@@ -381,6 +381,79 @@ for c in word:
 <img width="300" src="images/bird.png" />
 <img width="600" src="images/bird.png" />
 
+## Challenge: Ascii
+
+<div style="font-size: 9px !important; font-weight: bold;">
+
+`````````````````````````txt
+OEEEEEEEEEEEEEEEEEEEEOOc+:~~~-''''''''''`'````````'--~:<eOOEOOOOOOOOOOOOEEe-
+EEEEEEEEEEEEEEEEEEEOOec+:~~~~--''''`````````````````````'~+<eOEEEEEOOOOOOOO<
+EEEEEEEEEEEEEEEEEOOOec<+::~~~~-'''''````````````````````````-~+eOEEEOEEEOOec`
+EEEEEEEEEEEEEEEEEOeeccc<:::::~~--''````````````     ```````````':ceeOEEEEOe<`
+EEEEEEEEEEEEEEEOOOeecccc<+::+:~--'`````````````        ``````````'-':<OEEEO+
+EEEEEEEEEEEEEEEOOOeeeccc<<+:+:---''`````````           ````````````'''-+OEEc:`
+EEEEEEEEEEEEEEEEOOOeOec<++++:~~~-'''`````````             `````````````'-eEOEe'
+EEEEEEEEEEEEEEEOOOeecc<<<+++:::~---'`````              `  ``````````````'~OEEE:
+EEEEEEEEEEEEEOOeeccc<<+++++:::~~---'''```````          `````````````````''+OOE<`
+EEEEEEEEEEEEOeeccccc<<+<++:+::~~--''''``````````       `````````````````''~eEOc:
+EEEEEEEEEEOOeeccccc+<++<+::++:~~--''''````         `````````````````````'--<EOe:
+EEEEEEEEOOOeeecc<<<++<+++++:++:~------~~'``         ```````````````'''''--~<OOc~`
+EEOEOOOOOOOeeecc<++++<++<<c<ccccccceOOecc+:'```` ```   `````````````'''-~~:+Oeee<~`
+OEOOOOOOOOeecccc<+<<+++<ceOOOOOOOOOOeeeeeeeOc<+~````````````````````'''-~:++ee<<eec'
+OOEOOOOOOOeecc<<c<<+<<cceeeecc<<+::~-----~:eEEEOc<:-````````````````''-~~:++cc+cceO-
+OOEEEOOOOeecc<++<<+<ceecceecccccccc<<+:--'-:eOOOOOOe<~'''```````````''-~~++<Oecce:`
+OOEEEOOeeecc<<++++<+eecccceeeeeOOOOOOOee<:-'-+cOOeeec<+~''`'''``'``''''--:+cOEEO:``
+OOEEEOOecec<+++:~::~e<+<<ceeOOOOOeee<:~+cEOc:''~cOeeeec:'''-''''''''`'''-~:cc:~-`
+OOEEEOeecee<++::~~''e~~++<<<<ee+cEEEcO~  'eEEe+~~cOeec+~--~--------~~~~~~~:`
+eOOEOOeeceec<+::~~--c'`-''--~cOc:+eOEO:```:eeOOecce<+~---~:::+<ccceeeeOeccc`
+eeOOOOOeeOOecc<+~~-~c'````'-':eOe<+++~'''-'~eeOOec<:'```-:+ceOOOEEEEEEEEEEO:`
+eeOOOOOOeOOeec<+::~~e-`````''''~+cecc<+:::~~~-~~+~:~'```':eEEOOOOOOOOOeceOE<
+eeOeeOOOOOOOeec<++:~e~```````'````'''--~~-~~'`'--'--'` `-cEOOOOOeec<+:::<Oe-
+eeeeeeeOOOOOOeec<+::c+'''``````''---'--~~:~'``'``'---```-:+cOOe<+~:eOe<<e+`
+OeeeeeeeOOOOOeeec<<++c---''`````'-~~::~--```````'--~-'``'~~:eOOcO< `eEEc'
+OeeeeeeeOOOOOeec<<<+:c+---'''`````       ```````'-~--` `'~--~<OOOc--eEc`
+OeeeeeeeeOOOOeeec<<<++e~~--''`````      ```''''`'---'  `-:~~+++<+~:+:`
+OeOeeeeeeeeOOecccc<<<+e<~~-~-'```````  ```''-'''---'`  `~:+:::<eeec-
+Oeeeeeeeeeeeeeec<<+++:+O:~~~-''`````````-~::~-~~~-'`````~:+<<~-+eO~
+Oeeeeeeeeeeeeeec<++:::~+O:---'''```'''-~:+~--~::~-'`` ``-:~cec<<<c`
+OOeeeeeccceeeeec<++:::~~+O+--''''--~~~:<+~-''-:~-'``  `'-~~::++++:
+OOOeeeccccceeeeccc++:::~~+O<----~~~-'-ce<+:~-~:~-'` ```'~~~~~~~~:'
+OOOeeecccccccceeeecc<++~~~:Oc~~~~'```'eEOOOOOeee+~-````'~~~~~~:+~
+OOOOeeccccc<c<cccccceec<:~-~ee:'''````~eOEEEEEEEOe<<+:::+::::+c~                   ``
+EEOOOeeccc<<<<<<+++++<ceec+~~OO<~-''''''-:cOEEEEEEOOOeee++++<c-                 `-'
+EEEOOeecc<<+<+++::~~---~<eOOeOEEOe<~-'''''~<OEEEEEEEOec<+<ce<`               `~~`
+EEEEOOecc<<<<+++:~~---''-~+ceEEEEEEOe<++++:+OEEEEEEEec<ccee+              `-~'
+EEEEEOOeccc<<<<++:~~---~~:+<ceOEEEEEEEEOOecceOEEEEEOecccee-            `'-'`
+EEEEEOOOeeecc<<<++:::::+<<+<+<cOEEEEOOOe<+c+<OEOOOOecccec`        ``''-`
+EEEEEEEOOeeecccc<<<+::~--'-~~~'-+<ceOEEOe<:~~cOEEOec<ce+    `'-~~~-'`
+EEEEEEEEOOOOeeeccc<<+:~----~++:~---~:<eOEEEEOOEEEEEOOOOccc<+:-`
+EEEEEEEEEOOOOeeccc<c<+::::::+<<<+::~--~~:<ceOEEEEEEOe-''``
+EEEEEEEEEEEEOOOec<+<<<+~:++<<<ceOOOOeec++++<ceEEEEEc`
+EEEEEEEEEEEEEEOOec<+:::~---~~~~:+<ceeOEEEOeeeeceeee`
+EEEEEEEEEEEEEEEEOOec<:~-'''''````'-~:+<ceOOOec<cce'
+EEEEEEEEEEEEEEEEEEOOec<+~--'''``''-----~+cccceeOe'
+EEEEEEEEEEEEEEEEEEEEEOeec+:~~-----~~-~~~:++<eOO<`
+EEEEEEEEEEEEEEEEEEEEEEEEOOec<<::++++:+++:~:eOc'
+EEEEEEEEEEEEEEEEEEEEEEEEEEEOOOOOeeccccc<<<c:`
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEOOOOe<-
+EEEEEEEEEEEEEEEEEEEEEEEOec+:---~+<<<+:-`
+EEEEEEEEEEEEEEEEEEEOc:-``
+EEEEEEEEEEEEEEEEe+-```  `
+EEEEEEEEEEEEOc+-````````
+EEEEEEEEEEEE+``````````
+EEEEEEOEEEEE+``````````
+EEEEEEEEEEEEc``````````
+OEEEEEEEEEEEe'```~<~````
+OEEEEEEEEEEEe`':eEB+`````
+EEEEEEEEEEEEc+OEEEe``````
+EEEEEEEEEEEEEEEEEE-```````
+EEEEEEEEEEEEEEEEE+`````````
+EEEEEEEEEEEEEEEEc``````````
+EEEEEEEEEEEEEEEO-```````````
+`````````````````````````
+
+</div>
+
 ---
 
 ## Image Coordinates
