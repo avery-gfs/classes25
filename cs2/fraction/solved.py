@@ -19,13 +19,13 @@ class Fraction:
     def value(self):
         return self.num / self.den
 
-    # Multiple two functions to get a new fraction
+    # Multiple two functions to make a new fraction
     def __mul__(self, other):
         num = self.num * other.num
         den = self.den * other.den
         return Fraction(num, den)
 
-    # Add two functions to get a new fraction
+    # Add two functions to make a new fraction
     def __add__(self, other):
         num = self.num * other.den + self.den * other.num
         den = self.den * other.den
