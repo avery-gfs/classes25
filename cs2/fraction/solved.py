@@ -9,13 +9,7 @@ def gcd(a, b):
     return a
 
 
-# Challenges:
-#
-# - Let __mul__ work for numbers and fractions
-# - Let __add__ work for numbers and fractions
-# - Make __init__ automatically simplify fractions
-# - Add __sub__ method
-# - Add __div__ method
+# Challenge: make __init__ automatically simplify fractions
 
 
 class Fraction:
@@ -32,8 +26,6 @@ class Fraction:
     def value(self):
         return self.num / self.den
 
-    # Multiple two fractions to make a new fraction
-
     def __mul__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return Fraction(self.num * other, self.den)
@@ -41,8 +33,6 @@ class Fraction:
         num = self.num * other.num
         den = self.den * other.den
         return Fraction(num, den)
-
-    # Add two fractions to make a new fraction
 
     def __add__(self, other):
         if isinstance(other, int) or isinstance(other, float):
@@ -55,9 +45,9 @@ class Fraction:
 
 a = Fraction(5, 20)
 
-print(a)
-print(a.value())
-print(a + Fraction(2, 3))
-print(a * Fraction(2, 3))
-print(a + 6)
-print(a * 6)
+print(a)  # 1/4
+print(a.value())  # 0.25
+print(a + Fraction(2, 3))  # 11/12
+print(a * Fraction(2, 3))  # 1/6
+print(a + 6)  # 25/4
+print(a * 6)  # 3/2

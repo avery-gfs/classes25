@@ -1,28 +1,169 @@
-<!-- height duration instanceof -->
+<!-- height duration isinstance -->
 
-mul, add instanceof
+## isinstance
+
+```py
+class Height:
+    def __init__(self, feet, inches):
+        self.feet = feet
+        self.inches = inches
+
+    def __repr__(self):
+        return f"{self.feet}'{self.inches}\""
+
+height = Height(5, 6)
+n = 10
+
+isinstance(height, Height) # True
+isinstance(height, int)    # False
+
+isinstance(n, Height)      # False
+isinstance(n, int)         # True
+```
 
 ---
 
+## Height
+
 ```py
-class Fraction:
-    def __init__(self, num, den):
-        self.num = num
-        self.den = den
+class Height:
+    def __init__(self, feet, inches):
+        self.feet = feet
+        self.inches = inches
 
     def __repr__(self):
-        return f"{self.num}/{self.den}"
+        return f"{self.feet}'{self.inches}\""
 
-    def __mul__(self, other):
-        num = self.num * other.num
-        den = self.den * other.den
-        return Fraction(num, den)
 
-a = Fraction(5, 20)
+h = Height(5, 6)
 
-print(a) # 5/20
-print(a * Fraction(2, 3)) #10/60
+print(h)  # 5'6"
 ```
+
+## \_\_add\_\_ and \_\_mul\_\_
+
+```py
+class Height:
+    def __init__(self, feet, inches):
+        self.feet = feet
+        self.inches = inches
+
+    def __repr__(self):
+        return f"{self.feet}'{self.inches}\""
+
+    def __add__(self, other):
+        feet = self.feet + other.feet
+        inches = self.inches + other.inches
+        return Height(feet, inches)
+
+    def __sub__(self, other):
+        feet = self.feet - other.feet
+        inches = self.inches - other.inches
+        return Height(feet, inches)
+
+
+h = Height(5, 6)
+
+print(h)  # 5'6"
+print(h + Height(1, 4))  # 6'10"
+print(h - Height(1, 4))  # 4'2"
+```
+
+See the bug?
+
+## Invalid State
+
+```py
+h = Height(5, 6)
+
+print(h + Height(1, 4))  # 6'10"
+print(h - Height(1, 4))  # 4'2"
+print(h + Height(1, 10))  # 6'16"
+print(h - Height(1, 10))  # 4'-4"
+```
+
+## Corrections in \_\_init\_\_
+
+<div style="font-size: 16px;">
+
+```py
+class Height:
+    def __init__(self, feet, inches):
+        while inches >= 12:
+            feet += 1
+            inches -= 12
+
+        while inches < 0:
+            feet -= 1
+            inches += 12
+
+        self.feet = feet
+        self.inches = inches
+
+    def __repr__(self):
+        return f"{self.feet}'{self.inches}\""
+
+    def __add__(self, other):
+        feet = self.feet + other.feet
+        inches = self.inches + other.inches
+        return Height(feet, inches)
+
+    def __sub__(self, other):
+        feet = self.feet - other.feet
+        inches = self.inches - other.inches
+        return Height(feet, inches)
+
+
+h = Height(5, 6)
+
+print(h)  # 5'6"
+print(h + Height(1, 4))  # 6'10"
+print(h - Height(1, 4))  # 4'2"
+print(h + Height(1, 10))  # 7'4"
+print(h - Height(1, 10))  # 3'8"
+```
+
+</div>
+
+## Alternative Representation
+
+```py
+class Height:
+    def __init__(self, feet, inches):
+        self.inches = feet * 12 + inches
+
+    def __repr__(self):
+        feet = self.inches // 12
+        inches = self.inches - feet * 12
+        return f"{feet}'{inches}\""
+
+    def __add__(self, other):
+        return Height(0, self.inches + other.inches)
+
+    def __sub__(self, other):
+        return Height(0, self.inches - other.inches)
+
+
+h = Height(5, 6)
+
+print(h)  # 5'6"
+print(h + Height(1, 4))  # 6'10"
+print(h - Height(1, 4))  # 4'2"
+print(h + Height(1, 10))  # 7'4"
+print(h - Height(1, 10))  # 3'8"
+```
+
+See the bug?
+
+## Invalid \_\_repr\_\_
+
+```py
+h = Height(5, 6)
+
+print(h - Height(2, 8))  # -3'10"
+```
+
+We could fix this, but don't worry about it for now
 
 ---
 
