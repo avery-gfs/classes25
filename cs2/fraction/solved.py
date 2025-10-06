@@ -14,6 +14,8 @@ def gcd(a, b):
 # - Let __mul__ work for numbers and fractions
 # - Let __add__ work for numbers and fractions
 # - Make __init__ automatically simplify fractions
+# - Add __sub__ method
+# - Add __div__ method
 
 
 class Fraction:

@@ -1,6 +1,6 @@
 <!-- height duration instanceof -->
 
-mul, div instanceof
+mul, add instanceof
 
 ---
 
