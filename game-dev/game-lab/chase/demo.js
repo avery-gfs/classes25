@@ -11,7 +11,7 @@ var buffer = speed / 2;
 
 function draw() {
   background("white");
-  
+
   player.x = World.mouseX;
   player.y = World.mouseY;
 
@@ -22,7 +22,7 @@ function draw() {
   } else {
     ghost.velocityX = 0;
   }
-  
+
   if (World.mouseY < ghost.y - buffer) {
     ghost.velocityY = -speed;
   } else if (World.mouseY > ghost.y + buffer) {
