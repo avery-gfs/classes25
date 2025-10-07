@@ -3,10 +3,12 @@ git add .
 git status
 git commit -m "update"
 git push
-git checkout master
-git merge solutions -m "merge"
-trash **/solved.py
+git checkout -b temp-master
+git rm **/solved.py
 git status
 git commit -m "update problems"
 git push
+git branch -f master temp-master
+git push origin master --force
 git checkout solutions
+git branch -D temp-master
