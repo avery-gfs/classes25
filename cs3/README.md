@@ -20,6 +20,7 @@ Given a list of numbers:
 - Make an empty result list
 
 - While the (copied) input list has values:
+
   - Find the minimum value
   - Add it to the result list
   - Remove it from the input list
@@ -49,6 +50,7 @@ Given a list of numbers:
 - Otherwise, select the first number in the list as the pivot
 
 - Make three new lists:
+
   - `low`: all numbers less than the pivot
   - `mid`: all numbers equal to the pivot
   - `high`: all numbers greater than the pivot
