@@ -5,7 +5,7 @@ git status
 git commit -m "update"
 git push
 git checkout solutions
-git merge main
+git merge master
 git add "**/solved.py"
 git status
 git commit -m "update"
