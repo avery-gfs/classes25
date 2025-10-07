@@ -1,3 +1,7 @@
+def isSorted(numbers):
+    pass  # Your code goes here
+
+
 print(isSorted([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
 print(isSorted([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
 
@@ -14,10 +18,10 @@ print(isSorted([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
 
 def sort(numbers):
     numbers = numbers.copy()
-    pass
+    pass  # Your code goes here
 
 
-print(sort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
+print(sort([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
 
 # Implement quicksort:
 #
@@ -34,7 +38,7 @@ print(sort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
 
 
 def quicksort(numbers):
-    pass
+    pass  # Your code goes here
 
 
-print(quicksort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
+print(quicksort([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
