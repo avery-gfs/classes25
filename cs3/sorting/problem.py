@@ -13,6 +13,7 @@ list2 = [22, 15, 39, 6, 46, 49, 0, 43, 37, 45, 23, 20, 15, 24, 13, 23, 46, 26, 1
 
 
 def sort(numbers):
+    numbers = numbers.copy()
     pass
 
 

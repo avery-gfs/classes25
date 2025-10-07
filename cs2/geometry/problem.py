@@ -77,6 +77,9 @@ class Point:
         pass  # Your code goes here
 
     def distance_to(self, other):
+        # Use self.x, self.y, other.x, and other.y to calculate
+        # the distance between two points
+
         pass  # Your code goes here
 
 
@@ -97,6 +100,9 @@ class Line:
         pass  # Your code goes here
 
     def length(self):
+        # Use the distance_to method on one of your point objects
+        # to implement length
+
         pass  # Your code goes here
 
     def slope(self):
