@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Implement selection sort
 # Don't use the built-in `min` function
 #
@@ -9,6 +10,9 @@
 
 def sort(items):
 	for index in range(len(items)):
+=======
+def sort(items):
+>>>>>>> master
 
 
 print(sort([1, 4, 2, 7, 3, 1]))
