@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "push": "./push",
+    "fmt": "npx prettier --write --prose-wrap always .; ruff format . --no-respect-gitignore --no-cache"
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
+  }
+}

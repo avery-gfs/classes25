@@ -1,0 +1,13 @@
+npm run fmt
+git checkout solutions
+git add .
+git status
+git commit -m "update"
+git push
+cd ~/Documents/classes/public
+git checkout master
+cp -r ~/Documents/classes/solutions/* .
+git rm **/solved.py package.json push
+git add .
+git commit -m "update problems"
+push
