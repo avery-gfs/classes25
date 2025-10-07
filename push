@@ -13,5 +13,6 @@ cp -r ~/Documents/classes/intro ~/Documents/public/
 cp -r ~/Documents/classes/shared ~/Documents/public/
 cp -r ~/Documents/classes/tech ~/Documents/public/
 git rm **/solved.py
+git add .
 git commit -m "update problems"
 push
