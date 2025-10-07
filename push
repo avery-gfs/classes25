@@ -4,7 +4,7 @@ git add .
 git status
 git commit -m "update"
 git push
-cd ~/Documents/public
+cd ~/Documents/classes/public
 git checkout master
 cp -r ~/Documents/classes/solutions/cs2 ~/Documents/classes/solutions/cs3 ~/Documents/classes/solutions/game-dev ~/Documents/classes/solutions/intro ~/Documents/classes/solutions/shared ~/Documents/classes/solutions/tech ~/Documents/classes/public/
 git rm **/solved.py
