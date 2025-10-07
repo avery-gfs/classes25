@@ -4,13 +4,35 @@
 
 <!-- https://en.wikipedia.org/wiki/Selection_sort -->
 
-## Selection Sort
+## What is "Sorted"
+
+What does it mean for a list of numbers to be sorted?
+
+_(When programmers talk about sorting, they typically mean sorting in ascending
+order)_
+
+## Why Sorting
 
 Why sorting?
 
 Good starting point for understanding algorithms and algorithmic analysis.
 
 https://en.wikipedia.org/wiki/Selection_sort
+
+## Selection Sort
+
+Given a list of numbers:
+
+- Copy the input list to avoid modifying it
+- Make an empty result list
+
+- While the (copied) input list has values:
+
+  - Find the minimum value
+  - Add it to the result list
+  - Remove it from the input list
+
+- Return the result list once the input is empty
 
 ## Selection Sort Description
 
