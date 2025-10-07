@@ -1,3 +1,11 @@
+## Chase
+
+- Mouse position
+- AI sprite follow player
+- Deadzone
+
+---
+
 ## Team Building
 
 Hobbies, sports, siblings, future study.

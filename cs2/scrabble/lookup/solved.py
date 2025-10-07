@@ -1,0 +1,74 @@
+with open("words.txt") as file:
+    words = file.read().split()
+
+letterPoints = {
+    "a": 1,
+    "b": 3,
+    "c": 3,
+    "d": 2,
+    "e": 1,
+    "f": 4,
+    "g": 2,
+    "h": 4,
+    "i": 1,
+    "j": 8,
+    "k": 5,
+    "l": 1,
+    "m": 3,
+    "n": 1,
+    "o": 1,
+    "p": 3,
+    "q": 10,
+    "r": 1,
+    "s": 1,
+    "t": 1,
+    "u": 1,
+    "v": 4,
+    "w": 4,
+    "x": 8,
+    "y": 4,
+    "z": 10,
+}
+
+letters = input("Enter letters: ")
+
+# Get a list of words that contains all of the letters in letters,
+# accounting for numbers of duplicates
+
+matches = []
+
+for word in words:
+    available = list(word)
+
+    for letter in letters:
+        if letter not in available:
+            break
+
+        available.remove(letter)
+
+    else:
+        matches.append(word)
+
+print(matches)
+
+bestWord = None
+bestScore = 0
+
+# Find the highest scoring word in matches
+
+for word in matches:
+    score = 0
+
+    for letter in word:
+        score += letterPoints[letter]
+
+    if score > bestScore:
+        bestScore = score
+        bestWord = word
+
+# Enter letters: football
+# tablespoonful
+# 20
+
+print(bestWord)
+print(bestScore)

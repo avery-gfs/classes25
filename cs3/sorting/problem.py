@@ -1,5 +1,5 @@
-list1 = [1, 4, 2, 7, 3, 1]
-list2 = [22, 15, 39, 6, 46, 49, 0, 43, 37, 45, 23, 20, 15, 24, 13, 23, 46, 26, 17, 18]
+print(isSorted([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
+print(isSorted([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
 
 # Implement selection sort
 #
@@ -17,8 +17,7 @@ def sort(numbers):
     pass
 
 
-print(sort(list1))
-print(sort(list2))
+print(sort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
 
 # Implement quicksort:
 #
@@ -38,5 +37,4 @@ def quicksort(numbers):
     pass
 
 
-print(quicksort(list1))
-print(quicksort(list2))
+print(quicksort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
