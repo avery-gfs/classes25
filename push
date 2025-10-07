@@ -4,8 +4,8 @@ git status
 git commit -m "update"
 git push
 git checkout master
-git merge solutions
-git rm --cached **/solved.py
+git merge solutions -m "merge"
+trash **/solved.py
 git status
 git commit -m "update problems"
 git push
