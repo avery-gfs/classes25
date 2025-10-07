@@ -6,7 +6,7 @@ git commit -m "update"
 git push
 cd ~/Documents/public
 git checkout master
-cp -r ../classes/{cs2,cs3,game-dev,intro,shared,tech} ./
+cp -r ~/Documents/classes/{cs2,cs3,game-dev,intro,shared,tech} ~/Documents/public/
 git rm **/solved.py
 git commit -m "update problems"
 push
