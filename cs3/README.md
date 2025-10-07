@@ -4,46 +4,36 @@
 
 <!-- https://en.wikipedia.org/wiki/Selection_sort -->
 
-## Selection Sort
+## Quicksort
 
 Why sorting?
 
 Good starting point for understanding algorithms and algorithmic analysis.
 
-https://en.wikipedia.org/wiki/Selection_sort
+https://en.wikipedia.org/wiki/Quicksort
 
-## Selection Sort Description
+## Quicksort Description
+
+Recursive sorting algorithm.
 
 Given a list of numbers:
 
-- Initialize an `index` variable to `0`
-- Find the smallest number in the list from `index` onward
-- Swap the smallest number with the number at `index`
-- Increment `index` by `1`
-- Repeat until `index` equals the length of the list
+- If the list is empty, return an empty list
+- Otherwise, select the first number in the list as the pivot
 
-https://www.youtube.com/watch?v=g-PGLbMth_g
+- Make three new lists:
+  - `low`: all numbers less than the pivot
+  - `mid`: all numbers equal to the pivot
+  - `high`: all numbers greater than the pivot
 
-## Correctness
+- Recursively sort the `low` and `high` lists using the same process
+- Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
+  gives the fully sorted list
 
-What does it mean for a list to be sorted?
+## Quicksort Details
 
-How do we know that this algorithm will give us a sorted list?
-
-## Invariants
-
-> The algorithm divides the input list into two parts: a sorted sublist of items
-> which is built up from left to right at the front (left) of the list and a
-> sublist of the remaining unsorted items that occupy the rest of the list.
-> Initially, the sorted sublist is empty and the unsorted sublist is the entire
-> input list. The algorithm proceeds by finding the smallest (or largest,
-> depending on sorting order) element in the unsorted sublist, exchanging
-> (swapping) it with the leftmost unsorted element (putting it in sorted order),
-> and moving the sublist boundaries one element to the right.
-
-^ Wikipedia
-
-## Invariants
+Quicksort is typically done _in-place_, this is a simplified version that
+creates new lists.
 
 ---
 
