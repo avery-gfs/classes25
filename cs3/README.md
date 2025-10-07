@@ -1,9 +1,3 @@
-<!-- ## Sorting
-
-## Sorting -->
-
-<!-- https://en.wikipedia.org/wiki/Selection_sort -->
-
 ## What is "Sorted"
 
 What does it mean for a list of numbers to be sorted?
@@ -15,11 +9,11 @@ order)_
 
 Why sorting?
 
-Good starting point for understanding algorithms and algorithmic analysis.
-
-https://en.wikipedia.org/wiki/Selection_sort
+Good starting point for understanding algorithms and algorithmic analysis
 
 ## Selection Sort
+
+https://en.wikipedia.org/wiki/Selection_sort
 
 Given a list of numbers:
 
