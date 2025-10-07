@@ -4,15 +4,42 @@
 
 <!-- https://en.wikipedia.org/wiki/Selection_sort -->
 
-<!-- ## Quicksort
+## Selection Sort
 
 Why sorting?
 
 Good starting point for understanding algorithms and algorithmic analysis.
 
-https://en.wikipedia.org/wiki/Quicksort
+https://en.wikipedia.org/wiki/Selection_sort
 
-## Quicksort Description
+## Selection Sort Description
+
+Given a list of numbers:
+
+- Copy the input list to avoid modifying it
+- Make an empty result list
+
+- While the (copied) input list has values:
+  - Find the minimum value
+  - Add it to the result list
+  - Remove it from the input list
+
+- Return the result list once the input is empty
+
+## Correctness
+
+What does it mean for a list to be sorted?
+
+How do we know that this algorithm will give us a sorted list?
+
+## Invariants
+
+- Result is always sorted
+- Every item in result is less than or equal to those in the input list
+
+## Quicksort
+
+https://en.wikipedia.org/wiki/Quicksort
 
 Recursive sorting algorithm.
 
@@ -34,48 +61,6 @@ Given a list of numbers:
 
 Quicksort is typically done _in-place_, this is a simplified version that
 creates new lists.
- -->
-
-## Selection Sort
-
-Why sorting?
-
-Good starting point for understanding algorithms and algorithmic analysis.
-
-https://en.wikipedia.org/wiki/Selection_sort
-
-## Selection Sort Description
-
-Given a list of numbers:
-
-- Initialize an `index` variable to `0`
-- Find the smallest number in the list from `index` onward
-- Swap the smallest number with the number at `index`
-- Increment `index` by `1`
-- Repeat until `index` equals the length of the list
-
-https://www.youtube.com/watch?v=g-PGLbMth_g
-
-## Correctness
-
-What does it mean for a list to be sorted?
-
-How do we know that this algorithm will give us a sorted list?
-
-## Invariants
-
-> The algorithm divides the input list into two parts: a sorted sublist of items
-> which is built up from left to right at the front (left) of the list and a
-> sublist of the remaining unsorted items that occupy the rest of the list.
-> Initially, the sorted sublist is empty and the unsorted sublist is the entire
-> input list. The algorithm proceeds by finding the smallest (or largest,
-> depending on sorting order) element in the unsorted sublist, exchanging
-> (swapping) it with the leftmost unsorted element (putting it in sorted order),
-> and moving the sublist boundaries one element to the right.
-
-^ Wikipedia
-
-## Invariants
 
 ---
 

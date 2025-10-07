@@ -1,3 +1,24 @@
+list1 = [1, 4, 2, 7, 3, 1]
+list2 = [22, 15, 39, 6, 46, 49, 0, 43, 37, 45, 23, 20, 15, 24, 13, 23, 46, 26, 17, 18]
+
+# Implement selection sort
+#
+# - Copy the input list to avoid modifying it
+# - Make an empty result list
+# - While the (copied) input list has values:
+#   - Find the minimum value
+#   - Add it to the result list
+#   - Remove it from the input list
+# - Return the result list once the input is empty
+
+
+def sort(numbers):
+    pass
+
+
+print(sort(list1))
+print(sort(list2))
+
 # Implement quicksort:
 #
 # - If the list is empty, return an empty list
@@ -16,10 +37,5 @@ def quicksort(numbers):
     pass
 
 
-print(quicksort([1, 4, 2, 7, 3, 1]))
-
-print(
-    quicksort(
-        [22, 15, 39, 6, 46, 49, 0, 43, 37, 45, 23, 20, 15, 24, 13, 23, 46, 26, 17, 18]
-    )
-)
+print(quicksort(list1))
+print(quicksort(list2))
