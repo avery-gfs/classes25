@@ -10,4 +10,4 @@ cp -r ~/Documents/classes/solutions/* .
 git rm **/solved.py package.json push
 git add .
 git commit -m "update problems"
-push
+git push
