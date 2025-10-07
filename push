@@ -7,7 +7,6 @@ git checkout -b temp-master
 git rm **/solved.py
 git status
 git commit -m "update problems"
-git push
 git branch -f master temp-master
 git push origin master --force
 git checkout solutions
