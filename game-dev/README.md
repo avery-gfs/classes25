@@ -1,6 +1,7 @@
 ## Chase
 
 - Mouse position
+- Continuous vs discrete events
 - AI sprite follow player
 - Deadzone
 
