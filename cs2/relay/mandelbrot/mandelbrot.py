@@ -6,7 +6,7 @@ maxX = 0.9
 minY = -1.3
 maxY = 1.3
 
-scale = 400
+scale = 500
 
 width = round((maxX - minX) * scale)
 height = round((maxY - minY) * scale)
@@ -32,7 +32,7 @@ print("rendering")
 
 for y in range(height):
     for x in range(width):
-        iters = getIters(complex(x / scale + minX, y / scale + minY))
+        iters = getIters(x / scale + minX + (y / scale + minY) * 1j)
         r = round(255 * (iters / maxIters) ** 0.5)
         output.putpixel((x, y), (r, 0, 0))
 
