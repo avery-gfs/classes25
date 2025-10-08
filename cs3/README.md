@@ -1,3 +1,9 @@
+## Algorithms
+
+<img src="assets/algorithms.png" height="200px" />
+
+<img src="assets/clrs.png" width="300px" />
+
 ## What is "Sorted"
 
 What does it mean for a list of numbers to be sorted?
