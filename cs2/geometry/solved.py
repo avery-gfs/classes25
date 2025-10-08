@@ -8,8 +8,8 @@ class Rectangle:
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
- 
-   def area(self):
+
+    def area(self):
         return self.width * self.height
 
     def perimeter(self):
