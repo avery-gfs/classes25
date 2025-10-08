@@ -28,24 +28,7 @@ Given a list of numbers:
 
 - Return the result list once the input is empty
 
-## Selection Sort Description
-
-Given a list of numbers:
-
-- Copy the input list to avoid modifying it
-- Make an empty result list
-
-- While the (copied) input list has values:
-
-  - Find the minimum value
-  - Add it to the result list
-  - Remove it from the input list
-
-- Return the result list once the input is empty
-
 ## Correctness
-
-What does it mean for a list to be sorted?
 
 How do we know that this algorithm will give us a sorted list?
 
@@ -58,7 +41,7 @@ How do we know that this algorithm will give us a sorted list?
 
 https://en.wikipedia.org/wiki/Quicksort
 
-Recursive sorting algorithm.
+Recursive sorting algorithm
 
 Given a list of numbers:
 
@@ -75,10 +58,13 @@ Given a list of numbers:
 - Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
   gives the fully sorted list
 
-## Quicksort Details
+## In-Place Sorting
 
-Quicksort is typically done _in-place_, this is a simplified version that
-creates new lists.
+Selection sort and quicksort are typically done _in-place_, meaning that they
+modify the existing list, rather than making a new list to store the sorted
+values. We aren't doing that in this class; we're working with variant of these
+algorithms where we put the sorted values in a new list, which makes things a
+little easier.
 
 ---
 
