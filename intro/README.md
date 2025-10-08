@@ -1,8 +1,25 @@
+## Advanced Twine
+
+- Formats (chapbook)
+  https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
+- Text styles
+- Variables
+- Displaying variables
+- Conditionals
+- Randomness
+
+---
+
 ## Twine Editor
 
 https://twinery.org/
 
 https://twinery.org/reference/en/
+
+- Rooms (passages)
+- Links
+- Loops
+- Watch out for whitespace
 
 ---
 

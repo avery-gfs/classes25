@@ -291,20 +291,20 @@ class Rectangle:
   def __init__(self, width, height):
     self.width = width
     self.height = height
+
+  def __repr__(self):
+    return f"Rectangle({self.width}, {self.height})"
+
+  def area(self):
+    return self.width * self.height
+
+  def perimeter(self):
+    return 2 * (self.width + self.height)
 ```
 
-Linus:
-
-> When we make an object in Python and assign it to a variable, we can use that
-> variable name to access the fields and methods of the object. For example, if
-> we made a new `Point` object `p = Point(5, 0)` then we can access `p.x`,
-> `p.y`, `p.distanceTo(...)`, etc. **But** when we write methods for the `Point`
-> class, we don't know ahead of time what our point variable going to be named,
-> so we have to use the special placeholder name `self` instead.
-
-Avery:
-
-> `self` is a design flaw.
+The `self` variable helps us keep track of which data and functionality is
+inside of the objects of our class (that is, which variables and functions are
+fields and methods).
 
 ---
 
