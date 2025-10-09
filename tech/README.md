@@ -1,4 +1,60 @@
-how are things created toaster
+## The Philosophy of Mind
+
+What does it mean for a person to be conscious? To be intelligent? To be alive?
+
+We feel these qualities innately, but how do we recognize them in other people,
+beings, and systems?
+
+## What is Life?
+
+Let's start with the basics: what does it mean to be alive?
+
+## What is Life? (Continued)
+
+It's a surprisingly difficult question for us, as living beings, to answer.
+
+## Entropy
+
+<img src="assets/entropy.png" height="400">
+
+<img src="assets/mixing-paint.jpg" height="300" style="vertical-align: top;">
+
+## Isaiah 40:4
+
+<div style="font-size: 30px;">
+
+> Every valley shall be exalted, and every mountain and hill shall be made low:
+> and the crooked shall be made straight, and the rough places plain.
+
+</div>
+
+## Entropy and Life
+
+<img src="assets/apple-watch.jpg" height="400">
+
+https://www.youtube.com/watch?v=tXNJa86tErQ
+
+## Entropy and Life (Continued)
+
+<img src="assets/entropy-life.png">
+
+## Emergence
+
+<img src="assets/emergence.png" style="height: 100px;">
+
+<img src="assets/neurons.png" style="height: 400px;">
+
+## Qualia
+
+## Vienna Teng - The Hymn of Acxiom
+
+https://www.youtube.com/watch?v=tXNJa86tErQ
+
+##
+
+https://www.youtube.com/watch?v=tXNJa86tErQ
+
+<!-- how are things created toaster
 
 https://www.youtube.com/watch?v=5ODzO7Lz_pw
 
@@ -22,6 +78,22 @@ superintelligence
 
 turing test
 
+research needs computers
+
+chess programming
+
+are we just copying our inputs?
+
+lovelace
+
+immitation game
+
+von neumann
+
+turing machine
+
+computability
+
 chinese room
 
 Thamus Thoth AI memory without intelligence
@@ -29,6 +101,18 @@ Thamus Thoth AI memory without intelligence
 practices
 
 E acc
+
+Men have become the tools of their tools.
+
+vape chip -->
+
+<!-- ## Isaiah 40:4-5
+
+Emergence
+
+https://www.youtube.com/watch?v=tXNJa86tErQ
+
+ -->
 
 <!-- ## Ad Blocking (or, the fight for the internet)
 
