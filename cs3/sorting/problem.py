@@ -1,10 +1,3 @@
-def isSorted(numbers):
-    pass  # Your code goes here
-
-
-print(isSorted([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
-print(isSorted([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
-
 # Implement selection sort
 #
 # - Copy the input list to avoid modifying it
@@ -21,7 +14,7 @@ def sort(numbers):
     pass  # Your code goes here
 
 
-print(sort([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
+print(sort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
 
 # Implement quicksort:
 #
@@ -41,4 +34,4 @@ def quicksort(numbers):
     pass  # Your code goes here
 
 
-print(quicksort([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
+print(quicksort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))

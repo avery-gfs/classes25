@@ -1,13 +1,3 @@
-def isSorted(numbers):
-    for index in range(0, len(numbers) - 1):
-        if numbers[index] > numbers[index + 1]:
-            return False
-    return True
-
-
-print(isSorted([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
-print(isSorted([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
-
 # Implement selection sort
 #
 # - Copy the input list to avoid modifying it
@@ -31,7 +21,7 @@ def sort(numbers):
     return result
 
 
-print(sort([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
+print(sort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
 
 # Implement quicksort:
 #
@@ -60,4 +50,4 @@ def quicksort(numbers):
     return quicksort(low) + mid + quicksort(high)
 
 
-print(quicksort([0, 6, 15, 15, 22, 23, 37, 39, 43, 45, 46, 46]))
+print(quicksort([22, 15, 39, 6, 46, 46, 0, 43, 37, 45, 23, 15]))
