@@ -32,7 +32,9 @@ print("rendering")
 
 for y in range(height):
     for x in range(width):
-        iters = getIters(x / scale + minX + (y / scale + minY) * 1j)
+        real = x / scale + minX
+        imag = y / scale + minY
+        iters = getIters(real + imag * 1j)
         r = round(255 * (iters / maxIters) ** 0.5)
         output.putpixel((x, y), (r, 0, 0))
 
