@@ -28,8 +28,6 @@ def getIters(c):
     return 0
 
 
-print("rendering")
-
 for y in range(height):
     for x in range(width):
         real = x / scale + minX
@@ -39,4 +37,4 @@ for y in range(height):
         output.putpixel((x, y), (r, 0, 0))
 
 output.save("fractal.png")
-print("finshed")
+print("done")
