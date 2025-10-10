@@ -54,7 +54,15 @@ https://www.youtube.com/watch?v=tXNJa86tErQ
 
 https://www.youtube.com/watch?v=tXNJa86tErQ
 
-<!-- how are things created toaster
+<!--
+
+probability, prediction
+
+autocomplete
+
+turing completeness
+
+how are things created toaster
 
 https://www.youtube.com/watch?v=5ODzO7Lz_pw
 
@@ -104,7 +112,9 @@ E acc
 
 Men have become the tools of their tools.
 
-vape chip -->
+vape chip
+
+-->
 
 <!-- ## Isaiah 40:4-5
 

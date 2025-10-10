@@ -1,3 +1,5 @@
+<!-- https://en.wikipedia.org/wiki/Egyptian_Ratscrew -->
+
 ## Algorithms
 
 <img src="assets/algorithms.png" height="200px" />
