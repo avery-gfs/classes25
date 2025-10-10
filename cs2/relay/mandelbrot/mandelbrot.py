@@ -19,7 +19,7 @@ output = Image.new("RGB", (width, height))
 def getIters(c):
     z = 0
 
-    for i in range(maxIters + 1):
+    for i in range(maxIters):
         if abs(z) > 2:
             return i
 
