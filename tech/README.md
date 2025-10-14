@@ -56,11 +56,9 @@ https://www.youtube.com/watch?v=tXNJa86tErQ
 
 <!--
 
-probability, prediction
+superintelligence
 
-autocomplete
-
-turing completeness
+E acc
 
 how are things created toaster
 
@@ -82,15 +80,9 @@ already there
 
 free will
 
-superintelligence
-
-turing test
-
 research needs computers
 
 chess programming
-
-are we just copying our inputs?
 
 lovelace
 
@@ -98,17 +90,9 @@ immitation game
 
 von neumann
 
-turing machine
-
-computability
-
-chinese room
-
 Thamus Thoth AI memory without intelligence
 
 practices
-
-E acc
 
 Men have become the tools of their tools.
 

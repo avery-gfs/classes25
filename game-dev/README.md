@@ -1,7 +1,40 @@
-## Board Games
+## Start and Game Over
+
+---
+
+## Backgrounds and Parallax
+
+---
+
+## Groups
+
+---
+
+## Sprites, Images, Colors, Colliders
+
+- Colors
+- Alpha
+- Editing tools
+  - Brush
+  - Rotate
+  - Flip
+  - Fill
+  - Crop
+  - Mirror
+  - Picker
+- Why rotate sprite image vs in code?
+- Piskel
+- Color pallets
+- Colliders
+- Cropping sprites
+
+---
+
+## Board Games / Card Games
 
 - Cribbage
 - Set
+- ERS
 
 ---
 
