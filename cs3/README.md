@@ -19,32 +19,6 @@ Why sorting?
 
 Good starting point for understanding algorithms and algorithmic analysis
 
-## Selection Sort
-
-https://en.wikipedia.org/wiki/Selection_sort
-
-Given a list of numbers:
-
-- Copy the input list to avoid modifying it
-- Make an empty result list
-
-- While the (copied) input list has values:
-
-  - Find the minimum value
-  - Add it to the result list
-  - Remove it from the input list
-
-- Return the result list once the input is empty
-
-## Correctness
-
-How do we know that this algorithm will give us a sorted list?
-
-## Invariants
-
-- Result is always sorted
-- Every item in result is less than or equal to those in the input list
-
 ## Quicksort
 
 https://en.wikipedia.org/wiki/Quicksort
@@ -66,13 +40,22 @@ Given a list of numbers:
 - Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
   gives the fully sorted list
 
+## Correctness
+
+How do we know that this algorithm will terminate?
+
+How do we know that this algorithm will give us a sorted list?
+
+## Invariants
+
+Concatenating sublists maintains sorted order
+
 ## In-Place Sorting
 
-Selection sort and quicksort are typically done _in-place_, meaning that they
-modify the existing list, rather than making a new list to store the sorted
-values. We aren't doing that in this class; we're working with variant of these
-algorithms where we put the sorted values in a new list, which makes things a
-little easier.
+Quicksort is typically done _in-place_, meaning that it modifies the existing
+list, rather than making a new list to store the sorted values. We aren't doing
+that in this class; we're working with variant where we put the sorted values in
+a new list, which makes things a little easier, but the core idea is the same.
 
 ---
 
