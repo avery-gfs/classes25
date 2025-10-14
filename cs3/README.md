@@ -1,5 +1,14 @@
 <!-- https://en.wikipedia.org/wiki/Egyptian_Ratscrew -->
 
+## Comparison Sorting
+
+Computer doesn't have an intuition about what values are "big" or "small", only
+knows the result of individual comparisons.
+
+http://localhost:3000/cs3/sorting/emoji-comparison.html
+
+---
+
 ## Algorithms
 
 <img src="assets/algorithms.png" height="200px" />
@@ -39,6 +48,8 @@ Given a list of numbers:
 - Recursively sort the `low` and `high` lists using the same process
 - Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
   gives the fully sorted list
+
+http://localhost:3000/cs3/sorting/click-drag.html?q=22%2C+15%2C+39%2C+6%2C+46%2C+46%2C+0%2C+43%2C+37%2C+45%2C+23%2C+15
 
 ## Correctness
 
