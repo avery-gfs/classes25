@@ -169,10 +169,6 @@ We could fix this, but don't worry about it for now
 
 ---
 
-## Review Classes
-
-<img src="assets/init-meme.png" />
-
 ## Player Class
 
 ```py
@@ -408,6 +404,8 @@ r = Rectangle(3, 4)
 print(r.width)  # 3
 print(r.height) # 4
 ```
+
+<img src="assets/init-meme.png" height="200" />
 
 ## Terms
 
