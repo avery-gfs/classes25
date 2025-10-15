@@ -175,6 +175,62 @@ We could fix this, but don't worry about it for now
 
 ## To Do App
 
+Interactve demo
+
+```py
+todo = TodoList()
+
+todo.addTask("do homework")
+todo.addTask("feed dog")
+todo.addTask("water plants")
+todo.markDone("feed dog")
+todo.remove("do homework")
+
+print(todo)
+```
+
+```txt
+Should print:
+
+[x] feed dog
+[ ] water plants
+--------------------
+2 tasks, 1 undone
+```
+
+## Filtering a List
+
+- Make an empty list
+- Iterate over the items in the original list
+- Choose which items to add to the new list
+- Swap out the new list for the old one
+
+## Use Task `__repr__` in TodoList
+
+The `__repr__` method in TodoList should make use of the Task's `__repr__`
+method.
+
+```py
+hw = Task("do homework")
+print(hw)
+```
+
+```txt
+[ ] do homework
+```
+
+```py
+todo = TodoList()
+todo.addTask("do homework")
+print(todo)
+```
+
+```txt
+[ ] do homework
+--------------------
+1 tasks, 0 undone
+```
+
 ---
 
 ## Functions Review

@@ -17,7 +17,7 @@ class TodoList:
 
     def addTask(self, name):
         # Add a new task with a given name
-        self.tasks.append(Task(name))
+        pass
 
     def markDone(self, name):
         # Update the status of the task that matches name to be done
