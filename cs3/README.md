@@ -1,11 +1,27 @@
 <!-- https://en.wikipedia.org/wiki/Egyptian_Ratscrew -->
 
+## Merge Sort
+
+## Algorithmic Complexity
+
+---
+
 ## Comparison Sorting
 
 Computer doesn't have an intuition about what values are "big" or "small", only
 knows the result of individual comparisons.
 
+http://localhost:3000/cs3/sorting/click-drag.html?q=%F0%9F%90%BC%2C+%F0%9F%A6%98%2C+%F0%9F%A6%80%2C+%F0%9F%8F%80%2C+%F0%9F%92%A9%2C+%F0%9F%90%BC%2C+%F0%9F%A7%B2%2C+%F0%9F%AA%AD%2C+%F0%9F%8D%84%2C+%F0%9F%AB%96%2C+%F0%9F%A5%A6%2C+%F0%9F%AB%96
+
+---
+
+## Emoji Comparison
+
 http://localhost:3000/cs3/sorting/emoji-comparison.html
+
+## Lexicographic Comparison, Unicode
+
+<img src="assets/unicode.png" height/>
 
 ---
 
@@ -27,6 +43,10 @@ order)_
 Why sorting?
 
 Good starting point for understanding algorithms and algorithmic analysis
+
+## Bubble Sort
+
+Arguably the simplest sorting algorithm
 
 ## Quicksort
 
