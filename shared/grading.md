@@ -1,9 +1,16 @@
 # Grading Policy
 
-Overall I'm happy with how my classes last year went. I found that the classes
-that went best were the ones with the most structure. This year I'm laying out a
-more formal set of expectations for my classes, as I myself work to learn and
-improve as a teacher.
+My goals for this class are:
+
+- That it is easy to pass
+- That it is low-stress
+- That students work hard and focus in class
+- That students learn a lot
+
+Some students and teachers would see the first two goals as incompatible with
+the second two, but I think that it's possible to achieve all of these goals
+together. My policies for this class are designed to help you all achieve these
+goals.
 
 Class grade breakdown:
 
