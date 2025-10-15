@@ -169,6 +169,14 @@ We could fix this, but don't worry about it for now
 
 ---
 
+## Review Classes
+
+<img src="assets/init-meme.png" />
+
+## To Do App
+
+---
+
 ## Functions Review
 
 https://www.w3schools.com/python/python_functions.asp
