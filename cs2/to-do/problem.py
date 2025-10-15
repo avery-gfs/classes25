@@ -6,7 +6,6 @@ class Task:
 
     def __repr__(self):
         # Display the name and status of task
-        isDoneStr = "x" if self.isDone else " "
         return f"{self.name}"
 
 
