@@ -1,8 +1,76 @@
 <!-- https://en.wikipedia.org/wiki/Egyptian_Ratscrew -->
 
+## Merging Sorted Lists
+
+```py
+[0, 6, 15, 22, 39, 43, 46, 46]
+
+[2, 2, 12, 15, 23, 37, 43, 45]
+```
+
 ## Merge Sort
 
+<img src="assets/Merge sort - Wikipedia.png" width="700px" />
+
+<img src="assets/img_mergesort_long.png" height="400px" />
+
+## Emoji Comparison
+
+Sort the emojis using merge sort. Try to use as few comparisons as possible.
+
+http://localhost:3000/cs3/sorting/emoji-comparison.html
+
+<!-- ⚽ 🍄 🏀 🐼 🐼 💩 🥑 🥦 🥦 🦀 🦘 🧲 🪭 🫖 🫖 🫖 -->
+
 ## Algorithmic Complexity
+
+How many comparisons do we need to use to do merge sort for a list of `n`
+numbers?
+
+---
+
+## Quicksort
+
+https://en.wikipedia.org/wiki/Quicksort
+
+Recursive sorting algorithm
+
+Given a list of numbers:
+
+- If the list is empty, return an empty list
+- Otherwise, select the first number in the list as the pivot
+
+- Make three new lists:
+
+  - `low`: all numbers less than the pivot
+  - `mid`: all numbers equal to the pivot
+  - `high`: all numbers greater than the pivot
+
+- Recursively sort the `low` and `high` lists using the same process
+- Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
+  gives the fully sorted list
+
+http://localhost:3000/cs3/sorting/click-drag.html?q=22%2C+15%2C+39%2C+6%2C+46%2C+46%2C+0%2C+43%2C+37%2C+45%2C+23%2C+15
+
+## Emoji Comparison
+
+Sort the emojis using quicksort. Try to use as few comparisons as possible.
+
+http://localhost:3000/cs3/sorting/emoji-comparison.html
+
+<!-- ⚽ 🍄 🏀 🐼 🐼 💩 🥑 🥦 🥦 🦀 🦘 🧲 🪭 🫖 🫖 🫖 -->
+
+## In-Place Sorting
+
+Quicksort is typically done _in-place_, meaning that it modifies the existing
+list, rather than making a new list to store the sorted values. We aren't doing
+that in this class; we're working with variant where we put the sorted values in
+a new list, which makes things a little easier, but the core idea is the same.
+
+## Algorithmic Complexity
+
+How many comparisons do we need to use to do quicksort for a list of `n`
+numbers?
 
 ---
 
@@ -13,15 +81,22 @@ knows the result of individual comparisons.
 
 http://localhost:3000/cs3/sorting/click-drag.html?q=%F0%9F%90%BC%2C+%F0%9F%A6%98%2C+%F0%9F%A6%80%2C+%F0%9F%8F%80%2C+%F0%9F%92%A9%2C+%F0%9F%90%BC%2C+%F0%9F%A7%B2%2C+%F0%9F%AA%AD%2C+%F0%9F%8D%84%2C+%F0%9F%AB%96%2C+%F0%9F%A5%A6%2C+%F0%9F%AB%96
 
----
-
 ## Emoji Comparison
 
+Sort the emojis using bubble sort. Try to use as few comparisons as possible.
+
 http://localhost:3000/cs3/sorting/emoji-comparison.html
+
+<!-- ⚽ 🍄 🏀 🐼 🐼 💩 🥑 🥦 🥦 🦀 🦘 🧲 🪭 🫖 🫖 🫖 -->
 
 ## Lexicographic Comparison, Unicode
 
 <img src="assets/unicode.png" height/>
+
+## Algorithmic Complexity
+
+How many comparisons do we need to use to do bubble sort for a list of `n`
+numbers?
 
 ---
 
@@ -48,28 +123,13 @@ Good starting point for understanding algorithms and algorithmic analysis
 
 Arguably the simplest sorting algorithm
 
-## Quicksort
+<img src="assets/Bubble-sort-example-300px.gif" width="470px" />
 
-https://en.wikipedia.org/wiki/Quicksort
-
-Recursive sorting algorithm
-
-Given a list of numbers:
-
-- If the list is empty, return an empty list
-- Otherwise, select the first number in the list as the pivot
-
-- Make three new lists:
-
-  - `low`: all numbers less than the pivot
-  - `mid`: all numbers equal to the pivot
-  - `high`: all numbers greater than the pivot
-
-- Recursively sort the `low` and `high` lists using the same process
-- Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
-  gives the fully sorted list
-
-http://localhost:3000/cs3/sorting/click-drag.html?q=22%2C+15%2C+39%2C+6%2C+46%2C+46%2C+0%2C+43%2C+37%2C+45%2C+23%2C+15
+> An example of bubble sort. Starting from the beginning of the list, compare
+> every adjacent pair, swap their position if they are not in the right order
+> (the latter one is smaller than the former one). After each iteration, one
+> less element (the last one) is needed to be compared until there are no more
+> elements left to be compared. -- Wikipedia
 
 ## Correctness
 
@@ -79,14 +139,9 @@ How do we know that this algorithm will give us a sorted list?
 
 ## Invariants
 
-Concatenating sublists maintains sorted order
+The list suffix (the last elements in the list) are always in sorted order
 
-## In-Place Sorting
-
-Quicksort is typically done _in-place_, meaning that it modifies the existing
-list, rather than making a new list to store the sorted values. We aren't doing
-that in this class; we're working with variant where we put the sorted values in
-a new list, which makes things a little easier, but the core idea is the same.
+Each loop increases the length of the sorted suffix
 
 ---
 
