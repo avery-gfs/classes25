@@ -1,6 +1,6 @@
 <!-- height duration isinstance -->
 
-## isinstance
+<!-- ## isinstance
 
 ```py
 class Height:
@@ -166,6 +166,7 @@ print(h - Height(2, 8))  # -3'10"
 ```
 
 We could fix this, but don't worry about it for now
+ -->
 
 ---
 
