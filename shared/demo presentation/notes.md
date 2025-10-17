@@ -5,6 +5,7 @@
 - Don't go too fast
 - Better body language
 - Better setup
+- Buggy code
 - Ask audience questions
 - Chance for audience interaction
 - Show product first

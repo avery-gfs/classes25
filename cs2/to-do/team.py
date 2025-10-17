@@ -40,12 +40,16 @@ class Team:
                 player.shots += 1
 
     def removePlayer(self, name):
+        # Make a list to store the filtered players
         newPlayers = []
 
         for player in self.players:
+            # Add player to the new list if player's name isn't the one
+            # we're trying to remove
             if player.name != name:
                 newPlayers.append(player)
 
+        # Swap in new players list
         self.players = newPlayers
 
     def __repr__(self):
