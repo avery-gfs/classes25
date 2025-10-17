@@ -83,12 +83,16 @@ team = Team()
 
 team.addPlayer("alex")
 team.addPlayer("marcus")
+team.addPlayer("chuck")
 
 team.addBasket("marcus")
 team.addBasket("marcus")
 
 team.addMiss("marcus")
 team.addMiss("alex")
+team.addMiss("chuck")
+
+team.removePlayer("chuck")
 
 print(team)
 

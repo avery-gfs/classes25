@@ -206,12 +206,16 @@ team = Team()
 
 team.addPlayer("alex")
 team.addPlayer("marcus")
+team.addPlayer("chuck")
 
 team.addBasket("marcus")
 team.addBasket("marcus")
 
 team.addMiss("marcus")
 team.addMiss("alex")
+team.addMiss("chuck")
+
+team.removePlayer("chuck")
 
 print(team)
 ```
@@ -251,6 +255,28 @@ class Team:
             if player.name == name:
                 # Only update shots for unsuccessful shot
                 player.shots += 1
+
+    # ...
+```
+
+## Team Class (continued)
+
+```py
+class Team:
+    # ...
+
+    def removePlayer(self, name):
+        # Make a list to store the filtered players
+        newPlayers = []
+
+        for player in self.players:
+            # Add player to the new list if player's name isn't the one
+            # we're trying to remove
+            if player.name != name:
+                newPlayers.append(player)
+
+        # Swap in new players list
+        self.players = newPlayers
 
     # ...
 ```
