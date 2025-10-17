@@ -39,6 +39,15 @@ class Team:
                 # Only update shots for unsuccessful shot
                 player.shots += 1
 
+    def removePlayer(self, name):
+        newPlayers = []
+
+        for player in self.players:
+            if player.name != name:
+                newPlayers.append(player)
+
+        self.players = newPlayers
+
     def __repr__(self):
         # Number of players
         numPlayers = len(self.players)
