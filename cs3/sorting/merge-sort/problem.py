@@ -18,6 +18,8 @@ def merge(listA, listB):
     pass
 
 
+print(merge([0, 6, 15, 22, 39, 43, 46, 46], [2, 2, 12, 15, 23, 37, 43, 45]))
+
 # - If `numbers` is empty or has only a single value return `numbers`
 #
 # - Otherwise, split `numbers` in half to create two sub-lists
