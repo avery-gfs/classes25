@@ -1,7 +1,7 @@
 Print a bar chart based on the numbers in the list `numbers` where each number
 `n` in the list gets its own column with `n` `X` characters in it.
 
-For the numbers `[1, 4, 2, 7, 3]` the output should be:
+For the numbers `[1, 4, 2, 7, 3, 1]` the output should be:
 
 ```txt
    X
@@ -10,5 +10,5 @@ For the numbers `[1, 4, 2, 7, 3]` the output should be:
  X X
  X XX
  XXXX
-XXXXX
+XXXXXX
 ```
