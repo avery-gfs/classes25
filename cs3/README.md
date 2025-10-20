@@ -1,4 +1,4 @@
-<!-- https://en.wikipedia.org/wiki/Egyptian_Ratscrew -->
+---
 
 ## Merging Sorted Lists
 
@@ -22,7 +22,7 @@ l.pop(0)
 
 <img src="assets/img_mergesort_long.png" height="400px" />
 
-## Merge Sort
+## Hints
 
 Split a list into two halves:
 
@@ -32,6 +32,20 @@ left = l[:half]
 right = l[half:]
 ```
 
+Get and remove the first value from a list:
+
+```py
+l = [10, 11, 12]
+print(l.pop(0))  # 10
+print(l)         # [11, 12]
+```
+
+## Correctness
+
+How do we know that this algorithm will terminate?
+
+How do we know that this algorithm will give us a sorted list?
+
 ## Emoji Comparison
 
 Sort the emojis using merge sort. Try to use as few comparisons as possible.
@@ -39,44 +53,6 @@ Sort the emojis using merge sort. Try to use as few comparisons as possible.
 http://localhost:3000/cs3/sorting/emoji-comparison.html
 
 <!-- ⚽ 🍄 🏀 🐼 🐼 💩 🥑 🥦 🥦 🦀 🦘 🧲 🪭 🫖 🫖 🫖 -->
-
-## Algorithmic Complexity
-
-How many comparisons do we need to use to do merge sort for a list of `n`
-numbers?
-
-```py
-[3, 5, 11, 7, 4, 14, 6, 9, 13, 1, 2, 10, 12, 8, 16, 15]
-```
-
-```py
-[3] [5] [11] [7] [4] [14] [6] [9] [13] [1] [2] [10] [12] [8] [16] [15]  1 * 8 =  8
-[3,  5] [11,  7] [4,  14] [6,  9] [13,  1] [2,  10] [12,  8] [16,  15]  3 * 4 = 12
-[3,  5,  11,  7] [4,  14,  6,  9] [13,  1,  2,  10] [12,  8,  16,  15]  7 * 2 = 14
-[3,  5,  11,  7,  4,  14,  6,  9] [13,  1,  2,  10,  12,  8,  16,  15] 15 * 1 = 15
-```
-
-http://localhost:3000/cs3/sorting/click-drag.html?q=3%2C+5%2C+11%2C+7%2C+4%2C+14%2C+6%2C+9%2C+13%2C+1%2C+2%2C+10%2C+12%2C+8%2C+16%2C+15
-
-<img src="assets/img_mergesort_long.png" height="250px" />
-
-## Algorithmic Complexity (continued)
-
-```txt
-8 + 12 + 14 + 15 = 49
-```
-
-```txt
-n + n + n + n = n * log(n)
-└───────────┘
-log(n) times
-```
-
-$$
-n \cdot log(n) = O(nlog(n))
-$$
-
-<img src="assets/nlogn.png" height="300px" />
 
 ---
 
@@ -103,6 +79,12 @@ Given a list of numbers:
 
 http://localhost:3000/cs3/sorting/click-drag.html?q=22%2C+15%2C+39%2C+6%2C+46%2C+46%2C+0%2C+43%2C+37%2C+45%2C+23%2C+15
 
+## Correctness
+
+How do we know that this algorithm will terminate?
+
+How do we know that this algorithm will give us a sorted list?
+
 ## Emoji Comparison
 
 Sort the emojis using quicksort. Try to use as few comparisons as possible.
@@ -118,81 +100,6 @@ list, rather than making a new list to store the sorted values. We aren't doing
 that in this class; we're working with variant where we put the sorted values in
 a new list, which makes things a little easier, but the core idea is the same.
 
-## Algorithmic Complexity
-
-How many comparisons do we need to use to do quicksort for a list of `n`
-numbers?
-
-Best case:
-
-```py
-[8, 4, 2, 1, 3, 6, 5, 7, 12, 10, 9, 11, 14, 13, 15, 16]
-```
-
-http://localhost:3000/cs3/sorting/click-drag.html?q=8%2C+4%2C+2%2C+1%2C+3%2C+6%2C+5%2C+7%2C+12%2C+10%2C+9%2C+11%2C+14%2C+13%2C+15%2C+16
-
-Worst case:
-
-```py
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-```
-
-http://localhost:3000/cs3/sorting/click-drag.html?q=1%2C+2%2C+3%2C+4%2C+5%2C+6%2C+7%2C+8%2C+9%2C+10%2C+11%2C+12%2C+13%2C+14%2C+15%2C+16
-
-## Algorithmic Complexity (continued)
-
-```txt
-15 + 14 + 13 + 12 + 11 + 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 120
-```
-
-$$
-n + (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n \cdot(n + 1)}{2} = \frac{n^2}{2} +\frac{n}{2} = O(n^2)
-$$
-
-<img src="assets/quadratic.png" height="300px" />
-
----
-
-## Comparison Sorting
-
-Computer doesn't have an intuition about what values are "big" or "small", only
-knows the result of individual comparisons.
-
-http://localhost:3000/cs3/sorting/click-drag.html?q=%F0%9F%90%BC%2C+%F0%9F%A6%98%2C+%F0%9F%A6%80%2C+%F0%9F%8F%80%2C+%F0%9F%92%A9%2C+%F0%9F%90%BC%2C+%F0%9F%A7%B2%2C+%F0%9F%AA%AD%2C+%F0%9F%8D%84%2C+%F0%9F%AB%96%2C+%F0%9F%A5%A6%2C+%F0%9F%AB%96
-
-## Emoji Comparison
-
-Sort the emojis using bubble sort. Try to use as few comparisons as possible.
-
-http://localhost:3000/cs3/sorting/emoji-comparison.html
-
-<!-- ⚽ 🍄 🏀 🐼 🐼 💩 🥑 🥦 🥦 🦀 🦘 🧲 🪭 🫖 🫖 🫖 -->
-
-## Lexicographic Comparison, Unicode
-
-<img src="assets/unicode.png" height/>
-
-## Algorithmic Complexity
-
-How many comparisons do we need to use to do bubble sort for a list of `n`
-numbers?
-
-```py
-[3, 5, 11, 7, 4, 14, 6, 9, 13, 1, 2, 10, 12, 8, 16, 15]
-```
-
-```txt
-15 + 14 + 13 + 12 + 11 + 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 120
-```
-
-## Algorithmic Complexity (continued)
-
-$$
-n + (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n \cdot(n + 1)}{2} = \frac{n^2}{2} +\frac{n}{2} = O(n^2)
-$$
-
-<img src="assets/quadratic.png" height="300px" />
-
 ---
 
 ## Algorithms
@@ -207,12 +114,6 @@ What does it mean for a list of numbers to be sorted?
 
 _(When programmers talk about sorting, they typically mean sorting in ascending
 order)_
-
-## Why Sorting
-
-Why sorting?
-
-Good starting point for understanding algorithms and algorithmic analysis
 
 ## Bubble Sort
 
@@ -232,11 +133,24 @@ How do we know that this algorithm will terminate?
 
 How do we know that this algorithm will give us a sorted list?
 
-## Invariants
+## Comparison Sorting
 
-The list suffix (the last elements in the list) are always in sorted order
+Computer doesn't have an intuition about what values are "big" or "small", only
+knows the result of individual comparisons.
 
-Each loop increases the length of the sorted suffix
+http://localhost:3000/cs3/sorting/click-drag.html?q=%F0%9F%90%BC%2C+%F0%9F%A6%98%2C+%F0%9F%A6%80%2C+%F0%9F%8F%80%2C+%F0%9F%92%A9%2C+%F0%9F%90%BC%2C+%F0%9F%A7%B2%2C+%F0%9F%AA%AD%2C+%F0%9F%8D%84%2C+%F0%9F%AB%96%2C+%F0%9F%A5%A6%2C+%F0%9F%AB%96
+
+## Emoji Comparison
+
+Sort the emojis using bubble sort. Try to use as few comparisons as possible.
+
+http://localhost:3000/cs3/sorting/emoji-comparison.html
+
+<!-- ⚽ 🍄 🏀 🐼 🐼 💩 🥑 🥦 🥦 🦀 🦘 🧲 🪭 🫖 🫖 🫖 -->
+
+## Lexicographic Comparison, Unicode
+
+<img src="assets/unicode.png" height/>
 
 ---
 
