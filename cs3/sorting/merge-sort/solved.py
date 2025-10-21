@@ -26,7 +26,10 @@ def merge(listA, listB):
         else:
             result.append(listB.pop(0))
 
-    return result + listA + listB
+    result.extend(listA)
+    result.extend(listB)
+
+    return result
 
 
 print(merge([0, 6, 15, 22, 39, 43, 46, 46], [2, 2, 12, 15, 23, 37, 43, 45]))
