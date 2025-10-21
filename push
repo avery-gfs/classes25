@@ -14,5 +14,6 @@ git push
 cd ../../avery-gfs.github.io
 ./transfer.sh
 git add .
+git status
 git commit -m "update site"
 git push
