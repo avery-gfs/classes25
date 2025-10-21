@@ -8,6 +8,8 @@ write a web app to do the following. the app should be a single html file contai
 looks good. can you add a copy-text icon button for the selection log. also what happens if the submissions are longer (they'll be around 600 characters. Make sure they're displayed gracefully if they're long (make submission boxes scroll to show). Also show the identifier names above the two submission text boxes
 
 actually lets say that json file is a list of objects, with the form { id: string, content: (string around 600 chars, multi line), tool: string, prompts: (string, multi-line) } we only need to use the id and content fields 
+
+give me code (just change, not whole code) for the first app (the ranking input) so that you can click and ctrl a ctrl c to copy from the logs (maybe make it an uneditable textbox or something) 
 -->
 
 <!doctype html>
@@ -135,10 +137,12 @@ actually lets say that json file is a list of objects, with the form { id: strin
               </svg>
             </button>
           </div>
-          <pre
+
+          <textarea
+            readonly
             id="log-output"
-            class="text-sm bg-gray-100 p-3 rounded-md h-40 overflow-y-auto whitespace-pre-wrap"
-          ></pre>
+            class="flex-grow bg-gray-50 p-3 rounded-md text-sm font-mono overflow-y-auto h-48 w-full border-gray-200 focus:ring-0 focus:border-gray-200 resize-none"
+          ></textarea>
         </div>
       </footer>
     </div>
@@ -163,26 +167,6 @@ actually lets say that json file is a list of objects, with the form { id: strin
         let rankingCount = 0;
         let log = [];
 
-        // --- Embedded JSON Data ---
-        // For now, we use this embedded JSON string which is now an array of objects.
-        // The logic will extract the 'id' and 'content' fields.
-        const jsonString = `
-            [
-                { "id": "sub001", "content": "The sun dipped below the horizon, painting the sky in hues of orange and purple. It was a sight to behold, a daily masterpiece that never failed to inspire awe. For a moment, all the worries of the day melted away, replaced by a profound sense of peace and gratitude for the simple beauty of the world.", "tool": "human", "prompts": "Describe a sunset." },
-                { "id": "sub002", "content": "Artificial intelligence is a fascinating field. The potential for machines to learn and adapt is both exciting and terrifying. We stand on the precipice of a new era, one where the very definition of intelligence may be redefined. The ethical implications are staggering, and we must proceed with caution and foresight.", "tool": "model_v1", "prompts": "Explain the concept of AI." },
-                { "id": "sub003", "content": "I remember my grandmother's kitchen, the smell of baking bread and the comforting warmth of the wood-burning stove. It was a place of love and laughter, where stories were shared and memories were made. Those simple moments are the ones I cherish the most, a reminder of the importance of family and connection.", "tool": "human", "prompts": "Write about a cherished memory." },
-                { "id": "sub004", "content": "The city is a symphony of sounds, a chaotic orchestra of car horns, sirens, and the distant rumble of the subway. Yet, within this cacophony, there is a rhythm, a pulse that is unique to urban life. It's a constant reminder of the millions of stories unfolding simultaneously, each one a thread in the city's rich tapestry.", "tool": "model_v2", "prompts": "Describe the sounds of a city." },
-                { "id": "sub005", "content": "Climate change is the defining challenge of our generation. The science is clear, and the stakes could not be higher. We must transition to a sustainable future, not just for ourselves, but for generations to come. It will require collective action, innovation, and a fundamental shift in our relationship with the planet.", "tool": "model_v1", "prompts": "Explain the importance of addressing climate change." },
-                { "id": "sub006", "content": "There's a special kind of magic to a rainy day. The gentle patter of drops against the windowpane, the cozy feeling of being indoors with a good book and a warm cup of tea. It's a time for reflection and introspection, a welcome respite from the hustle and bustle of everyday life.", "tool": "human", "prompts": "Describe a rainy day." },
-                { "id": "sub007", "content": "The vastness of space is humbling. To look up at the night sky and see countless stars, each one a distant sun, is to be reminded of our own insignificance in the grand scheme of things. Yet, it also fills me with a sense of wonder and a desire to explore the unknown.", "tool": "model_v2", "prompts": "Write about looking at the stars." },
-                { "id": "sub008", "content": "Music has a unique power to connect us. It transcends language and culture, speaking directly to our emotions. A single melody can evoke joy, sadness, or a sense of nostalgia. It's a universal language that reminds us of our shared humanity, the feelings that bind us all together in this complex world.", "tool": "human", "prompts": "Explain the power of music." },
-                { "id": "sub009", "content": "The forest floor is a world of its own, a miniature ecosystem teeming with life. Mosses and fungi create a vibrant carpet, while insects and small animals scurry about their daily business. It’s a delicate balance, a reminder of the intricate web of life that sustains our planet and the need to protect these natural wonders.", "tool": "model_v1", "prompts": "Describe a forest floor." },
-                { "id": "sub010", "content": "To truly understand another person, you must listen not just with your ears, but with your heart. Empathy is the bridge that connects us, allowing us to share in each other's joys and sorrows. In a world that often feels divided, it is the most powerful tool we have for fostering understanding and compassion.", "tool": "human", "prompts": "Define empathy." },
-                { "id": "sub011", "content": "Creativity is not something you can force. It’s like a gentle stream that flows when you least expect it. The key is to be open to it, to create space for your mind to wander and make unexpected connections. The best ideas often come not from intense focus, but from moments of quiet contemplation and playfulness.", "tool": "model_v2", "prompts": "How does creativity work?" },
-                { "id": "sub012", "content": "The ocean is a force of nature, both beautiful and terrifying. Its gentle waves can be calming, while its powerful storms can be destructive. It’s a constant reminder of the power and mystery of the natural world, a source of endless fascination and respect for the forces that shape our planet.", "tool": "human", "prompts": "Describe the ocean." }
-            ]
-            `;
-
         // --- Functions ---
 
         /**
@@ -193,18 +177,16 @@ actually lets say that json file is a list of objects, with the form { id: strin
           try {
             let sourceData;
             // --- OPTION 1: Parse the embedded JSON string (current method) ---
-            sourceData = JSON.parse(jsonString);
+            // sourceData = JSON.parse(jsonString);
 
             // --- OPTION 2: Fetch from a URL (commented out) ---
             // To use this, comment out the line above and uncomment the lines below.
             // Make sure you have a 'submissions.json' file in the same directory.
-            /*
-                    const response = await fetch('./submissions.json');
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    sourceData = await response.json();
-                    */
+            const response = await fetch("./submissions.json");
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            sourceData = await response.json();
 
             // Transform the array of objects into a key-value map for the app's logic
             submissions = sourceData.reduce((acc, item) => {
