@@ -12,6 +12,9 @@
 #
 # - Note that you can use `list.pop(0)` to get and remove the first value
 #   from a list
+#
+# - Note that you can use `list1.extend(list2)` to add the values from one the
+#   `list2` to the `list1`
 
 
 def merge(listA, listB):

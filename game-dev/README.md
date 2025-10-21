@@ -6,10 +6,6 @@
 
 ---
 
-## Groups
-
----
-
 ## Sprites, Images, Colors, Colliders
 
 - Colors

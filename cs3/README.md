@@ -1,5 +1,3 @@
----
-
 ## Merging Sorted Lists
 
 ```py
@@ -18,9 +16,9 @@ l.pop(0)
 
 ## Merge Sort
 
-<img src="assets/Merge sort - Wikipedia.png" width="700px" />
+<img src="assets/img_mergesort_long.png" height="500px" />
 
-<img src="assets/img_mergesort_long.png" height="400px" />
+http://localhost:3000/cs3/sorting/click-drag.html?q=23%2C+46%2C+15%2C+43%2C+37%2C+2%2C+12%2C+15%2C+45%2C+39%2C+6%2C+22%2C+2%2C+46%2C+0%2C+43
 
 ## Hints
 
@@ -39,6 +37,17 @@ l = [10, 11, 12]
 print(l.pop(0))  # 10
 print(l)         # [11, 12]
 ```
+
+Add items to the end of a list:
+
+```py
+l = [10, 11, 12]
+l.extend([13, 14, 15])
+
+print(l)  # [10, 11, 12, 13, 14, 15]
+```
+
+(Note that `extend` is different from `append`)
 
 ## Correctness
 
@@ -77,7 +86,7 @@ Given a list of numbers:
 - Return the concatenation of `quicksort(low) + mid + quicksort(high)`, which
   gives the fully sorted list
 
-http://localhost:3000/cs3/sorting/click-drag.html?q=22%2C+15%2C+39%2C+6%2C+46%2C+46%2C+0%2C+43%2C+37%2C+45%2C+23%2C+15
+http://localhost:3000/cs3/sorting/click-drag.html?q=23%2C+46%2C+15%2C+43%2C+37%2C+2%2C+12%2C+15%2C+45%2C+39%2C+6%2C+22%2C+2%2C+46%2C+0%2C+43
 
 ## Correctness
 
@@ -126,6 +135,8 @@ Arguably the simplest sorting algorithm
 > (the latter one is smaller than the former one). After each iteration, one
 > less element (the last one) is needed to be compared until there are no more
 > elements left to be compared. -- Wikipedia
+
+http://localhost:3000/cs3/sorting/click-drag.html?q=23%2C+46%2C+15%2C+43%2C+37%2C+2%2C+12%2C+15%2C+45%2C+39%2C+6%2C+22%2C+2%2C+46%2C+0%2C+43
 
 ## Correctness
 
