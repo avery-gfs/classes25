@@ -4,9 +4,9 @@ git add .
 git status
 git commit -m "update"
 git push
-cd ~/Documents/classes/public
+cd ../public
 git checkout master
-cp -r ~/Documents/classes/solutions/* .
+cp -r ../solutions/* .
 git rm **/solved.py package.json push
 git add .
 git commit -m "update problems"
