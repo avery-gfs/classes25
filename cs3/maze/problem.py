@@ -32,20 +32,6 @@ def update(r, c, symbol):
 
 
 def search(r, c):
-    cell = board[r][c]
-
-    if cell == "█" or cell == "▒":
-        return False
-
-    update(r, c, "▒")
-
-    if cell == "B":
-        return True
-
-    if search(r - 1, c) or search(r, c + 1) or search(r + 1, c) or search(r, c - 1):
-        return True
-
-    update(r, c, " ")
     return False
 
 

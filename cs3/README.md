@@ -1,3 +1,28 @@
+##
+
+<img src="assets/recursion-meme.jpg" height="600px" />
+
+## Algorithmic Problem Solving
+
+1. Establish constraints
+2. Apply intuition
+
+## Hidden Maze Demo
+
+```txt
+███████████████
+█A█     █B█   █
+█ █ ███ █ ███ █
+█ █ █ █ █     █
+█ █ █ █ █████ █
+█   █ █     █ █
+█ ███ █████ █ █
+█     █       █
+███████████████
+```
+
+---
+
 ## Merging Sorted Lists
 
 ```py

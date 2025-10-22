@@ -321,10 +321,10 @@ Interactve demo
 ```py
 todo = TodoList()
 
-todo.addTask("do homework")
-todo.addTask("feed dog")
-todo.addTask("water plants")
-todo.markDone("feed dog")
+todo.add("do homework")
+todo.add("feed dog")
+todo.add("water plants")
+todo.finish("feed dog")
 todo.remove("do homework")
 
 print(todo)
@@ -353,10 +353,10 @@ class TodoList:
     def __init__(self):
         self.tasks = []
 
-    def addTask(self, name):
+    def add(self, name):
         # ...
 
-    def markDone(self, name):
+    def finish(self, name):
         # ...
 
     def remove(self, name):

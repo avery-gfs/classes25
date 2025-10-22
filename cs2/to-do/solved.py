@@ -16,11 +16,11 @@ class TodoList:
         # Keep track of a tasks list, which starts out empty
         self.tasks = []
 
-    def addTask(self, name):
+    def add(self, name):
         # Add a new task with a given name
         self.tasks.append(Task(name))
 
-    def markDone(self, name):
+    def finish(self, name):
         # Update the status of the task that matches name to be done
         for task in self.tasks:
             if task.name == name:
@@ -72,10 +72,10 @@ print("\nTest TodoList:\n")
 
 todo = TodoList()
 
-todo.addTask("do homework")
-todo.addTask("feed dog")
-todo.addTask("water plants")
-todo.markDone("feed dog")
+todo.add("do homework")
+todo.add("feed dog")
+todo.add("water plants")
+todo.finish("feed dog")
 todo.remove("do homework")
 
 print(todo)
