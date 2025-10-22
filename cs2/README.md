@@ -301,6 +301,8 @@ def __truediv__(self, other):
     # ...
 ```
 
+<img src="assets/add-fractions-formula.png" height="320" />
+
 ## Simplification
 
 ```py
