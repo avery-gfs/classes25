@@ -32,20 +32,20 @@ class Fraction:
         # Make `self - other` work
         pass
 
+    def __rmul__(self, other):
+        # Make `other * self` work
+        return self * other
+
     def __radd__(self, other):
         # Make `other + self` work
         pass
 
-    def __rsub__(self, other):
-        # Make `other - self` work
-        return -1 * self + other
-
-    def __rmul__(self, other):
-        # Make `other * self` work
-        pass
-
     def __rtruediv__(self, other):
         # Make `other / self` work
+        pass
+
+    def __rsub__(self, other):
+        # Make `other - self` work
         pass
 
 
