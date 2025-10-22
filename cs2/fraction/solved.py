@@ -52,21 +52,21 @@ class Fraction:
         # Make `self - other` work
         return self + (other * -1)
 
-    def __radd__(self, other):
-        # Make `other + self` work
-        return self + other
-
-    def __rsub__(self, other):
-        # Make `other - self` work
-        return -1 * self + other
-
     def __rmul__(self, other):
         # Make `other * self` work
         return self * other
 
+    def __radd__(self, other):
+        # Make `other + self` work
+        return self + other
+
     def __rtruediv__(self, other):
         # Make `other / self` work
         return self.inverse() * other
+
+    def __rsub__(self, other):
+        # Make `other - self` work
+        return -1 * self + other
 
 
 a = Fraction(5, 20)
