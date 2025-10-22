@@ -29,7 +29,7 @@
 
 from PIL import Image
 
-im = Image.open("dali.png")
+im = Image.open("/home/anortonsmith/Documents/classes/solutions/cs2/images/bird.png")
 
 symbols = "   ``'-~:+<ceOEB"
 

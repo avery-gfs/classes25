@@ -170,6 +170,203 @@ We could fix this, but don't worry about it for now
 
 ---
 
+## Fraction Class
+
+```py
+class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
+
+    def __repr__(self):
+        return f"{self.num}/{self.den}"
+
+    def __mul__(self, other):
+        # Make `self * other` work
+        if isinstance(other, int):
+            return Fraction(self.num * other, self.den)
+
+        num = self.num * other.num
+        den = self.den * other.den
+        return Fraction(num, den)
+```
+
+```py
+a = Fraction(7, 20)
+print(a)
+```
+
+```txt
+7/20
+```
+
+## `__mul__` by Int
+
+```py
+class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
+
+    def __repr__(self):
+        return f"{self.num}/{self.den}"
+
+    def __mul__(self, other):
+        # Make `self * other` work
+        return Fraction(self.num * other, self.den)
+```
+
+```py
+a = Fraction(7, 20)
+print(a * 3)
+```
+
+```txt
+21/20
+```
+
+## `__mul__` by Fraction
+
+```py
+class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
+
+    def __repr__(self):
+        return f"{self.num}/{self.den}"
+
+    def __mul__(self, other):
+        # Make `self * other` work
+        num = self.num * other.num
+        den = self.den * other.den
+        return Fraction(num, den)
+```
+
+```py
+a = Fraction(7, 20)
+b = Fraction(3, 2)
+print(a * b)
+```
+
+```txt
+21/40
+```
+
+## `isinstance`
+
+```py
+isinstance(3, int)                     # True
+isinstance(3, Fraction)                # False
+isinstance(Fraction(7, 20), int)       # False
+isinstance(Fraction(7, 20), Fraction)  # True
+```
+
+## Generic `__mul__`
+
+```py
+class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
+
+    def __repr__(self):
+        return f"{self.num}/{self.den}"
+
+    def __mul__(self, other):
+        # Make `self * other` work
+        if isinstance(other, int):
+            return Fraction(self.num * other, self.den)
+
+        num = self.num * other.num
+        den = self.den * other.den
+        return Fraction(num, den)
+```
+
+```py
+a = Fraction(7, 20)
+print(a * 3)
+
+b = Fraction(3, 2)
+print(a * b)
+```
+
+```txt
+21/20
+21/40
+```
+
+## Other Math Methods
+
+```py
+def __add__(self, other):
+    # ...
+
+def __sub__(self, other):
+    # ...
+
+def __mul__(self, other):
+    # ...
+
+def __truediv__(self, other):
+    # ...
+```
+
+## Simplification
+
+```py
+a = Fraction(5, 20)
+```
+
+```txt
+5/20
+```
+
+```txt
+1/4
+```
+
+```py
+a = Fraction(3, 7)
+b = Fraction(7 / 6)
+print(a * b)
+```
+
+```txt
+1/2
+```
+
+## `r` Methods
+
+```py
+a = Fraction(7, 20)
+print(3 * a)
+```
+
+```txt
+Traceback (most recent call last):
+  File "/tmp/demo.py", line 19, in <module>
+    print(3 * a)
+          ~~^~~
+TypeError: unsupported operand type(s) for *: 'int' and 'Fraction'
+```
+
+```py
+def __radd__(self, other):
+    # ...
+
+def __rsub__(self, other):
+    # ...
+
+def __rmul__(self, other):
+    # ...
+
+def __rtruediv__(self, other):
+    # ...
+```
+
+---
+
 ## Player Class
 
 ```py
