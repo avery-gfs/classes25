@@ -21,6 +21,14 @@
 ███████████████
 ```
 
+## Hidden Maze
+
+1. Solve the maze
+2. Write an algorithm for solving the maze (a procedure that) someone could
+   follow to solve the problem, subject to the constraints of the problem
+
+<img src="assets/algorithms.png" height="200px" />
+
 ---
 
 ## Merging Sorted Lists
