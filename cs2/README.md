@@ -178,15 +178,6 @@ class Fraction:
 
     def __repr__(self):
         return f"{self.num}/{self.den}"
-
-    def __mul__(self, other):
-        # Make `self * other` work
-        if isinstance(other, int):
-            return Fraction(self.num * other, self.den)
-
-        num = self.num * other.num
-        den = self.den * other.den
-        return Fraction(num, den)
 ```
 
 ```py
@@ -361,6 +352,40 @@ def __rmul__(self, other):
 
 def __rtruediv__(self, other):
     # ...
+```
+
+## `__rmul__`
+
+```py
+class Fraction:
+    def __init__(self, num, den):
+        self.num = num
+        self.den = den
+
+    def __repr__(self):
+        return f"{self.num}/{self.den}"
+
+    def __mul__(self, other):
+        # Make `self * other` work
+        if isinstance(other, int):
+            return Fraction(self.num * other, self.den)
+
+        num = self.num * other.num
+        den = self.den * other.den
+        return Fraction(num, den)
+
+    def __rmul__(self, other):
+        # Make `other * self` work
+        return self * other
+```
+
+```py
+a = Fraction(7, 20)
+print(3 * a)
+```
+
+```txt
+21/20
 ```
 
 ---

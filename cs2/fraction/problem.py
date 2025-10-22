@@ -20,12 +20,12 @@ class Fraction:
         den = self.den * other.den
         return Fraction(num, den)
 
-    def __add__(self, other):
-        # Make `self + other` work
-        pass
-
     def __truediv__(self, other):
         # Make `self / other` work
+        pass
+
+    def __add__(self, other):
+        # Make `self + other` work
         pass
 
     def __sub__(self, other):
@@ -62,17 +62,17 @@ print("a * Fraction(2, 3) = ", a * Fraction(2, 3))  # 1/6
 print("6 * a = ", 6 * a)  # 3/2
 print("a * 6 = ", a * 6)  # 3/2
 
-print("\nTest addition:\n")
-
-print("a + Fraction(2, 3) = ", a + Fraction(2, 3))  # 11/12
-print("6 + a = ", 6 + a)  # 25/4
-print("a + 6 = ", a + 6)  # 25/4
-
 print("\nTest division:\n")
 
 print("a / Fraction(2, 3) = ", a / Fraction(2, 3))  # 3/8
 print("6 / a = ", 6 / a)  # 24/1
 print("a / 6 = ", a / 6)  # 1/24
+
+print("\nTest addition:\n")
+
+print("a + Fraction(2, 3) = ", a + Fraction(2, 3))  # 11/12
+print("6 + a = ", 6 + a)  # 25/4
+print("a + 6 = ", a + 6)  # 25/4
 
 print("\nTest subtraction:\n")
 
