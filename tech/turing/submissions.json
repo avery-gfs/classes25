@@ -1,74 +1,122 @@
 [
   {
-    "id": "sub001",
-    "content": "The sun dipped below the horizon, painting the sky in hues of orange and purple. It was a sight to behold, a daily masterpiece that never failed to inspire awe. For a moment, all the worries of the day melted away, replaced by a profound sense of peace and gratitude for the simple beauty of the world.",
-    "type": "human"
+    "id": "finch",
+    "type": "human",
+    "content": "I read the Remembrance of Earth's Past trilogy (aka the Three Body Problem series) this year, and I found it profound, particular in it's exploration of the concept of \"the future\". Depending on our expectations, the future might be something that we're trying to avert, or to hasten, or something that doesn't exist at all (if we expect the world to be the same in 100 years as it is now, then does \"the future\" have any real meaning)? The story illustrates how much our qualitative experience as individuals and our direction as a society are born from our shared struggle with our vision of the future."
   },
   {
-    "id": "sub002",
-    "content": "Artificial intelligence is a fascinating field. The potential for machines to learn and adapt is both exciting and terrifying. We stand on the precipice of a new era, one where the very definition of intelligence may be redefined. The ethical implications are staggering, and we must proceed with caution and foresight.",
+    "id": "flux",
+    "type": "human",
+    "content": "Plato and a Platypus Walk Into a Bar: Understanding Philosophy Through Jokes was the most influential to me. I \"read\" it because my family shared an audible account, and my older brother got it for free with points. Listening to it was my first introduction to philosophy as a whole, and, because it was explained \"through jokes\", I found the logic to be much more understandable. Since then, I've read very few books by choice that were not at least philosophy related (although I haven't read too many philosophy books either)."
+  },
+  {
+    "id": "bolt",
+    "type": "human",
+    "content": "The most impactful series for me has been the Eragon series written by Christopher Paolini. It was recommended to me by a good friend and it immediately grabbed my attention. The immersive world and creative concepts have made sure that Eragon is one of my favorite fantasy worlds. I have read the entire series more than 6 times and I follow the progress of any new books. The character development throughout the series is amazing to watch. Also, the writer was 15 when he published the first book and the evolution of his writing style over the series is remarkable. "
+  },
+  {
+    "id": "hawk",
+    "type": "human",
+    "content": "A book that has a special place in my heart is the novel Dr Jekyll and Mr Hyde. After reading this book freshman year, I really appreciated the theme of duality throughout the novel. This is an important novel that foreshadows many different modern concepts including identity and mental illness. Dr Jekyll's character is entertaining to follow throughout the novel as he struggles with certain aspects of his identity, and how he deals with facing his alter ego My Hyde. This book has a thrilling undertone to it which allows for readers to stay engaged and interested. I recommend this book to high school students because it makes for a fun read while still teaching about important concepts.  "
+  },
+  {
+    "id": "flint",
+    "type": "human",
+    "content": "I have been very affected by The Stormlight Archive by Brandon Sanderson. This fantasy series had very relatable characters and over the top climaxes that resonated with me when I was going through a tough time. In particular, Sanderson's masterful writing of Kaladen, a knight who is sold into slavery, masterfully talks about topics of mental health and depression while also creating a well rounded character with an intriguing backstory. His climaxes are also extremely well written. The first book of The Stormlight Archive has a climax that has been rated as “one of the best in fantasy” and it is easy to see why. Sanderson's masterful manipulation of his world led to a perfect conclusion."
+  },
+  {
+    "id": "crimson",
+    "type": "human",
+    "content": "A book series that has been most meaningful to me is the Harry Potter series. I read it when I was a lot younger, and it helped me learn to enjoy reading. It also helped me bond with my family, as my parents and my brother are fans of the series, so it gave me something to talk about with them. The long books seemed daunting to me as a first grader, but as soon as I started reading them, I got excited and intrigued by the complicated characters and plot. Once I read the first book, I knew I wanted to keep reading the entire series. After I finished the Harry Potter series, I felt confident enough to read other long chapter books. "
+  },
+  {
+    "id": "glyph",
+    "type": "human",
+    "content": "The Giving Tree by Shel Silverstein is a popular children's picture book that teaches young kids the importance of sharing in relationships, and how it complicates. It also shows them what it can do to a person when they are giving too much, or don't notice when they ask for too much. \"The gift is in giving\" is what the story is saying but also to somewhat measure it. Throughout the novel, a boy asks for parts of the tree and the tree always says yes. By the end, the tree has become a stump, and that is when the boy finally realizes what he has done. He cries and feels horrible. Every child should read this story, because it will teach them to share and care, but also when to notice you are abusing that right."
+  },
+  {
+    "id": "cedar",
+    "type": "human",
+    "content": "A book series that was special and influential to me was the Arc of a Scythe series, written by Neal Shusterman. It takes place in a dystopian society run by a powerful AI called the Thunderhead, who has conquered disease and death and therefore has set up a system of Scythes to \"glean\" people. Scythes are randomly selected people, often in their teens, who train under an older Scythe. Every year Scythes are given a quota to reach, and a maximum that they are not allowed to exceed. The book follows two main characters, Rowan and Citra, and their rocky paths to becoming Scythes in a new wave of Scythes. This new wave is lead by Scythe Goddard. Their primary belief is that killing is an enjoyable act meant to remind people of their mortality. This belief causes their main objective to be to conduct mass and public killings. As all dystopian books do, or at least good ones, it makes you think about relevant issues in today's society and amplifies them greatly to create a dystopic environment that makes you question the future evolution of our current society. "
+  },
+  {
+    "id": "aura",
+    "type": "human",
+    "content": "The Great Gatsby, by F. Scott Fitzgerald, is one of the most iconic books from the 20th century. Nick Carraway writes about his experience with Jay Gatsby, a wealthy bootlegger. The novel is filled with themes of love and desire, class and wealth, and the American dream. Jay Gatsby's desire for Daisy, leads him to try and become part of the upper echelon of society. Although he achieved this, it eventually led to his downfall, as he was murdered in his own pool. The Great Gatsby shows how flawed the American dream can be."
+  },
+  {
+    "id": "echo",
+    "type": "human",
+    "content": "“The Song of Achilles” by Madeline Miller is particularly meaningful to me because it was the first book to make me cry. I felt genuinely connected to the two main characters, Achilles and Patroclus. The novel begins during their childhood, so as the reader, I watched them grow up and develop their relationship with each other. My attachment to the characters made their deaths immensely impactful. It felt like someone I personally knew had passed away. The way love, loyalty, and fate intertwined in their story left a lasting impression on me."
+  },
+  {
+    "id": "aqua",
     "type": "ai",
-    "tool": "model_v1",
-    "prompts": "Explain the concept of AI."
+    "content": "Honestly, probably The Hunger Games. not because it’s super deep or anything, but it kinda stuck with me. The whole thing about standing up to a messed-up system and fighting back was pretty cool. plus, Katniss doesn’t care what people think, and i wish i could be like that sometimes. it’s not like it changed my whole life, but it did make me think about power and how people can push back when stuff isn’t fair. Also, the idea of surviving in the woods seems like a good skill to have, just in case.",
+    "tool": "ChatGPT",
+    "prompts": "respond to the following prompt, which is for an in-class turing test exercise. Pretend you are a high school student. Write in a way that's informal, a bit sarcastic, with an unexpected response that would make people think that a human wrote it instead of AI: *What book (or book series) that you've read has been the more special, meaningful, or influential for you, and why? Respond in 500-700 characters.*  rewrite the hunger games response with the same content but without as much proper capitalization for some starting sentence words  make it a little less sarcastic, and less polishe  take out the rhetorical question  same content, but capitalize some of the starting letters, should be inconsistent"
   },
   {
-    "id": "sub003",
-    "content": "I remember my grandmother's kitchen, the smell of baking bread and the comforting warmth of the wood-burning stove. It was a place of love and laughter, where stories were shared and memories were made. Those simple moments are the ones I cherish the most, a reminder of the importance of family and connection.",
-    "type": "human"
-  },
-  {
-    "id": "sub004",
-    "content": "The city is a symphony of sounds, a chaotic orchestra of car horns, sirens, and the distant rumble of the subway. Yet, within this cacophony, there is a rhythm, a pulse that is unique to urban life. It's a constant reminder of the millions of stories unfolding simultaneously, each one a thread in the city's rich tapestry.",
+    "id": "harp",
     "type": "ai",
-    "tool": "model_v2",
-    "prompts": "Describe the sounds of a city."
+    "content": "The most meaningful series for me has been the Percy Jackson and the Olympians books by Rick Riordan. I started reading them when I was younger, and I felt like I grew up alongside the characters as they faced challenges and learned more about themselves. The blend of modern life with Greek mythology made the world feel exciting and believable. I also bonded with my mom over the series since we both love mythology and often talked about the stories together. Its mix of humor and heart makes it a series I’ll always consider my favorite. ",
+    "tool": "Chapt GPT",
+    "prompts": "You said: You are trying to pass a Turing test in a high school class. Create a 500-700 character response answering this prompt  You'll submit two responses: one that you write yourself, and one that you generate with AI.  This is a competition. You want both of your submissions to seem as \"authentic\" as possible. There are many ways to go about this. What book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters.  The series that has been most influential for me is Percy Jackson. Here are the key points. The long spanning timeline of the series is cool because I grew up with the characters as they matured. I also bonded with my mom over it because we both love greek mythology  Do not use em dashes. I'm going to give you a sample of my writing and I want you to mimic the tone and style. The most impactful series for me has been the Eragon series written by Christopher Paolini. It was recommended to me by a good friend and it immediately grabbed my attention. The immersive world and creative concepts have made sure that Eragon is one of my favorite fantasy worlds. I have read the entire series more than 6 times and I follow the progress of any new books. The character development throughout the series is amazing to watch. Also, the writer was 15 when he published the first book and the evolution of his writing style over the series is remarkable.   This is all good. I just want you to change the final line. \"the humor, adventure, and lessons about loyalty and courage make this series one i'll always come back to.\" I think you should have less examples, two at the most if that makes sense "
   },
   {
-    "id": "sub005",
-    "content": "Climate change is the defining challenge of our generation. The science is clear, and the stakes could not be higher. We must transition to a sustainable future, not just for ourselves, but for generations to come. It will require collective action, innovation, and a fundamental shift in our relationship with the planet.",
+    "id": "gold",
     "type": "ai",
-    "tool": "model_v1",
-    "prompts": "Explain the importance of addressing climate change."
+    "content": "Are you there god its me Margaret is a book i loved reading throughout my childhood. this book feels like a conversation with a friend who really gets what it’s like to be on the edge of growing up. Reading Margaret’s struggles with faith, fitting in, and all the confusing changes made me feel less alone and more understood. Judy Blume writes with such honesty and warmth that it reassured me it’s okay to have questions and feel unsure. This book stuck with me because it reminded me that growing up is messy but also full of hope.",
+    "tool": "Chatgpt",
+    "prompts": "1)write about are you there god its me What book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters. by judy blume using this prompt 2)make it sound more human 3)take out the quote 4)make it from first person"
   },
   {
-    "id": "sub006",
-    "content": "There's a special kind of magic to a rainy day. The gentle patter of drops against the windowpane, the cozy feeling of being indoors with a good book and a warm cup of tea. It's a time for reflection and introspection, a welcome respite from the hustle and bustle of everyday life.",
-    "type": "human"
-  },
-  {
-    "id": "sub007",
-    "content": "The vastness of space is humbling. To look up at the night sky and see countless stars, each one a distant sun, is to be reminded of our own insignificance in the grand scheme of things. Yet, it also fills me with a sense of wonder and a desire to explore the unknown.",
+    "id": "delta",
     "type": "ai",
-    "tool": "model_v2",
-    "prompts": "Write about looking at the stars."
+    "content": "The Harry Potter series has been the most meaningful for me because it was the first book that truly got me excited about reading. Right away, I got drawn into its magical world, but what made it special were the characters—Harry, Hermione, and Ron feel real and relatable, all of them facing challenges and learning lessons that I can see in my everyday life. Furthermore, their friendships, struggles, and bravery inspired me and showed me that reading can be both fun and meaningful. The story made enjoying books feel easy and natural.",
+    "tool": "Chat GPT",
+    "prompts": "write a response to this, responding with harry potter as the book. Include points about how it got you into reading and how the book series has good, relatable charectures: What book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters.  use less complicated words toward the end and start one sentence with furthermore  rewrite the passage, following all guidlines above to pass a turing test  replace \"I was instantly\" with something less AI sounding  replace each with all of them  Replace, reflect with that I can see in my"
   },
   {
-    "id": "sub008",
-    "content": "Music has a unique power to connect us. It transcends language and culture, speaking directly to our emotions. A single melody can evoke joy, sadness, or a sense of nostalgia. It's a universal language that reminds us of our shared humanity, the feelings that bind us all together in this complex world.",
-    "type": "human"
-  },
-  {
-    "id": "sub009",
-    "content": "The forest floor is a world of its own, a miniature ecosystem teeming with life. Mosses and fungi create a vibrant carpet, while insects and small animals scurry about their daily business. It’s a delicate balance, a reminder of the intricate web of life that sustains our planet and the need to protect these natural wonders.",
+    "id": "crest",
     "type": "ai",
-    "tool": "model_v1",
-    "prompts": "Describe a forest floor."
+    "content": "One of the most meaningful books I’ve ever read is The Book Thief by Markus Zusak. It’s about a girl living in Nazi Germany who finds comfort in books during a really hard time. What made the book different was that the story is told by Death, which was surprising and interesting. The book is sad in a lot of ways, but it also has hopeful moments that made me feel something. Reading it made me realize how powerful words and stories can be. They can give people hope even when things seem really dark. It also made me think about how important it is to appreciate the small moments of kindness in everyday life around us",
+    "tool": "Chat GPT",
+    "prompts": "Respond as a human to the following prompt: What book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters. make it less advanced make it more human get rid of m dashes and words like honestly get rid of the last sentence get rid of the last sentence get rid of the words from also to small how many characters is that keep the same style but make it longer make it longer and more human get rid of the last two sentences make this paragraph more human and 500-700 characters get rid of m dashes and the last two sentences take out the part about it staying longer and replace the word solace take out the part about coming across it and the word haunting take out the part about something you had not encountered befote take out the sentence about the characters feeling real make it 500-700 characters take out m dashes make it 500-700 character make it sound more human, these are complex thoughts, make it sound a like a freshman in high school wrote it take out m dashes and add another sentence take out the last sentence add nine more character. remember to make it sound like a high school freshman wrote it add one more word "
   },
   {
-    "id": "sub010",
-    "content": "To truly understand another person, you must listen not just with your ears, but with your heart. Empathy is the bridge that connects us, allowing us to share in each other's joys and sorrows. In a world that often feels divided, it is the most powerful tool we have for fostering understanding and compassion.",
-    "type": "human"
-  },
-  {
-    "id": "sub011",
-    "content": "Creativity is not something you can force. It’s like a gentle stream that flows when you least expect it. The key is to be open to it, to create space for your mind to wander and make unexpected connections. The best ideas often come not from intense focus, but from moments of quiet contemplation and playfulness.",
+    "id": "frost",
     "type": "ai",
-    "tool": "model_v2",
-    "prompts": "How does creativity work?"
+    "content": "Number the Stars by Lois Lowry showed me how far family can make you brave. Annemarie risked her life to help her friend, but she also acted to keep her family safe. I saw that love for those close to you can give you strength even when fear is near. Her care for her sister and parents made me think of my own family and how much I would do to help them. The book taught me that family ties can make ordinary kids act in ways that are truly brave. It made me value the small acts of love at home. I also learned that protecting family is a quiet kind of heroism that can change the world.",
+    "tool": "ChatGPT",
+    "prompts": "-Write me a paragraph about number the stars and how it changed your perspective on something -Write me a paragraph about number the stars and how it changed your perspective on something in your life without using words with more than 7 letters and 600 characters -Make it shorter and have a theme of family"
   },
   {
-    "id": "sub012",
-    "content": "The ocean is a force of nature, both beautiful and terrifying. Its gentle waves can be calming, while its powerful storms can be destructive. It’s a constant reminder of the power and mystery of the natural world, a source of endless fascination and respect for the forces that shape our planet.",
-    "type": "human"
+    "id": "gust",
+    "type": "ai",
+    "content": "Percy Jackson and the Olympians has always stuck with me. It’s not just a cool mix of mythology and adventure. It actually turns stuff like dyslexia and ADHD into strengths, which meant a lot to me because I always felt like I didn’t really fit in or was kinda different from everyone else. My favorite character is Clarisse La Rue. She’s way more than just the tough, angry girl most people see her as. She’s fierce and loyal, but also really insecure underneath, which makes her way more real and relatable than a lot of characters. The series showed me that being different isn’t a weakness. It’s what makes you powerful and unique.",
+    "tool": "Chatpgpt",
+    "prompts": "What juvenile book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters. make it sound like a teenager wrote it and add a bit about your favorite character and make it niche and controversial make it more formal extend to 663 characters make it sound like you're not responding to a prompt remove the dash add a few grammatical errors make it slightly more juvenile, like a teenager reflecting on their childhood make it slightly longer more human remove the dash make your favorite character more niche or controversial different character "
+  },
+  {
+    "id": "calm",
+    "type": "ai",
+    "content": "The Percy Jackson series has been the most meaningful for me. I first picked it up in my school library when I was around eleven not really expecting much. But once I started reading I couldn’t stop. Percy’s journey from a regular kid with ADHD and dyslexia, to discovering he’s the son of Poseidon really stuck with me. The way he learns to use what makes him different as a strength, changed how I saw challenges. I liked how he built close friendships with Annabeth and Grover, and how each quest tested his courage and loyalty. That series made me fall in love with reading, and believe that being different can actually be your strength.",
+    "tool": "ChatGPT",
+    "prompts": "1. write a response to the following prompt using extremely informal, shorthand language. begin it with \"wsg gng\". What book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters. 2. choose a less intellectual book 3. don't use incorrect spelling, but still use abbreviations common in text 4. use fewer abbreviations like fr and shorten more of the common words (for example, shorten something to smth) 5. it needs to be a little longer, so maybe include an anecdote such as how you came across percy jackson 6. use more common grammar structures. long compound sentences should be shorter (break commas into new sentences) and the em dash shouldn't be used. make sure that all abbreviations like \"fr\" are necessary rather than added on, 7. rewrite it but not informally 8. include more specific details about why percy jackson is important, such as plot points. 9. remove summaries such as \"it's funny, action packed...\" 10. introduce minor grammatical errors such as missing or extra commas"
+  },
+  {
+    "id": "apex",
+    "type": "ai",
+    "content": "The Handmaid’s Tale” by Margaret Atwood made me think a lot about what it means to be a woman. I’d read other books with strong female characters, but this one felt more real and scary. It showed how quickly people can lose their freedom and identity, especially women. While reading, I kept wondering what I would do if I were in Offred’s place. It made me realize how important it is to have control over your own life. After finishing it, I felt like I wanted to stand up for feminism more so something like that never happens in real life.",
+    "tool": "Chat GPT",
+    "prompts": "1. I'm doing an assignment on the Turing test where I'm writing two pieces on the prompt \"What book (or book series) that you've read has been the most special, meaningful, or influential for you, and why? Respond in 500-700 characters.\" One I wrote myself, which I will give below, and one must be written by an LLM. My goal is to make both submissions sound as human as possible. My classmates will vote on which sounds more human. With this in mind, write a piece on the prompt about the book \"A Handmaid's Tale\" using the style I employ in this submission. I wrote myself: [my human submission]  "
+  },
+  {
+    "id": "dove",
+    "type": "ai",
+    "content": "1984 by George Orwell tells the story of Winston Smith who lives in Oceania where the government watches everyone all the time. The Party controls what people say, think, and even remember. Winston feels trapped and starts to fight against the lies and the constant surveillance. He wants freedom and to be his true self, but it is very dangerous. This book shows how scary it is to live without privacy and why standing up to power truly matters for all people. It still feels very important today. ",
+    "tool": "chat gpt",
+    "prompts": "write me a paragraph of 500-600 charachters about 1984 by george wilson, make it human, use no m dashes, and no commas"
   }
 ]
