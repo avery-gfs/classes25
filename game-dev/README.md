@@ -6,6 +6,32 @@
 
 ---
 
+## Flappy Bird
+
+- Game over screen
+- Bird jump animation
+- Parallax scrolling
+
+---
+
+## Flappy Bird
+
+- Random gap
+- Scoring
+- Collisions
+- Boundary detection
+
+---
+
+## Flappy Bird
+
+- Gravity
+- Jumping
+- Obstacles and movement
+- Obstacle looping
+
+---
+
 ## Sprites, Images, Colors, Colliders
 
 - Colors
