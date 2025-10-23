@@ -10,7 +10,7 @@
 
 - Game over screen
 - Bird jump animation
-- Parallax scrolling
+- Parallax scrolling (debug with `camera.zoom`)
 
 ---
 

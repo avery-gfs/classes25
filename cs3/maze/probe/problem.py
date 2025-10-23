@@ -31,18 +31,9 @@ def update(r, c, symbol):
     time.sleep(0.05)
 
 
-def fill(r, c):
+def probe(r, c):
     cell = board[r][c]
-
-    if cell == "█" or cell == "▒":
-        return
-
     update(r, c, "▒")
 
-    fill(r - 1, c)
-    fill(r, c + 1)
-    fill(r + 1, c)
-    fill(r, c - 1)
 
-
-fill(1, 1)
+probe(1, 1)
