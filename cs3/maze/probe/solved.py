@@ -32,7 +32,7 @@ def update(r, c, symbol):
 
 
 def probe(r, c):
-    # Edit the code in `probe` to write a function that probes the board
+    # Edit the code below to make a function that fully probes the board
 
     cell = board[r][c]
 
