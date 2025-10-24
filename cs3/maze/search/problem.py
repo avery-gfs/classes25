@@ -33,6 +33,7 @@ def update(r, c, symbol):
 
 def search(r, c):
     cell = board[r][c]
+    update(r, c, "▒")
     return False
 
 
