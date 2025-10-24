@@ -92,10 +92,11 @@ update(2, 1, "▒")
 
 <img src="assets/probe.gif" height="380px" />
 
-Recursively "probe" every path in the maze. Don't worry about stopping when you
-find the goal ("B"). Make sure your probe accesses each cell of the maze. Make
-your probe erase previous path characters as it backtracks from exploring a
-branch.
+- Recursively "probe" every path in the maze
+- Don't worry about stopping when you find the goal ("B")
+- Make sure your probe accesses each cell of the maze
+- Make your probe erase previous path characters as it backtracks from exploring
+  a branch
 
 ---
 
