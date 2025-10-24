@@ -98,6 +98,21 @@ update(2, 1, "▒")
 - Make your probe erase previous path characters as it backtracks from exploring
   a branch
 
+## Probe Starter Code
+
+```py
+def probe(r, c):
+    # Edit the code below to make a function that fully probes the board
+
+    cell = board[r][c]
+
+    if cell == "█":
+        return
+
+    update(r, c, "▒")
+    probe(r + 1, c)
+```
+
 ---
 
 ## Merging Sorted Lists
