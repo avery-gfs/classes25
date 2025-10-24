@@ -1,16 +1,14 @@
-## Start and Game Over
-
----
-
-## Backgrounds and Parallax
-
----
-
 ## Flappy Bird
 
 - Game over screen
 - Bird jump animation
 - Parallax scrolling (debug with `camera.zoom`)
+
+## Testing and Feedback
+
+- A design choice you liked
+- A suggestion for an improvement
+- A question about the code
 
 ---
 
