@@ -32,6 +32,8 @@ def update(r, c, symbol):
 
 
 def probe(r, c):
+    # Edit the code in `probe` to write a function that probes the board
+
     cell = board[r][c]
 
     if cell == "█" or cell == "▒":

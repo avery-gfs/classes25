@@ -32,8 +32,16 @@ def update(r, c, symbol):
 
 
 def probe(r, c):
+    # Edit the code in `probe` to write a function that probes the board
+
+    # Access the character at the current position in the board
     cell = board[r][c]
+
+    # Update the board at the current position
     update(r, c, "▒")
+
+    # Probe the cell below the current one
+    probe(r + 1, c)
 
 
 probe(1, 1)
