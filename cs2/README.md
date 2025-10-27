@@ -408,35 +408,24 @@ The following two forms are equivalent
 Fraction.__rmul__(a, 3)
 ```
 
-## `__rdiv__`
-
-$$
-c \div \frac{a}{b} = c \cdot \frac{b}{a}
-$$
+## `r` Method Implementaion
 
 ```py
-class Fraction:
-    def __init__(self, num, den):
-        self.num = num
-        self.den = den
+def __rmul__(self, other):
+    # Make `other * self` work
+    return self * other
 
-    def __repr__(self):
-        return f"{self.num}/{self.den}"
+def __radd__(self, other):
+    # Make `other + self` work
+    return self + other
 
-    # ...
+def __rtruediv__(self, other):
+    # Make `other / self` work
+    return other * self.inverse()
 
-    def __rdiv__(self, other):
-        # Make `other / self` work
-        return other * self.inverse()
-```
-
-```py
-a = Fraction(7, 20)
-print(2 / a)
-```
-
-```txt
-40/7
+def __rsub__(self, other):
+    # Make `other - self` work
+    return -1 * self + other
 ```
 
 ---
