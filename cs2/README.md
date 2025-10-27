@@ -319,7 +319,7 @@ a = Fraction(5, 20)
 
 ```py
 a = Fraction(3, 7)
-b = Fraction(7 / 6)
+b = Fraction(7, 6)
 print(a * b)
 ```
 
