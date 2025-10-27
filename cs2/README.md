@@ -365,40 +365,6 @@ def __rtruediv__(self, other):
     # ...
 ```
 
-## `__rmul__`
-
-```py
-class Fraction:
-    def __init__(self, num, den):
-        self.num = num
-        self.den = den
-
-    def __repr__(self):
-        return f"{self.num}/{self.den}"
-
-    def __mul__(self, other):
-        # Make `self * other` work
-        if isinstance(other, int):
-            return Fraction(self.num * other, self.den)
-
-        num = self.num * other.num
-        den = self.den * other.den
-        return Fraction(num, den)
-
-    def __rmul__(self, other):
-        # Make `other * self` work
-        return self * other
-```
-
-```py
-a = Fraction(7, 20)
-print(3 * a)
-```
-
-```txt
-21/20
-```
-
 ## `__rmul__` Arguments
 
 The following two forms are equivalent
@@ -406,6 +372,10 @@ The following two forms are equivalent
 ```py
 3 * a
 Fraction.__rmul__(a, 3)
+```
+
+```txt
+21/20
 ```
 
 ## `r` Method Implementaion
