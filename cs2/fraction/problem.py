@@ -9,7 +9,7 @@ class Fraction:
 
     def inverse(self):
         # Calculate the inverse of a fraction (1 / self)
-        pass
+        return Fraction(1, 1)  # Change this
 
     def __mul__(self, other):
         # Make `self * other` work
