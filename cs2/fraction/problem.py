@@ -38,7 +38,7 @@ class Fraction:
 
     def __radd__(self, other):
         # Make `other + self` work
-        pass
+        return self + other
 
     def __rtruediv__(self, other):
         # Make `other / self` work
@@ -46,7 +46,7 @@ class Fraction:
 
     def __rsub__(self, other):
         # Make `other - self` work
-        pass
+        return -1 * self + other
 
 
 a = Fraction(5, 20)
@@ -60,25 +60,22 @@ print("\nTest multiplication:\n")
 
 print("a * Fraction(2, 3) = ", a * Fraction(2, 3))  # 1/6
 print("a * 6 = ", a * 6)  # 3/2
+print("6 * a = ", 6 * a)  # 3/2
 
 print("\nTest division:\n")
 
 print("a / Fraction(2, 3) = ", a / Fraction(2, 3))  # 3/8
 print("a / 6 = ", a / 6)  # 1/24
+print("6 / a = ", 6 / a)  # 24/1
 
 print("\nTest addition:\n")
 
 print("a + Fraction(2, 3) = ", a + Fraction(2, 3))  # 11/12
 print("a + 6 = ", a + 6)  # 25/4
+print("6 + a = ", 6 + a)  # 25/4
 
 print("\nTest subtraction:\n")
 
 print("a - Fraction(2, 3) = ", a - Fraction(2, 3))  # -5/12
 print("a - 6 = ", a - 6)  # -23/4
-
-print("\nTest r-methods:\n")
-
-print("6 * a = ", 6 * a)  # 3/2
-print("6 / a = ", 6 / a)  # 24/1
-print("6 + a = ", 6 + a)  # 25/4
 print("6 - a = ", 6 - a)  # 23/4
