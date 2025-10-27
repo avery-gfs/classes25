@@ -207,11 +207,20 @@ class Fraction:
 
 ```py
 a = Fraction(7, 20)
-print(a * 3)
+print(a * 3)  # Calls __mul__(a, 3)
 ```
 
 ```txt
 21/20
+```
+
+## `__mul__` Arguments
+
+The following two forms are equivalent
+
+```py
+a * 3
+Fraction.__mul__(a, 3)
 ```
 
 ## `__mul__` by Fraction
@@ -388,6 +397,15 @@ print(3 * a)
 
 ```txt
 21/20
+```
+
+## `__rmul__` Arguments
+
+The following two forms are equivalent
+
+```py
+3 * a
+Fraction.__rmul__(a, 3)
 ```
 
 ---
