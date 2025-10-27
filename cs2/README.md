@@ -310,7 +310,15 @@ def __truediv__(self, other):
     # ...
 ```
 
+## Addition Formula
+
 <img src="assets/add-fractions-formula.png" height="320" />
+
+```txt
+self.num   other.num   self.num * other.den + other.num * self.den
+──────── + ───────── = ───────────────────────────────────────────
+self.den   other.den               self.den * other.den
+```
 
 ## Simplification
 
@@ -376,26 +384,6 @@ Fraction.__rmul__(a, 3)
 
 ```txt
 21/20
-```
-
-## `r` Method Implementaion
-
-```py
-def __rmul__(self, other):
-    # Make `other * self` work
-    return self * other
-
-def __radd__(self, other):
-    # Make `other + self` work
-    return self + other
-
-def __rtruediv__(self, other):
-    # Make `other / self` work
-    return other * self.inverse()
-
-def __rsub__(self, other):
-    # Make `other - self` work
-    return -1 * self + other
 ```
 
 ---
