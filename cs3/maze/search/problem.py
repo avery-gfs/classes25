@@ -33,7 +33,22 @@ def update(r, c, symbol):
 
 def search(r, c):
     cell = board[r][c]
+
+    if cell == "█" or cell == "▒":
+        return False
+
     update(r, c, "▒")
+
+    if cell == "B":
+        return True
+
+    search(r - 1, c)
+    search(r, c + 1)
+    search(r + 1, c)
+    search(r, c - 1)
+
+    update(r, c, " ")
+
     return False
 
 
