@@ -50,12 +50,28 @@ maze = """
 search(6, 1)  # True
 ```
 
-<!--
 ## Search Procedure
 
-1) If the goal is reached, return `True`
-2) If we hit a wall or backtrack on the current path, return `False`
- -->
+1. If we hit a wall or backtrack on the current path, return `False`
+2. Mark the current cell with the path characters
+3. If the goal is reached, return `True`
+4. Run a child search in all four neighbor directions
+
+   - If any branch returns `True`, return `True` and skip subsequent search
+     branches
+
+   - Otherwise, erase the current path character and return `False`
+
+## Short Circuit Operators
+
+```py
+def getTrue():
+    print("Called getTrue")
+    return True
+
+True or getTrue()  # Doesn't call getTrue
+False or getTrue()  # Calls getTrue
+```
 
 ---
 
