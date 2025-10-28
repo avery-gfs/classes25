@@ -34,19 +34,19 @@ class Fraction:
 
     def __rmul__(self, other):
         # Make `other * self` work
-        pass
+        return self * other
 
     def __radd__(self, other):
         # Make `other + self` work
-        pass
+        return self + other
 
     def __rtruediv__(self, other):
         # Make `other / self` work
-        pass
+        return self.inverse() * other
 
     def __rsub__(self, other):
         # Make `other - self` work
-        pass
+        return -1 * self + other
 
 
 a = Fraction(5, 20)
