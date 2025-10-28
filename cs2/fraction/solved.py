@@ -62,7 +62,7 @@ class Fraction:
 
     def __rtruediv__(self, other):
         # Make `other / self` work
-        return other * self.inverse()
+        return self.inverse() * other
 
     def __rsub__(self, other):
         # Make `other - self` work

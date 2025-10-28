@@ -359,22 +359,6 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for *: 'int' and 'Fraction'
 ```
 
-```py
-def __radd__(self, other):
-    # ...
-
-def __rsub__(self, other):
-    # ...
-
-def __rmul__(self, other):
-    # ...
-
-def __rtruediv__(self, other):
-    # ...
-```
-
-## `__rmul__` Arguments
-
 The following two forms are equivalent
 
 ```py
@@ -382,8 +366,26 @@ The following two forms are equivalent
 Fraction.__rmul__(a, 3)
 ```
 
-```txt
-21/20
+## `r` Method Implementation
+
+"How can we rearrange the equation to put `self` on the left-hand side?"
+
+```py
+def __rmul__(self, other):
+    # Make `other * self` work
+    return self * other
+
+def __radd__(self, other):
+    # Make `other + self` work
+    return self + other
+
+def __rtruediv__(self, other):
+    # Make `other / self` work
+    return self.inverse() * other
+
+def __rsub__(self, other):
+    # Make `other - self` work
+    return -1 * self + other
 ```
 
 ---
