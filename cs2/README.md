@@ -344,6 +344,31 @@ print(a * b)
 1/2
 ```
 
+## Greatest Common Factor (Divisor)
+
+https://en.wikipedia.org/wiki/Euclidean_algorithm
+
+```py
+def gcd(a, b):
+    while b != 0:
+        tmp = b
+        b = a % b
+        a = tmp
+    return a
+```
+
+```py
+gcd(5, 20)
+gcd(12, 20)
+gcd(12, 27)
+```
+
+```py
+5
+4
+1
+```
+
 ## `r` Methods
 
 ```py
