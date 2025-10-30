@@ -1,3 +1,6 @@
+import re
+
+
 class Duration:
     def __init__(self, hours, minutes, seconds):
         self.totalSeconds = max(int(hours * 3600 + minutes * 60 + seconds), 0)
@@ -37,9 +40,11 @@ class Duration:
 
     @staticmethod
     def fromStr(durStr):
-        hours = int(durStr[:-7])
-        minutes = int(durStr[-6:-4])
-        seconds = int(durStr[-3:-1])
+        pattern = r"(\d+)h(\d+)m(\d+)s"
+        match = re.match(pattern, durStr)
+        hours = int(match.group(1))
+        minutes = int(match.group(2))
+        seconds = int(match.group(3))
         return Duration(hours, minutes, seconds)
 
 

@@ -1,3 +1,6 @@
+import re
+
+
 class Height:
     def __init__(self, feet, inches):
         self.totalInches = int(feet * 12 + inches)
@@ -36,8 +39,10 @@ class Height:
 
     @staticmethod
     def fromStr(heightStr):
-        feet = int(heightStr[:-4])
-        inches = int(heightStr[-3:-1])
+        pattern = r"(\d+)'(\d+)\""
+        match = re.match(pattern, heightStr)
+        feet = int(match.group(1))
+        inches = int(match.group(2))
         return Height(feet, inches)
 
 

@@ -1,3 +1,6 @@
+import re
+
+
 class Duration:
     def __init__(self, hours, minutes, seconds):
         pass
