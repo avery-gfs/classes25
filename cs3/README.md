@@ -69,7 +69,7 @@ def getTrue():
     print("Called getTrue")
     return True
 
-True or getTrue()  # Doesn't call getTrue
+True or getTrue()   # Doesn't call getTrue
 False or getTrue()  # Calls getTrue
 ```
 
