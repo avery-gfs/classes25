@@ -1,13 +1,12 @@
 class Duration:
     def __init__(self, hours, minutes, seconds):
         self.totalSeconds = max(int(hours * 3600 + minutes * 60 + seconds), 0)
+        self.hours = self.totalSeconds // 3600
+        self.minutes = (self.totalSeconds // 60) % 60
+        self.seconds = self.totalSeconds % 60
 
     def __str__(self):
-        hours = self.totalSeconds // 3600
-        minutes = (self.totalSeconds // 60) % 60
-        seconds = self.totalSeconds % 60
-
-        return f"{hours}h{minutes:02}m{seconds:02}s"
+        return f"{self.hours}h{self.minutes:02}m{self.seconds:02}s"
 
     def __eq__(self, other):
         return self.totalSeconds == other.totalSeconds
