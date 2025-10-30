@@ -1,6 +1,6 @@
 npm run fmt
 git checkout solutions
-git add .
+git add --all .
 git status
 git commit -m "update"
 git push
@@ -8,12 +8,12 @@ cd ../public
 git checkout master
 cp -r ../solutions/* .
 git rm **/solved.py package.json push
-git add .
+git add --all .
 git commit -m "update problems"
 git push
 cd ../../avery-gfs.github.io
 ./transfer.sh
-git add .
+git add --all .
 git status
 git commit -m "update site"
 git push
