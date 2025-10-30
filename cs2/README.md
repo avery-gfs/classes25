@@ -1,172 +1,72 @@
-<!-- height duration isinstance -->
-
-<!-- ## isinstance
+## Modulo and Floor Division
 
 ```py
-class Height:
-    def __init__(self, feet, inches):
-        self.feet = feet
-        self.inches = inches
+n = 123456
 
-    def __repr__(self):
-        return f"{self.feet}'{self.inches}\""
-
-height = Height(5, 6)
-n = 10
-
-isinstance(height, Height) # True
-isinstance(height, int)    # False
-
-isinstance(n, Height)      # False
-isinstance(n, int)         # True
+print(n % 100)            # 56
+print(n // 100 % 100)     # 34
+print(n // 10000)         # 12
 ```
 
----
-
-## Classes Review
-
-## Height
+## Modulo and Floor Division for Height
 
 ```py
-class Height:
-    def __init__(self, feet, inches):
-        self.feet = feet
-        self.inches = inches
+inches = 76
 
-    def __repr__(self):
-        return f"{self.feet}'{self.inches}\""
-
-
-h = Height(5, 6)
-
-print(h)  # 5'6"
+print(inches % 12)     # 4
+print(inches // 12)    # 6
 ```
 
-## \_\_add\_\_ and \_\_mul\_\_
+## Modulo and Floor Division for Duration
 
 ```py
-class Height:
-    def __init__(self, feet, inches):
-        self.feet = feet
-        self.inches = inches
+seconds = 7000
 
-    def __repr__(self):
-        return f"{self.feet}'{self.inches}\""
-
-    def __add__(self, other):
-        feet = self.feet + other.feet
-        inches = self.inches + other.inches
-        return Height(feet, inches)
-
-    def __sub__(self, other):
-        feet = self.feet - other.feet
-        inches = self.inches - other.inches
-        return Height(feet, inches)
-
-
-h = Height(5, 6)
-
-print(h)  # 5'6"
-print(h + Height(1, 4))  # 6'10"
-print(h - Height(1, 4))  # 4'2"
+print(seconds % 60)        # 40
+print(seconds // 60 % 60)  # 56
+print(seconds // 3600)     # 1
 ```
 
-See the bug?
+## Let's Write a Height Class
 
-## Invalid State
-
-```py
-h = Height(5, 6)
-
-print(h + Height(1, 4))  # 6'10"
-print(h - Height(1, 4))  # 4'2"
-print(h + Height(1, 10))  # 6'16"
-print(h - Height(1, 10))  # 4'-4"
-```
-
-## Corrections in \_\_init\_\_
-
-<div style="font-size: 16px;">
+<div style="font-size: 20px">
 
 ```py
-class Height:
-    def __init__(self, feet, inches):
-        while inches >= 12:
-            feet += 1
-            inches -= 12
+h = Height(5, 10)
 
-        while inches < 0:
-            feet -= 1
-            inches += 12
+str(h)              # 5'10"
 
-        self.feet = feet
-        self.inches = inches
+h == Height(5, 10)  # True
+h <= Height(5, 10)  # True
+h < Height(6, 0)    # True
+h > Height(4, 11)   # True
+h <= Height(5, 10)  # True
+h <= Height(6, 0)   # True
+h >= Height(4, 11)  # True
+h >= Height(5, 10)  # True
 
-    def __repr__(self):
-        return f"{self.feet}'{self.inches}\""
+h + Height(1, 0)    # 6'10"
+h + Height(0, 1)    # 5'11"
+h + Height(0, 4)    # 6'02"
+h + Height(1, 4)    # 7'02"
 
-    def __add__(self, other):
-        feet = self.feet + other.feet
-        inches = self.inches + other.inches
-        return Height(feet, inches)
+h - Height(1, 0)    # 4'10"
+h - Height(0, 1)    # 5'09"
+h - Height(0, 11)   # 4'11"
+h - Height(1, 11)   # 3'11"
 
-    def __sub__(self, other):
-        feet = self.feet - other.feet
-        inches = self.inches - other.inches
-        return Height(feet, inches)
+h * 2               # 11'08"
+h * 10              # 58'04"
 
+h / 2               # 2'11"
+h / 10              # 0'07"
 
-h = Height(5, 6)
-
-print(h)  # 5'6"
-print(h + Height(1, 4))  # 6'10"
-print(h - Height(1, 4))  # 4'2"
-print(h + Height(1, 10))  # 7'4"
-print(h - Height(1, 10))  # 3'8"
+print(Height.fromStr("5'06\""))  # 5'06"
 ```
 
 </div>
 
-## Alternative Representation
-
-```py
-class Height:
-    def __init__(self, feet, inches):
-        self.inches = feet * 12 + inches
-
-    def __repr__(self):
-        feet = self.inches // 12
-        inches = self.inches - feet * 12
-        return f"{feet}'{inches}\""
-
-    def __add__(self, other):
-        return Height(0, self.inches + other.inches)
-
-    def __sub__(self, other):
-        return Height(0, self.inches - other.inches)
-
-
-h = Height(5, 6)
-
-print(h)  # 5'6"
-print(h + Height(1, 4))  # 6'10"
-print(h - Height(1, 4))  # 4'2"
-print(h + Height(1, 10))  # 7'4"
-print(h - Height(1, 10))  # 3'8"
-```
-
-See the bug?
-
-## Invalid \_\_repr\_\_
-
-```py
-h = Height(5, 6)
-
-print(h - Height(2, 8))  # -3'10"
-```
-
-We could fix this, but don't worry about it for now
- -->
+---
 
 ## Fraction Class
 
