@@ -6,6 +6,7 @@ git commit -m "update"
 git push
 cd ../public
 git checkout master
+trash *
 cp -r ../solutions/* .
 git rm **/solved.py package.json push
 git add --all .
