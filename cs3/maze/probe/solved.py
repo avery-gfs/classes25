@@ -47,4 +47,4 @@ def probe(r, c):
     update(r, c, " ")
 
 
-probe(1, 9)
+probe(1, 1)
