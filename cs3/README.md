@@ -1,3 +1,198 @@
+## Refactoring
+
+<img src="assets/Code refactoring - Wikipedia.png" height="400px" />
+
+## Refactoring
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    elif num > high:
+        return high
+
+    elif num >= low and num <= high:
+        return num
+```
+
+```py
+clamp(-7, 0, 10)
+clamp(7, 0, 10)
+clamp(17, 0, 10)
+```
+
+```py
+0
+7
+10
+```
+
+## Refactoring
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    elif num > high:
+        return high
+
+    elif num >= low and num <= high:
+        return num
+```
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    elif num > high:
+        return high
+
+    else:
+        return num
+```
+
+## Refactoring
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    elif num > high:
+        return high
+
+    else:
+        return num
+```
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    if num > high:
+        return high
+
+    return num
+```
+
+## Refactoring
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    if num > high:
+        return high
+
+    return num
+```
+
+```py
+def clamp(num, low, high):
+    return max(low, min(high, num))
+```
+
+## Refactoring
+
+```py
+def clamp(num, low, high):
+    if num < low:
+        return low
+
+    elif num > high:
+        return high
+
+    elif num >= low and num <= high:
+        return num
+```
+
+```py
+def clamp(num, low, high):
+    return max(low, min(high, num))
+```
+
+## Ruff
+
+Code formatter and linter
+
+https://github.com/astral-sh/ruff?tab=readme-ov-file
+
+```txt
+python3 -m pip install ruff
+```
+
+https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+
+## Formatting
+
+```py
+def factorial(
+  n):
+   result  = 1
+
+   for i in range(1,n+1):
+
+        result*= i
+
+   return result
+
+print(
+ factorial(10))
+```
+
+```txt
+ruff format example.py
+```
+
+```py
+def factorial(n):
+    result = 1
+
+    for i in range(1, n + 1):
+        result *= i
+
+    return result
+
+print(factorial(10))
+```
+
+## Linting
+
+```py
+def factorial(n):
+    result = 1
+
+    for i in range(1, n + 1):
+        resutl *= i
+
+    return result
+
+print(factorial(0))
+```
+
+```txt
+ruff check example.py
+```
+
+```py
+F821 Undefined name `resutl`
+ --> /home/anortonsmith/Documents/classes/solutions/test.py:5:9
+  |
+4 |     for i in range(1, n + 1):
+5 |         resutl *= i
+  |         ^^^^^^
+6 |
+7 |     return result
+  |
+```
+
+---
+
 ## Maze Search
 
 ```py
