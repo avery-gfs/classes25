@@ -1,3 +1,6 @@
+# Refactor the code for these functions to make it better
+# You'll find **lots** of room for improvement
+
 import math
 
 
