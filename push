@@ -8,7 +8,7 @@ cd ../public
 git checkout master
 trash *
 cp -r ../solutions/* .
-rm **/solved* package.json push
+trash **/solved* package.json push
 git add --all .
 git commit -m "update problems"
 git push
