@@ -1,0 +1,21 @@
+npm run fmt
+git checkout solutions
+git add --all .
+git status
+git commit -m "update"
+git push
+cd ../public
+git checkout master
+trash *
+cp -r ../solutions/* .
+ls **/solved*
+git rm **/solved* package.json push
+git add --all .
+git commit -m "update problems"
+git push
+cd ../../avery-gfs.github.io
+./transfer.sh
+git add --all .
+git status
+git commit -m "update site"
+git push

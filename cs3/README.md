@@ -116,6 +116,21 @@ def clamp(num, low, high):
     return max(low, min(high, num))
 ```
 
+## Comments
+
+```py
+"""
+Please for the love of all that is good in the world, never
+do this.
+"""
+```
+
+```py
+# Comments in Python use hash '#' symbols
+```
+
+Most editors will let you toggle comments on/off using `ctrl + /` or `cmd + /`
+
 ## Ruff
 
 Code formatter and linter
