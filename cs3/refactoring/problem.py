@@ -179,7 +179,7 @@ def rpsWinner(player, ai):
             return "player"
         if ai == "paper":
             return "tie"
-        if ai == "ai":
+        if ai == "scissors":
             return "player"
     if player == "scissors":
         if ai == "rock":
@@ -197,7 +197,7 @@ print(rpsWinner("paper", "paper"))
 # ---------------------------------------------------------
 
 
-def factors(num):
+def primeFactors(num):
     results = []
     div = 2
 
@@ -212,5 +212,5 @@ def factors(num):
     return results
 
 
-print(factors(60))
-print(factors(100000001))
+print(primeFactors(60))
+print(primeFactors(100000001))

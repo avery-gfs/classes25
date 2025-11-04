@@ -138,7 +138,7 @@ print(rpsWinner("paper", "paper"))
 # ---------------------------------------------------------
 
 
-def factors(num):
+def primeFactors(num):
     results = []
     div = 2
 
@@ -153,5 +153,5 @@ def factors(num):
     return results
 
 
-print(factors(60))
-print(factors(100000001))
+print(primeFactors(60))
+print(primeFactors(100000001))
