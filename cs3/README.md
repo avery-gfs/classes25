@@ -118,18 +118,136 @@ def clamp(num, low, high):
 
 ## Comments
 
+Please for the love of all that is good in the world, never do this
+
 ```py
 """
-Please for the love of all that is good in the world, never
-do this.
+def clamp(num, low, high):
+    return max(low, min(high, num))
 """
 ```
 
+Comments in Python use hash `#` symbols
+
 ```py
-# Comments in Python use hash '#' symbols
+# def clamp(num, low, high):
+#     return max(low, min(high, num))
 ```
 
 Most editors will let you toggle comments on/off using `ctrl + /` or `cmd + /`
+
+## Comments
+
+```py
+def search(r, c):
+    cell = board[r][c]
+
+    if cell == "█" or cell == "▒":
+        return False
+
+    update(r, c, "▒")
+
+    """
+    if cell == "B":
+        return True
+    """
+
+    if search(r - 1, c) or search(r + 1, c) or search(r, c - 1) or search(r, c + 1):
+        return True
+
+    update(r, c, " ")
+    return False
+```
+
+## Comments
+
+```py
+"""
+def search(r, c):
+    cell = board[r][c]
+
+    if cell == "█" or cell == "▒":
+        return False
+
+    update(r, c, "▒")
+
+    """
+    if cell == "B":
+        return True
+    """
+
+    if search(r - 1, c) or search(r + 1, c) or search(r, c - 1) or search(r, c + 1):
+        return True
+
+    update(r, c, " ")
+    return False
+"""
+```
+
+**NOT COMPOSIBLE**
+
+## Comments
+
+```py
+def search(r, c):
+    cell = board[r][c]
+
+    if cell == "█" or cell == "▒":
+        return False
+
+    update(r, c, "▒")
+
+    # if cell == "B":
+    #     return True
+
+    if search(r - 1, c) or search(r + 1, c) or search(r, c - 1) or search(r, c + 1):
+        return True
+
+    update(r, c, " ")
+    return False
+```
+
+## Comments
+
+```py
+# def search(r, c):
+#     cell = board[r][c]
+
+#     if cell == "█" or cell == "▒":
+#         return False
+
+#     update(r, c, "▒")
+
+#     # if cell == "B":
+#     #     return True
+
+#     if search(r - 1, c) or search(r + 1, c) or search(r, c - 1) or search(r, c + 1):
+#         return True
+
+#     update(r, c, " ")
+#     return False
+```
+
+**COMPOSIBLE**
+
+## Comments
+
+You can have nested lists
+
+```py
+["a", "b", ["c", "d"]]
+```
+
+because lists use different starting and ending delimeters (`[` vs `]`)
+
+You can't have nested strings (without using escape characters or different
+quote characters)
+
+```py
+"germantown "friends" school"
+```
+
+because strings use `"` for as both the starting and ending delimeter
 
 ## Ruff
 
