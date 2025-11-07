@@ -23,6 +23,9 @@ class Duration:
     def __ge__(self, other):
         pass
 
+    def __neg__(self):
+        pass
+
     def __add__(self, other):
         pass
 
@@ -33,9 +36,6 @@ class Duration:
         pass
 
     def __truediv__(self, n):
-        pass
-
-    def __neg__(self):
         pass
 
 
@@ -66,6 +66,7 @@ print("test / :", Duration(1, 23, 4) / 2 == Duration(0, 41, 32))
 print("test / :", Duration(1, 23, 4) / 10 == Duration(0, 8, 18))
 
 print("test negative :", str(Duration(0, 0, -100)) == "-0h01m40s")
+print("test negative :", str(Duration(-1, -1, -1)) == "-1h01m01s")
 print("test negative :", -Duration(0, 0, 100) == Duration(0, 0, -100))
 print("test negative :", Duration(1, 23, 4) - Duration(1, 23, 5) == Duration(0, 0, -1))
 print("test negative :", Duration(0, 0, 1) - Duration(1, 0, 0) == Duration(0, -59, -59))
