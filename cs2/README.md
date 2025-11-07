@@ -1,85 +1,3 @@
-## Negatives
-
-```py
-class Duration:
-    def __init__(self, hours, minutes, seconds):
-        self.totalSeconds = int(hours * 3600 + minutes * 60 + seconds)
-        self.hours = self.totalSeconds // 3600
-        self.minutes = self.totalSeconds // 60 % 60
-        self.seconds = self.totalSeconds % 60
-```
-
-```py
-print(Duration(0, 0, -100))
-print(Duration(-1, -1, -1))
-```
-
-```txt
--1h58m20s
--2h58m59s
-```
-
-```txt
--0h01m40s
--1h01m01s
-```
-
-## `__neg__`
-
-```py
-def __neg__(self):
-    return # ...
-```
-
-```py
--Duration(0, 0, 100)
-
-Duration(0, 0, -100)
-```
-
-## Negatives
-
-```py
-print(str(Duration(0, 0, -100)) == "-0h01m40s")
-
-print(-Duration(0, 0, 100) == Duration(0, 0, -100))
-
-print(Duration(1, 23, 4) - Duration(1, 23, 5) == Duration(0, 0, -1))
-
-print(Duration(0, 0, 1) - Duration(1, 0, 0) == Duration(0, -59, -59))
-```
-
-## `abs`
-
-```py
-abs()
-```
-
-```py
-abs(-5)
-abs(0)
-abs(5)
-```
-
-```txt
-5
-0
-5
-```
-
-## Negatives
-
-```py
-class Duration:
-    def __init__(self, hours, minutes, seconds):
-        self.totalSeconds = int(hours * 3600 + minutes * 60 + seconds)
-        self.hours = self.totalSeconds // 3600
-        self.minutes = self.totalSeconds // 60 % 60
-        self.seconds = self.totalSeconds % 60
-```
-
----
-
 ## Modulo and Floor Division
 
 ```py
@@ -107,6 +25,24 @@ seconds = 7000
 print(seconds % 60)        # 40
 print(seconds // 60 % 60)  # 56
 print(seconds // 3600)     # 1
+```
+
+## `abs`
+
+```py
+abs()
+```
+
+```py
+abs(-5)
+abs(0)
+abs(5)
+```
+
+```txt
+5
+0
+5
 ```
 
 ## Let's Write a Height Class
@@ -140,6 +76,8 @@ Height(5, 10) * 10              # 58'04"
 
 Height(5, 10) / 2               # 2'11"
 Height(5, 10) / 10              # 0'07"
+
+-Height(5, 10)                  # -5'10"
 ```
 
 </div>

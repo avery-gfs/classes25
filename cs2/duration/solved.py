@@ -4,16 +4,19 @@ import re
 class Duration:
     def __init__(self, hours, minutes, seconds):
         self.totalSeconds = int(hours * 3600 + minutes * 60 + seconds)
-        absSeconds = abs(self.totalSeconds)
-        self.hours = absSeconds // 3600
-        self.minutes = absSeconds // 60 % 60
-        self.seconds = absSeconds % 60
+
+        self.hours = abs(self.totalSeconds) // 3600
+        self.minutes = abs(self.totalSeconds) // 60 % 60
+        self.seconds = abs(self.totalSeconds) % 60
+
+        if self.totalSeconds < 0:
+            self.hours *= -1
+            self.minutes *= -1
+            self.seconds *= -1
 
     def __str__(self):
-        if self.totalSeconds < 0:
-            return f"-{self.hours}h{self.minutes:02}m{self.seconds:02}s"
-
-        return f"{self.hours}h{self.minutes:02}m{self.seconds:02}s"
+        sign = "-" if self.totalSeconds < 0 else ""
+        return f"{sign}{abs(self.hours)}h{abs(self.minutes):02}m{abs(self.seconds):02}s"
 
     def __eq__(self, other):
         return self.totalSeconds == other.totalSeconds
@@ -30,6 +33,9 @@ class Duration:
     def __ge__(self, other):
         return self.totalSeconds >= other.totalSeconds
 
+    def __neg__(self):
+        return Duration(0, 0, -self.totalSeconds)
+
     def __add__(self, other):
         return Duration(0, 0, self.totalSeconds + other.totalSeconds)
 
@@ -41,9 +47,6 @@ class Duration:
 
     def __truediv__(self, n):
         return Duration(0, 0, self.totalSeconds / n)
-
-    def __neg__(self):
-        return Duration(0, 0, -self.totalSeconds)
 
 
 print("test str() :", str(Duration(1, 23, 4)) == "1h23m04s")
