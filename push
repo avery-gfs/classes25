@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 shopt -s globstar
 
+trash **/.~lock*
 npm run fmt
 git checkout solutions
 git add --all .
