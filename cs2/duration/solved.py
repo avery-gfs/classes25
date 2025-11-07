@@ -3,12 +3,16 @@ import re
 
 class Duration:
     def __init__(self, hours, minutes, seconds):
-        self.totalSeconds = max(int(hours * 3600 + minutes * 60 + seconds), 0)
-        self.hours = self.totalSeconds // 3600
-        self.minutes = (self.totalSeconds // 60) % 60
-        self.seconds = self.totalSeconds % 60
+        self.totalSeconds = int(hours * 3600 + minutes * 60 + seconds)
+        absSeconds = abs(self.totalSeconds)
+        self.hours = absSeconds // 3600
+        self.minutes = absSeconds // 60 % 60
+        self.seconds = absSeconds % 60
 
     def __str__(self):
+        if self.totalSeconds < 0:
+            return f"-{self.hours}h{self.minutes:02}m{self.seconds:02}s"
+
         return f"{self.hours}h{self.minutes:02}m{self.seconds:02}s"
 
     def __eq__(self, other):
@@ -38,45 +42,38 @@ class Duration:
     def __truediv__(self, n):
         return Duration(0, 0, self.totalSeconds / n)
 
-    @staticmethod
-    def fromStr(durStr):
-        pattern = r"(\d+)h(\d+)m(\d+)s"
-        match = re.match(pattern, durStr)
-        hours = int(match.group(1))
-        minutes = int(match.group(2))
-        seconds = int(match.group(3))
-        return Duration(hours, minutes, seconds)
+    def __neg__(self):
+        return Duration(0, 0, -self.totalSeconds)
 
 
-d = Duration(1, 23, 4)
+print("test str() :", str(Duration(1, 23, 4)) == "1h23m04s")
 
-print(str(d) == "1h23m04s")
+print("test == :", Duration(1, 23, 4) == Duration(1, 23, 4))
+print("test <= :", Duration(1, 23, 4) <= Duration(1, 23, 4))
+print("test < :", Duration(1, 23, 4) < Duration(4, 0, 0))
+print("test > :", Duration(1, 23, 4) > Duration(0, 50, 50))
+print("test <= :", Duration(1, 23, 4) <= Duration(1, 23, 4))
+print("test <= :", Duration(1, 23, 4) <= Duration(4, 0, 0))
+print("test >= :", Duration(1, 23, 4) >= Duration(0, 50, 50))
+print("test >= :", Duration(1, 23, 4) >= Duration(1, 23, 4))
 
-print(d == Duration(1, 23, 4))
-print(d <= Duration(1, 23, 4))
-print(d < Duration(4, 0, 0))
-print(d > Duration(0, 50, 50))
-print(d <= Duration(1, 23, 4))
-print(d <= Duration(4, 0, 0))
-print(d >= Duration(0, 50, 50))
-print(d >= Duration(1, 23, 4))
+print("test + :", Duration(1, 23, 4) + Duration(10, 0, 0) == Duration(11, 23, 4))
+print("test + :", Duration(1, 23, 4) + Duration(0, 10, 0) == Duration(1, 33, 4))
+print("test + :", Duration(1, 23, 4) + Duration(0, 0, 10) == Duration(1, 23, 14))
+print("test + :", Duration(1, 23, 4) + Duration(10, 57, 57) == Duration(12, 21, 1))
 
-print(d + Duration(10, 0, 0) == Duration(11, 23, 4))
-print(d + Duration(0, 10, 0) == Duration(1, 33, 4))
-print(d + Duration(0, 0, 10) == Duration(1, 23, 14))
-print(d + Duration(0, 57, 0) == Duration(2, 20, 4))
-print(d + Duration(0, 0, 57) == Duration(1, 24, 1))
-print(d + Duration(10, 57, 57) == Duration(12, 21, 1))
+print("test - :", Duration(1, 23, 4) - Duration(1, 0, 0) == Duration(0, 23, 4))
+print("test - :", Duration(1, 23, 4) - Duration(0, 57, 0) == Duration(0, 26, 4))
+print("test - :", Duration(1, 23, 4) - Duration(0, 0, 57) == Duration(1, 22, 7))
 
-print(d - Duration(10, 0, 0) == Duration(0, 0, 0))
-print(d - Duration(0, 57, 0) == Duration(0, 26, 4))
-print(d - Duration(0, 0, 57) == Duration(1, 22, 7))
-print(d - Duration(10, 57, 57) == Duration(0, 0, 0))
+print("test * :", Duration(1, 23, 4) * 2 == Duration(2, 46, 8))
+print("test * :", Duration(1, 23, 4) * 10 == Duration(13, 50, 40))
 
-print(d * 2 == Duration(2, 46, 8))
-print(d * 10 == Duration(13, 50, 40))
+print("test / :", Duration(1, 23, 4) / 2 == Duration(0, 41, 32))
+print("test / :", Duration(1, 23, 4) / 10 == Duration(0, 8, 18))
 
-print(d / 2 == Duration(0, 41, 32))
-print(d / 10 == Duration(0, 8, 18))
-
-print(Duration.fromStr("1h23m04s") == Duration(1, 23, 4))
+print("test negative :", str(Duration(0, 0, -100)) == "-0h01m40s")
+print("test negative :", str(Duration(-1, -1, -1)) == "-1h01m01s")
+print("test negative :", -Duration(0, 0, 100) == Duration(0, 0, -100))
+print("test negative :", Duration(1, 23, 4) - Duration(1, 23, 5) == Duration(0, 0, -1))
+print("test negative :", Duration(0, 0, 1) - Duration(1, 0, 0) == Duration(0, -59, -59))

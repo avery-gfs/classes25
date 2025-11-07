@@ -1,18 +1,9 @@
-# https://en.wikipedia.org/wiki/Greatest_common_divisor
-
-
-def gcd(a, b):
-    while b != 0:
-        tmp = b
-        b = a % b
-        a = tmp
-    return a
+import math
 
 
 class Fraction:
     def __init__(self, num, den):
-        # Challenge: automatically simplify fractions
-        divisor = gcd(num, den)
+        divisor = math.gcd(num, den)
         self.num = num // divisor
         self.den = den // divisor
 

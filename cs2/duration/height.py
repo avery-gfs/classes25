@@ -37,42 +37,30 @@ class Height:
     def __truediv__(self, n):
         return Height(0, self.totalInches / n)
 
-    @staticmethod
-    def fromStr(heightStr):
-        pattern = r"(\d+)'(\d+)\""
-        match = re.match(pattern, heightStr)
-        feet = int(match.group(1))
-        inches = int(match.group(2))
-        return Height(feet, inches)
 
+print(Height(5, 10))
 
-h = Height(5, 10)
+print(Height(5, 10) == Height(5, 10))
+print(Height(5, 10) <= Height(5, 10))
+print(Height(5, 10) < Height(6, 0))
+print(Height(5, 10) > Height(4, 11))
+print(Height(5, 10) <= Height(5, 10))
+print(Height(5, 10) <= Height(6, 0))
+print(Height(5, 10) >= Height(4, 11))
+print(Height(5, 10) >= Height(5, 10))
 
-print(h)
+print(Height(5, 10) + Height(1, 0))
+print(Height(5, 10) + Height(0, 1))
+print(Height(5, 10) + Height(0, 4))
+print(Height(5, 10) + Height(1, 4))
 
-print(h == Height(5, 10))
-print(h <= Height(5, 10))
-print(h < Height(6, 0))
-print(h > Height(4, 11))
-print(h <= Height(5, 10))
-print(h <= Height(6, 0))
-print(h >= Height(4, 11))
-print(h >= Height(5, 10))
+print(Height(5, 10) - Height(1, 0))
+print(Height(5, 10) - Height(0, 1))
+print(Height(5, 10) - Height(0, 11))
+print(Height(5, 10) - Height(1, 11))
 
-print(h + Height(1, 0))
-print(h + Height(0, 1))
-print(h + Height(0, 4))
-print(h + Height(1, 4))
+print(Height(5, 10) * 2)
+print(Height(5, 10) * 10)
 
-print(h - Height(1, 0))
-print(h - Height(0, 1))
-print(h - Height(0, 11))
-print(h - Height(1, 11))
-
-print(h * 2)
-print(h * 10)
-
-print(h / 2)
-print(h / 10)
-
-print(Height.fromStr("5'06\"") == Height(5, 6))
+print(Height(5, 10) / 2)
+print(Height(5, 10) / 10)

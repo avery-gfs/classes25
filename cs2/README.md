@@ -1,3 +1,85 @@
+## Negatives
+
+```py
+class Duration:
+    def __init__(self, hours, minutes, seconds):
+        self.totalSeconds = int(hours * 3600 + minutes * 60 + seconds)
+        self.hours = self.totalSeconds // 3600
+        self.minutes = self.totalSeconds // 60 % 60
+        self.seconds = self.totalSeconds % 60
+```
+
+```py
+print(Duration(0, 0, -100))
+print(Duration(-1, -1, -1))
+```
+
+```txt
+-1h58m20s
+-2h58m59s
+```
+
+```txt
+-0h01m40s
+-1h01m01s
+```
+
+## `__neg__`
+
+```py
+def __neg__(self):
+    return # ...
+```
+
+```py
+-Duration(0, 0, 100)
+
+Duration(0, 0, -100)
+```
+
+## Negatives
+
+```py
+print(str(Duration(0, 0, -100)) == "-0h01m40s")
+
+print(-Duration(0, 0, 100) == Duration(0, 0, -100))
+
+print(Duration(1, 23, 4) - Duration(1, 23, 5) == Duration(0, 0, -1))
+
+print(Duration(0, 0, 1) - Duration(1, 0, 0) == Duration(0, -59, -59))
+```
+
+## `abs`
+
+```py
+abs()
+```
+
+```py
+abs(-5)
+abs(0)
+abs(5)
+```
+
+```txt
+5
+0
+5
+```
+
+## Negatives
+
+```py
+class Duration:
+    def __init__(self, hours, minutes, seconds):
+        self.totalSeconds = int(hours * 3600 + minutes * 60 + seconds)
+        self.hours = self.totalSeconds // 3600
+        self.minutes = self.totalSeconds // 60 % 60
+        self.seconds = self.totalSeconds % 60
+```
+
+---
+
 ## Modulo and Floor Division
 
 ```py
@@ -32,36 +114,32 @@ print(seconds // 3600)     # 1
 <div style="font-size: 20px">
 
 ```py
-h = Height(5, 10)
+str(Height(5, 10))              # 5'10"
 
-str(h)              # 5'10"
+Height(5, 10) == Height(5, 10)  # True
+Height(5, 10) <= Height(5, 10)  # True
+Height(5, 10) < Height(6, 0)    # True
+Height(5, 10) > Height(4, 11)   # True
+Height(5, 10) <= Height(5, 10)  # True
+Height(5, 10) <= Height(6, 0)   # True
+Height(5, 10) >= Height(4, 11)  # True
+Height(5, 10) >= Height(5, 10)  # True
 
-h == Height(5, 10)  # True
-h <= Height(5, 10)  # True
-h < Height(6, 0)    # True
-h > Height(4, 11)   # True
-h <= Height(5, 10)  # True
-h <= Height(6, 0)   # True
-h >= Height(4, 11)  # True
-h >= Height(5, 10)  # True
+Height(5, 10) + Height(1, 0)    # 6'10"
+Height(5, 10) + Height(0, 1)    # 5'11"
+Height(5, 10) + Height(0, 4)    # 6'02"
+Height(5, 10) + Height(1, 4)    # 7'02"
 
-h + Height(1, 0)    # 6'10"
-h + Height(0, 1)    # 5'11"
-h + Height(0, 4)    # 6'02"
-h + Height(1, 4)    # 7'02"
+Height(5, 10) - Height(1, 0)    # 4'10"
+Height(5, 10) - Height(0, 1)    # 5'09"
+Height(5, 10) - Height(0, 11)   # 4'11"
+Height(5, 10) - Height(1, 11)   # 3'11"
 
-h - Height(1, 0)    # 4'10"
-h - Height(0, 1)    # 5'09"
-h - Height(0, 11)   # 4'11"
-h - Height(1, 11)   # 3'11"
+Height(5, 10) * 2               # 11'08"
+Height(5, 10) * 10              # 58'04"
 
-h * 2               # 11'08"
-h * 10              # 58'04"
-
-h / 2               # 2'11"
-h / 10              # 0'07"
-
-print(Height.fromStr("5'06\""))  # 5'06"
+Height(5, 10) / 2               # 2'11"
+Height(5, 10) / 10              # 0'07"
 ```
 
 </div>

@@ -1,3 +1,7 @@
+## Timing
+
+---
+
 ## Functions
 
 Functions help us reduce repetition in our code and build more powerful
@@ -161,6 +165,9 @@ Hobbies, sports, siblings, future study.
 - Multi-user input
 - Bouncing Collisions
 - Why is ball slower when it moves horizontally?
+
+<br />
+<br />
 
 1. Two sprites with separate controls
 2. Ball with movement, bouncing off walls
