@@ -50,6 +50,8 @@ class Duration:
 
 
 print("test str() :", str(Duration(1, 23, 4)) == "1h23m04s")
+print("test str() :", str(Duration(0, 0, -100)) == "-0h01m40s")
+print("test str() :", str(Duration(-1, -1, -1)) == "-1h01m01s")
 
 print("test == :", Duration(1, 23, 4) == Duration(1, 23, 4))
 print("test <= :", Duration(1, 23, 4) <= Duration(1, 23, 4))
@@ -65,18 +67,16 @@ print("test + :", Duration(1, 23, 4) + Duration(0, 10, 0) == Duration(1, 33, 4))
 print("test + :", Duration(1, 23, 4) + Duration(0, 0, 10) == Duration(1, 23, 14))
 print("test + :", Duration(1, 23, 4) + Duration(10, 57, 57) == Duration(12, 21, 1))
 
+print("test negative :", -Duration(0, 0, 100) == Duration(0, 0, -100))
+
 print("test - :", Duration(1, 23, 4) - Duration(1, 0, 0) == Duration(0, 23, 4))
 print("test - :", Duration(1, 23, 4) - Duration(0, 57, 0) == Duration(0, 26, 4))
 print("test - :", Duration(1, 23, 4) - Duration(0, 0, 57) == Duration(1, 22, 7))
+print("test - :", Duration(1, 23, 4) - Duration(1, 23, 5) == Duration(0, 0, -1))
+print("test - :", Duration(0, 0, 1) - Duration(1, 0, 0) == Duration(0, -59, -59))
 
 print("test * :", Duration(1, 23, 4) * 2 == Duration(2, 46, 8))
 print("test * :", Duration(1, 23, 4) * 10 == Duration(13, 50, 40))
 
 print("test / :", Duration(1, 23, 4) / 2 == Duration(0, 41, 32))
 print("test / :", Duration(1, 23, 4) / 10 == Duration(0, 8, 18))
-
-print("test negative :", str(Duration(0, 0, -100)) == "-0h01m40s")
-print("test negative :", str(Duration(-1, -1, -1)) == "-1h01m01s")
-print("test negative :", -Duration(0, 0, 100) == Duration(0, 0, -100))
-print("test negative :", Duration(1, 23, 4) - Duration(1, 23, 5) == Duration(0, 0, -1))
-print("test negative :", Duration(0, 0, 1) - Duration(1, 0, 0) == Duration(0, -59, -59))
