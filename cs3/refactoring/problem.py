@@ -5,6 +5,8 @@ import math
 
 
 def clamp(num, low, high):
+    # Hints: min, max
+
     if num < low:
         return low
 
@@ -23,6 +25,7 @@ print(clamp(17, 0, 10))
 
 
 def priceTag(a, b):
+    # Hints: variable names, format strings
     return "A " + a + " costs $" + str(b)
 
 
@@ -32,6 +35,8 @@ print(priceTag("banana", 10))
 
 
 def sign(num):
+    # Hints: redundant conditionals, `is` operator
+
     if (num > 0) == True:
         return "positive"
 
@@ -50,6 +55,8 @@ print(sign(-7))
 
 
 def isEven(num):
+    # Hints: `%` operator
+
     half = num / 2
 
     if half == round(half):
@@ -65,6 +72,8 @@ print(isEven(8))
 
 
 def sum(numbers):
+    # Hints: variable name, for loop indices vs values
+
     sum = 0
 
     for index in range(len(numbers)):
@@ -80,6 +89,8 @@ print(sum([]))
 
 
 def countEvens(numbers):
+    # Hints: sum funciton, generator expressions
+
     count = 0
 
     for n in numbers:
@@ -97,6 +108,8 @@ print(countEvens([1, 4, 2, 7, 3, 1]))
 
 
 def shout(words):
+    # Hints: `join` method, generator expressions
+
     result = ""
     index = 0
 
@@ -116,6 +129,8 @@ print(shout(["germantown", "friends", "school"]))
 
 
 def hexToDec(hexStr):
+    # Hints: dictionaries, combine loops
+
     digitVals = []
 
     for d in hexStr:
@@ -167,6 +182,8 @@ print(hexToDec("1a"))  # Should print 26
 
 
 def rpsWinner(player, ai):
+    # Hints: dictionaries
+
     if player == "rock":
         if ai == "rock":
             return "tie"
@@ -198,6 +215,8 @@ print(rpsWinner("paper", "paper"))
 
 
 def primeFactors(num):
+    # Hints: efficiency, loop condition
+
     results = []
     div = 2
 

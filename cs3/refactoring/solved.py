@@ -25,7 +25,7 @@ def sign(num):
     if num > 0:
         return "positive"
 
-    elif num == 0:
+    if num == 0:
         return "zero"
 
     return "negative"
