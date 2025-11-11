@@ -16,7 +16,7 @@ add string as query param so link can be saved, changing input string should upd
 update this code so i can click outside and drag to box select multiple cards and move them all at once, deselecting all when i click outside of selected cards
 -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -209,7 +209,8 @@ update this code so i can click outside and drag to box select multiple cards an
           card.textContent = item;
           card.id = `card-${index}`;
 
-          const containerWidth = cardContainer.clientWidth || window.innerWidth;
+          const containerWidth = cardContainer.clientWidth ||
+            window.innerWidth;
           const cardWidth = 80;
           const cardsPerRow = Math.max(
             1,
@@ -245,7 +246,9 @@ update this code so i can click outside and drag to box select multiple cards an
       }
 
       function deselectAllCards() {
-        selectedCards.forEach((card) => card.classList.remove("selected"));
+        selectedCards.forEach((card) =>
+          card.classList.remove("selected")
+        );
         selectedCards.clear();
       }
 
@@ -284,7 +287,9 @@ update this code so i can click outside and drag to box select multiple cards an
 
         document.addEventListener("mousemove", dragMove);
         document.addEventListener("mouseup", dragEnd);
-        document.addEventListener("touchmove", dragMove, { passive: false });
+        document.addEventListener("touchmove", dragMove, {
+          passive: false,
+        });
         document.addEventListener("touchend", dragEnd);
       }
 
@@ -390,7 +395,9 @@ update this code so i can click outside and drag to box select multiple cards an
       // Cleans up after dragging cards
       function dragEnd() {
         isDraggingCards = false;
-        selectedCards.forEach((card) => card.classList.remove("dragging"));
+        selectedCards.forEach((card) =>
+          card.classList.remove("dragging")
+        );
 
         document.removeEventListener("mousemove", dragMove);
         document.removeEventListener("mouseup", dragEnd);

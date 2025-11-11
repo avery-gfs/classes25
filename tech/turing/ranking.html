@@ -12,7 +12,7 @@ actually lets say that json file is a list of objects, with the form { id: strin
 give me code (just change, not whole code) for the first app (the ranking input) so that you can click and ctrl a ctrl c to copy from the logs (maybe make it an uneditable textbox or something) 
 -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -104,8 +104,7 @@ give me code (just change, not whole code) for the first app (the ranking input)
           <p>
             Rankings Completed:
             <span id="ranking-count" class="font-bold text-xl text-blue-600"
-              >0</span
-            >
+            >0</span>
           </p>
         </div>
         <!-- Log -->
@@ -133,7 +132,8 @@ give me code (just change, not whole code) for the first app (the ranking input)
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path
                   d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                ></path>
+                >
+                </path>
               </svg>
             </button>
           </div>
@@ -150,10 +150,18 @@ give me code (just change, not whole code) for the first app (the ranking input)
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // --- UI Elements ---
-        const submissionAText = document.getElementById("submissionA-text");
-        const submissionBText = document.getElementById("submissionB-text");
-        const submissionAIdEl = document.getElementById("submissionA-id");
-        const submissionBIdEl = document.getElementById("submissionB-id");
+        const submissionAText = document.getElementById(
+          "submissionA-text",
+        );
+        const submissionBText = document.getElementById(
+          "submissionB-text",
+        );
+        const submissionAIdEl = document.getElementById(
+          "submissionA-id",
+        );
+        const submissionBIdEl = document.getElementById(
+          "submissionB-id",
+        );
         const chooseABtn = document.getElementById("chooseA-btn");
         const chooseBBtn = document.getElementById("chooseB-btn");
         const rankingCountEl = document.getElementById("ranking-count");
@@ -217,8 +225,11 @@ give me code (just change, not whole code) for the first app (the ranking input)
          * @param {string} message - The error message to display.
          */
         function showError(message) {
-          const container = document.getElementById("comparison-container");
-          container.innerHTML = `<div class="col-span-1 md:col-span-2 text-center bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">${message}</div>`;
+          const container = document.getElementById(
+            "comparison-container",
+          );
+          container.innerHTML =
+            `<div class="col-span-1 md:col-span-2 text-center bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">${message}</div>`;
         }
 
         /**
@@ -290,7 +301,8 @@ give me code (just change, not whole code) for the first app (the ranking input)
             document.execCommand("copy");
             // Visual feedback
             const originalIcon = copyLogBtn.innerHTML;
-            copyLogBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+            copyLogBtn.innerHTML =
+              `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
             setTimeout(() => {
               copyLogBtn.innerHTML = originalIcon;
             }, 2000);

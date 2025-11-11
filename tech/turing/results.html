@@ -8,7 +8,7 @@ ok, now make another app to collate and rank these results. app should have an i
 looks good, increase font size for submission content a bit, show cards (will starting stats) before logs are pasted in. there will be roughly 20 submissions and around 500 rankings (single log entries). does elo have a learning rate? should we adjust it? scores seem similar for all
 -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,8 +47,7 @@ looks good, increase font size for submission content a bit, show cards (will st
         <label
           for="log-input"
           class="block text-lg font-semibold text-gray-700 mb-2"
-          >Paste Combined Logs Here:</label
-        >
+        >Paste Combined Logs Here:</label>
         <textarea
           id="log-input"
           rows="10"
@@ -80,7 +79,9 @@ looks good, increase font size for submission content a bit, show cards (will st
         // --- UI Elements ---
         const logInputEl = document.getElementById("log-input");
         const rankButton = document.getElementById("rank-button");
-        const resultsContainer = document.getElementById("results-container");
+        const resultsContainer = document.getElementById(
+          "results-container",
+        );
 
         const response = await fetch("./submissions.json");
         if (!response.ok) {
@@ -99,13 +100,15 @@ looks good, increase font size for submission content a bit, show cards (will st
          * @returns {Array<number>} - The new ratings for Player A and Player B.
          */
         function calculateElo(ratingA, ratingB, scoreA, kFactor = 32) {
-          const expectedScoreA =
-            1 / (1 + Math.pow(10, (ratingB - ratingA) / 400));
+          const expectedScoreA = 1 /
+            (1 + Math.pow(10, (ratingB - ratingA) / 400));
           const expectedScoreB = 1 - expectedScoreA;
           const scoreB = 1 - scoreA;
 
-          const newRatingA = ratingA + kFactor * (scoreA - expectedScoreA);
-          const newRatingB = ratingB + kFactor * (scoreB - expectedScoreB);
+          const newRatingA = ratingA +
+            kFactor * (scoreA - expectedScoreA);
+          const newRatingB = ratingB +
+            kFactor * (scoreB - expectedScoreB);
 
           return [newRatingA, newRatingB];
         }
@@ -158,8 +161,9 @@ looks good, increase font size for submission content a bit, show cards (will st
           // 3. Convert stats object to an array and calculate final metrics
           const rankedResults = Object.values(stats).map((stat) => {
             const comparisons = stat.wins + stat.losses;
-            const winPercentage =
-              comparisons > 0 ? (stat.wins / comparisons) * 100 : 0;
+            const winPercentage = comparisons > 0
+              ? (stat.wins / comparisons) * 100
+              : 0;
             return {
               ...stat,
               comparisons,
@@ -188,25 +192,36 @@ looks good, increase font size for submission content a bit, show cards (will st
           }
 
           results.forEach((sub, index) => {
-            const cardClass = sub.type === "human" ? "human-card" : "ai-card";
-            const promptSection =
-              sub.type === "ai"
-                ? `
+            const cardClass = sub.type === "human"
+              ? "human-card"
+              : "ai-card";
+            const promptSection = sub.type === "ai"
+              ? `
                         <div class="mt-4 pt-4 border-t border-gray-300">
-                            <h4 class="font-semibold text-gray-600">Tool: <span class="font-normal text-gray-800">${sub.tool || "N/A"}</span></h4>
-                            <h4 class="font-semibold text-gray-600 mt-1">Prompt (${sub.prompts?.length || 0} chars):</h4>
-                            <p class="text-sm text-gray-700 bg-gray-100 p-2 rounded mt-1 whitespace-pre-wrap">${sub.prompts || "N/A"}</p>
+                            <h4 class="font-semibold text-gray-600">Tool: <span class="font-normal text-gray-800">${
+                sub.tool || "N/A"
+              }</span></h4>
+                            <h4 class="font-semibold text-gray-600 mt-1">Prompt (${
+                sub.prompts?.length || 0
+              } chars):</h4>
+                            <p class="text-sm text-gray-700 bg-gray-100 p-2 rounded mt-1 whitespace-pre-wrap">${
+                sub.prompts || "N/A"
+              }</p>
                         </div>
                     `
-                : "";
+              : "";
 
             const cardHTML = `
                         <div class="p-6 rounded-lg shadow-md mb-6 ${cardClass}">
                             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                                 <!-- Rank and Type -->
                                 <div class="md:col-span-1 text-center">
-                                    <div class="text-4xl font-bold text-gray-800">${index + 1}</div>
-                                    <div class="text-xs font-bold uppercase tracking-wider ${sub.type === "human" ? "text-blue-600" : "text-gray-600"}">${sub.type}</div>
+                                    <div class="text-4xl font-bold text-gray-800">${
+              index + 1
+            }</div>
+                                    <div class="text-xs font-bold uppercase tracking-wider ${
+              sub.type === "human" ? "text-blue-600" : "text-gray-600"
+            }">${sub.type}</div>
                                 </div>
 
                                 <!-- Content and Prompts -->
@@ -222,7 +237,11 @@ looks good, increase font size for submission content a bit, show cards (will st
                                     <div class="space-y-2 text-sm">
                                         <div class="flex justify-between">
                                             <span class="font-semibold text-gray-600">Elo Rating:</span>
-                                            <span class="font-bold text-xl text-blue-700">${Math.round(sub.elo)}</span>
+                                            <span class="font-bold text-xl text-blue-700">${
+              Math.round(
+                sub.elo,
+              )
+            }</span>
                                         </div>
                                         <div class="flex justify-between">
                                             <span class="font-semibold text-gray-600">Vote Stats:</span>
@@ -230,7 +249,11 @@ looks good, increase font size for submission content a bit, show cards (will st
                                         </div>
                                         <div class="flex justify-between">
                                             <span class="font-semibold text-gray-600">Win Rate:</span>
-                                            <span class="font-mono">${sub.winPercentage.toFixed(1)}%</span>
+                                            <span class="font-mono">${
+              sub.winPercentage.toFixed(
+                1,
+              )
+            }%</span>
                                         </div>
                                         <div class="flex justify-between">
                                             <span class="font-semibold text-gray-600">Content Length:</span>

@@ -25,7 +25,7 @@ add note explaining colors
 
 redo ui without tailwind
 -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -280,7 +280,9 @@ redo ui without tailwind
 
         // --- DOM Elements ---
         const moveCountDisplay = document.getElementById("move-count");
-        const gameInfoHeader = document.getElementById("game-info-header");
+        const gameInfoHeader = document.getElementById(
+          "game-info-header",
+        );
         const winMessage = document.getElementById("win-message");
 
         const buttons = {
@@ -311,7 +313,8 @@ redo ui without tailwind
 
           parseMaze(mazeString);
           if (!startPos || !endPos) {
-            document.body.innerHTML = `<div style="color: red; text-align: center; padding: 2rem;">Error: Maze must contain a starting point 'A' and an ending point 'B'.</div>`;
+            document.body.innerHTML =
+              `<div style="color: red; text-align: center; padding: 2rem;">Error: Maze must contain a starting point 'A' and an ending point 'B'.</div>`;
             return;
           }
 
@@ -348,12 +351,18 @@ redo ui without tailwind
           };
 
           const move = moves[direction];
-          const newPos = { y: playerPos.y + move.y, x: playerPos.x + move.x };
+          const newPos = {
+            y: playerPos.y + move.y,
+            x: playerPos.x + move.x,
+          };
 
           if (isValidMove(newPos)) {
             const newPosCoordString = `${newPos.y},${newPos.x}`;
             if (!visitedCells.has(newPosCoordString)) {
-              pathMap.set(newPosCoordString, `${playerPos.y},${playerPos.x}`);
+              pathMap.set(
+                newPosCoordString,
+                `${playerPos.y},${playerPos.x}`,
+              );
             }
 
             playerPos = newPos;
@@ -401,7 +410,9 @@ redo ui without tailwind
           };
 
           if (isGameOver) {
-            Object.values(buttons).forEach((btn) => (btn.disabled = true));
+            Object.values(buttons).forEach((
+              btn,
+            ) => (btn.disabled = true));
             return;
           }
 
@@ -411,7 +422,10 @@ redo ui without tailwind
 
           for (const [dir, move] of Object.entries(directions)) {
             const btn = buttons[dir];
-            const newPos = { y: playerPos.y + move.y, x: playerPos.x + move.x };
+            const newPos = {
+              y: playerPos.y + move.y,
+              x: playerPos.x + move.x,
+            };
             const newPosCoordString = `${newPos.y},${newPos.x}`;
 
             // Reset classes
@@ -436,9 +450,18 @@ redo ui without tailwind
         // --- Event Listeners ---
         function setupEventListeners() {
           buttons.up.addEventListener("click", () => movePlayer("up"));
-          buttons.down.addEventListener("click", () => movePlayer("down"));
-          buttons.left.addEventListener("click", () => movePlayer("left"));
-          buttons.right.addEventListener("click", () => movePlayer("right"));
+          buttons.down.addEventListener(
+            "click",
+            () => movePlayer("down"),
+          );
+          buttons.left.addEventListener(
+            "click",
+            () => movePlayer("left"),
+          );
+          buttons.right.addEventListener(
+            "click",
+            () => movePlayer("right"),
+          );
 
           document.addEventListener("keydown", (e) => {
             if (isGameOver) return;
