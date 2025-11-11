@@ -1,5 +1,10 @@
 ## Timing
 
+- `World.seconds`
+- Offsets and resets
+- Delay
+- Window focus
+
 ---
 
 ## Functions
