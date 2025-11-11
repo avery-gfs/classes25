@@ -1,3 +1,107 @@
+## Zen
+
+```txt
+>>> import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+```
+
+## Ruff
+
+Code formatter and linter
+
+https://github.com/astral-sh/ruff?tab=readme-ov-file
+
+```txt
+python3 -m pip install ruff
+```
+
+https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+
+## Formatting
+
+```py
+def factorial(
+  n):
+   result  = 1
+
+   for i in range(1,n+1):
+
+        result*= i
+
+   return result
+
+print(
+ factorial(10))
+```
+
+```txt
+ruff format example.py
+```
+
+```py
+def factorial(n):
+    result = 1
+
+    for i in range(1, n + 1):
+        result *= i
+
+    return result
+
+print(factorial(10))
+```
+
+## Linting
+
+```py
+def factorial(n):
+    result = 1
+
+    for i in range(1, n + 1):
+        resutl *= i
+
+    return result
+
+print(factorial(0))
+```
+
+```txt
+ruff check example.py
+```
+
+```py
+F821 Undefined name `resutl`
+ --> /home/anortonsmith/Documents/classes/solutions/test.py:5:9
+  |
+4 |     for i in range(1, n + 1):
+5 |         resutl *= i
+  |         ^^^^^^
+6 |
+7 |     return result
+  |
+```
+
+---
+
 ## Refactoring
 
 <img src="assets/Code refactoring - Wikipedia.png" height="400px" />
@@ -248,81 +352,6 @@ quote characters)
 ```
 
 because strings use `"` for as both the starting and ending delimeter
-
-## Ruff
-
-Code formatter and linter
-
-https://github.com/astral-sh/ruff?tab=readme-ov-file
-
-```txt
-python3 -m pip install ruff
-```
-
-https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
-
-## Formatting
-
-```py
-def factorial(
-  n):
-   result  = 1
-
-   for i in range(1,n+1):
-
-        result*= i
-
-   return result
-
-print(
- factorial(10))
-```
-
-```txt
-ruff format example.py
-```
-
-```py
-def factorial(n):
-    result = 1
-
-    for i in range(1, n + 1):
-        result *= i
-
-    return result
-
-print(factorial(10))
-```
-
-## Linting
-
-```py
-def factorial(n):
-    result = 1
-
-    for i in range(1, n + 1):
-        resutl *= i
-
-    return result
-
-print(factorial(0))
-```
-
-```txt
-ruff check example.py
-```
-
-```py
-F821 Undefined name `resutl`
- --> /home/anortonsmith/Documents/classes/solutions/test.py:5:9
-  |
-4 |     for i in range(1, n + 1):
-5 |         resutl *= i
-  |         ^^^^^^
-6 |
-7 |     return result
-  |
-```
 
 ---
 
