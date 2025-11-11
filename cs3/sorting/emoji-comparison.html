@@ -8,7 +8,7 @@ make a html web app (as a standalone file) that lets the user select two emoji f
 update this code so that the count is only loaded from localstorage if the previous count stored was from the same day as the current day, and otherwise resets count to 0. From user perspctive count should reset each day
  -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -50,16 +50,17 @@ update this code so that the count is only loaded from localstorage if the previ
         <select
           id="emoji1"
           class="emoji-select bg-gray-100 border-2 border-gray-300 rounded-xl p-3 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-        ></select>
+        >
+        </select>
         <span
           id="result-symbol"
           class="text-4xl font-bold text-indigo-600 w-12 h-12 flex items-center justify-center"
-          >?</span
-        >
+        >?</span>
         <select
           id="emoji2"
           class="emoji-select bg-gray-100 border-2 border-gray-300 rounded-xl p-3 text-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-        ></select>
+        >
+        </select>
       </div>
 
       <div class="text-center mb-6">
@@ -74,7 +75,8 @@ update this code so that the count is only loaded from localstorage if the previ
       <div
         id="result-text"
         class="text-center text-xl font-medium text-gray-700 min-h-[28px] mb-8"
-      ></div>
+      >
+      </div>
 
       <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
         <div class="flex justify-between items-center mb-4">
@@ -90,7 +92,8 @@ update this code so that the count is only loaded from localstorage if the previ
         <div
           id="log-container"
           class="h-48 overflow-y-auto bg-white p-3 rounded-lg border border-gray-200 space-y-2"
-        ></div>
+        >
+        </div>
       </div>
     </main>
 
@@ -170,7 +173,9 @@ update this code so that the count is only loaded from localstorage if the previ
          */
         function loadFromStorage() {
           const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD format
-          const storedDataJSON = localStorage.getItem("emojiComparatorData");
+          const storedDataJSON = localStorage.getItem(
+            "emojiComparatorData",
+          );
 
           if (storedDataJSON) {
             try {
@@ -239,7 +244,8 @@ update this code so that the count is only loaded from localstorage if the previ
 
           // Update result display
           resultSymbolEl.textContent = resultSymbol;
-          resultTextEl.textContent = `${emoji1} ${resultText} ${emoji2}`;
+          resultTextEl.textContent =
+            `${emoji1} ${resultText} ${emoji2}`;
 
           // Update state
           comparisonCount++;
