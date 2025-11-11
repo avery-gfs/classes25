@@ -89,7 +89,7 @@ print(sum([]))
 
 
 def countEvens(numbers):
-    # Hints: sum funciton, generator expressions
+    # Hints: generator expressions, boolean addition, sum
 
     count = 0
 

@@ -1,6 +1,26 @@
 import random
 import os
 
+# The game has 3 classes:
+#   Regular Characters
+#   Warriors
+#   Wizards
+# All characters can:
+#   Attack
+#   Take Damage
+#   Display their health bar
+# The wizard can resore mana
+# The warrior can restore health
+# The combat flow goes like this:
+#  1. The player selects a class
+#  2. The player and enemy health bars are displayed
+#  3. The player can either attack, use their ability, do nothing or run
+#  4. The enemy attacks the player
+#  5. Repeat parts 2-4 until on of the following is true:
+#       The player dies
+#       The enemy dies
+#       The player runs away
+
 
 class Character:
     def __init__(self, name, health, power):
@@ -9,18 +29,6 @@ class Character:
         self.power = power
 
     def __repr__(self):
-        return f"{self.name} | {self.health} HP | {self.power} power"
-
-    def take_damage(self, damage):
-        self.health -= damage
-        print(f"{self.name} takes {damage} damage!")
-
-    def attack(self, other):
-        damage = self.power * random.randint(1, 2)
-        print(f"{self.name} attacks {other.name}")
-        other.take_damage(damage)
-
-    def show_health(self):  # theres no need to try and understand this method
         bar_length = 20
         filled = int((self.health / 100) * bar_length)
         empty = bar_length - filled
@@ -35,7 +43,16 @@ class Character:
             color = "\033[91m"
         reset = "\033[0m"
 
-        print(f"{self.name:10} {color}[{bar}]{reset} {percentage}/100 HP")
+        return f"{self.name:10} {color}[{bar}]{reset} {percentage}/100 HP"
+
+    def take_damage(self, damage):
+        self.health -= damage
+        print(f"{self.name} takes {damage} damage!")
+
+    def attack(self, other):
+        damage = self.power * random.randint(1, 2)
+        print(f"{self.name} attacks {other.name}")
+        other.take_damage(damage)
 
     def is_alive(self):
         return self.health > 0
@@ -54,23 +71,44 @@ class Warrior(Character):
         # hint: the syntax for getting the random number is random.randint(1,2)
         pass
 
+    def show_special(self):
+        print("2 - Defend (restore HP)")
+
+    def do_special(self):
+        self.defend()
+
 
 class Wizard(Character):
     def __init__(self, name, health, power, mana):
+        # same as above
         pass
 
-    # override the parent __repr__ method with a wizard specific one that shows name and mana
+    def __repr__(self):
+        # call the parent repr method and add a line to show the wizards mana
+        pass
 
     def attack(self, enemy):
-        # use super() to write an attack method that damages the enemy and lowers the wizards mana by 5
+        multiplier = 1 + (self.mana / 30)
+        # add a check for mana, wizards can only attack with AT LEAST 5 mana
+        # attack the enemy by self.power * a random number from 1 - 2 * multiplier
         pass
 
     def meditate(self):
-        print(f"{self.name} restores 10 mana")
-        self.mana += 10
+        max_mana = 30
+        if self.mana >= max_mana:
+            print(f"{self.name} is already at full mana")
+            return
+        self.mana = min(self.mana + 10, max_mana)
+        print(f"{self.name} restores mana. Now at {self.mana}")
+
+    def show_special(self):
+        print("2 - Meditate (restore mana)")
+
+    def do_special(self):
+        self.meditate()
 
 
-def main():  # theres also no need to understand most of this method, just try to understand the isinstance use here
+def main():
     os.system("clear")
     print("Choose your hero!")
     print("1. Warrior")
@@ -86,13 +124,10 @@ def main():  # theres also no need to understand most of this method, just try t
     enemy = Character("Troll", 60, 5)
 
     while player.is_alive() and enemy.is_alive():
-        # call show_health on the player and the enemy using a for loop and only writing one call
+        # print out the player and enemy stats with writing "print" only once
         print("\nYour Turn")
         print("1 - attack")
-        if isinstance(player, Warrior):
-            print("2 - Defend (restore HP)")
-        elif isinstance(player, Wizard):
-            print("2 - meditate (restore mana)")
+        player.show_special()
         print("3 - do nothing")
         print("4 - quit")
 
@@ -102,10 +137,7 @@ def main():  # theres also no need to understand most of this method, just try t
             case "1":
                 player.attack(enemy)
             case "2":
-                if isinstance(player, Warrior):
-                    player.defend()
-                elif isinstance(player, Wizard):
-                    player.meditate()
+                player.do_special()
             case "3":
                 print(f"{player.name} does nothing")
             case "4":
@@ -118,9 +150,9 @@ def main():  # theres also no need to understand most of this method, just try t
         print("\n")
 
     if not enemy.is_alive():
-        print(f"You defeated the enemy!")
+        print("You defeated the enemy!")
     if not player.is_alive():
-        print(f"The enemy defeated you!")
+        print("The enemy defeated you!")
 
 
 if __name__ == "__main__":

@@ -8,15 +8,6 @@ class Character:
         self.health = health
         self.power = power
 
-    def take_damage(self, damage):
-        self.health -= damage
-        print(f"{self.name} takes {damage} damage!")
-
-    def attack(self, other):
-        damage = self.power * random.randint(1, 2)
-        print(f"{self.name} attacks {other.name}!")
-        other.take_damage(damage)
-
     def __repr__(self):
         bar_length = 20
         filled = int((self.health / 100) * bar_length)
@@ -33,6 +24,15 @@ class Character:
         reset = "\033[0m"
 
         return f"{self.name:10} {color}[{bar}]{reset} {percentage}/100 HP"
+
+    def take_damage(self, damage):
+        self.health -= damage
+        print(f"{self.name} takes {damage} damage!")
+
+    def attack(self, other):
+        damage = self.power * random.randint(1, 2)
+        print(f"{self.name} attacks {other.name}!")
+        other.take_damage(damage)
 
     def is_alive(self):
         return self.health > 0
@@ -63,24 +63,37 @@ class Wizard(Character):
         super().__init__(name, health, power)
         self.mana = mana
 
+    def __repr__(self):
+        print(super().__repr__())
+        return f"Wizard {self.name} has {self.mana} mana"
+
     def attack(self, enemy):
-        super().attack(enemy)
-        print(f"{self.name} attacks {enemy}!")
+        if self.mana < 5:
+            print(f"{self.name} doesn't have enough mana to attack!")
+            return
+        multiplier = 1 + (self.mana / 30)
+        damage = int(self.power * random.randint(1, 2) * multiplier)
+        print(f"{self.name} attacks {enemy.name}!")
+        enemy.take_damage(damage)
         self.mana -= 5
-        print(f"{self.name} has {self.mana} left")
+        print(f"{self.name} has {self.mana} mana left")
 
     def meditate(self):
-        print(f"{self.name} restores 10 mana")
-        self.mana += 10
+        max_mana = 30
+        if self.mana >= max_mana:
+            print(f"{self.name} is already at full mana")
+            return
+        self.mana = min(self.mana + 10, max_mana)
+        print(f"{self.name} restores mana. Now at {self.mana}")
 
     def show_special(self):
-        print("2 - meditate (restore mana)")
+        print("2 - Meditate (restore mana)")
 
     def do_special(self):
         self.meditate()
 
 
-# DONT TOUCH ANYHTHING BELOW THIS COMMENT
+# DONT TOUCH ANYHTING BELOW THIS COMMENT
 
 
 def main():
@@ -101,12 +114,9 @@ def main():
     while player.is_alive() and enemy.is_alive():
         for i in [player, enemy]:
             print(i)
-
         print("\nYour Turn")
         print("1 - attack")
-
         player.show_special()
-
         print("3 - do nothing")
         print("4 - quit")
 
@@ -124,17 +134,14 @@ def main():
                 break
             case _:
                 print("invalid option")
-
         if enemy.is_alive():
             enemy.attack(player)
-
         print("\n")
 
     if not enemy.is_alive():
-        print(f"You defeated the enemy!")
-
+        print("You defeated the enemy!")
     if not player.is_alive():
-        print(f"The enemy defeated you!")
+        print("The enemy defeated you!")
 
 
 if __name__ == "__main__":
