@@ -3,7 +3,7 @@
 - `World.seconds`
 - Offsets and resets
 - Delay
-- Window focus
+- Frame progression (focus) vs timing (background)
 
 ---
 

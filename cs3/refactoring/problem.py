@@ -88,46 +88,6 @@ print(sum([]))
 # ---------------------------------------------------------
 
 
-def countEvens(numbers):
-    # Hints: generator expressions, boolean addition, sum
-
-    count = 0
-
-    for n in numbers:
-        half = n / 2
-
-        if half == round(half):
-            count = count + 1
-
-    return count
-
-
-print(countEvens([1, 4, 2, 7, 3, 1]))
-
-# ---------------------------------------------------------
-
-
-def shout(words):
-    # Hints: `join` method, generator expressions
-
-    result = ""
-    index = 0
-
-    while index < len(words):
-        result += words[index].upper()
-        result += "!"
-        index = index + 1
-        if index < len(words):
-            result += " "
-
-    return result
-
-
-print(shout(["germantown", "friends", "school"]))
-
-# ---------------------------------------------------------
-
-
 def hexToDec(hexStr):
     # Hints: dictionaries, combine loops
 
@@ -233,3 +193,43 @@ def primeFactors(num):
 
 print(primeFactors(60))
 print(primeFactors(100000001))
+
+# ---------------------------------------------------------
+
+
+def countEvens(numbers):
+    # Hints: generator expressions, boolean addition, sum
+
+    count = 0
+
+    for n in numbers:
+        half = n / 2
+
+        if half == round(half):
+            count = count + 1
+
+    return count
+
+
+print(countEvens([1, 4, 2, 7, 3, 1]))
+
+# ---------------------------------------------------------
+
+
+def shout(words):
+    # Hints: `join` method, generator expressions
+
+    result = ""
+    index = 0
+
+    while index < len(words):
+        result += words[index].upper()
+        result += "!"
+        index = index + 1
+        if index < len(words):
+            result += " "
+
+    return result
+
+
+print(shout(["germantown", "friends", "school"]))

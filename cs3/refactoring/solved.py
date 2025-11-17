@@ -62,24 +62,6 @@ print(sum([]))
 
 # ---------------------------------------------------------
 
-
-def countEvens(numbers):
-    return sum(isEven(n) for n in numbers)
-
-
-print(countEvens([1, 4, 2, 7, 3, 1]))
-
-# ---------------------------------------------------------
-
-
-def shout(words):
-    return " ".join(word.upper() + "!" for word in words)
-
-
-print(shout(["germantown", "friends", "school"]))
-
-# ---------------------------------------------------------
-
 hexValues = {
     "0": 0,
     "1": 1,
@@ -155,3 +137,21 @@ def primeFactors(num):
 
 print(primeFactors(60))
 print(primeFactors(100000001))
+
+# ---------------------------------------------------------
+
+
+def countEvens(numbers):
+    return sum(isEven(n) for n in numbers)
+
+
+print(countEvens([1, 4, 2, 7, 3, 1]))
+
+# ---------------------------------------------------------
+
+
+def shout(words):
+    return " ".join(word.upper() + "!" for word in words)
+
+
+print(shout(["germantown", "friends", "school"]))
