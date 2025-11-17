@@ -106,6 +106,18 @@ for game in games:
 
 </div>
 
+## Review Dictionaries
+
+```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes.setdefault("mint", 0)
+votes.setdefault("vanilla", 0)
+```
+
+```py
+{ 'strawberry': 1, 'chocolate': 1, 'vanilla': 1, 'mint': 0 }
+```
+
 ---
 
 ## Modulo and Floor Division
@@ -795,7 +807,7 @@ fields and methods).
 - [`values()`](https://www.w3schools.com/python/ref_dictionary_values.asp)
 - [`items()`](https://www.w3schools.com/python/ref_dictionary_items.asp)
 - [`get(key, default)`](https://www.w3schools.com/python/ref_dictionary_get.asp)
-- [`setDefault(key, default)`](https://www.w3schools.com/python/ref_dictionary_setdefault.asp)
+- [`setdefault(key, default)`](https://www.w3schools.com/python/ref_dictionary_setdefault.asp)
 - [`pop(value)`](https://www.w3schools.com/python/ref_dictionary_pop.asp)
 
 https://docs.python.org/3/library/stdtypes.html#dict
@@ -895,23 +907,33 @@ votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
 ## Look up a value
 
 ```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+```
+
+```py
 votes["strawberry"] # 1
 ```
 
 ## Add a value
 
 ```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
 votes["mint"] = 1
+```
 
-# votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1 }
+```py
+{ "strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1 }
 ```
 
 ## Update a value
 
 ```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
 votes["strawberry"] = 2
+```
 
-# votes = { "strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1 }
+```py
+{ "strawberry": 2, "chocolate": 1, "vanilla": 1 }
 ```
 
 A dictionary can only contain a single entry for a given key.
@@ -919,9 +941,12 @@ A dictionary can only contain a single entry for a given key.
 ## Increment a value
 
 ```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
 votes["chocolate"] += 1
+```
 
-# votes = { "strawberry": 2, "chocolate": 2, "vanilla": 1, "mint": 1 }
+```py
+{ "strawberry": 1, "chocolate": 2, "vanilla": 1 }
 ```
 
 ## Iterate over keys
