@@ -48,6 +48,8 @@ print(gcd(12, 20) == 4)
 
 def calcDay(today, n):
     # Figure out what day it will be `n` days from now
+    #
+    # Hint: use the `.index()` method of list
 
     days = [
         "monday",
