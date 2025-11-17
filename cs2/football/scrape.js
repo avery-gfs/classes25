@@ -1,9 +1,10 @@
-$$("tr")
+const rows = $$("tr")
   .filter((tr) => !tr.classList.contains("header"))
-  .map((tr) => {
-    const strings = [...tr.querySelectorAll("td")].map((td) => td.innerText);
-    strings[1] = `"${strings[1]}"`;
-    strings[3] = `"${strings[3]}"`;
-    return strings.slice(1, 5).join(", ");
-  })
+  .map((tr) =>
+    [...tr.querySelectorAll("td")].map((td) => td.innerText).slice(1, 5).join(
+      ",",
+    )
+  )
   .join("\n");
+
+console.log(`away_team,away_score,home_team,home_score\n${rows}`);
