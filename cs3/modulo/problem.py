@@ -38,6 +38,19 @@ print(gcd(12, 20) == 4)
 
 def calcDay(today, n):
     # Figure out what day it will be `n` days from now
+    #
+    # Hint: use the `.index()` method of list
+
+    days = [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+    ]
+
     pass
 
 
@@ -46,6 +59,7 @@ print(calcDay("monday", 100) == "wednesday")
 
 def showHeight(totalInches):
     # Display a height (given in inches) as feet and inch components
+    # (You don't need to use % for the feet, just the inches)
     pass
 
 

@@ -1,3 +1,28 @@
+## Refactoring != Code Golf
+
+```py
+def sign(num):
+    if num > 0:
+        return "positive"
+
+    if num == 0:
+        return "zero"
+
+    return "negative"
+
+
+print(sign(8))   # 1
+print(sign(0))   # 0
+print(sign(-7))  # -1
+```
+
+```py
+def sign(num):
+    return ["zero", "positive", "negative"][num // (abs(num) or 1)]
+```
+
+---
+
 ## Zen
 
 ```txt
