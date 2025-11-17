@@ -21,6 +21,31 @@ def sign(num):
     return ["zero", "positive", "negative"][num // (abs(num) or 1)]
 ```
 
+## The Sad State of Python Docs
+
+Challenge: try to find a piece of official documentation (from
+[python.org](python.org)) that describes the behavior of the `%` operator in
+Python.
+
+## Modulus `%`
+
+```python
+a % b
+```
+
+Add or subtract `b` from `a` until the absolute value of the resulting number
+has:
+
+1. The same sign as `b`
+2. An absolute value less than `b`
+
+Note that `%` works differently for negative numbers in Python than it does in
+other languages.
+
+Note that `b` must not be `0`.
+
+https://docs.python.org/3/reference/expressions.html#binary-arithmetic-operations
+
 ---
 
 ## Zen
