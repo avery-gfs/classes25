@@ -15,6 +15,7 @@ eagles = "Philadelphia Eagles"
 
 wins = 0
 losses = 0
+ties = 0
 
 # Calculate wins and losses for the eagles
 
@@ -22,13 +23,17 @@ for game in games:
     if game["home_team"] == eagles:
         if game["home_score"] > game["away_score"]:
             wins += 1
-        else:
+        elif game["home_score"] < game["away_score"]:
             losses += 1
+        else:
+            ties += 1
 
     if game["away_team"] == eagles:
         if game["away_score"] > game["home_score"]:
             wins += 1
-        else:
+        elif game["away_score"] < game["home_score"]:
             losses += 1
+        else:
+            tie += 1
 
-print("Eagles record:", wins, losses)
+print("Eagles record:", wins, losses, ties)

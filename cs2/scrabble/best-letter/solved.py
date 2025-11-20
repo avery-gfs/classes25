@@ -59,7 +59,12 @@ for word in words:
 
     firstLetter = word[0]
 
-    if bestScores.get(firstLetter, 0) < score:
+    # Alternatively, we could use bestScores.get with a default
+    # value in the condition
+
+    bestScores.setdefault(firstLetter, 0)
+
+    if bestScores[firstLetter] < score:
         bestWords[firstLetter] = word
         bestScores[firstLetter] = score
 

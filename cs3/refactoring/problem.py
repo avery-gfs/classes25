@@ -185,7 +185,7 @@ def primeFactors(num):
             div = div + 1
         else:
             results.append(div)
-            num /= div
+            num //= div
 
     results.append(num)
     return results
