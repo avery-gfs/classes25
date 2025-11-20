@@ -1,3 +1,110 @@
+## Analogy to Scrabble Problem
+
+```py
+bestWord = None  # Keep track of the highest scoring word
+bestScore = 0  # Keep track of the score of bestWord
+
+for word in words:
+    score = 0
+
+    for letter in word:
+        score += letterPoints[letter]
+
+    if score > bestScore:
+        bestScore = score
+        bestWord = word
+```
+
+```txt
+puzzling
+29
+```
+
+## Analogy to Scrabble Problem
+
+```py
+bestWords = {}  # Keep track of the highest scoring word for each letter
+bestScores = {}  # Keep track of the scores for bestWords
+
+for word in words:
+    score = 0
+
+    for letter in word:
+        score += letterPoints[letter]
+
+    firstLetter = word[0]
+    bestScores.setdefault(firstLetter, 0) 
+
+    if bestScores[firstLetter] < score:
+        bestWords[firstLetter] = word
+        bestScores[firstLetter] = score
+```
+
+```txt
+c contemptuously 23
+i inquisitively 28
+d difficulty 22
+t thoughtfully 25
+r refreshments 20
+h hjckrrh 26
+a affectionately 25
+w whiskers 18
+...
+```
+
+## Analogy to Scrabble Problem
+
+```py
+bestWords = {}
+bestScores = {}
+```
+
+```py
+wins = {}
+losses = {}
+ties = {}
+```
+
+## `setdefault`
+
+```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes.setdefault("mint", 0)
+votes.setdefault("vanilla", 0)
+```
+
+```py
+{ 'strawberry': 1, 'chocolate': 1, 'vanilla': 1, 'mint': 0 }
+```
+
+## `setdefault`
+
+```py
+wins.setdefault(homeTeam, 0)
+wins.setdefault(awayTeam, 0)
+
+losses.setdefault(homeTeam, 0)
+losses.setdefault(awayTeam, 0)
+
+ties.setdefault(homeTeam, 0)
+ties.setdefault(awayTeam, 0)
+```
+
+## All Records
+
+```txt
+Philadelphia Eagles 8 2 0 0.800
+Dallas Cowboys 3 5 1 0.333
+Los Angeles Chargers 7 4 0 0.636
+Kansas City Chiefs 5 5 0 0.500
+New Orleans Saints 2 8 0 0.200
+Arizona Cardinals 3 7 0 0.300
+New York Jets 2 8 0 0.200
+...
+```
+
+---
+
 ## Data Scraping
 
 https://www.footballdb.com/games/index.html
@@ -20,6 +127,7 @@ console.log(`away_team,away_score,home_team,home_score\n${rows}`);
 "Comma separated values"
 
 ```txt
+away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
 Arizona Cardinals,20,New Orleans Saints,13
@@ -36,6 +144,7 @@ Miami Dolphins,8,Indianapolis Colts,33
 ## Loading CSVs
 
 ```txt
+away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
 Arizona Cardinals,20,New Orleans Saints,13
@@ -70,6 +179,7 @@ with open("games.csv") as file:
 ## Converting Numbers
 
 ```txt
+away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
 Arizona Cardinals,20,New Orleans Saints,13
@@ -107,16 +217,6 @@ for game in games:
 </div>
 
 ## Review Dictionaries
-
-```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
-votes.setdefault("mint", 0)
-votes.setdefault("vanilla", 0)
-```
-
-```py
-{ 'strawberry': 1, 'chocolate': 1, 'vanilla': 1, 'mint': 0 }
-```
 
 ---
 
@@ -814,7 +914,45 @@ https://docs.python.org/3/library/stdtypes.html#dict
 
 https://www.w3schools.com/python/python_ref_dictionary.asp
 
-## Get
+## `setdefault`
+
+```py
+votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes.setdefault("mint", 0)
+votes.setdefault("vanilla", 0)
+```
+
+```py
+{ 'strawberry': 1, 'chocolate': 1, 'vanilla': 1, 'mint': 0 }
+```
+
+## Using `setdefault`
+
+```py
+votes = { "strawberry": 1 }
+
+while True:
+  flavor = input("Enter for your favorite flavor: ")
+
+  if flavor in votes:
+      votes[flavor] += 1
+  else:
+      votes[flavor] = 1
+
+  print(votes)
+```
+
+```py
+votes = { "strawberry": 1 }
+
+while True:
+    flavor = input("Enter for your favorite flavor: ")
+    votes.setdefault(flavor, 0)
+    votes[flavor] += 1
+    print(votes)
+```
+
+## `get`
 
 ```py
 votes = { "strawberry": 7 }
@@ -823,33 +961,29 @@ votes.get("strawberry", 0) # 7
 votes.get("banana", 0)     # 0
 ```
 
-## Using Get
+## Using `get`
 
 ```py
 votes = { "strawberry": 1 }
 
-while True: # Loop forever
+while True:
   flavor = input("Enter for your favorite flavor: ")
 
   if flavor in votes:
-      votes[flavor] += 1 # Increase vote count by one
+      votes[flavor] += 1
   else:
-      votes[flavor] = 1 # Set initial vote count to one
+      votes[flavor] = 1
 
-  print(votes) # Print out vote data after each new vote
+  print(votes)
 ```
 
 ```py
 votes = { "strawberry": 1 }
 
-while True: # Loop forever
+while True:
     flavor = input("Enter for your favorite flavor: ")
-
-    # Increase the vote count for flavor by 1, using 0 as the default current
-    # value if the flavor isn't in the votes dictionary yet
     votes[flavor] = votes.get(flavor, 0) + 1
-
-    print(votes) # Print out vote data after each new vote
+    print(votes)
 ```
 
 ## Scrabble Best Alphabet
