@@ -1,3 +1,86 @@
+## Pseudo-random Numbers
+
+```py
+import random
+
+print(random.random())
+print(random.random())
+print(random.random())
+print(random.random())
+```
+
+```
+0.17231323191590397
+0.2546137274261232
+0.530283680130046
+0.6811537529720958
+```
+
+## Pseudo-random Numbers
+
+Linear congruential generators
+
+<img src="assets/lcg.png" height="200px" />
+
+```py
+def next(n):
+    m = 2**32  # 4294967296
+    a = 1664525
+    c = 1013904223
+    return (a * n + c) % m
+```
+
+## Pseudo-random Numbers
+
+```py
+def next(n):
+    m = 2**32  # 4294967296
+    a = 1664525
+    c = 1013904223
+    return (a * n + c) % m
+```
+
+```py
+n = 17  # Seed value
+
+n = next(n)
+print(n)
+
+n = next(n)
+print(n)
+
+n = next(n)
+print(n)
+
+n = next(n)
+print(n)
+```
+
+```
+1042201148
+3524153451
+1973856974
+1276228565
+```
+
+## Pseudo-random Numbers
+
+Scale to between `0.0` and `1.0`
+
+```txt
+1042201148 -> 0.24265636410564184
+3524153451 -> 0.8205309163313359
+1973856974 -> 0.4595743897370994
+1276228565 -> 0.2971451182384044
+```
+
+## Pseudo-random Number Properties
+
+- Should have even distribution across output range
+- Should have unpredictable spacing between values
+
+---
+
 ## Refactoring != Code Golf
 
 ```py
@@ -38,6 +121,13 @@ has:
 
 1. The same sign as `b`
 2. An absolute value less than `b`
+
+```txt
+ 20 %  7 =  20 - 7 - 7     =  6
+-20 %  7 = -20 + 7 + 7 + 7 =  1
+ 20 % -7 =  20 - 7 - 7 - 7 = -1
+-20 % -7 = -20 + 7 + 7     = -6
+```
 
 Note that `%` works differently for negative numbers in Python than it does in
 other languages.

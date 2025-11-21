@@ -20,11 +20,20 @@ ties = {}
 # Update stats for home and away teams for each game
 
 for game in games:
-    pass
+    homeTeam = game["home_team"]
+    homeScore = game["home_score"]
+
+    awayTeam = game["away_team"]
+    awayScore = game["away_score"]
+
+    # Your code goes here
 
 # Print final stats for each team
 
 for team in wins:
     # Add code to print the win percentage for each team, showing three decimal
     # places for each win percentage value
-    print(team, wins[team], losses[team], ties[team])
+
+    winPct = 0  # Your code goes here
+
+    print(team, wins[team], losses[team], ties[team], winPct)

@@ -4,10 +4,10 @@ import time
 
 def lastDigit(n):
     # Return the last digit of an integer `n`
-    return abs(n) % 10
+    return n % 10
 
 
-print(lastDigit(-5678) == 8)
+print(lastDigit(5678) == 8)
 
 
 def isEven(n):
@@ -82,10 +82,10 @@ print(showHeight(66) == "5'06\"")
 def factors(n):
     # Get a list of the factors of an integer `n`
 
-    return [f for f in range(2, n) if n % f == 0]
+    return [f for f in range(1, n + 1) if n % f == 0]
 
 
-print(factors(40) == [2, 4, 5, 8, 10, 20])
+print(factors(40) == [1, 2, 4, 5, 8, 10, 20, 40])
 
 
 def loading():
@@ -95,9 +95,11 @@ def loading():
     #
     # print("\x1b[1A\x1b[2K", end="")
 
-    for index in range(10):
-        print("loading" + "." * (index % 5))
+    for n in range(20):
+        print("loading" + "." * (n % 5))
         time.sleep(0.2)
+
+        # This code to clears the current line:
         print("\x1b[1A\x1b[2K", end="")
 
 
@@ -109,11 +111,12 @@ def randomNums():
     # https://en.wikipedia.org/wiki/Linear_congruential_generator
 
     seed = 17
+
+    n = seed
     m = 2**32
     a = 1664525
     c = 1013904223
 
-    n = seed
     result = []
 
     for _ in range(10):
