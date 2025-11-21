@@ -7,7 +7,7 @@ def lastDigit(n):
     pass
 
 
-print(lastDigit(-5678) == 8)
+print(lastDigit(5678) == 8)
 
 
 def isEven(n):
@@ -71,15 +71,17 @@ def factors(n):
     pass
 
 
-print(factors(40) == [2, 4, 5, 8, 10, 20])
+print(factors(40) == [1, 2, 4, 5, 8, 10, 20, 40])
 
 
 def loading():
     # Display an animated loading bar
-    #
-    # Note that you can use this code to clear the current line:
-    #
-    # print("\x1b[1A\x1b[2K", end="")
+
+    for n in range(20):
+        # Your code goes here
+
+        # This code to clears the current line
+        print("\x1b[1A\x1b[2K", end="")
 
     pass
 
@@ -92,6 +94,8 @@ def randomNums():
     # https://en.wikipedia.org/wiki/Linear_congruential_generator
 
     seed = 17
+
+    n = seed
     m = 2**32
     a = 1664525
     c = 1013904223
