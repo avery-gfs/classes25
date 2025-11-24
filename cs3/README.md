@@ -9,7 +9,7 @@ print(random.random())
 print(random.random())
 ```
 
-```
+```txt
 0.17231323191590397
 0.2546137274261232
 0.530283680130046
@@ -56,7 +56,7 @@ n = next(n)
 print(n)
 ```
 
-```
+```txt
 1042201148
 3524153451
 1973856974
@@ -78,6 +78,10 @@ Scale to between `0.0` and `1.0`
 
 - Should have even distribution across output range
 - Should have unpredictable spacing between values
+
+Requires good parameter values
+
+<img src="assets/lcg-params.png"/>
 
 ---
 

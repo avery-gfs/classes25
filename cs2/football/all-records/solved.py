@@ -52,6 +52,6 @@ for team in wins:
     # places for each win percentage value
 
     total = wins[team] + losses[team] + ties[team]
-    winPct = wins[team] / total
+    winPct = (wins[team] + 0.5 * ties[team]) / total
 
     print(team, wins[team], losses[team], ties[team], f"{winPct:.3f}")
