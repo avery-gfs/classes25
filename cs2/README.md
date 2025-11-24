@@ -1,3 +1,151 @@
+## All Stats
+
+```py
+class TeamStats:
+    # Each team will have its own TeamStats object
+
+    def __init__(self, name):
+        self.name = name
+        self.wins = 0
+        self.losses = 0
+        self.ties = 0
+        self.pointsScored = 0
+        self.pointsAllowed = 0
+        self.numGames = 0
+
+    def addStats(self, game):
+        self.numGames += 1
+
+        if self.name == game["home_team"]:
+            self.addStatsHome(game)
+        else:
+            self.addStatsAway(game)
+
+    # ...
+```
+
+## All Stats
+
+```py
+class TeamStats:
+    # ...
+    def addStatsHome(self, game):
+        # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
+        # based on game info, knowing that this team was the home team
+
+        pass  # Your code goes here
+
+    def addStatsAway(self, game):
+        # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
+        # based on game info, knowing that this team was the away team
+
+        pass  # Your code goes here
+
+    def winPercent(self):
+        # Calculate the win percentage
+
+        return 0  # Your code goes here
+
+    def pointsScoredPerGame(self):
+        # Calculate points scored per game
+
+        return 0  # Your code goes here
+
+    def pointsAllowedPerGame(self):
+        # Calculate points allowed per game
+
+        return 0  # Your code goes here
+```
+
+## All Stats
+
+```txt
+stats["Philadlphia Eagles"] =
+    TeamStats {
+        name = "Philadlphia Eagles"
+        wins = 0
+        losses = 0
+        ties = 0
+        pointsScored = 0
+        pointsAllowed = 0
+        numGames = 0
+    }
+```
+
+```py
+game = { "away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24 }
+stats["Philadlphia Eagles"].addHomeGame(game)
+```
+
+```txt
+stats["Philadlphia Eagles"] =
+    TeamStats {
+        name = "Philadlphia Eagles"
+        wins = 1
+        losses = 0
+        ties = 0
+        pointsScored = 24
+        pointsAllowed = 20
+        numGames = 1
+    }
+```
+
+## All Stats
+
+```txt
+stats["Philadlphia Eagles"] =
+    TeamStats {
+        name = "Philadlphia Eagles"
+        wins = 1
+        losses = 0
+        ties = 0
+        pointsScored = 24
+        pointsAllowed = 20
+        numGames = 1
+    }
+```
+
+```py
+game = { "away_team": "Denver Broncos", "away_score": 21, "home_team": "Philadelphia Eagles", "home_score": 17 }
+stats["Philadlphia Eagles"].addHomeGame(game)
+```
+
+```txt
+stats["Philadlphia Eagles"] =
+    TeamStats {
+        name = "Philadlphia Eagles"
+        wins = 1
+        losses = 1
+        ties = 0
+        pointsScored = 41
+        pointsAllowed = 41
+        numGames = 2
+    }
+```
+
+## All Stats
+
+```txt
+stats["Philadlphia Eagles"] =
+    TeamStats {
+        name = "Philadlphia Eagles"
+        wins = 1
+        losses = 1
+        ties = 0
+        pointsScored = 41
+        pointsAllowed = 41
+        numGames = 2
+    }
+```
+
+```py
+stats["Philadlphia Eagles"].winPercent()            # 0.5
+stats["Philadlphia Eagles"].pointsScoredPerGame()   # 20.5
+stats["Philadlphia Eagles"].pointsAllowedPerGame()  # 20.5
+```
+
+---
+
 ## Analogy to Scrabble Problem
 
 ```py

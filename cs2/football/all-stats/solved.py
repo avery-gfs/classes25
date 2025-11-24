@@ -63,7 +63,7 @@ class TeamStats:
     def winPercent(self):
         # Calculate the win percentage
 
-        return self.wins / self.numGames
+        return self.wins / (self.numGames or 1)
 
     def pointsScoredPerGame(self):
         # Calculate points scored per game
