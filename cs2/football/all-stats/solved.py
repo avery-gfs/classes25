@@ -128,6 +128,7 @@ for team in stats:
         teamStats.name,
         teamStats.wins,
         teamStats.losses,
+        teamStats.ties,
         teamStats.winPercent(),
         teamStats.pointsScored,
         teamStats.pointsAllowed,
