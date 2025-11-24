@@ -11,10 +11,10 @@ for game in games:
     game["away_score"] = int(game["away_score"])
     game["home_score"] = int(game["home_score"])
 
-# Each team gets its own TeamStats object
-
 
 class TeamStats:
+    # Each team gets its own TeamStats object
+
     def __init__(self, name):
         self.name = name
         self.wins = 0
@@ -116,9 +116,10 @@ for game in games:
 for team in stats:
     print(stats[team])
 
-resultCSV = "name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
-
 # Generate output CSV file for team stats
+# The CSV table should start with the following header row
+
+resultCSV = "name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
 
 for team in stats:
     teamStats = stats[team]

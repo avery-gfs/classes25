@@ -11,10 +11,10 @@ for game in games:
     game["away_score"] = int(game["away_score"])
     game["home_score"] = int(game["home_score"])
 
-# Each team gets its own TeamStats object
-
 
 class TeamStats:
+    # Each team will have its own TeamStats object
+
     def __init__(self, name):
         self.name = name
         self.wins = 0
@@ -32,32 +32,36 @@ class TeamStats:
         else:
             self.addStatsAway(game)
 
+    # -------------------------------------------------------------------------
+
     def addStatsHome(self, game):
         # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
         # based on game info, knowing that this team was the home team
 
-        pass
+        pass  # Your code goes here
 
     def addStatsAway(self, game):
         # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
         # based on game info, knowing that this team was the away team
 
-        pass
+        pass  # Your code goes here
 
     def winPercent(self):
         # Calculate the win percentage
 
-        return 0
+        return 0  # Your code goes here
 
     def pointsScoredPerGame(self):
         # Calculate points scored per game
 
-        return 0
+        return 0  # Your code goes here
 
     def pointsAllowedPerGame(self):
         # Calculate points allowed per game
 
-        return 0
+        return 0  # Your code goes here
+
+    # -------------------------------------------------------------------------
 
     def __repr__(self):
         result = ""
@@ -100,14 +104,19 @@ for game in games:
 for team in stats:
     print(stats[team])
 
-resultCSV = "name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
+# -----------------------------------------------------------------------------
 
 # Generate output CSV file for team stats
+# The CSV table should start with the following header row
+
+resultCSV = "name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
 
 for team in stats:
     teamStats = stats[team]
 
-    pass
+    pass  # Your code goes here
+
+# -----------------------------------------------------------------------------
 
 # Write output CSV
 
