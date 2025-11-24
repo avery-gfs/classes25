@@ -80,6 +80,8 @@ def loading():
     for n in range(20):
         # Your code goes here
 
+        time.sleep(0.2)
+
         # This code to clears the current line
         print("\x1b[1A\x1b[2K", end="")
 
