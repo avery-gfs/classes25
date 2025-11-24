@@ -144,6 +144,34 @@ stats["Philadlphia Eagles"].pointsScoredPerGame()   # 20.5
 stats["Philadlphia Eagles"].pointsAllowedPerGame()  # 20.5
 ```
 
+## All Stats
+
+```py
+# Generate output CSV file for team stats
+# The CSV table should start with the following header row
+
+resultCSV = "name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
+
+for team in stats:
+    teamStats = stats[team]
+
+    pass  # Your code goes here
+```
+
+```txt
+name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game
+Philadelphia Eagles,8,3,0.7272727272727273,255,225,11,23.181818181818183,20.454545454545453
+Dallas Cowboys,5,5,0.45454545454545453,320,314,11,29.09090909090909,28.545454545454547
+Los Angeles Chargers,7,4,0.6363636363636364,246,238,11,22.363636363636363,21.636363636363637
+Kansas City Chiefs,6,5,0.5454545454545454,277,201,11,25.181818181818183,18.272727272727273
+New Orleans Saints,2,9,0.18181818181818182,165,274,11,15.0,24.90909090909091
+Arizona Cardinals,3,8,0.2727272727272727,248,283,11,22.545454545454547,25.727272727272727
+New York Jets,2,9,0.18181818181818182,219,291,11,19.90909090909091,26.454545454545453
+Pittsburgh Steelers,6,5,0.5454545454545454,274,263,11,24.90909090909091,23.90909090909091
+Indianapolis Colts,8,3,0.7272727272727273,341,229,11,31.0,20.818181818181817
+Miami Dolphins,4,7,0.36363636363636365,226,269,11,20.545454545454547,24.454545454545453
+```
+
 ---
 
 ## Analogy to Scrabble Problem
