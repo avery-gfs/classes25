@@ -109,7 +109,7 @@ for team in stats:
 # Generate output CSV file for team stats
 # The CSV table should start with the following header row
 
-resultCSV = "name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
+resultCSV = "name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
 
 for team in stats:
     teamStats = stats[team]
