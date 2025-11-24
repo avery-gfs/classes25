@@ -74,7 +74,7 @@ stats["Philadlphia Eagles"] =
 
 ```py
 game = { "away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24 }
-stats["Philadlphia Eagles"].addHomeGame(game)
+stats["Philadlphia Eagles"].addStats(game)
 ```
 
 ```txt
@@ -107,7 +107,7 @@ stats["Philadlphia Eagles"] =
 
 ```py
 game = { "away_team": "Denver Broncos", "away_score": 21, "home_team": "Philadelphia Eagles", "home_score": 17 }
-stats["Philadlphia Eagles"].addHomeGame(game)
+stats["Philadlphia Eagles"].addStats(game)
 ```
 
 ```txt
