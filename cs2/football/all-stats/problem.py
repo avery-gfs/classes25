@@ -24,25 +24,17 @@ class TeamStats:
         self.pointsAllowed = 0
         self.numGames = 0
 
-    def addStats(self, game):
-        self.numGames += 1
-
-        if self.name == game["home_team"]:
-            self.addStatsHome(game)
-        else:
-            self.addStatsAway(game)
-
-    # -------------------------------------------------------------------------
-
     def addStatsHome(self, game):
-        # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
-        # based on game info, knowing that this team was the home team
+        # Update team stats (numGames, wins, losses, ties, pointsScored,
+        # and pointsAllowed) based on game info, knowing that this team
+        # was the home team
 
         pass  # Your code goes here
 
     def addStatsAway(self, game):
-        # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
-        # based on game info, knowing that this team was the away team
+        # Update team stats (numGames, wins, losses, ties, pointsScored,
+        # and pointsAllowed) based on game info, knowing that this team
+        # was the away team
 
         pass  # Your code goes here
 
@@ -60,8 +52,6 @@ class TeamStats:
         # Calculate points allowed per game
 
         return 0  # Your code goes here
-
-    # -------------------------------------------------------------------------
 
     def __repr__(self):
         result = ""
@@ -93,18 +83,13 @@ for game in games:
     stats.setdefault(homeTeam, TeamStats(homeTeam))
     stats.setdefault(awayTeam, TeamStats(awayTeam))
 
-    homeStats = stats[homeTeam]
-    awayStats = stats[awayTeam]
-
-    homeStats.addStats(game)
-    awayStats.addStats(game)
+    stats[homeTeam].addStatsHome(game)
+    stats[awayTeam].addStatsAway(game)
 
 # Print final stats for each team
 
 for team in stats:
     print(stats[team])
-
-# -----------------------------------------------------------------------------
 
 # Generate output CSV file for team stats
 # The CSV table should start with the following header row
@@ -115,8 +100,6 @@ for team in stats:
     teamStats = stats[team]
 
     pass  # Your code goes here
-
-# -----------------------------------------------------------------------------
 
 # Write output CSV
 
