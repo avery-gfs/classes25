@@ -70,7 +70,7 @@ class TeamStats:
         result += f"number of games:         {self.numGames}\n"
         result += f"wins:                    {self.wins}\n"
         result += f"losses:                  {self.losses}\n"
-        result += f"ties:                    {self.losses}\n"
+        result += f"ties:                    {self.ties}\n"
         result += f"win percent:             {self.winPercent():.3f}\n"
         result += f"points scored:           {self.pointsScored}\n"
         result += f"points allowed:          {self.pointsAllowed}\n"
