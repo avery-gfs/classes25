@@ -24,17 +24,12 @@ class TeamStats:
         self.pointsAllowed = 0
         self.numGames = 0
 
-    def addStats(self, game):
-        self.numGames += 1
-
-        if self.name == game["home_team"]:
-            self.addStatsHome(game)
-        else:
-            self.addStatsAway(game)
-
     def addStatsHome(self, game):
-        # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
-        # based on game info, knowing that this team was the home team
+        # Update team stats (numGames, wins, losses, ties, pointsScored,
+        # and pointsAllowed) based on game info, knowing that this team
+        # was the home team
+
+        self.numGames += 1
 
         if game["home_score"] > game["away_score"]:
             self.wins += 1
@@ -47,8 +42,11 @@ class TeamStats:
         self.pointsAllowed += game["away_score"]
 
     def addStatsAway(self, game):
-        # Update team stats (wins, losses, ties, pointsScored, pointsAllowed)
-        # based on game info, knowing that this team was the away team
+        # Update team stats (numGames, wins, losses, ties, pointsScored,
+        # and pointsAllowed) based on game info, knowing that this team
+        # was the away team
+
+        self.numGames += 1
 
         if game["away_score"] > game["home_score"]:
             self.wins += 1
@@ -105,11 +103,8 @@ for game in games:
     stats.setdefault(homeTeam, TeamStats(homeTeam))
     stats.setdefault(awayTeam, TeamStats(awayTeam))
 
-    homeStats = stats[homeTeam]
-    awayStats = stats[awayTeam]
-
-    homeStats.addStats(game)
-    awayStats.addStats(game)
+    stats[homeTeam].addStatsHome(game)
+    stats[awayTeam].addStatsAway(game)
 
 # Print final stats for each team
 
