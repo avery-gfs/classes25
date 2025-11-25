@@ -1,4 +1,4 @@
-name,wins,losses,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game
+name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game
 Philadelphia Eagles,8,3,0,0.7272727272727273,255,225,11,23.181818181818183,20.454545454545453
 Dallas Cowboys,5,5,1,0.45454545454545453,320,314,11,29.09090909090909,28.545454545454547
 Los Angeles Chargers,7,4,0,0.6363636363636364,246,238,11,22.363636363636363,21.636363636363637
