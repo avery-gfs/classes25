@@ -98,8 +98,7 @@ resultCSV = "name,wins,losses,ties,win_percent,points_scored,points_allowed,num_
 
 for team in stats:
     teamStats = stats[team]
-
-    pass  # Your code goes here
+    resultCSV += f"\n"
 
 # Write output CSV
 
