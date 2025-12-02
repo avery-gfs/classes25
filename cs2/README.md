@@ -1,3 +1,213 @@
+## Data Frames
+
+```txt
+away_team,away_score,home_team,home_score
+Dallas Cowboys,20,Philadelphia Eagles,24
+Kansas City Chiefs,21,Los Angeles Chargers,27
+Arizona Cardinals,20,New Orleans Saints,13
+Pittsburgh Steelers,34,New York Jets,32
+Miami Dolphins,8,Indianapolis Colts,33
+...
+```
+
+```txt
+name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game
+Philadelphia Eagles,8,3,0,0.7272727272727273,255,225,11,23.181818181818183,20.454545454545453
+Dallas Cowboys,5,5,1,0.45454545454545453,320,314,11,29.09090909090909,28.545454545454547
+Los Angeles Chargers,7,4,0,0.6363636363636364,246,238,11,22.363636363636363,21.636363636363637
+Kansas City Chiefs,6,5,0,0.5454545454545454,277,201,11,25.181818181818183,18.272727272727273
+New Orleans Saints,2,9,0,0.18181818181818182,165,274,11,15.0,24.90909090909091
+Arizona Cardinals,3,8,0,0.2727272727272727,248,283,11,22.545454545454547,25.727272727272727
+New York Jets,2,9,0,0.18181818181818182,219,291,11,19.90909090909091,26.454545454545453
+Pittsburgh Steelers,6,5,0,0.5454545454545454,274,263,11,24.90909090909091,23.90909090909091
+Indianapolis Colts,8,3,0,0.7272727272727273,341,229,11,31.0,20.818181818181817
+Miami Dolphins,4,7,0,0.36363636363636365,226,269,11,20.545454545454547,24.454545454545453
+...
+```
+
+## Data Frames
+
+```py
+import csv
+
+# Read game data
+
+with open("games.csv") as file:
+    games = list(csv.DictReader(file))
+
+# Convert scores from strings to numbers
+
+for game in games:
+    game["away_score"] = int(game["away_score"])
+    game["home_score"] = int(game["home_score"])
+
+
+class TeamStats:
+    # Each team gets its own TeamStats object
+
+    def __init__(self, name):
+        self.name = name
+        self.wins = 0
+        self.losses = 0
+        self.ties = 0
+        self.pointsScored = 0
+        self.pointsAllowed = 0
+        self.numGames = 0
+
+    # ...
+```
+
+## Polars
+
+<img src="https://raw.githubusercontent.com/pola-rs/polars-static/master/banner/polars_github_banner.svg" height="100"/>
+
+`python3 -m pip install polars`
+
+> A DataFrame is a 2-dimensional data structure that is useful for data
+> manipulation and analysis. With labeled axes for rows and columns, each column
+> can contain different data types, making complex data operations such as
+> merging and aggregation much easier. Due to their flexibility and intuitive
+> way of storing and working with data, DataFrames have become increasingly
+> popular in modern data analytics and engineering.
+
+## Polars
+
+CSV:
+
+```txt
+away_team,away_score,home_team,home_score
+Dallas Cowboys,20,Philadelphia Eagles,24
+Kansas City Chiefs,21,Los Angeles Chargers,27
+Arizona Cardinals,20,New Orleans Saints,13
+Pittsburgh Steelers,34,New York Jets,32
+Miami Dolphins,8,Indianapolis Colts,33
+...
+```
+
+Dataframe:
+
+```txt
+shape: (194, 4)
+┌──────────────────────┬────────────┬───────────────────────┬────────────┐
+│ away_team            ┆ away_score ┆ home_team             ┆ home_score │
+│ ---                  ┆ ---        ┆ ---                   ┆ ---        │
+│ str                  ┆ i64        ┆ str                   ┆ i64        │
+╞══════════════════════╪════════════╪═══════════════════════╪════════════╡
+│ Dallas Cowboys       ┆ 20         ┆ Philadelphia Eagles   ┆ 24         │
+│ Kansas City Chiefs   ┆ 21         ┆ Los Angeles Chargers  ┆ 27         │
+│ Arizona Cardinals    ┆ 20         ┆ New Orleans Saints    ┆ 13         │
+│ Pittsburgh Steelers  ┆ 34         ┆ New York Jets         ┆ 32         │
+│ Miami Dolphins       ┆ 8          ┆ Indianapolis Colts    ┆ 33         │
+│ …                    ┆ …          ┆ …                     ┆ …          │
+└──────────────────────┴────────────┴───────────────────────┴────────────┘
+```
+
+## Polars
+
+<div style="font-size: 15px">
+
+```txt
+shape: (32, 10)
+┌───────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┬───────────────┬────────────────┐
+│ team                  ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
+│ ---                   ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    ┆ ---           ┆ ---            │
+│ str                   ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    ┆ f64           ┆ f64            │
+╞═══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╪═══════════════╪════════════════╡
+│ New England Patriots  ┆ 13       ┆ 11   ┆ 2      ┆ 0    ┆ 351    ┆ 241     ┆ 0.846  ┆ 27.0          ┆ 18.5           │
+│ Denver Broncos        ┆ 12       ┆ 10   ┆ 2      ┆ 0    ┆ 284    ┆ 218     ┆ 0.833  ┆ 23.7          ┆ 18.2           │
+│ Seattle Seahawks      ┆ 12       ┆ 9    ┆ 3      ┆ 0    ┆ 350    ┆ 217     ┆ 0.75   ┆ 29.2          ┆ 18.1           │
+│ Los Angeles Rams      ┆ 12       ┆ 9    ┆ 3      ┆ 0    ┆ 334    ┆ 210     ┆ 0.75   ┆ 27.8          ┆ 17.5           │
+│ Chicago Bears         ┆ 12       ┆ 9    ┆ 3      ┆ 0    ┆ 313    ┆ 307     ┆ 0.75   ┆ 26.1          ┆ 25.6           │
+│ Green Bay Packers     ┆ 12       ┆ 8    ┆ 3      ┆ 1    ┆ 294    ┆ 226     ┆ 0.708  ┆ 24.5          ┆ 18.8           │
+│ San Francisco 49ers   ┆ 13       ┆ 9    ┆ 4      ┆ 0    ┆ 307    ┆ 269     ┆ 0.692  ┆ 23.6          ┆ 20.7           │
+│ Indianapolis Colts    ┆ 12       ┆ 8    ┆ 4      ┆ 0    ┆ 357    ┆ 249     ┆ 0.667  ┆ 29.8          ┆ 20.8           │
+│ Buffalo Bills         ┆ 12       ┆ 8    ┆ 4      ┆ 0    ┆ 337    ┆ 259     ┆ 0.667  ┆ 28.1          ┆ 21.6           │
+│ Jacksonville Jaguars  ┆ 12       ┆ 8    ┆ 4      ┆ 0    ┆ 292    ┆ 253     ┆ 0.667  ┆ 24.3          ┆ 21.1           │
+│ Los Angeles Chargers  ┆ 12       ┆ 8    ┆ 4      ┆ 0    ┆ 277    ┆ 252     ┆ 0.667  ┆ 23.1          ┆ 21.0           │
+│ Philadelphia Eagles   ┆ 12       ┆ 8    ┆ 4      ┆ 0    ┆ 270    ┆ 249     ┆ 0.667  ┆ 22.5          ┆ 20.8           │
+│ Detroit Lions         ┆ 12       ┆ 7    ┆ 5      ┆ 0    ┆ 350    ┆ 274     ┆ 0.583  ┆ 29.2          ┆ 22.8           │
+│ Tampa Bay Buccaneers  ┆ 12       ┆ 7    ┆ 5      ┆ 0    ┆ 279    ┆ 301     ┆ 0.583  ┆ 23.3          ┆ 25.1           │
+│ Houston Texans        ┆ 12       ┆ 7    ┆ 5      ┆ 0    ┆ 263    ┆ 198     ┆ 0.583  ┆ 21.9          ┆ 16.5           │
+│ Dallas Cowboys        ┆ 12       ┆ 6    ┆ 5      ┆ 1    ┆ 351    ┆ 342     ┆ 0.542  ┆ 29.3          ┆ 28.5           │
+│ Carolina Panthers     ┆ 13       ┆ 7    ┆ 6      ┆ 0    ┆ 247    ┆ 297     ┆ 0.538  ┆ 19.0          ┆ 22.8           │
+│ Baltimore Ravens      ┆ 12       ┆ 6    ┆ 6      ┆ 0    ┆ 289    ┆ 293     ┆ 0.5    ┆ 24.1          ┆ 24.4           │
+│ Pittsburgh Steelers   ┆ 12       ┆ 6    ┆ 6      ┆ 0    ┆ 281    ┆ 289     ┆ 0.5    ┆ 23.4          ┆ 24.1           │
+│ Kansas City Chiefs    ┆ 12       ┆ 6    ┆ 6      ┆ 0    ┆ 305    ┆ 232     ┆ 0.5    ┆ 25.4          ┆ 19.3           │
+│ Miami Dolphins        ┆ 12       ┆ 5    ┆ 7      ┆ 0    ┆ 247    ┆ 286     ┆ 0.417  ┆ 20.6          ┆ 23.8           │
+│ Atlanta Falcons       ┆ 12       ┆ 4    ┆ 8      ┆ 0    ┆ 243    ┆ 276     ┆ 0.333  ┆ 20.3          ┆ 23.0           │
+│ Cincinnati Bengals    ┆ 12       ┆ 4    ┆ 8      ┆ 0    ┆ 280    ┆ 374     ┆ 0.333  ┆ 23.3          ┆ 31.2           │
+│ Minnesota Vikings     ┆ 12       ┆ 4    ┆ 8      ┆ 0    ┆ 224    ┆ 281     ┆ 0.333  ┆ 18.7          ┆ 23.4           │
+│ New York Jets         ┆ 12       ┆ 3    ┆ 9      ┆ 0    ┆ 246    ┆ 315     ┆ 0.25   ┆ 20.5          ┆ 26.3           │
+│ Cleveland Browns      ┆ 12       ┆ 3    ┆ 9      ┆ 0    ┆ 194    ┆ 270     ┆ 0.25   ┆ 16.2          ┆ 22.5           │
+│ Washington Commanders ┆ 12       ┆ 3    ┆ 9      ┆ 0    ┆ 262    ┆ 323     ┆ 0.25   ┆ 21.8          ┆ 26.9           │
+│ Arizona Cardinals     ┆ 12       ┆ 3    ┆ 9      ┆ 0    ┆ 265    ┆ 303     ┆ 0.25   ┆ 22.1          ┆ 25.3           │
+│ New Orleans Saints    ┆ 12       ┆ 2    ┆ 10     ┆ 0    ┆ 182    ┆ 295     ┆ 0.167  ┆ 15.2          ┆ 24.6           │
+│ Las Vegas Raiders     ┆ 12       ┆ 2    ┆ 10     ┆ 0    ┆ 179    ┆ 308     ┆ 0.167  ┆ 14.9          ┆ 25.7           │
+│ New York Giants       ┆ 13       ┆ 2    ┆ 11     ┆ 0    ┆ 279    ┆ 367     ┆ 0.154  ┆ 21.5          ┆ 28.2           │
+│ Tennessee Titans      ┆ 12       ┆ 1    ┆ 11     ┆ 0    ┆ 170    ┆ 328     ┆ 0.083  ┆ 14.2          ┆ 27.3           │
+└───────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┴───────────────┴────────────────┘
+```
+
+</div>
+
+## Polars
+
+```py
+import polars as pl
+
+# Read CSV data as a dataframe
+
+games = pl.read_csv("games.csv")
+
+# Separate each game into two entries, one for the home team and one for away
+
+homeResults = games.select(
+    pl.col("home_team").alias("team"),
+    pl.col("home_score").alias("scored"),
+    pl.col("away_score").alias("allowed"),
+)
+
+awayResults = games.select(
+    pl.col("away_team").alias("team"),
+    pl.col("away_score").alias("scored"),
+    pl.col("home_score").alias("allowed"),
+)
+
+# Combine the home and away win loss results
+
+combined = pl.concat([homeResults, awayResults])
+```
+
+## Polars
+
+```py
+# Group the stats from each team game into a single row
+
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
+    (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
+    (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
+    pl.sum("scored").alias("scored"),
+    pl.sum("allowed").alias("allowed"),
+)
+
+# Calculate the per-game stats for each team
+# Sort the team data by win percentage, highest to lowest
+
+finalStats = grouped.with_columns(
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames")).round(3).alias("winPct"),
+    (pl.col("scored") / pl.col("numGames")).round(1).alias("scoredPerGame"),
+    (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
+).sort("winPct", descending = True)
+```
+
+## Project Planning Slides
+
+https://docs.google.com/presentation/d/1hh2TvDd2wa9LfzCvLSy28JokWcScPnhxPGbqGM2R9Ws/edit?usp=sharing
+
+---
+
 ## All Stats
 
 ```py

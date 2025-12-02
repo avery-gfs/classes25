@@ -90,10 +90,6 @@ print(factors(40) == [1, 2, 4, 5, 8, 10, 20, 40])
 
 def loading():
     # Display an animated loading bar
-    #
-    # Note that you can use this code to clear the current line:
-    #
-    # print("\x1b[1A\x1b[2K", end="")
 
     for n in range(20):
         print("loading" + "." * (n % 5))
@@ -107,7 +103,7 @@ loading()
 
 
 def randomNums():
-    # Generate a list of 10 random numbers using the LCG algorithm
+    # Generate a list of 10 paeuso-random numbers using the LCG algorithm
     # https://en.wikipedia.org/wiki/Linear_congruential_generator
 
     seed = 17
