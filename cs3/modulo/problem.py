@@ -92,7 +92,7 @@ loading()
 
 
 def randomNums():
-    # Generate a list of 10 random numbers using the LCG algorithm
+    # Generate a list of 10 paeuso-random numbers using the LCG algorithm
     # https://en.wikipedia.org/wiki/Linear_congruential_generator
 
     seed = 17

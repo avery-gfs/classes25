@@ -1,3 +1,9 @@
+## Project Planning Slides
+
+https://docs.google.com/presentation/d/1hh2TvDd2wa9LfzCvLSy28JokWcScPnhxPGbqGM2R9Ws/edit?usp=sharing
+
+---
+
 ## Pseudo-random Numbers
 
 ```py
