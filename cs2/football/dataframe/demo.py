@@ -1,12 +1,13 @@
 import polars as pl
 
-# Increase table display size
+# Show all rows and columns
 
-pl.Config(tbl_rows=32, tbl_cols=10)
+pl.Config(tbl_rows=-1, tbl_cols=-1)
 
 # Read CSV data as a dataframe
 
 games = pl.read_csv("games.csv")
+
 print(games)
 
 # Separate each game into two entries, one for the home team and one for away
@@ -26,6 +27,7 @@ awayResults = games.select(
 # Combine the home and away win loss results
 
 combined = pl.concat([homeResults, awayResults])
+
 print(combined)
 
 # Group the stats from each team game into a single row
@@ -35,8 +37,8 @@ grouped = combined.group_by("team").agg(
     (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
     (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
     (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
-    pl.sum("scored").alias("scored"),
-    pl.sum("allowed").alias("allowed"),
+    pl.sum("scored"),
+    pl.sum("allowed"),
 )
 
 print(grouped)
