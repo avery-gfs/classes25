@@ -1,3 +1,164 @@
+## Twine
+
+https://twinery.org/
+
+https://twinery.org/reference/en/
+
+- Rooms (passages)
+- Links
+- Loops
+- Watch out for whitespace
+- Formats (chapbook)
+  https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
+- Text styles
+- Variables
+- Displaying variables
+- Conditionals
+- Randomness
+
+## Text
+
+- `*Italic text*`
+- `**Bold text**`
+- `***Bold italic text***`
+
+## Lists
+
+Unordered list:
+
+```md
+- Lorem
+- Ipsum
+- Dolor
+- Sit
+```
+
+Ordered list:
+
+```md
+1. Lorem
+2. Ipsum
+3. Dolor
+4. Sit
+```
+
+## Game Structure
+
+- Rooms ("passages")
+- Links
+- Cycles
+
+Simple link:
+
+```md
+[[story]]
+```
+
+Labelled link:
+
+```md
+You [[tell a story->story]] with great confidence.
+```
+
+## Delays
+
+```md
+You are in Quaker meeting
+
+[after 2 second] You feel very tired, but you CANNOT go to sleep
+
+[after 4 second] You have the urge to speak
+
+[[tell a story->story]]
+
+[[sing a song->song]]
+
+[[make a speech->speech]]
+```
+
+## Variables
+
+```md
+## dollarsInPocket: 12 openedPortalToAlternateDimension: true name: 'James'
+
+You've nearly reached the end of your adventure.
+```
+
+Common variable types:
+
+- Numbers
+- Strings (text)
+- Booleans (true / false)
+
+https://klembot.github.io/chapbook/guide/state/the-vars-section.html
+
+## Variable Updates
+
+```md
+## score: 0
+```
+
+```md
+## score: score + 1
+
+Your score is {score}
+```
+
+## Variable Display
+
+```md
+## name: 'Chris'
+
+"Hi, {name}," your guide greets you.
+```
+
+## Conditionals
+
+```md
+## hasKey: true
+
+It's the strangest thing: there, in the weeds that surround the base of the
+tree, is a single rusted key.
+
+After picking it up, you decide to [[move on]].
+```
+
+```md
+At the end of the hall, you find a featureless steel door.
+
+[if hasKey] You could try [[unlocking it]] with the key you found.
+
+[continue] You consider [[turning back]].
+```
+
+https://klembot.github.io/chapbook/guide/state/conditional-display.html
+
+## Randomness
+
+```md
+[if random.coinFlip] Heads!
+
+[else] Tails!
+```
+
+```md
+## score: random.d4
+
+Your score is {score}
+```
+
+https://klembot.github.io/chapbook/guide/state/randomness.html
+
+---
+
+## Game State
+
+- State machines
+- Transition diagrams
+- State timing
+
+---
+
 ## Timing
 
 - `World.seconds`
