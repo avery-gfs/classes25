@@ -83,7 +83,7 @@ You have the urge to speak
 ```txt
 dollarsInPocket: 12
 openedPortalToAlternateDimension: true
-name: 'James'
+name: "James"
 --
 You've nearly reached the end of your adventure.
 ```
@@ -112,7 +112,7 @@ Your score is {score}
 ## Variable Display
 
 ```txt
-name: 'Chris'
+name: "Chris"
 --
 "Hi, {name}," your guide greets you.
 ```
