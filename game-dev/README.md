@@ -26,7 +26,7 @@ https://twinery.org/reference/en/
 
 Unordered list:
 
-```md
+```txt
 - Lorem
 - Ipsum
 - Dolor
@@ -35,7 +35,7 @@ Unordered list:
 
 Ordered list:
 
-```md
+```txt
 1. Lorem
 2. Ipsum
 3. Dolor
@@ -50,24 +50,26 @@ Ordered list:
 
 Simple link:
 
-```md
+```txt
 [[story]]
 ```
 
 Labelled link:
 
-```md
+```txt
 You [[tell a story->story]] with great confidence.
 ```
 
 ## Delays
 
-```md
+```txt
 You are in Quaker meeting
 
-[after 2 second] You feel very tired, but you CANNOT go to sleep
+[after 2 second]
+You feel very tired, but you CANNOT go to sleep
 
-[after 4 second] You have the urge to speak
+[after 4 second]
+You have the urge to speak
 
 [[tell a story->story]]
 
@@ -78,9 +80,11 @@ You are in Quaker meeting
 
 ## Variables
 
-```md
-## dollarsInPocket: 12 openedPortalToAlternateDimension: true name: 'James'
-
+```txt
+dollarsInPocket: 12
+openedPortalToAlternateDimension: true
+name: 'James'
+--
 You've nearly reached the end of your adventure.
 ```
 
@@ -94,60 +98,68 @@ https://klembot.github.io/chapbook/guide/state/the-vars-section.html
 
 ## Variable Updates
 
-```md
-## score: 0
+```txt
+score: 0
+--
 ```
 
-```md
-## score: score + 1
-
+```txt
+score: score + 1
+--
 Your score is {score}
 ```
 
 ## Variable Display
 
-```md
-## name: 'Chris'
-
+```txt
+name: 'Chris'
+--
 "Hi, {name}," your guide greets you.
 ```
 
 ## Conditionals
 
-```md
-## hasKey: true
-
-It's the strangest thing: there, in the weeds that surround the base of the
-tree, is a single rusted key.
+```txt
+hasKey: true
+--
+It's the strangest thing: there, in the weeds that surround the base of the tree, is a single rusted key.
 
 After picking it up, you decide to [[move on]].
 ```
 
-```md
+```txt
 At the end of the hall, you find a featureless steel door.
 
-[if hasKey] You could try [[unlocking it]] with the key you found.
+[if hasKey]
+You could try [[unlocking it]] with the key you found.
 
-[continue] You consider [[turning back]].
+[continue]
+You consider [[turning back]].
 ```
 
 https://klembot.github.io/chapbook/guide/state/conditional-display.html
 
 ## Randomness
 
-```md
-[if random.coinFlip] Heads!
+```txt
+[if random.coinFlip]
+Heads!
 
-[else] Tails!
+[else]
+Tails!
 ```
 
-```md
-## score: random.d4
-
+```txt
+score: random.d4
+--
 Your score is {score}
 ```
 
 https://klembot.github.io/chapbook/guide/state/randomness.html
+
+## Twine for Prototyping
+
+<img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/the-legend-of-zelda-hd/d/d5/Good-horse-botw.jpg?width=1280"/>
 
 ---
 
