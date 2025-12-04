@@ -16,11 +16,47 @@ https://twinery.org/reference/en/
 - Conditionals
 - Randomness
 
+## Game Structure
+
+- Rooms ("passages")
+- Links
+- Cycles
+
+Simple link:
+
+```txt
+[[story]]
+```
+
+Labelled link:
+
+```txt
+You [[tell a story->story]] with great confidence.
+```
+
 ## Text
 
 - `*Italic text*`
 - `**Bold text**`
 - `***Bold italic text***`
+
+## Delays
+
+```txt
+You are in Quaker meeting
+
+[after 2 seconds]
+You feel very tired, but you CANNOT go to sleep
+
+[after 4 seconds]
+You have the urge to speak
+
+[[tell a story->story]]
+
+[[sing a song->song]]
+
+[[make a speech->speech]]
+```
 
 ## Lists
 
@@ -40,42 +76,6 @@ Ordered list:
 2. Ipsum
 3. Dolor
 4. Sit
-```
-
-## Game Structure
-
-- Rooms ("passages")
-- Links
-- Cycles
-
-Simple link:
-
-```txt
-[[story]]
-```
-
-Labelled link:
-
-```txt
-You [[tell a story->story]] with great confidence.
-```
-
-## Delays
-
-```txt
-You are in Quaker meeting
-
-[after 2 second]
-You feel very tired, but you CANNOT go to sleep
-
-[after 4 second]
-You have the urge to speak
-
-[[tell a story->story]]
-
-[[sing a song->song]]
-
-[[make a speech->speech]]
 ```
 
 ## Variables
@@ -156,6 +156,12 @@ Your score is {score}
 ```
 
 https://klembot.github.io/chapbook/guide/state/randomness.html
+
+## Images
+
+`{embed image: 'https://alpexcursion.com/storage/media/Snow/Swiss-chalet-covered-with-snow(1).webp'}`
+
+<img src="https://alpexcursion.com/storage/media/Snow/Swiss-chalet-covered-with-snow(1).webp" height=400 />
 
 ## Twine for Prototyping
 
