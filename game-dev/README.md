@@ -1,3 +1,90 @@
+## Variables
+
+```txt
+dollarsInPocket: 12
+openedPortalToAlternateDimension: true
+name: "James"
+--
+You've nearly reached the end of your adventure.
+```
+
+Common variable types:
+
+- Numbers
+- Strings (text)
+- Booleans (true / false)
+
+https://klembot.github.io/chapbook/guide/state/the-vars-section.html
+
+## Variable Display
+
+```txt
+name: "Chris"
+--
+"Hi, {name}," your guide greets you.
+```
+
+## Variable Updates
+
+```txt
+score: 0
+--
+```
+
+```txt
+score: score + 1
+--
+Your score is {score}
+```
+
+## Conditionals
+
+```txt
+hasKey: true
+--
+It's the strangest thing: there, in the weeds that surround the base of the tree, is a single rusted key.
+
+After picking it up, you decide to [[move on]].
+```
+
+```txt
+At the end of the hall, you find a featureless steel door.
+
+[if hasKey]
+You could try [[unlocking it]] with the key you found.
+
+[continue]
+You consider [[turning back]].
+```
+
+https://klembot.github.io/chapbook/guide/state/conditional-display.html
+
+## Randomness
+
+```txt
+[if random.coinFlip]
+Heads!
+
+[else]
+Tails!
+```
+
+```txt
+score: random.d4
+--
+Your score is {score}
+```
+
+https://klembot.github.io/chapbook/guide/state/randomness.html
+
+## Images
+
+`{embed image: 'https://alpexcursion.com/storage/media/Snow/Swiss-chalet-covered-with-snow(1).webp'}`
+
+<img src="https://alpexcursion.com/storage/media/Snow/Swiss-chalet-covered-with-snow(1).webp" height=400 />
+
+---
+
 ## Twine
 
 https://twinery.org/
@@ -77,91 +164,6 @@ Ordered list:
 3. Dolor
 4. Sit
 ```
-
-## Variables
-
-```txt
-dollarsInPocket: 12
-openedPortalToAlternateDimension: true
-name: "James"
---
-You've nearly reached the end of your adventure.
-```
-
-Common variable types:
-
-- Numbers
-- Strings (text)
-- Booleans (true / false)
-
-https://klembot.github.io/chapbook/guide/state/the-vars-section.html
-
-## Variable Updates
-
-```txt
-score: 0
---
-```
-
-```txt
-score: score + 1
---
-Your score is {score}
-```
-
-## Variable Display
-
-```txt
-name: "Chris"
---
-"Hi, {name}," your guide greets you.
-```
-
-## Conditionals
-
-```txt
-hasKey: true
---
-It's the strangest thing: there, in the weeds that surround the base of the tree, is a single rusted key.
-
-After picking it up, you decide to [[move on]].
-```
-
-```txt
-At the end of the hall, you find a featureless steel door.
-
-[if hasKey]
-You could try [[unlocking it]] with the key you found.
-
-[continue]
-You consider [[turning back]].
-```
-
-https://klembot.github.io/chapbook/guide/state/conditional-display.html
-
-## Randomness
-
-```txt
-[if random.coinFlip]
-Heads!
-
-[else]
-Tails!
-```
-
-```txt
-score: random.d4
---
-Your score is {score}
-```
-
-https://klembot.github.io/chapbook/guide/state/randomness.html
-
-## Images
-
-`{embed image: 'https://alpexcursion.com/storage/media/Snow/Swiss-chalet-covered-with-snow(1).webp'}`
-
-<img src="https://alpexcursion.com/storage/media/Snow/Swiss-chalet-covered-with-snow(1).webp" height=400 />
 
 ## Twine for Prototyping
 
