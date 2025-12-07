@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="-1 -1 172 142"
+  width="172mm"
+  height="142mm"
+  stroke-width="0.2"
+  fill="none"
+>
+  <rect x="0" y="0" width="170" height="120" stroke="black" />
+
+  <rect x="10" y="3.5" width="150" height="3" stroke="red" />
+  <rect x="10" y="113.5" width="150" height="3" stroke="red" />
+  <rect x="3.5" y="10" width="3" height="100" stroke="red" />
+  <rect x="163.5" y="10" width="3" height="100" stroke="red" />
+
+  <rect x="75" y="105" width="20" height="3" stroke="red" />
+</svg>
