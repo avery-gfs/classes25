@@ -1,5 +1,5 @@
-width = int(input("enter picture width (default 150 mm): ") or 150)
-height = int(input("enter picture height (default 100 mm): ") or 100)
+width = int(input("enter picture width (mm) (default 150): ") or 150)
+height = int(input("enter picture height (mm) (default 100): ") or 100)
 
 back = f"""
 <svg
