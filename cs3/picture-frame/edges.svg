@@ -11,8 +11,31 @@
   <path d="m 0 0 v 120 l 10 -10 v -100 z" stroke="black" />
   <path d="m 170 0 v 120 l -10 -10 v -100 z" stroke="black" />
 
-  <rect x="10" y="3.5" width="150" height="3" stroke="red" />
-  <rect x="10" y="113.5" width="150" height="3" stroke="red" />
-  <rect x="3.5" y="10" width="3" height="100" stroke="red" />
-  <rect x="163.5" y="10" width="3" height="100" stroke="red" />
+  <rect
+    width="8"
+    height="3"
+    fill="black"
+    transform="translate(7 7) rotate(-45) translate(-4 -1.5)"
+  />
+
+  <rect
+    width="8"
+    height="3"
+    fill="black"
+    transform="translate(163 113) rotate(-45) translate(-4 -1.5)"
+  />
+
+  <rect
+    width="8"
+    height="3"
+    fill="black"
+    transform="translate(7 113) rotate(45) translate(-4 -1.5)"
+  />
+
+  <rect
+    width="8"
+    height="3"
+    fill="black"
+    transform="translate(163 7) rotate(45) translate(-4 -1.5)"
+  />
 </svg>
