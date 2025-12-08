@@ -1,5 +1,9 @@
 width = int(input("enter picture width (mm) (default 150): ") or 150)
 height = int(input("enter picture height (mm) (default 100): ") or 100)
+overlap = 2
+
+width -= overlap * 2
+height -= overlap * 2
 
 back = f"""
 <svg
