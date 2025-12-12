@@ -1,0 +1,36 @@
+- Basic types (strings, booleans, integers, floats, lists)
+- Difference between ints and floats
+- Basic numerical operators (+ - * / \*\*)
+- Inequality operators
+- Basic numerical functions (round, abs)
+- Printing strings
+- Printing variables
+- Reading string input
+- Reading and converting numerical input
+- Reading and writing text files
+- String concatenation
+- String interpolation
+- Equality
+- Boolean operators (and, or, not)
+- In operator
+- String slicing
+- List append
+- List indexing
+- Length function
+- List concatenation
+- List slicing
+- Conditionals
+- Conditional expressions
+- While loops
+- For loops with list
+- For loops with range
+- Break and continue
+- Return semantics
+- Calling functions
+- Defining functions
+- Functions parameters and arity
+- Variable scope
+- Variable aliasing
+- Calling methods
+- Validating user input
+- Basic numerical and string algorithms
