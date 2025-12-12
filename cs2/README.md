@@ -1,3 +1,26 @@
+## Input Validation
+
+```py
+def getInput(maxNum):
+    while True:
+        choice = input(f"Enter a number 1 - {maxNum}: ")
+
+        if not choice.isdigit():
+            print("Not a valid number")
+        else:
+            choice = int(choice)
+
+            if choice < 1 or choice > maxNum:
+                print("Not in range")
+            else:
+                return choice
+
+selection = getInput(10)
+print(selection)
+```
+
+---
+
 ## Data Frames
 
 ```txt

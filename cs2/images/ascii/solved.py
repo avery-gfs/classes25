@@ -29,9 +29,13 @@
 
 from PIL import Image
 
-im = Image.open("/home/anortonsmith/Documents/classes/solutions/cs2/images/bird.png")
+im = Image.open("dali.png")
 
+invert = False  # Set to True for dark-on-light color scheme
 symbols = "   ``'-~:+<ceOEB"
+
+if invert:
+    symbols = symbols[::-1]  # Reverse symbols
 
 for y in range(0, im.height, 2):
     row = ""
