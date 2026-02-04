@@ -1,0 +1,13 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 77 30.5"
+  width="77mm"
+  height="29mm"
+  stroke-width="0.2"
+  fill="none"
+>
+  <rect x="0" y="0" width="50" height="6.4" stroke="black" />
+  <rect x="0" y="7.5" width="50" height="6.4" stroke="black" />
+  <rect x="0" y="15" width="75" height="6.4" stroke="black" />
+  <rect x="0" y="22.5" width="75" height="6.4" stroke="black" />
+</svg>

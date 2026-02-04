@@ -1,3 +1,87 @@
+<!--
+
+## Ghost
+
+---
+
+## Min Max
+
+---
+
+## Language
+
+---
+
+## Concurrency
+
+---
+
+## Scope
+
+---
+
+## Closures
+
+---
+
+## Regex Impl
+
+---
+
+## Regex
+
+---
+
+## Sudoku
+
+## set
+
+---
+
+## VM
+
+---
+
+## Paper VM
+
+---
+
+## Metro
+
+---
+
+## Tree
+
+---
+
+## Queue
+
+---
+
+## Stack
+
+---
+
+## Linked List
+
+---
+
+## Picture Frame
+
+---
+
+ -->
+
+---
+
+## Teaching
+
+## Code Review
+
+## Towers
+
+---
+
 ## Project Planning Slides
 
 https://docs.google.com/presentation/d/1hh2TvDd2wa9LfzCvLSy28JokWcScPnhxPGbqGM2R9Ws/edit?usp=sharing
@@ -695,6 +779,10 @@ def probe(r, c):
     update(r, c, "▒")
     probe(r + 1, c)
 ```
+
+---
+
+## Shuffle
 
 ---
 

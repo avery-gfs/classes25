@@ -1,0 +1,18 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 170 120"
+  width="170mm"
+  height="120mm"
+  stroke-width="0.2"
+  fill="none"
+>
+  <rect x="0" y="0" width="170" height="120" stroke="black" />
+
+  <rect x="10" y="3.5" width="150" height="3" stroke="red" />
+  <rect x="10" y="113.5" width="150" height="3" stroke="red" />
+  <rect x="3.5" y="10" width="3" height="100" stroke="red" />
+  <rect x="163.5" y="10" width="3" height="100" stroke="red" />
+
+  <rect x="75.0" y="12" width="20" height="3" stroke="red" />
+  <rect x="12" y="50.0" width="3" height="20" stroke="red" />
+</svg>
