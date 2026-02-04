@@ -1,7 +1,5 @@
 ## Binary
 
-Decimal: base `10` https://en.wikipedia.org/wiki/Decimal
-
 Binary: base `2` https://en.wikipedia.org/wiki/Binary_number
 
 Powers of 2: `1 2 4 8 16 32 64 128 ...`
@@ -31,6 +29,7 @@ Powers of 2: `1 2 4 8 16 32 64 128 ...`
 
 - What do powers of 2 look like in binary?
 - What do powers of 2 minus 1 look like in binary?
+- What do even numbers like in binary? Odd numbers?
 
 ## Hexadecimal
 
@@ -59,13 +58,80 @@ Hexadecimal: base `16` https://en.wikipedia.org/wiki/Hexadecimal
 
 </pre>
 
-## Reversing Strings
+## Hex to Binary Conversion
 
-Reverse a string in Python with `[::-1]`:
+```txt
+3b
+```
+
+```txt
+3    b
+---- ----
+0011 1011
+```
+
+```txt
+00111011
+```
+
+```txt
+111011
+```
+
+```txt
+c2f
+```
+
+```txt
+c    2    f
+---- ---- ----
+1100 0020 1111
+```
+
+```txt
+110000201111
+```
+
+## Binary to Hex Conversion
+
+```txt
+101100
+```
+
+```txt
+0010 1100
+---- ----
+2    c
+```
+
+```txt
+2c
+```
+
+```txt
+101100201101
+```
+
+```txt
+b    2    e
+---- ---- ----
+1011 0020 1101
+```
+
+```txt
+b2e
+```
+
+## DEADBEEF
 
 ```py
-s = "abcd"
-print(s[::-1]) # prints dcba
+0xdeadbeef      # 3735928559
+bin(3735928559) # "0b11011110101011011011111011101111"
+```
+
+```py
+0b11011110101011011011111011101111 # 3735928559
+hex(3735928559)                    # 0xdeadbeef
 ```
 
 ---
