@@ -54,16 +54,27 @@
 - Cube
 - Dice
 - Projector / light box
+- Folding (box)
 
 ## Rules:
 
 - Original art
 - Time limit (5min??)
 
+## Items:
+
+- Wood
+- Paper
+- Keychains
+- Press
+- Ink
+- Vise
+
 ## Lessons:
 
 1. Keychain
 
+- Make collage
 - Sketch design
 - Engrave design and cut outline
 
@@ -96,3 +107,8 @@
 - No glue, adhesive, or extra material allowed
 
 7. Light box
+
+---
+
+- joints
+- tinkercad

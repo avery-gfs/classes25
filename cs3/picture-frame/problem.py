@@ -1,16 +1,17 @@
+import os
+
 width = int(input("enter picture width (mm) (default 150): ") or 150)
 height = int(input("enter picture height (mm) (default 100): ") or 100)
-overlap = 2
 
-width -= overlap * 2
-height -= overlap * 2
+directory = f"{width}-by-{height}"
+os.makedirs(directory, exist_ok=True)
 
 back = f"""
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="-1 -1 172 122"
-  width="172mm"
-  height="122mm"
+  viewBox="0 0 170 120"
+  width="172m0"
+  height="120mm"
   stroke-width="0.2"
   fill="none"
 >
@@ -26,15 +27,15 @@ back = f"""
 </svg>
 """
 
-with open("back.svg", "w") as file:
+with open(f"{directory}/back.svg", "w") as file:
     file.write(back.lstrip())
 
 edges = f"""
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="-1 -1 172 122"
-  width="172mm"
-  height="122mm"
+  viewBox="0 0 172 120"
+  width="172m0"
+  height="120mm"
   stroke-width="0.2"
   fill="none"
 >
@@ -50,13 +51,13 @@ edges = f"""
 </svg>
 """
 
-with open("edges.svg", "w") as file:
+with open(f"{directory}/edges.svg", "w") as file:
     file.write(edges.lstrip())
 
 nails = f"""
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="-1 -1 152 29"
+  viewBox="0 0 152 29"
   width="152mm"
   height="29mm"
   stroke-width="0.2"
@@ -69,5 +70,21 @@ nails = f"""
 </svg>
 """
 
-with open("nails.svg", "w") as file:
+with open(f"{directory}/nails.svg", "w") as file:
     file.write(nails.lstrip())
+
+stand = f"""
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 55 30"
+  width="55mm"
+  height="30mm"
+  stroke-width="0.2"
+  fill="none"
+>
+  <path d="m 0 0 h 45 v 4 h 3.2 v 20 h -3.2 v 4 h -45 z" stroke="black" />
+</svg>
+"""
+
+with open(f"{directory}/stand.svg", "w") as file:
+    file.write(stand.lstrip())

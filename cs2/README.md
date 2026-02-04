@@ -1,3 +1,75 @@
+## Binary
+
+Decimal: base `10` https://en.wikipedia.org/wiki/Decimal
+
+Binary: base `2` https://en.wikipedia.org/wiki/Binary_number
+
+Powers of 2: `1 2 4 8 16 32 64 128 ...`
+
+<pre style="font-size: 8px;">
+
+| decimal      | binary      |          | decimal      | binary      |
+| ------------ | ----------- |          | ------------ | ----------- |
+|            0 |           0 |          |           16 |       10000 |
+|            1 |           1 |          |           17 |       10001 |
+|            2 |          10 |          |           18 |       10010 |
+|            3 |          11 |          |           19 |       10011 |
+|            4 |         100 |          |           20 |       10100 |
+|            5 |         101 |          |           21 |       10101 |
+|            6 |         110 |          |           22 |       10110 |
+|            7 |         111 |          |           23 |       10111 |
+|            8 |        1000 |          |           24 |       11000 |
+|            9 |        1001 |          |           25 |       11001 |
+|           10 |        1010 |          |           26 |       11010 |
+|           11 |        1011 |          |           27 |       11011 |
+|           12 |        1100 |          |           28 |       11100 |
+|           13 |        1101 |          |           29 |       11101 |
+|           14 |        1110 |          |           30 |       11110 |
+|           15 |        1111 |          |           31 |       11111 |
+
+</pre>
+
+- What do powers of 2 look like in binary?
+- What do powers of 2 minus 1 look like in binary?
+
+## Hexadecimal
+
+Hexadecimal: base `16` https://en.wikipedia.org/wiki/Hexadecimal
+
+<pre style="font-size: 8px;">
+
+| decimal      | hexadecimal      |          | decimal      | hexadecimal      |
+| ------------ | ---------------- |          | ------------ | ---------------- |
+|            0 |                0 |          |           16 |               10 |
+|            1 |                1 |          |           17 |               11 |
+|            2 |                2 |          |           18 |               12 |
+|            3 |                3 |          |           19 |               13 |
+|            4 |                4 |          |           20 |               14 |
+|            5 |                5 |          |           21 |               15 |
+|            6 |                6 |          |           22 |               16 |
+|            7 |                7 |          |           23 |               17 |
+|            8 |                8 |          |           24 |               18 |
+|            9 |                9 |          |           25 |               19 |
+|           10 |                a |          |           26 |               1a |
+|           11 |                b |          |           27 |               1b |
+|           12 |                c |          |           28 |               1c |
+|           13 |                d |          |           29 |               1d |
+|           14 |                e |          |           30 |               1e |
+|           15 |                f |          |           31 |               1f |
+
+</pre>
+
+## Reversing Strings
+
+Reverse a string in Python with `[::-1]`:
+
+```py
+s = "abcd"
+print(s[::-1]) # prints dcba
+```
+
+---
+
 ## Input Validation
 
 ```py

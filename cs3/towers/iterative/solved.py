@@ -32,13 +32,23 @@ def showTowers():
     time.sleep(0.2)
 
 
-# https://en.wikipedia.org/wiki/Tower_of_Hanoi#Recursive_solution
+# https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution
 
 
 def moveSingle(src, dest):
     towers[dest].append(towers[src][-1])
     towers[src].pop()
     showTowers()
+
+
+def canMove(src, dest):
+    if not towers[src]:
+        return False
+
+    if not towers[dest]:
+        return True
+
+    return towers[src][-1] < towers[dest][-1]
 
 
 def solve(src, dest, depth):
@@ -49,6 +59,22 @@ def solve(src, dest, depth):
         solve(tmp, dest, depth - 1)
 
 
+transitionsA = [0, 0, 1]
+transitionsB = [1, 2, 2]
+
+
+def step(n):
+    a = transitionsA[n % 3]
+    b = transitionsB[n % 3]
+
+    if canMove(a, b):
+        moveSingle(a, b)
+    else:
+        moveSingle(b, a)
+
+
 towers = [[6, 5, 4, 3, 2, 1], [], []]
 showTowers()
-solve(0, 2, 6)
+
+for n in range(2**6 - 1):
+    step(n)
