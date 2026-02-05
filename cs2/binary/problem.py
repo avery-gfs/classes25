@@ -1,6 +1,3 @@
-# Hint: use [::-1] to reverse a string
-
-
 def binToDec(s):
     pass
 
