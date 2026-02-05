@@ -1,3 +1,77 @@
+## Top Down Conversion
+
+Top down conversion generates digits from the start of the number.
+
+```txt
+n = 26    p = 16    result = "1    "
+                              ^
+
+n = 10    p =  8    result = "11   "
+                               ^
+
+n =  2    p =  4    result = "110  "
+                                ^
+
+n =  2    p =  2    result = "1101 "
+                                 ^
+
+n =  0    p =  1    result = "11010"
+                                  ^
+```
+
+## Bottom Up Conversion
+
+Bottom up conversion generates digits from the end of the number.
+
+```txt
+n = 26    result = "    0"
+                        ^
+
+n = 13    result = "   10"
+                       ^
+
+n =  6    result = "  010"
+                      ^
+
+n =  3    result = " 1010"
+                     ^
+
+n =  1    result = "11010"
+                    ^
+```
+
+## Top Down Conversion
+
+Top down conversion generates digits from the start of the number.
+
+```txt
+n = 395   p = 256    result = "1  "
+                               ^
+
+n = 139   p =  16    result = "18 "
+                                ^
+
+n =  11   p =   1    result = "18b"
+                                 ^
+```
+
+## Bottom Up Conversion
+
+Bottom up conversion generates digits from the end of the number.
+
+```txt
+n = 395   result = "  b"
+                      ^
+
+n =  24   result = " 8b"
+                     ^
+
+n =   1   result = "18b"
+                    ^
+```
+
+---
+
 ## Binary
 
 Binary: base `2` https://en.wikipedia.org/wiki/Binary_number

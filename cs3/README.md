@@ -74,6 +74,41 @@
 
 ---
 
+## Recursive Tower Solver
+
+```txt
+Disk Numbers:
+
+D1       ▇▇▇
+D2      ▇▇▇▇▇
+D3     ▇▇▇▇▇▇▇
+D4    ▇▇▇▇▇▇▇▇▇
+D5   ▇▇▇▇▇▇▇▇▇▇▇
+D6  ▇▇▇▇▇▇▇▇▇▇▇▇▇
+
+Tower Labels:
+
+    ░             ░             ░
+    ░             ░             ░
+    ░             ░             ░
+    ░             ░             ░
+    ░             ░             ░
+    ░             ░             ░
+    ░             ░             ░
+   
+    0             1             2
+```
+
+```py
+moveSingle(src, dest)
+```
+
+```py
+solve(src, dest, depth)
+```
+
+---
+
 ## Towers
 
 ```
