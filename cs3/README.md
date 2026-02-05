@@ -74,11 +74,15 @@
 
 ---
 
-## Teaching
-
-## Code Review
-
 ## Towers
+
+```
+steps(n + 1) = 2 * steps(n) + 1
+```
+
+## World Record
+
+https://www.youtube.com/watch?v=TTKwx1xIx6g
 
 ---
 
