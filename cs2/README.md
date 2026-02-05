@@ -1,3 +1,8 @@
+## Binary Digits -> Tower of Hanoi
+
+Show correspondance between leftmost 1 changed and disc moved in tower of hanoi
+solution steps.
+
 ## Top Down Conversion
 
 Top down conversion generates digits from the start of the number.
