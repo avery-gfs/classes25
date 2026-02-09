@@ -1,3 +1,30 @@
+## Pseudocode
+
+What's the best essay you've ever written?
+
+<img src="assets/latin.jpg" style="height: 400px;" />
+
+<!--
+- First draft: essay writing analogy
+- Writing an essay in Latin
+- Writing pseudocode
+- Solve the problem before you start coding
+- Coding is the easy part
+ -->
+
+## Pseudocode Template
+
+- What are my inputs?
+- What is my result?
+- What do I need to keep track of?
+- What decisions / checks do I need to make?
+- Are there steps that repeat?
+- What changes at each step?
+- How do I know when I'm done?
+- What are my edge cases (what could go wrong)?
+
+---
+
 ## Binary Digits -> Tower of Hanoi
 
 Show correspondance between leftmost 1 changed and disc moved in tower of hanoi

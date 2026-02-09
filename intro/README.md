@@ -6,19 +6,33 @@
 
 ---
 
-## Advanced Twine
+## Twine 4
 
-- Formats (chapbook)
-  https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
-- Text styles
-- Variables
-- Displaying variables
-- Conditionals
+- More conditionals
 - Randomness
 
 ---
 
-## Twine Editor
+## Twine 3
+
+- Variables
+- Displaying variables
+- Variable math
+- Text input
+- Conditionals
+
+---
+
+## Twine 2
+
+- Formats (chapbook)
+  https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
+- Text styles
+- Images
+
+---
+
+## Twine 1
 
 https://twinery.org/
 
