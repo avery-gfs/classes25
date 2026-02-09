@@ -44,8 +44,6 @@ hexValues = {
     "f": 15,
 }
 
-hexDigits = "0123456789abcdef"
-
 
 def hexToDec(s):
     result = 0
@@ -57,6 +55,8 @@ def hexToDec(s):
 
 
 print(hexToDec("1a"))  # Should print 26
+
+hexDigits = "0123456789abcdef"
 
 
 def decToHex(n):

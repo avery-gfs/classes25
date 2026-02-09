@@ -49,18 +49,48 @@ def showTowers():
 
 
 def moveSingle(src, dest):
-    towers[dest].append(towers[src][-1])
-    towers[src].pop()
+    # Move a single disc from the top of tower `src` to tower `dest`.
+    #
+    # For example, if `towers` is
+    #
+    #     [[6, 5, 4], [3, 2, 1], []]
+    #
+    # and we run
+    #
+    #     moveSingle(0, 2)
+    #
+    # then `towers` will become
+    #
+    #     [[6, 5], [3, 2, 1], [4]]
+
+    # Your code goes here
+
     showTowers()
 
 
 def solve(src, dest, depth):
-    if depth:
-        tmp = 3 - src - dest
-        solve(src, tmp, depth - 1)
-        moveSingle(src, dest)
-        solve(tmp, dest, depth - 1)
+    # Using recursion, move the top `depth` discs from tower `src` to tower `dest`.
+    #
+    # For example, if `towers` is
+    #
+    #     [[6, 5, 4, 3, 2, 1], [], []]
+    #
+    # and we run
+    #
+    #     solve(0, 2, 3)
+    #
+    # then `towers` will become
+    #
+    #     [[6, 5, 4], [], [3, 2, 1]]
 
+    # Your code goes here
+
+    pass
+
+
+# The game state is represented as a list of three stacks. Each stack represents a
+# tower. The numbers on the stack represent the discs in the tower, where 1 is the
+# smallest and 6 is the largest.
 
 towers = [[6, 5, 4, 3, 2, 1], [], []]
 showTowers()

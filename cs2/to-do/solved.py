@@ -1,7 +1,7 @@
 class Task:
     def __init__(self, name):
-        # Keep track of task name and status (done or not done)
-        # Task should start out not done
+        # Keep track of task name and status (done or not done). Tasks should
+        # start out not done
         self.name = name
         self.isDone = False
 
@@ -37,9 +37,9 @@ class TodoList:
         self.tasks = newTasks
 
     def __repr__(self):
-        # Return a representation of the to do list that
-        # shows each task (name and status), the total number
-        # of tasks, and the number of undone tasks.
+        # Return a representation of the to do list that shows each task (name
+        # and status), the total number of tasks, and the number of undone
+        # tasks.
 
         numTasks = len(self.tasks)
         numUnDone = 0
