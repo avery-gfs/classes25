@@ -63,7 +63,7 @@ def moveSingle(src, dest):
     #
     #     [[6, 5], [3, 2, 1], [4]]
 
-    # Your code goes here
+    towers[dest].append(towers[src].pop())
 
     showTowers()
 
@@ -93,5 +93,8 @@ def solve(src, dest, depth):
 # smallest and 6 is the largest.
 
 towers = [[6, 5, 4, 3, 2, 1], [], []]
-showTowers()
-solve(0, 2, 6)
+
+moveSingle(0, 2)
+
+# showTowers()
+# solve(0, 2, 6)

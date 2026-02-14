@@ -1,0 +1,370 @@
+<svg
+  id="mermaid-1770830445175-a3ictta59"
+  width="100%"
+  xmlns="http://www.w3.org/2000/svg"
+  class="flowchart"
+  style="max-width: 290.9666442871094px"
+  viewBox="0 0 290.9666442871094 70"
+  role="graphics-document document"
+  aria-roledescription="flowchart-v2"
+>
+  <style>
+  #mermaid-1770830445175-a3ictta59 {
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    fill: #333;
+  }
+  @keyframes edge-animation-frame {
+    from {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-animation-slow {
+    stroke-dasharray: 9, 5 !important;
+    stroke-dashoffset: 900;
+    animation: dash 50s linear infinite;
+    stroke-linecap: round;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-animation-fast {
+    stroke-dasharray: 9, 5 !important;
+    stroke-dashoffset: 900;
+    animation: dash 20s linear infinite;
+    stroke-linecap: round;
+  }
+  #mermaid-1770830445175-a3ictta59 .error-icon {
+    fill: #552222;
+  }
+  #mermaid-1770830445175-a3ictta59 .error-text {
+    fill: #552222;
+    stroke: #552222;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-thickness-normal {
+    stroke-width: 1px;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-thickness-thick {
+    stroke-width: 3.5px;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-pattern-solid {
+    stroke-dasharray: 0;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-thickness-invisible {
+    stroke-width: 0;
+    fill: none;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-pattern-dashed {
+    stroke-dasharray: 3;
+  }
+  #mermaid-1770830445175-a3ictta59 .edge-pattern-dotted {
+    stroke-dasharray: 2;
+  }
+  #mermaid-1770830445175-a3ictta59 .marker {
+    fill: #4a4a4a;
+    stroke: #4a4a4a;
+  }
+  #mermaid-1770830445175-a3ictta59 .marker.cross {
+    stroke: #4a4a4a;
+  }
+  #mermaid-1770830445175-a3ictta59 svg {
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+  }
+  #mermaid-1770830445175-a3ictta59 p {
+    margin: 0;
+  }
+  #mermaid-1770830445175-a3ictta59 .label {
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+  }
+  #mermaid-1770830445175-a3ictta59 .cluster-label text {
+    fill: #1a1a1a;
+  }
+  #mermaid-1770830445175-a3ictta59 .cluster-label span {
+    color: #1a1a1a;
+  }
+  #mermaid-1770830445175-a3ictta59 .cluster-label span p {
+    background-color: transparent;
+  }
+  #mermaid-1770830445175-a3ictta59 .label text,
+  #mermaid-1770830445175-a3ictta59 span {
+    fill: #333;
+    color: #333;
+  }
+  #mermaid-1770830445175-a3ictta59 .node rect,
+  #mermaid-1770830445175-a3ictta59 .node circle,
+  #mermaid-1770830445175-a3ictta59 .node ellipse,
+  #mermaid-1770830445175-a3ictta59 .node polygon,
+  #mermaid-1770830445175-a3ictta59 .node path {
+    fill: #ececff;
+    stroke: #7c7cdb;
+    stroke-width: 1px;
+  }
+  #mermaid-1770830445175-a3ictta59 .rough-node .label text,
+  #mermaid-1770830445175-a3ictta59 .node .label text,
+  #mermaid-1770830445175-a3ictta59 .image-shape .label,
+  #mermaid-1770830445175-a3ictta59 .icon-shape .label {
+    text-anchor: middle;
+  }
+  #mermaid-1770830445175-a3ictta59 .node .katex path {
+    fill: #000;
+    stroke: #000;
+    stroke-width: 1px;
+  }
+  #mermaid-1770830445175-a3ictta59 .rough-node .label,
+  #mermaid-1770830445175-a3ictta59 .node .label,
+  #mermaid-1770830445175-a3ictta59 .image-shape .label,
+  #mermaid-1770830445175-a3ictta59 .icon-shape .label {
+    text-align: center;
+  }
+  #mermaid-1770830445175-a3ictta59 .node.clickable {
+    cursor: pointer;
+  }
+  #mermaid-1770830445175-a3ictta59 .root .anchor path {
+    fill: #4a4a4a !important;
+    stroke-width: 0;
+    stroke: #4a4a4a;
+  }
+  #mermaid-1770830445175-a3ictta59 .arrowheadPath {
+    fill: #333333;
+  }
+  #mermaid-1770830445175-a3ictta59 .edgePath .path {
+    stroke: #4a4a4a;
+    stroke-width: 2.0px;
+  }
+  #mermaid-1770830445175-a3ictta59 .flowchart-link {
+    stroke: #4a4a4a;
+    fill: none;
+  }
+  #mermaid-1770830445175-a3ictta59 .edgeLabel {
+    background-color: #ffffff;
+    text-align: center;
+  }
+  #mermaid-1770830445175-a3ictta59 .edgeLabel p {
+    background-color: #ffffff;
+  }
+  #mermaid-1770830445175-a3ictta59 .edgeLabel rect {
+    opacity: 0.5;
+    background-color: #ffffff;
+    fill: #ffffff;
+  }
+  #mermaid-1770830445175-a3ictta59 .labelBkg {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  #mermaid-1770830445175-a3ictta59 .cluster rect {
+    fill: #f0f0ff;
+    stroke: #9c9ceb;
+    stroke-width: 1px;
+  }
+  #mermaid-1770830445175-a3ictta59 .cluster text {
+    fill: #1a1a1a;
+  }
+  #mermaid-1770830445175-a3ictta59 .cluster span {
+    color: #1a1a1a;
+  }
+  #mermaid-1770830445175-a3ictta59 div.mermaidTooltip {
+    position: absolute;
+    text-align: center;
+    max-width: 200px;
+    padding: 2px;
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    background: #e6f7ff;
+    border: 1px solid #aaaa33;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 100;
+  }
+  #mermaid-1770830445175-a3ictta59 .flowchartTitleText {
+    text-anchor: middle;
+    font-size: 18px;
+    fill: #333;
+  }
+  #mermaid-1770830445175-a3ictta59 rect.text {
+    fill: none;
+    stroke-width: 0;
+  }
+  #mermaid-1770830445175-a3ictta59 .icon-shape,
+  #mermaid-1770830445175-a3ictta59 .image-shape {
+    background-color: #ffffff;
+    text-align: center;
+  }
+  #mermaid-1770830445175-a3ictta59 .icon-shape p,
+  #mermaid-1770830445175-a3ictta59 .image-shape p {
+    background-color: #ffffff;
+    padding: 2px;
+  }
+  #mermaid-1770830445175-a3ictta59 .icon-shape rect,
+  #mermaid-1770830445175-a3ictta59 .image-shape rect {
+    opacity: 0.5;
+    background-color: #ffffff;
+    fill: #ffffff;
+  }
+  #mermaid-1770830445175-a3ictta59 .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  #mermaid-1770830445175-a3ictta59 .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+  #mermaid-1770830445175-a3ictta59 :root {
+    --mermaid-font-family: "trebuchet ms",verdana,arial,sans-serif;
+  }
+  </style><g><marker
+      id="mermaid-1770830445175-a3ictta59_flowchart-v2-pointEnd"
+      class="marker flowchart-v2"
+      viewBox="0 0 10 10"
+      refX="5"
+      refY="5"
+      markerUnits="userSpaceOnUse"
+      markerWidth="8"
+      markerHeight="8"
+      orient="auto"
+    ><path
+        d="M 0 0 L 10 5 L 0 10 z"
+        class="arrowMarkerPath"
+        style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
+      ></path></marker><marker
+      id="mermaid-1770830445175-a3ictta59_flowchart-v2-pointStart"
+      class="marker flowchart-v2"
+      viewBox="0 0 10 10"
+      refX="4.5"
+      refY="5"
+      markerUnits="userSpaceOnUse"
+      markerWidth="8"
+      markerHeight="8"
+      orient="auto"
+    ><path
+        d="M 0 5 L 10 10 L 10 0 z"
+        class="arrowMarkerPath"
+        style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
+      ></path></marker><marker
+      id="mermaid-1770830445175-a3ictta59_flowchart-v2-circleEnd"
+      class="marker flowchart-v2"
+      viewBox="0 0 10 10"
+      refX="11"
+      refY="5"
+      markerUnits="userSpaceOnUse"
+      markerWidth="11"
+      markerHeight="11"
+      orient="auto"
+    ><circle
+        cx="5"
+        cy="5"
+        r="5"
+        class="arrowMarkerPath"
+        style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
+      ></circle></marker><marker
+      id="mermaid-1770830445175-a3ictta59_flowchart-v2-circleStart"
+      class="marker flowchart-v2"
+      viewBox="0 0 10 10"
+      refX="-1"
+      refY="5"
+      markerUnits="userSpaceOnUse"
+      markerWidth="11"
+      markerHeight="11"
+      orient="auto"
+    ><circle
+        cx="5"
+        cy="5"
+        r="5"
+        class="arrowMarkerPath"
+        style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
+      ></circle></marker><marker
+      id="mermaid-1770830445175-a3ictta59_flowchart-v2-crossEnd"
+      class="marker cross flowchart-v2"
+      viewBox="0 0 11 11"
+      refX="12"
+      refY="5.2"
+      markerUnits="userSpaceOnUse"
+      markerWidth="11"
+      markerHeight="11"
+      orient="auto"
+    ><path
+        d="M 1,1 l 9,9 M 10,1 l -9,9"
+        class="arrowMarkerPath"
+        style="stroke-width: 2px; stroke-dasharray: 1px, 0px"
+      ></path></marker><marker
+      id="mermaid-1770830445175-a3ictta59_flowchart-v2-crossStart"
+      class="marker cross flowchart-v2"
+      viewBox="0 0 11 11"
+      refX="-1"
+      refY="5.2"
+      markerUnits="userSpaceOnUse"
+      markerWidth="11"
+      markerHeight="11"
+      orient="auto"
+    ><path
+        d="M 1,1 l 9,9 M 10,1 l -9,9"
+        class="arrowMarkerPath"
+        style="stroke-width: 2px; stroke-dasharray: 1px, 0px"
+      ></path></marker><g class="root"><g class="clusters"></g><g
+        class="edgePaths"
+      ><path
+          d="M99.15,35L124.15,35L145.15,35"
+          id="L_A_E_0"
+          class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+          style=""
+          marker-end="url(#mermaid-1770830445175-a3ictta59_flowchart-v2-pointEnd)"
+        ></path></g><g class="edgeLabels"><g class="edgeLabel"><g
+            class="label"
+            transform="translate(0, 0)"
+          ><foreignObject width="0" height="0"><div
+                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center"
+                xmlns="http://www.w3.org/1999/xhtml"
+                class="labelBkg"
+              ><span
+                  class="edgeLabel"
+                ></span></div></foreignObject></g></g></g><g class="nodes"><g
+          class="node default"
+          id="flowchart-A-0"
+          transform="translate(53.57499694824219, 35)"
+        ><rect
+            class="basic label-container"
+            style=""
+            x="-45.57499694824219"
+            y="-27"
+            width="91.14999389648438"
+            height="54"
+          ></rect><g
+            class="label"
+            style=""
+            transform="translate(-15.574996948242188, -12)"
+          ><rect></rect><foreignObject
+              width="31.149993896484375"
+              height="24"
+            ><div
+                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center"
+                xmlns="http://www.w3.org/1999/xhtml"
+              ><span class="nodeLabel"><p
+                  >Idea</p></span></div></foreignObject></g></g><g
+          class="node default"
+          id="flowchart-E-1"
+          transform="translate(216.0583267211914, 35)"
+        ><rect
+            class="basic label-container"
+            style=""
+            x="-66.90833282470703"
+            y="-27"
+            width="133.81666564941406"
+            height="54"
+          ></rect><g
+            class="label"
+            style=""
+            transform="translate(-36.90833282470703, -12)"
+          ><rect></rect><foreignObject
+              width="73.81666564941406"
+              height="24"
+            ><div
+                style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center"
+                xmlns="http://www.w3.org/1999/xhtml"
+              ><span class="nodeLabel"><p
+                  >Final Latin</p></span></div></foreignObject></g></g></g></g></g>
+</svg>
