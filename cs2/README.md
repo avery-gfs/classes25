@@ -2,7 +2,20 @@
 
 What's the best essay you've ever written?
 
-<img src="assets/latin.jpg" style="height: 400px;" />
+How did you write it?
+
+## Pseudocode
+
+<img src="assets/latin-1.jpg" style="height: 100px;" />
+
+What if you had to write an essay in Latin? Would you sit down at the computer
+and start typing in Latin?
+
+<img src="assets/latin-2.svg" style="height: 100px;" />
+
+No! You'd do it in steps?
+
+<img src="assets/latin-3.svg" style="height: 160px;" />
 
 <!--
 - First draft: essay writing analogy
@@ -15,12 +28,19 @@ What's the best essay you've ever written?
 ## Pseudocode Template
 
 - What are my inputs?
+
 - What is my result?
+
 - What do I need to keep track of?
-- What decisions / checks do I need to make?
+
+- What decisions or checks do I need to make?
+
 - Are there steps that repeat?
-- What changes at each step?
+
+- What changes between steps?
+
 - How do I know when I'm done?
+
 - What are my edge cases (what could go wrong)?
 
 ---

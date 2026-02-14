@@ -18,7 +18,7 @@ def showRows(tower):
 def showTowers():
     combined = [" "] * 7
 
-    for tower in towers:
+    for tower in [towerA, towerB, towerC]:
         rows = showRows(tower)
 
         for index, row in enumerate(rows):
@@ -28,6 +28,8 @@ def showTowers():
 
     for row in combined:
         print(row)
+
+    print("\n       A             B             C")
 
     time.sleep(0.2)
 
@@ -45,22 +47,33 @@ def showTowers():
 #     ░             ░             ░
 #     ░             ░             ░
 #
-#     0             1             2
+#     A             B             C
 
 
 def moveSingle(src, dest):
-    towers[dest].append(towers[src].pop())
+    dest.append(src.pop())
     showTowers()
 
 
-def solve(src, dest, depth):
+def solve(src, dest, tmp, depth):
     if depth:
-        tmp = 3 - src - dest
-        solve(src, tmp, depth - 1)
+        solve(src, tmp, dest, depth - 1)
         moveSingle(src, dest)
-        solve(tmp, dest, depth - 1)
+        solve(tmp, dest, src, depth - 1)
 
 
-towers = [[6, 5, 4, 3, 2, 1], [], []]
+towerA = [6, 5, 4, 3, 2, 1]
+towerB = []
+towerC = []
+
+moveSingle(towerA, towerB)  # Check moveSingle
+moveSingle(towerA, towerC)  # Check moveSingle
+moveSingle(towerB, towerC)  # Check moveSingle
+
+# Reset towers
+towerA = [6, 5, 4, 3, 2, 1]
+towerB = []
+towerC = []
+
 showTowers()
-solve(0, 2, 6)
+solve(towerA, towerC, towerB, 6)

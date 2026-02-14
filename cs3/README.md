@@ -72,7 +72,7 @@
 
  -->
 
-## Recursive Tower Solver
+## Tower Representation
 
 ```txt
 Tower Labels:
@@ -86,6 +86,22 @@ Tower Labels:
     ░             ░             ░
    
     0             1             2
+```
+
+```py
+towers = [[6, 5, 4, 3, 2, 1], [], []]
+```
+
+```py
+towers[0]  # [6, 5, 4, 3, 2, 1]
+```
+
+```py
+towers[1]  # []
+```
+
+```py
+towers[0][-1]  # 1
 ```
 
 ## Stacks
@@ -113,12 +129,6 @@ values[-1]
 What are some real-life examples of stacks?
 
 <!-- browser history, loading truck (shelf before books) -->
-
-## Tower Representation
-
-```py
-towers = [[6, 5, 4, 3, 2, 1], [], []]
-```
 
 ## Functions
 
