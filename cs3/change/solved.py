@@ -1,3 +1,6 @@
+coins = [25, 10, 5, 1]
+
+
 # def countChange(goal):
 # 	total = 0
 
@@ -8,19 +11,19 @@
 # 	return total
 
 
-def countChange(goal, coins):
+def countChange(goal, coinIndex=0):
     if goal == 0:
         return 1
 
-    if not coins:
+    if coinIndex == len(coins):
         return 0
 
     total = 0
 
-    for n in range(0, goal + 1, coins[0]):
-        total += countChange(goal - n, coins[1:])
+    for n in range(0, goal + 1, coins[coinIndex]):
+        total += countChange(goal - n, coinIndex + 1)
 
     return total
 
 
-print(countChange(50, [25, 10, 5, 1]))
+print(countChange(50))
