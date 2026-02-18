@@ -84,6 +84,4 @@ bounce = [
     "1800000000000000",
 ]
 
-custom = []
-
 animate(bounce, 10)
