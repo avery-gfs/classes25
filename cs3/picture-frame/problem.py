@@ -6,12 +6,31 @@ height = int(input("enter picture height (mm) (default 100): ") or 100)
 directory = f"{width}-by-{height}"
 os.makedirs(directory, exist_ok=True)
 
+nails = f"""
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 400"
+  width="400mm"
+  height="400mm"
+  stroke-width="0.2"
+  fill="none"
+>
+  <rect x="0" y="0" width="{width}" height="6.4" stroke="black" />
+  <rect x="0" y="7.5" width="{width}" height="6.4" stroke="black" />
+  <rect x="0" y="15" width="{height}" height="6.4" stroke="black" />
+  <rect x="0" y="22.5" width="{height}" height="6.4" stroke="black" />
+</svg>
+"""
+
+with open(f"{directory}/nails.svg", "w") as file:
+    file.write(nails.lstrip())
+
 back = f"""
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 170 120"
-  width="172m0"
-  height="120mm"
+  viewBox="0 0 400 400"
+  width="400mm"
+  height="400mm"
   stroke-width="0.2"
   fill="none"
 >
@@ -33,9 +52,9 @@ with open(f"{directory}/back.svg", "w") as file:
 edges = f"""
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 172 120"
-  width="172m0"
-  height="120mm"
+  viewBox="0 0 400 400"
+  width="400mm"
+  height="400mm"
   stroke-width="0.2"
   fill="none"
 >
@@ -54,31 +73,12 @@ edges = f"""
 with open(f"{directory}/edges.svg", "w") as file:
     file.write(edges.lstrip())
 
-nails = f"""
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 152 29"
-  width="152mm"
-  height="29mm"
-  stroke-width="0.2"
-  fill="none"
->
-  <rect x="0" y="0" width="150" height="6" stroke="black" />
-  <rect x="0" y="7" width="150" height="6" stroke="black" />
-  <rect x="0" y="14" width="100" height="6" stroke="black" />
-  <rect x="0" y="21" width="100" height="6" stroke="black" />
-</svg>
-"""
-
-with open(f"{directory}/nails.svg", "w") as file:
-    file.write(nails.lstrip())
-
 stand = f"""
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 55 30"
-  width="55mm"
-  height="30mm"
+  viewBox="0 0 400 400"
+  width="400mm"
+  height="400mm"
   stroke-width="0.2"
   fill="none"
 >

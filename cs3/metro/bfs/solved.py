@@ -1,6 +1,6 @@
 import json
 
-with open("links.json") as file:
+with open("connections.json") as file:
     links = json.load(file)
 
 
