@@ -15,10 +15,10 @@ nails = f"""
   stroke-width="0.2"
   fill="none"
 >
-  <rect x="0" y="0" width="{width}" height="6.4" stroke="black" />
-  <rect x="0" y="7.5" width="{width}" height="6.4" stroke="black" />
-  <rect x="0" y="15" width="{height}" height="6.4" stroke="black" />
-  <rect x="0" y="22.5" width="{height}" height="6.4" stroke="black" />
+  <rect x="0" y="0" width="{width}" height="6.2" stroke="black" />
+  <rect x="0" y="7.5" width="{width}" height="6.2" stroke="black" />
+  <rect x="0" y="15" width="{height}" height="6.2" stroke="black" />
+  <rect x="0" y="22.5" width="{height}" height="6.2" stroke="black" />
 </svg>
 """
 
