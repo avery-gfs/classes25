@@ -63,8 +63,6 @@ def moveSingle(src, dest):
     #
     #     [[6, 5], [3, 2, 1], [4]]
 
-    towers[dest].append(towers[src].pop())
-
     showTowers()
 
 
@@ -82,6 +80,8 @@ def solve(src, dest, depth):
     # then `towers` will become
     #
     #     [[6, 5, 4], [], [3, 2, 1]]
+
+    tmp = 3 - src - dest
 
     # Your code goes here
 

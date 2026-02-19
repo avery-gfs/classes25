@@ -1,12 +1,31 @@
 def binToDec(s):
-    pass
+    result = 0
+    power = 2 ** (len(s) - 1)
+
+    for d in s:
+        if d == "1":
+            result += power
+
+        power //= 2
+
+    return result
 
 
 print(binToDec("11010"))  # Should print 26
 
 
 def decToBin(n):
-    pass
+    result = ""
+
+    while n > 0:
+        if n % 2 == 0:
+            result = "0" + result
+        else:
+            result = "1" + result
+
+        n //= 2
+
+    return result
 
 
 print(decToBin(26))  # Should print 11010
@@ -32,7 +51,14 @@ hexValues = {
 
 
 def hexToDec(s):
-    pass
+    result = 0
+    power = 16 ** (len(s) - 1)
+
+    for d in s:
+        result += hexValues[d] * power
+        power //= 16
+
+    return result
 
 
 print(hexToDec("1a"))  # Should print 26
@@ -41,7 +67,13 @@ hexDigits = "0123456789abcdef"
 
 
 def decToHex(n):
-    pass
+    result = ""
+
+    while n > 0:
+        result = hexDigits[n % 16] + result
+        n //= 16
+
+    return result
 
 
 print(decToHex(26))  # Should print 1a
