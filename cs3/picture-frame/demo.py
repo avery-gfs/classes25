@@ -36,13 +36,13 @@ back = f"""
 >
   <rect x="0" y="0" width="{width + 20}" height="{height + 20}" stroke="black" />
 
-  <rect x="10" y="3.5" width="{width}" height="3" stroke="red" />
-  <rect x="10" y="{height + 13.5}" width="{width}" height="3" stroke="red" />
-  <rect x="3.5" y="10" width="3" height="{height}" stroke="red" />
-  <rect x="{width + 13.5}" y="10" width="3" height="{height}" stroke="red" />
+  <rect x="10" y="3.5" width="{width}" height="3" stroke="black" />
+  <rect x="10" y="{height + 13.5}" width="{width}" height="3" stroke="black" />
+  <rect x="3.5" y="10" width="3" height="{height}" stroke="black" />
+  <rect x="{width + 13.5}" y="10" width="3" height="{height}" stroke="black" />
 
-  <rect x="{width / 2}" y="12" width="20" height="3" stroke="red" />
-  <rect x="12" y="{height / 2}" width="3" height="20" stroke="red" />
+  <rect x="{width / 2}" y="12" width="20" height="3" stroke="black" />
+  <rect x="12" y="{height / 2}" width="3" height="20" stroke="black" />
 </svg>
 """
 
@@ -63,10 +63,10 @@ edges = f"""
   <path d="m 0 0 v {height + 20} l 10 -10 v -{height} z" stroke="black" />
   <path d="m {width + 20} 0 v {height + 20} l -10 -10 v -{height} z" stroke="black" />
 
-  <rect x="10" y="3.5" width="{width}" height="3" stroke="red" />
-  <rect x="10" y="{height + 13.5}" width="{width}" height="3" stroke="red" />
-  <rect x="3.5" y="10" width="3" height="{height}" stroke="red" />
-  <rect x="{width + 13.5}" y="10" width="3" height="{height}" stroke="red" />
+  <rect x="10" y="3.5" width="{width}" height="3" stroke="black" />
+  <rect x="10" y="{height + 13.5}" width="{width}" height="3" stroke="black" />
+  <rect x="3.5" y="10" width="3" height="{height}" stroke="black" />
+  <rect x="{width + 13.5}" y="10" width="3" height="{height}" stroke="black" />
 </svg>
 """
 
