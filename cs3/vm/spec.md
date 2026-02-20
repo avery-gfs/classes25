@@ -7,6 +7,10 @@ made for use in CS 3.
 
 ## The VM has
 
+- A sequence of instructions. The VM starts with the first instruction, and
+  moves through the instructions in sequence (unless a jump operation is
+  performed).
+
 - Four registers, which each hold a single integer, which are initialized to `0`
   at the start of the program.
 
