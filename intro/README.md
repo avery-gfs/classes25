@@ -1,51 +1,10 @@
-## Review Twine
-
-## Demo Presentation
-
-## Final Project and Presentations
+## Final Projects
 
 ---
 
-## Twine 4
-
-- More conditionals
-- Randomness
+## Morse Radio
 
 ---
-
-## Twine 3
-
-- Variables
-- Displaying variables
-- Variable math
-- Text input
-- Conditionals
-
----
-
-## Twine 2
-
-- Formats (chapbook)
-  https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
-- Text styles
-- Images
-
----
-
-## Twine 1
-
-https://twinery.org/
-
-https://twinery.org/reference/en/
-
-- Rooms (passages)
-- Links
-- Loops
-- Watch out for whitespace
-
----
-
-## Rock Paper Scissors Review
 
 ## Morse Code
 
@@ -66,12 +25,6 @@ What commands do we need to make microbit display morse code?
 I'll transmit a word, see who can decode it first
 
 ---
-
-## Variables
-
-What is a variable?
-
-## Counter
 
 ## Rock Paper Scissors Demo
 
@@ -108,13 +61,63 @@ Make a digital die that display a random roll when you shake your microbit.
 
 ## Commands Overview
 
+## Variables
+
+What is a variable?
+
+## Counter
+
 ## Connecting the microbit
 
 - Sending code
 - Errors
 - Restarting code
 
+---
+
+## Twine Presentations
+
+- Wrap up projects
+- Present projects
+
+## MakeCode Editor
+
+https://makecode.microbit.org/
+
+## Jumping Jacks Demo
+
+## Nametag
+
+- `on start`
+- `show leds`
+
 ## Share Nametags
+
+---
+
+## Twine 4
+
+- More conditionals
+- Randomness
+
+---
+
+## Twine 3
+
+- Variables
+- Displaying variables
+- Variable math
+- Text input
+- Conditionals
+
+---
+
+## Twine 2
+
+- Formats (chapbook)
+  https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
+- Text styles
+- Images
 
 ---
 
@@ -127,19 +130,14 @@ Make a digital die that display a random roll when you shake your microbit.
 - Orbits
 - Sports data
 - Images
-- Microbit
 
-## Grading policy
+## Twine 1
 
-[Link](../shared/grading.md)
+https://twinery.org/
 
-## MakeCode Editor
+https://twinery.org/reference/en/
 
-https://makecode.microbit.org/
-
-## Jumping Jacks Demo
-
-## Nametag
-
-- `on start`
-- `show leds`
+- Rooms (passages)
+- Links
+- Loops
+- Watch out for whitespace
