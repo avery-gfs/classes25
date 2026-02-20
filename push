@@ -2,7 +2,7 @@
 shopt -s globstar
 
 rm -f **/.~lock*
-rm -f **/__pycache__
+rm -r **/__pycache__
 npm run fmt
 git checkout solutions
 git add --all .
