@@ -1,0 +1,1 @@
+-- compute and display the factorial of the number in r0
