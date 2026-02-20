@@ -1,0 +1,27 @@
+-- Sort the 10 values in memory using the selection sort algorithm.
+-- You should use reference.py as a reference for the algorithm.
+-- You can hard-code the length of the memory into the program.
+
+-- One of the challenges you'll face is the limited number of registers;
+-- you can solve the problem using 4 registers, but you'll have to be
+-- careful with how you use them. I'd recommend using two registers for
+-- the two memory indices (i and j in the python program), and the other
+-- two registers for storing temporary values. Remember that you can always
+-- re-load values from memory if you need.
+
+init 3 1 4 1 5 9 2 6 5 4
+jeq 14 r0 10
+set r1 r0
+jeq 10 r1 10
+load r2 r0
+load r3 r1
+lt r3 r2
+jeq 4 r3 0
+load r3 r1
+store r1 r2
+store r0 r3
+add r1 1
+jmp -9
+add r0 1
+jmp -13
+halt
