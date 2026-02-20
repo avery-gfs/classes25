@@ -1,14 +1,11 @@
--- Find the maximum of the numbers in memory
+-- Compute the sum of the numbers in memory
 -- You can hard-code the length of the memory into the program
 
 mem 3 1 4 1 5 9 2 6 5 4
-load r2 0
-jeq 7 r0 10
+jeq 5 r0 10
 load r1 r0
-gt r1 r2
-jeq 2 r1 0
-load r2 r0
+add r2 r1
 add r0 1
-jmp -6
+jmp -4
 log r2
 halt

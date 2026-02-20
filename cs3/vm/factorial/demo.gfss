@@ -1,4 +1,4 @@
--- compute and display the factorial of the number in r0
+-- Compute and display the factorial of the number in r0
 
 set r0 10
 set r1 1
