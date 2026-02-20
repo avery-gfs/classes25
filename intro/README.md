@@ -67,12 +67,6 @@ What is a variable?
 
 ## Counter
 
-## Connecting the microbit
-
-- Sending code
-- Errors
-- Restarting code
-
 ---
 
 ## Twine Presentations
@@ -90,6 +84,12 @@ https://makecode.microbit.org/
 
 - `on start`
 - `show leds`
+
+## Connecting the microbit
+
+- Sending code
+- Errors
+- Restarting code
 
 ## Share Nametags
 
