@@ -13,7 +13,7 @@ class VM:
         self.registers = [0, 0, 0, 0]  # Registers initialized to zero
         self.memory = []  # Memory gets initialized by mem command
 
-    def run(self, path):
+    def run(self, path, fps):
         with open(path) as file:
             lines = [line.strip() for line in file.read().splitlines()]
 
@@ -43,11 +43,11 @@ class VM:
             self.logOutput()
 
             # Pause to visualize execution
-            time.sleep(0.01)
+            time.sleep(1 / fps)
 
     def regIndex(self, regName):
         if not regName.startswith("r"):
-            raise ValueError(f"Invalid register name {regName}")
+            raise Error(f"Invalid register name {regName}")
 
         return int(regName[1:])
 
@@ -74,7 +74,7 @@ class VM:
             case "or":
                 return int(a != 0 or b != 0)
 
-        raise ValueError(f"Unreachable operation {op}")
+        raise Error(f"Unreachable operation {op}")
 
     def runInst(self, inst):
         tokens = inst.split()
@@ -128,7 +128,7 @@ class VM:
             case "halt":
                 self.halted = True
 
-            case "init":
+            case "mem":
                 self.memory = args
                 self.ip += 1
 
@@ -154,7 +154,7 @@ class VM:
                 self.ip += 1
 
             case _:
-                raise ValueError(f"Invalid instruction {op}")
+                raise Error(f"Invalid instruction {op}")
 
     def logInsts(self):
         for index, inst in enumerate(self.instrs):
@@ -183,4 +183,4 @@ class VM:
             print(self.output, end="", flush=True)
 
 
-VM().run("squares/solved.gfss")
+VM().run("sum/solved.gfss", 20)
