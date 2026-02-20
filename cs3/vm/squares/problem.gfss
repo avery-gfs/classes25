@@ -1,0 +1,17 @@
+-- Compute and display the squares of the numbers 1 through 10
+-- Your program may only use a single log instruction
+--
+-- The output should be:
+--
+-- 1
+-- 4
+-- 9
+-- 16
+-- 25
+-- 36
+-- 49
+-- 64
+-- 81
+-- 100
+
+halt
