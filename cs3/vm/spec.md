@@ -20,10 +20,10 @@ The VM has:
 
 All numbers in the VM are integers (division results are truncated).
 
-## Instructions
+## Notes on Instructions
 
 - Instructions with a `rX` parameter store their result in the register `rX`,
-  where `rX` is `r0`, `r1`, `r2`, or `r3` All other arguments can be register
+  where `rX` is `r0`, `r1`, `r2`, or `r3`. All other arguments can be register
   names or number literals.
 
 - Comparison instructions produce a result of `0` if the comparison is false and
@@ -197,9 +197,9 @@ Example: `gt r2 5`
 
 ## `and`
 
-Format: `and rX alt`
+Format: `and rX n`
 
-Action: Compute logical 'and' of `rX` and `alt` and store the result in `rX`
+Action: Compute logical 'and' of `rX` and `n` and store the result in `rX`
 
 Example: `and r2 r1`
 
@@ -210,9 +210,9 @@ Example: `and r2 r1`
 
 ## `or`
 
-Format: `or rX alt`
+Format: `or rX n`
 
-Action: Compute logical 'or' of `rX` and `alt` and store the result in `rX`
+Action: Compute logical 'or' of `rX` and `n` and store the result in `rX`
 
 Example: `or r2 r1`
 
@@ -337,8 +337,8 @@ Example: `print 64`
 
 |        |  r0 |  r1 |  r2 |  r3 | memory | output |
 | ------ | --: | --: | --: | --: | ------ | ------ |
-| before | `0` | `0` | `0` | `0` | `[]`   | @      |
-| after  | `0` | `0` | `0` | `0` | `[]`   |        |
+| before | `0` | `0` | `0` | `0` | `[]`   |        |
+| after  | `0` | `0` | `0` | `0` | `[]`   | @      |
 
 ## `load`
 
