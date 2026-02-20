@@ -62,7 +62,7 @@ Example: `sub r2 r1`
 |        |  r0 |  r1 |   r2 |  r3 | memory | output |
 | ------ | --: | --: | ---: | --: | ------ | ------ |
 | before | `0` | `7` |  `5` | `0` | `[]`   |        |
-| after  | `0` | `7` | -`2` | `0` | `[]`   |        |
+| after  | `0` | `7` | `-2` | `0` | `[]`   |        |
 
 Example: `sub r2 3`
 
@@ -236,12 +236,9 @@ Format: `jmp n`
 
 Action: Jump by `n` instructions
 
-Example: `jmp n`
+Example: `jmp -5`
 
-|        |  r0 |  r1 |  r2 |  r3 | memory | output |
-| ------ | --: | --: | --: | --: | ------ | ------ |
-| before | `0` | `0` | `0` | `0` | `[]`   |        |
-| after  | `0` | `0` | `0` | `0` | `[]`   |        |
+> Jump backwards by `5` instructions
 
 ### `jeq`
 
@@ -249,12 +246,14 @@ Format: `jeq n a b`
 
 Action: Jump by `n` instructions if `a` equals `b`
 
-Example: `jeq n a b`
+Example: `jeq 10 r2 r1`
 
-|        |  r0 |  r1 |  r2 |  r3 | memory | output |
-| ------ | --: | --: | --: | --: | ------ | ------ |
-| before | `0` | `0` | `0` | `0` | `[]`   |        |
-| after  | `0` | `0` | `0` | `0` | `[]`   |        |
+> Jump forwards by `10` instructions if the value in `r2` equals the value in
+> `r1`
+
+Example: `jeq 10 r2 0`
+
+> Jump forwards by `10` instructions if the value in `r2` equals `0`
 
 ### `jne`
 
@@ -262,12 +261,14 @@ Format: `jne n a b`
 
 Action: Jump by `n` instructions if `a` does not equal `b`
 
-Example: `jne n a b`
+Example: `jne 10 r2 r1`
 
-|        |  r0 |  r1 |  r2 |  r3 | memory | output |
-| ------ | --: | --: | --: | --: | ------ | ------ |
-| before | `0` | `0` | `0` | `0` | `[]`   |        |
-| after  | `0` | `0` | `0` | `0` | `[]`   |        |
+> Jump forwards by `10` instructions if the value in `r2` does not equal the
+> value in `r1`
+
+Example: `jne 10 r2 0`
+
+> Jump forwards by `10` instructions if the value in `r2` does not equal `0`
 
 ### `halt`
 
