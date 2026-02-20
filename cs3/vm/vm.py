@@ -183,4 +183,4 @@ class VM:
             print(self.output, end="", flush=True)
 
 
-VM().run("fibonacci/solved.gfss", 20)
+VM().run("collatz/demo.gfss", 20)

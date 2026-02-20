@@ -1,6 +1,6 @@
 -- Compute and display the collatz sequence starting from the number in r0
 
-set r0 17
+set r0 3
 log r0
 jeq 9 r0 1
 set r1 r0
