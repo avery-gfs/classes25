@@ -248,12 +248,12 @@ Action: Jump by `n` instructions if `a` equals `b`
 
 Example: `jeq 10 r2 r1`
 
-> Jump forwards by `10` instructions if the value in `r2` equals the value in
+> Jump forward by `10` instructions if the value in `r2` equals the value in
 > `r1`
 
 Example: `jeq 10 r2 0`
 
-> Jump forwards by `10` instructions if the value in `r2` equals `0`
+> Jump forward by `10` instructions if the value in `r2` equals `0`
 
 ### `jne`
 
@@ -263,12 +263,12 @@ Action: Jump by `n` instructions if `a` does not equal `b`
 
 Example: `jne 10 r2 r1`
 
-> Jump forwards by `10` instructions if the value in `r2` does not equal the
+> Jump forward by `10` instructions if the value in `r2` does not equal the
 > value in `r1`
 
 Example: `jne 10 r2 0`
 
-> Jump forwards by `10` instructions if the value in `r2` does not equal `0`
+> Jump forward by `10` instructions if the value in `r2` does not equal `0`
 
 ### `halt`
 
