@@ -5,7 +5,7 @@ register-based
 [virtual machine](https://rosettacode.org/wiki/Compiler/virtual_machine_interpreter),
 made for use in CS 3.
 
-## The VM has
+The VM has:
 
 - A sequence of instructions. The VM starts with the first instruction, and
   moves through the instructions in sequence unless a jump operation is
@@ -35,7 +35,7 @@ All numbers in the VM are integers (division results are truncated).
 - Jumps are applied relative to the instruction position. Conditional jumps
   whose condition is false proceed to the next instruction.
 
-### `add`
+## `add`
 
 Format: `add rX n`
 
@@ -55,7 +55,7 @@ Example: `add r2 8`
 | before | `0` | `0` |  `4` | `0` | `[]`   |        |
 | after  | `0` | `0` | `12` | `0` | `[]`   |        |
 
-### `sub`
+## `sub`
 
 Format: `sub rX n`
 
@@ -75,7 +75,7 @@ Example: `sub r2 3`
 | before | `0` | `0` | `5` | `0` | `[]`   |        |
 | after  | `0` | `0` | `2` | `0` | `[]`   |        |
 
-### `mul`
+## `mul`
 
 Format: `mul rX n`
 
@@ -95,7 +95,7 @@ Example: `mul r2 7`
 | before | `0` | `0` |  `4` | `0` | `[]`   |        |
 | after  | `0` | `0` | `28` | `0` | `[]`   |        |
 
-### `div`
+## `div`
 
 Format: `div rX n`
 
@@ -115,7 +115,7 @@ Example: `div r2 4`
 | before | `0` | `0` | `20` | `0` | `[]`   |        |
 | after  | `0` | `0` |  `5` | `0` | `[]`   |        |
 
-### `mod`
+## `mod`
 
 Format: `mod rX n`
 
@@ -135,7 +135,7 @@ Example: `mod r2 3`
 | before | `0` | `0` | `20` | `0` | `[]`   |        |
 | after  | `0` | `0` |  `2` | `0` | `[]`   |        |
 
-### `eq`
+## `eq`
 
 Format: `eq rX n`
 
@@ -155,7 +155,7 @@ Example: `eq r2 5`
 | before | `0` | `0` | `5` | `0` | `[]`   |        |
 | after  | `0` | `0` | `1` | `0` | `[]`   |        |
 
-### `lt`
+## `lt`
 
 Format: `lt rX n`
 
@@ -175,7 +175,7 @@ Example: `lt r2 5`
 | before | `0` | `0` | `10` | `0` | `[]`   |        |
 | after  | `0` | `0` |  `0` | `0` | `[]`   |        |
 
-### `gt`
+## `gt`
 
 Format: `gt rX n`
 
@@ -195,7 +195,7 @@ Example: `gt r2 5`
 | before | `0` | `0` | `10` | `0` | `[]`   |        |
 | after  | `0` | `0` |  `1` | `0` | `[]`   |        |
 
-### `and`
+## `and`
 
 Format: `and rX alt`
 
@@ -208,7 +208,7 @@ Example: `and r2 r1`
 | before | `0` | `1` | `0` | `0` | `[]`   |        |
 | after  | `0` | `1` | `0` | `0` | `[]`   |        |
 
-### `or`
+## `or`
 
 Format: `or rX alt`
 
@@ -221,7 +221,7 @@ Example: `or r2 r1`
 | before | `0` | `1` | `0` | `0` | `[]`   |        |
 | after  | `0` | `1` | `1` | `0` | `[]`   |        |
 
-### `not`
+## `not`
 
 Format: `not rX`
 
@@ -234,7 +234,7 @@ Example: `not r2`
 | before | `0` | `0` | `1` | `0` | `[]`   |        |
 | after  | `0` | `0` | `0` | `0` | `[]`   |        |
 
-### `jmp`
+## `jmp`
 
 Format: `jmp n`
 
@@ -244,7 +244,7 @@ Example: `jmp -5`
 
 > Jump backwards by `5` instructions
 
-### `jeq`
+## `jeq`
 
 Format: `jeq n a b`
 
@@ -259,7 +259,7 @@ Example: `jeq 10 r2 0`
 
 > Jump forward by `10` instructions if the value in `r2` equals `0`
 
-### `jne`
+## `jne`
 
 Format: `jne n a b`
 
@@ -274,13 +274,13 @@ Example: `jne 10 r2 0`
 
 > Jump forward by `10` instructions if the value in `r2` does not equal `0`
 
-### `halt`
+## `halt`
 
 Format: `halt`
 
 Action: Stop program execution immediately
 
-### `set`
+## `set`
 
 Format: `set rX n`
 
@@ -300,7 +300,7 @@ Example: `set r2 r3`
 | before | `0` | `0` | `0` | `7` | `[]`   |        |
 | after  | `0` | `0` | `7` | `7` | `[]`   |        |
 
-### `log`
+## `log`
 
 Format: `log n`
 
@@ -320,7 +320,7 @@ Example: `log 10`
 | before | `0` | `0` | `0` | `0` | `[]`   |        |
 | after  | `0` | `0` | `0` | `0` | `[]`   | 10     |
 
-### `print`
+## `print`
 
 Format: `print n`
 
@@ -340,7 +340,7 @@ Example: `print 64`
 | before | `0` | `0` | `0` | `0` | `[]`   | @      |
 | after  | `0` | `0` | `0` | `0` | `[]`   |        |
 
-### `load`
+## `load`
 
 Format: `load rX index`
 
@@ -360,7 +360,7 @@ Example: `load r2 r1`
 | before | `0` | `0` | `0` | `0` | `[4, 3, 0]` |        |
 | after  | `0` | `0` | `4` | `0` | `[4, 3, 0]` |        |
 
-### `store`
+## `store`
 
 Format: `store src index`
 
@@ -380,7 +380,7 @@ Example: `store r1 2`
 | before | `0` | `8` | `0` | `0` | `[0, 0, 0]` |        |
 | after  | `0` | `8` | `0` | `0` | `[0, 0, 8]` |        |
 
-### `mem`
+## `mem`
 
 Format: `mem values...`
 
