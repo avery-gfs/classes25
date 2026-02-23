@@ -47,6 +47,8 @@ All numbers in the VM are integers (division results are truncated).
 | `store src index` | Store `src` in memory at location `index`                             |
 | `mem values...`   | Set memory array to a given sequence of values                        |
 
+Notes:
+
 - Instructions with a `rX` parameter store their result in the register `rX`,
   where `rX` is `r0`, `r1`, `r2`, or `r3`. All other arguments can be register
   names or number literals.
