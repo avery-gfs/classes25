@@ -1,6 +1,7 @@
-# gfssembly
+# GFSsembly
 
-A toy [assembly language](https://en.wikipedia.org/wiki/Assembly_language) for a
+GFSsembly is a toy
+[assembly language](https://en.wikipedia.org/wiki/Assembly_language) for a
 register-based
 [virtual machine](https://rosettacode.org/wiki/Compiler/virtual_machine_interpreter),
 made for use in CS 3.
