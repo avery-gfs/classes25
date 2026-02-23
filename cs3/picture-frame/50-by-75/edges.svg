@@ -11,8 +11,8 @@
   <path d="m 0 0 v 95 l 10 -10 v -75 z" stroke="black" />
   <path d="m 70 0 v 95 l -10 -10 v -75 z" stroke="black" />
 
-  <rect x="10" y="3.5" width="50" height="3" stroke="red" />
-  <rect x="10" y="88.5" width="50" height="3" stroke="red" />
-  <rect x="3.5" y="10" width="3" height="75" stroke="red" />
-  <rect x="63.5" y="10" width="3" height="75" stroke="red" />
+  <rect x="10" y="3.5" width="50" height="3" stroke="black" />
+  <rect x="10" y="88.5" width="50" height="3" stroke="black" />
+  <rect x="3.5" y="10" width="3" height="75" stroke="black" />
+  <rect x="63.5" y="10" width="3" height="75" stroke="black" />
 </svg>

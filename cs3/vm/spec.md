@@ -20,7 +20,31 @@ The VM has:
 
 All numbers in the VM are integers (division results are truncated).
 
-## Notes on Instructions
+## Instructions List
+
+| Instruction       | Action                                                                |
+| ----------------- | --------------------------------------------------------------------- |
+| `add rX n`        | Add `n` to `rX` and store the result in `rX`                          |
+| `sub rX n`        | Subtract `n` from `rX` and store the result in `rX`                   |
+| `mul rX n`        | Multiply `rX` by `n` and store the result in `rX`                     |
+| `div rX n`        | Divide `rX` by `n` (truncating decimals) and store the result in `rX` |
+| `mod rX n`        | Compute `rX` modulo `n` and store the result in `rX`                  |
+| `eq rX n`         | Check if `rX` equals `n` and store the result in `rX`                 |
+| `lt rX n`         | Check if `rX` is less than `n` and store the result in `rX`           |
+| `gt rX n`         | Check if `rX` is greater than `n` and store the result in `rX`        |
+| `and rX n`        | Compute logical 'and' of `rX` and `n` and store the result in `rX`    |
+| `or rX n`         | Compute logical 'or' of `rX` and `n` and store the result in `rX`     |
+| `not rX`          | Compute logical 'not' of `rX` and store the result in `rX`            |
+| `jmp n`           | Jump by `n` instructions                                              |
+| `jeq n a b`       | Jump by `n` instructions if `a` equals `b`                            |
+| `jne n a b`       | Jump by `n` instructions if `a` does not equal `b`                    |
+| `halt`            | Stop program execution immediately                                    |
+| `set rX n`        | Set the value of `rX` to `n`                                          |
+| `log n`           | Print `n` as a number on a new line                                   |
+| `print n`         | Print `n` as a character in the current line, converting to unicode   |
+| `load rX index`   | Load the number at memory location `index` into `rX`                  |
+| `store src index` | Store `src` in memory at location `index`                             |
+| `mem values...`   | Set memory array to a given sequence of values                        |
 
 - Instructions with a `rX` parameter store their result in the register `rX`,
   where `rX` is `r0`, `r1`, `r2`, or `r3`. All other arguments can be register
@@ -37,7 +61,7 @@ All numbers in the VM are integers (division results are truncated).
 
 ## `add`
 
-Format: `add rX n`
+Instruction: `add rX n`
 
 Action: Add `n` to `rX` and store the result in `rX`
 
@@ -57,7 +81,7 @@ Example: `add r2 8`
 
 ## `sub`
 
-Format: `sub rX n`
+Instruction: `sub rX n`
 
 Action: Subtract `n` from `rX` and store the result in `rX`
 
@@ -77,7 +101,7 @@ Example: `sub r2 3`
 
 ## `mul`
 
-Format: `mul rX n`
+Instruction: `mul rX n`
 
 Action: Multiply `rX` by `n` and store the result in `rX`
 
@@ -97,7 +121,7 @@ Example: `mul r2 7`
 
 ## `div`
 
-Format: `div rX n`
+Instruction: `div rX n`
 
 Action: Divide `rX` by `n` (truncating decimals) and store the result in `rX`
 
@@ -117,7 +141,7 @@ Example: `div r2 4`
 
 ## `mod`
 
-Format: `mod rX n`
+Instruction: `mod rX n`
 
 Action: Compute `rX` modulo `n` and store the result in `rX`
 
@@ -137,7 +161,7 @@ Example: `mod r2 3`
 
 ## `eq`
 
-Format: `eq rX n`
+Instruction: `eq rX n`
 
 Action: Check if `rX` equals `n` and store the result in `rX`
 
@@ -157,7 +181,7 @@ Example: `eq r2 5`
 
 ## `lt`
 
-Format: `lt rX n`
+Instruction: `lt rX n`
 
 Action: Check if `rX` is less than `n` and store the result in `rX`
 
@@ -177,7 +201,7 @@ Example: `lt r2 5`
 
 ## `gt`
 
-Format: `gt rX n`
+Instruction: `gt rX n`
 
 Action: Check if `rX` is greater than `n` and store the result in `rX`
 
@@ -197,7 +221,7 @@ Example: `gt r2 5`
 
 ## `and`
 
-Format: `and rX n`
+Instruction: `and rX n`
 
 Action: Compute logical 'and' of `rX` and `n` and store the result in `rX`
 
@@ -210,7 +234,7 @@ Example: `and r2 r1`
 
 ## `or`
 
-Format: `or rX n`
+Instruction: `or rX n`
 
 Action: Compute logical 'or' of `rX` and `n` and store the result in `rX`
 
@@ -223,7 +247,7 @@ Example: `or r2 r1`
 
 ## `not`
 
-Format: `not rX`
+Instruction: `not rX`
 
 Action: Compute logical 'not' of `rX` and store the result in `rX`
 
@@ -236,7 +260,7 @@ Example: `not r2`
 
 ## `jmp`
 
-Format: `jmp n`
+Instruction: `jmp n`
 
 Action: Jump by `n` instructions
 
@@ -246,7 +270,7 @@ Example: `jmp -5`
 
 ## `jeq`
 
-Format: `jeq n a b`
+Instruction: `jeq n a b`
 
 Action: Jump by `n` instructions if `a` equals `b`
 
@@ -261,7 +285,7 @@ Example: `jeq 10 r2 0`
 
 ## `jne`
 
-Format: `jne n a b`
+Instruction: `jne n a b`
 
 Action: Jump by `n` instructions if `a` does not equal `b`
 
@@ -276,13 +300,13 @@ Example: `jne 10 r2 0`
 
 ## `halt`
 
-Format: `halt`
+Instruction: `halt`
 
 Action: Stop program execution immediately
 
 ## `set`
 
-Format: `set rX n`
+Instruction: `set rX n`
 
 Action: Set the value of `rX` to `n`
 
@@ -302,7 +326,7 @@ Example: `set r2 r3`
 
 ## `log`
 
-Format: `log n`
+Instruction: `log n`
 
 Action: Print `n` as a number on a new line
 
@@ -322,7 +346,7 @@ Example: `log 10`
 
 ## `print`
 
-Format: `print n`
+Instruction: `print n`
 
 Action: Print `n` as a character in the current line, converting to unicode
 
@@ -342,7 +366,7 @@ Example: `print 64`
 
 ## `load`
 
-Format: `load rX index`
+Instruction: `load rX index`
 
 Action: Load the number at memory location `index` into `rX`
 
@@ -362,7 +386,7 @@ Example: `load r2 r1`
 
 ## `store`
 
-Format: `store src index`
+Instruction: `store src index`
 
 Action: Store `src` in memory at location `index`
 
@@ -382,7 +406,7 @@ Example: `store r1 2`
 
 ## `mem`
 
-Format: `mem values...`
+Instruction: `mem values...`
 
 Action: Set memory array to a given sequence of values
 

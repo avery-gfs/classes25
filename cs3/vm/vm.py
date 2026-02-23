@@ -13,7 +13,7 @@ class VM:
         self.registers = [0, 0, 0, 0]  # Registers initialized to zero
         self.memory = []  # Memory gets initialized by mem command
 
-    def run(self, path, fps):
+    def run(self, path, fps, logging=True):
         with open(path) as file:
             lines = [line.strip() for line in file.read().splitlines()]
 
@@ -22,25 +22,17 @@ class VM:
 
         while not self.halted:
             self.steps += 1
-
             os.system("clear")
-            self.logInsts()
 
-            print()
-            self.logSteps()
+            if logging:
+                self.runLog()
+            else:
+                self.runInst()
 
-            # Run instruction before doing rest of logging so that logs
-            # reflect the VM state after running the current instruction
-            self.runInst(self.instrs[self.ip])
-
-            print()
-            self.logRegs()
-
-            print()
-            self.logMem()
-
-            print()
-            self.logOutput()
+            if self.halted:
+                print(self.output)
+            else:
+                print(self.output, end="", flush=True)
 
             # Pause to visualize execution
             time.sleep(1 / fps)
@@ -76,8 +68,8 @@ class VM:
 
         raise Error(f"Unreachable operation {op}")
 
-    def runInst(self, inst):
-        tokens = inst.split()
+    def runInst(self):
+        tokens = self.instrs[self.ip].split()
         op = tokens[0]
 
         def setReg(value):
@@ -156,31 +148,28 @@ class VM:
             case _:
                 raise Error(f"Invalid instruction {op}")
 
-    def logInsts(self):
+    def runLog(self):
         for index, inst in enumerate(self.instrs):
             prefix = "> " if index == self.ip else "  "
             print(f"{prefix}{inst}")
 
-    def logSteps(self):
-        print(f"steps: {self.steps}")
+        print(f"\nsteps: {self.steps}")
 
-    def logRegs(self):
+        # Run instruction before doing rest of logging so that logs
+        # reflect the VM state after running the current instruction
+        self.runInst()
+
+        print()
+
         for index, reg in enumerate(self.registers):
             print(f"r{index}: {reg}")
 
-    def logMem(self):
         memStr = ", ".join(
             f"*{val}" if index == self.lastMem else f" {val}"
             for index, val in enumerate(self.memory)
         )
 
-        print(f"memory: [{memStr} ]")
-
-    def logOutput(self):
-        if self.halted:
-            print(self.output)
-        else:
-            print(self.output, end="", flush=True)
+        print(f"\nmemory: [{memStr} ]\n")
 
 
 VM().run("collatz/demo.gfss", 20)
