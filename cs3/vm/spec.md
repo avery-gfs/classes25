@@ -11,12 +11,9 @@ The VM has:
 - A sequence of instructions. The VM starts with the first instruction, and
   moves through the instructions in sequence unless a jump operation is
   performed.
-
 - Four registers, which each hold a single integer, which are initialized to `0`
   at the start of the program.
-
 - A fixed-length memory array (a list of numbers).
-
 - An output stream, which can be used to log numbers or print characters.
 
 All numbers in the VM are integers (division results are truncated).
@@ -52,13 +49,10 @@ Notes:
 - Instructions with a `rX` parameter store their result in the register `rX`,
   where `rX` is `r0`, `r1`, `r2`, or `r3`. All other arguments can be register
   names or number literals.
-
 - Comparison instructions produce a result of `0` if the comparison is false and
   `1` if the comparison is true.
-
 - Logical instructions interpret arguments of `0` as false and arguments of any
   other value as true.
-
 - Jumps are applied relative to the instruction position. Conditional jumps
   whose condition is false proceed to the next instruction.
 
