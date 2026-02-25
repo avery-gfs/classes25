@@ -22,7 +22,7 @@ class VM:
 
         while not self.halted:
             self.steps += 1
-            os.system("clear")
+            # os.system("clear")
 
             if logging:
                 self.runLog()
