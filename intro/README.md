@@ -26,6 +26,19 @@ I'll transmit a word, see who can decode it first
 
 ---
 
+## Program Structure
+
+- `on start` and `forever`
+- What happens if we leave out on start block?
+- Command arguments
+- Data types
+- What is a string?
+- Help menu
+- Copy commands
+- Deleting commands
+
+## Commands Overview
+
 ## Rock Paper Scissors Demo
 
 - Conditionals
@@ -46,34 +59,6 @@ Make a digital die that display a random roll when you shake your microbit.
 
 ---
 
-## Program Structure
-
-- What is a command?
-- What is a program? Sequence of commands
-- `on start` and `forever`
-- What happens if we leave out on start block?
-- Command arguments
-- Data types
-- What is a string?
-- Help menu
-- Copy commands
-- Deleting commands
-
-## Commands Overview
-
-## Variables
-
-What is a variable?
-
-## Counter
-
----
-
-## Twine Presentations
-
-- Wrap up projects
-- Present projects
-
 ## MakeCode Editor
 
 https://makecode.microbit.org/
@@ -91,7 +76,26 @@ https://makecode.microbit.org/
 - Errors
 - Restarting code
 
-## Share Nametags
+## Program Structure
+
+- What is a command?
+- What is a program? Sequence of commands
+- `on start` and `forever`
+
+## Variables
+
+What is a variable?
+
+## Counter
+
+## Tinkering
+
+---
+
+## Twine Presentations
+
+- Wrap up projects
+- Present projects
 
 ---
 
