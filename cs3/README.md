@@ -38,7 +38,7 @@
 
 ---
 
-## VM
+### VM
 
 ---
 
@@ -71,6 +71,310 @@
 ---
 
  -->
+
+## GFSsembly
+
+GFSsembly is a toy
+[assembly language](https://en.wikipedia.org/wiki/Assembly_language) for a
+register-based
+[virtual machine](https://rosettacode.org/wiki/Compiler/virtual_machine_interpreter),
+made for use in CS 3.
+
+The VM has:
+
+- A sequence of instructions. The VM starts with the first instruction, and
+  moves through the instructions in sequence unless a jump operation is
+  performed.
+
+- Four registers, which each hold a single integer, which are initialized to `0`
+  at the start of the program.
+
+- A fixed-length memory array (a list of numbers).
+
+- An output stream, which can be used to log numbers or print characters.
+
+All numbers in the VM are integers (division results are truncated).
+
+## VM
+
+```txt
+> set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 1
+
+r0: 3
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+```
+
+## VM
+
+```txt
+  set r0 3
+> log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 2
+
+r0: 3
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+> jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 3
+
+r0: 3
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+> set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 4
+
+r0: 3
+r1: 3
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+> mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 5
+
+r0: 3
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+> jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 6
+
+r0: 3
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+> mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 7
+
+r0: 9
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+> add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 8
+
+r0: 10
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+> jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 9
+
+r0: 10
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+```
+
+## VM
+
+```txt
+  set r0 3
+> log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 10
+
+r0: 10
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+---
 
 ## Tower Representation
 
