@@ -48,7 +48,9 @@ class Board:
         # Then, or each active neighbor of the cell, add `1` to the cell's
         # neighbor count, using `self.get_state`
 
-        pass
+        for dr in [-1, 0, 1]:
+            for dc in [-1, 0, 1]:
+                pass
 
     def update(self):
         # First call sum_neighbors on each `(r, c)` coordinate of the board
