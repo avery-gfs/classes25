@@ -129,7 +129,7 @@ assert str(board) == "░░░░░░░░░░\n░░░░░░░░�
 
 # ---------- Run simulation
 
-board = Board(examples.blinker)
+board = Board(examples.glider)
 
 for generation in range(500):
     os.system("clear")

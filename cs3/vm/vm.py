@@ -22,7 +22,7 @@ class VM:
 
         while not self.halted:
             self.steps += 1
-            # os.system("clear")
+            os.system("clear")
 
             if logging:
                 self.runLog()
@@ -172,4 +172,4 @@ class VM:
         print(f"\nmemory: [{memStr} ]\n")
 
 
-VM().run("chart/solved.gfss", 20)
+VM().run("collatz/demo.gfss", 20)

@@ -30,9 +30,10 @@ https://playgameoflife.com/
 
 ## Rules
 
-- If a cell has `3` active neighbors, then it will be active in the next step
-- If a cell has `2` active neighbors, and it is currently active, then it will
-  be active in the next step
+- If a cell has _exactly_ `3` active neighbors, then it will be active in the
+  next step
+- If a cell has _exactly_ `2` active neighbors, and it is currently active, then
+  it will be active in the next step
 - Otherwise, the cell will be inactive in the next step
 
 ```txt
@@ -63,11 +64,11 @@ https://en.wikipedia.org/wiki/Speed_of_light_(cellular_automaton)
 
 ## Variants
 
+https://www.youtube.com/watch?v=RZyy5bwXrn8
+
 https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
 
-Lenia
-
-Bugs
+https://www.youtube.com/watch?v=HT49wpyux-k
 
 ---
 

@@ -374,6 +374,240 @@ memory: [ ]
 10
 ```
 
+## VM
+
+```txt
+  set r0 3
+  log r0
+> jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 11
+
+r0: 10
+r1: 1
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+> set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 12
+
+r0: 10
+r1: 10
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+> mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 13
+
+r0: 10
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+> jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 14
+
+r0: 10
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+> div r0 2
+  jmp -9
+  halt
+
+steps: 15
+
+r0: 5
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+## VM
+
+```txt
+  set r0 3
+  log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+> jmp -9
+  halt
+
+steps: 16
+
+r0: 5
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+```
+
+## VM
+
+```txt
+  set r0 3
+> log r0
+  jeq 9 r0 1
+  set r1 r0
+  mod r1 2
+  jeq 4 r1 0
+  mul r0 3
+  add r0 1
+  jmp -7
+  div r0 2
+  jmp -9
+  halt
+
+steps: 17
+
+r0: 5
+r1: 0
+r2: 0
+r3: 0
+
+memory: [ ]
+
+3
+10
+5
+```
+
+## `load` vs `set`
+
+Note the difference between the `load` and `set` instructions:
+
+**`set`**
+
+```txt
+set r1 r0
+```
+
+Means set `r1` to contain the value in `r0`. The Python equivalent of this would
+be:
+
+```py
+r1 = r0
+```
+
+**`load`**
+
+```txt
+load r1 r0
+```
+
+Means set `r1` to contain the value **in memory at index `r0`**. The Python
+equivalent of this would be:
+
+```py
+r1 = memory[r0]
+```
+
 ---
 
 ## Tower Representation
