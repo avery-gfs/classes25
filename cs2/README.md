@@ -1,3 +1,106 @@
+## Rule Strings
+
+`B2/S34`
+
+Kellie Evans thesis paper:
+
+https://www.csun.edu/~kme52026/thesis.html
+
+## Variants
+
+Highlife:
+
+https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
+
+Bugs:
+
+https://www.youtube.com/watch?v=RZyy5bwXrn8
+
+Lenia:
+
+https://www.youtube.com/watch?v=HT49wpyux-k
+
+## Challenges:
+
+- Increase board size by adding padding to the initial pattern string
+- Implement complex structures like a glider gun or puffer or max
+- Make patterns wrap around the board
+- Experiment with different update rules
+- Use pygame to visualize the board instead of text
+
+## Implementation
+
+```py
+class Cell:
+    def __init__(self, active):
+        self.active = active  # Whether the cell is active
+        self.neighbors = 0  # Number of active neighbors to the cell
+
+    def update(self):
+        # Update self.active based on self.neighbors
+        pass
+
+    def __str__(self):
+        # Return "██" if the cell is active, "░░" otherwise
+        pass
+```
+
+## Implementation
+
+```py
+class Board:
+    def __init__(self, initial):
+        # Convert the starting board string to a grid (list of lists) of cells
+        # Save the width and height of the board
+
+        lines = initial.strip().splitlines()
+
+        self.cells = []
+        self.height = len(lines)
+        self.width = len(lines[0])
+
+        for line in lines:
+            assert len(line) == self.width
+            row = [Cell(sym != ".") for sym in line]
+            self.cells.append(row)
+
+    def get_state(self, r, c):
+        # Return the active state of the cell at row `r` and column `c`,
+        # or `False` if `r` or `c` are outside the bounds of the board
+
+        pass
+
+    def sum_neighbors(self, r, c):
+        # Get the cell at row `r` and column `c`
+        # Reset the cell's neighbor count to `0`
+
+        pass
+
+        # Then, or each active neighbor of the cell, add `1` to the cell's
+        # neighbor count, using `self.get_state`
+
+        for dr in [-1, 0, 1]:
+            for dc in [-1, 0, 1]:
+                pass
+
+    def update(self):
+        # First call sum_neighbors on each `(r, c)` coordinate of the board
+        # where `r` is between `0` and `self.height - 1` and `c` is between
+        # `0` and `self.width - 1`
+
+        pass
+
+        # Then, call `cell.update()` for each cell on the board
+
+        pass
+
+    def __str__(self):
+        # Visualize the cells in a 2D grid
+        return "\n".join("".join(str(cell) for cell in row) for row in self.cells)
+```
+
+---
+
 ## Game of Life
 
 https://kylepaulsen.com/stuff/game_of_life.html
@@ -13,27 +116,12 @@ https://playgameoflife.com/
 > Life by creating an initial configuration and observing how it evolves in
 > discrete time steps called generations. -- wikipedia
 
-> The universe of the Game of Life is an infinite, two-dimensional orthogonal
-> grid of square cells, each of which is in one of two possible states, live or
-> dead (or populated and unpopulated, respectively). Every cell interacts with
-> its eight neighbours, which are the cells that are horizontally, vertically,
-> or diagonally adjacent. At each step in time, the following transitions occur:
->
-> - Any live cell with fewer than two live neighbours dies, as if by
->   underpopulation.
-> - Any live cell with two or three live neighbours lives on to the next
->   generation.
-> - Any live cell with more than three live neighbours dies, as if by
->   overpopulation.
-> - Any dead cell with exactly three live neighbours becomes a live cell, as if
->   by reproduction.
-
 ## Rules
 
 - If a cell has _exactly_ `3` active neighbors, then it will be active in the
   next step
-- If a cell has _exactly_ `2` active neighbors, and it is currently active, then
-  it will be active in the next step
+- Otherwise, if a cell has _exactly_ `2` active neighbors, and it is currently
+  active, then it will be active in the next step
 - Otherwise, the cell will be inactive in the next step
 
 ```txt
@@ -60,15 +148,15 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Analysis
 
 ## Speed of Light
 
+> In Conway's Game of Life (and related cellular automata), the speed of light
+> is a propagation rate across the grid of exactly one step (either
+> horizontally, vertically or diagonally) per generation. In a single
+> generation, a cell can only influence its nearest neighbours, and so the speed
+> of light (by analogy with the speed of light in physics) is the maximum rate
+> at which information can propagate. It is therefore an upper bound to the
+> speed at which any pattern can move. -- wikipedia
+
 https://en.wikipedia.org/wiki/Speed_of_light_(cellular_automaton)
-
-## Variants
-
-https://www.youtube.com/watch?v=RZyy5bwXrn8
-
-https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
-
-https://www.youtube.com/watch?v=HT49wpyux-k
 
 ---
 
