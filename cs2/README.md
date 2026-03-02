@@ -1,8 +1,26 @@
+## `=` vs `==`
+
+```py
+def update(self):
+    # Update self.active based on self.neighbors
+    
+    if self.neighbors == 3:
+        self.active = True
+
+    elif self.neighbors == 2 and self.active:
+        self.active = True
+
+    else:
+        self.active = False
+```
+
+---
+
 ## Rule Strings
 
-`B2/S34`
+`B3/S23`
 
-Kellie Evans thesis paper:
+Kellie Evans "Larger than Life" thesis paper:
 
 https://www.csun.edu/~kme52026/thesis.html
 
@@ -19,14 +37,6 @@ https://www.youtube.com/watch?v=RZyy5bwXrn8
 Lenia:
 
 https://www.youtube.com/watch?v=HT49wpyux-k
-
-## Challenges:
-
-- Increase board size by adding padding to the initial pattern string
-- Implement complex structures like a glider gun or puffer or max
-- Make patterns wrap around the board
-- Experiment with different update rules
-- Use pygame to visualize the board instead of text
 
 ## Implementation
 
@@ -99,6 +109,14 @@ class Board:
         return "\n".join("".join(str(cell) for cell in row) for row in self.cells)
 ```
 
+## Challenges:
+
+- Increase board size by adding padding to the initial pattern string
+- Implement complex structures like a glider gun or puffer or max
+- Make patterns wrap around the board
+- Experiment with different update rules
+- Use pygame to visualize the board instead of text
+
 ---
 
 ## Game of Life
@@ -120,23 +138,41 @@ https://playgameoflife.com/
 
 - If a cell has _exactly_ `3` active neighbors, then it will be active in the
   next step
-- Otherwise, if a cell has _exactly_ `2` active neighbors, and it is currently
-  active, then it will be active in the next step
-- Otherwise, the cell will be inactive in the next step
+- If a cell has _exactly_ `2` active neighbors, and it is currently active, then
+  it will be active in the next step
+- Ihe cell will be inactive in the next step
+
+<img src="assets/minesweeper.png" style="height: 400px;" />
+
+## Rules
+
+- If a cell has _exactly_ `3` active neighbors, then it will be active in the
+  next step
+- If a cell has _exactly_ `2` active neighbors, and it is currently active, then
+  it will be active in the next step
+- Ihe cell will be inactive in the next step
 
 ```txt
-┌───┬───┬───┬───┬───┐
-│   │   │   │   │   │
-├───┼───┼───┼───┼───┤
-│   │   │███│   │   │
-├───┼───┼───┼───┼───┤
-│   │   │███│   │   │
-├───┼───┼───┼───┼───┤
-│   │   │███│   │   │
-├───┼───┼───┼───┼───┤
-│   │   │   │   │   │
-└───┴───┴───┴───┴───┘
+┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
+│   │   │   │   │   │       │ 0 │ 1 │ 1 │ 1 │ 0 │       │   │   │   │   │   │
+├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+│   │   │███│   │   │       │ 0 │ 2 │ 1 │ 2 │ 0 │       │   │   │   │   │   │
+├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+│   │   │███│   │   │  =>   │ 0 │ 3 │ 2 │ 3 │ 0 │  =>   │   │███│███│███│   │
+├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+│   │   │███│   │   │       │ 0 │ 2 │ 1 │ 2 │ 0 │       │   │   │   │   │   │
+├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+│   │   │   │   │   │       │ 0 │ 1 │ 1 │ 1 │ 0 │       │   │   │   │   │   │
+└───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
 ```
+
+## Examples:
+
+- [Blinker](https://playgameoflife.com/lexicon/blinker)
+- [Loaf](https://playgameoflife.com/lexicon/loaf)
+- [Glider](https://playgameoflife.com/lexicon/glider)
+- [Octagon 2](https://playgameoflife.com/lexicon/octagon_II)
+- [R-Pentomino](https://playgameoflife.com/lexicon/R-pentomino)
 
 ## Turing Completeness
 
@@ -157,6 +193,10 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Analysis
 > speed at which any pattern can move. -- wikipedia
 
 https://en.wikipedia.org/wiki/Speed_of_light_(cellular_automaton)
+
+## Conway Video
+
+https://www.youtube.com/watch?v=R9Plq-D1gEk
 
 ---
 
