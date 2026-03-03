@@ -72,6 +72,216 @@
 
  -->
 
+## Compiling Code
+
+How would we write this code using GFSsembly?
+
+```py
+r0 = 10
+r1 = 1
+
+while r0 != 0:
+    r1 *= r0
+    r0 -= 1
+
+print(r1)
+```
+
+## Compiling Code
+
+```py
+r0 = 10
+r1 = 1
+
+while r0 != 0:
+    r1 *= r0
+    r0 -= 1
+
+print(r1)
+```
+
+```txt
+set r0 10
+set r1 1
+jeq 4 r0 0
+mul r1 r0
+sub r0 1
+jmp -3
+log r1
+halt
+```
+
+## Python Bytecode
+
+```py
+import dis
+
+dis.dis("""
+r0 = 10
+r1 = 1
+
+while r0 != 0:
+    r1 *= r0
+    r0 -= 1
+
+print(r1)
+""")
+```
+
+```
+  0           0 RESUME                   0
+
+  2           2 LOAD_CONST               0 (10)
+              4 STORE_NAME               0 (r0)
+
+  3           6 LOAD_CONST               1 (1)
+              8 STORE_NAME               1 (r1)
+
+  5          10 LOAD_NAME                0 (r0)
+             12 LOAD_CONST               2 (0)
+             14 COMPARE_OP               3 (!=)
+             20 POP_JUMP_FORWARD_IF_FALSE    16 (to 54)
+...
+```
+
+## Compiling C
+
+```c
+#include <stdio.h>
+
+int main() {
+    int r0 = 10;
+    int r1 = 1;
+
+    while (r0 != 0) {
+        r1 *= r0;
+        r0 -= 1;
+    }
+
+    printf("%d\n", r1);
+}
+```
+
+```txt
+$ gcc -g -O0 C/factorial.c -o C/factorial
+```
+
+```txt
+$ ./C/factorial
+3628800
+```
+
+## Compiling C
+
+```txt
+$ objdump -d C/factorial
+...
+0000000000001149 <main>:
+    1149:   f3 0f 1e fa             endbr64 
+    114d:   55                      push   %rbp
+    114e:   48 89 e5                mov    %rsp,%rbp
+    1151:   48 83 ec 10             sub    $0x10,%rsp
+    1155:   c7 45 f8 0a 00 00 00    movl   $0xa,-0x8(%rbp)
+    115c:   c7 45 fc 01 00 00 00    movl   $0x1,-0x4(%rbp)
+    1163:   eb 0e                   jmp    1173 <main+0x2a>
+    1165:   8b 45 fc                mov    -0x4(%rbp),%eax
+    1168:   0f af 45 f8             imul   -0x8(%rbp),%eax
+    116c:   89 45 fc                mov    %eax,-0x4(%rbp)
+    116f:   83 6d f8 01             subl   $0x1,-0x8(%rbp)
+    1173:   83 7d f8 00             cmpl   $0x0,-0x8(%rbp)
+    1177:   75 ec                   jne    1165 <main+0x1c>
+    1179:   8b 45 fc                mov    -0x4(%rbp),%eax
+    117c:   89 c6                   mov    %eax,%esi
+    117e:   48 8d 05 7f 0e 00 00    lea    0xe7f(%rip),%rax        # 2004 <_IO_stdin_used+0x4>
+    1185:   48 89 c7                mov    %rax,%rdi
+    1188:   b8 00 00 00 00          mov    $0x0,%eax
+    118d:   e8 be fe ff ff          call   1050 <printf@plt>
+    1192:   b8 00 00 00 00          mov    $0x0,%eax
+    1197:   c9                      leave  
+    1198:   c3                      ret 
+...
+```
+
+## Compiled vs Interpreted Languages
+
+Compiled Languages (C):
+
+Convert source code to machine code (assembly) and run directly on the CPU
+
+```txt
+┌────────┐        ┌──────────────┐        ┌─────┐
+│ C Code │   ➡️   │ Machine Code │   ⚡   │ CPU │
+└────────┘        └──────────────┘        └─────┘
+```
+
+## Compiled vs Interpreted Languages
+
+Interpreted Languages (Python):
+
+Convert source code to some intermediate representation (bytecode) and run on a
+virtual machine.
+
+```txt
+┌─────────────┐        ┌─────────────────┐        ┌───────────┐   
+│ Python Code │   ➡️   │ Python Bytecode │   ⚡   │ Python VM │
+└─────────────┘        └─────────────────┘        └───────────┘
+```
+
+Where the virtual machine is (usually) written in a compiled language like C.
+
+```txt
+┌───────────┐
+│ Python VM │:
+└───────────┘
+
+┌────────┐        ┌──────────────┐        ┌─────┐
+│ C Code │   ➡️   │ Machine Code │   ⚡   │ CPU │
+└────────┘        └──────────────┘        └─────┘
+```
+
+## Tradeoffs
+
+In general:
+
+- Compiled languages are faster
+
+- Compiled languages give you more control (lower level)
+
+- Interpreted languages are more flexible (dynamic types, data structures,
+  closures)
+
+- Interpreted language code is more portable
+
+## Writing Assembly
+
+How would you write this program in GFSsembly?
+
+- How many registers would you need to use?
+- What would those registers be used for?
+- Would the program need to use any looping or conditionals?
+- How would you write those loops / consitionals as jumps?
+- How would your program know when to stop?
+
+```txt
+-- Compute and display the squares of the numbers 1 through 10
+-- Your program may only use a single log instruction
+--
+-- The output should be:
+--
+-- 1
+-- 4
+-- 9
+-- 16
+-- 25
+-- 36
+-- 49
+-- 64
+-- 81
+-- 100
+```
+
+---
+
 ## GFSsembly
 
 GFSsembly is a toy
@@ -1955,7 +2165,7 @@ hello(0)
 
 ```txt
 factorial(0) = 1
-factorial(n) = n * (n - 1) * ... * 1
+factorial(n) = n * (n - 1) * * 1
 ```
 
 ```txt
