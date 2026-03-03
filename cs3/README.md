@@ -296,10 +296,14 @@ In general:
 
 - Compiled languages give you more control (lower level)
 
+- Compiled languages can be used with embedded systems
+
 - Interpreted languages are more flexible (dynamic types, data structures,
   closures)
 
 - Interpreted language code is more portable
+
+- Interpreted language code is easier to debug
 
 ## Writing Assembly
 

@@ -172,4 +172,4 @@ class VM:
         print(f"\nmemory: [{memStr} ]\n")
 
 
-VM().run("chart/solved.gfss", 20)
+VM().run("squares/solved.gfss", 20)
