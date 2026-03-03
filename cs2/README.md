@@ -1,58 +1,39 @@
 ## `=` vs `==`
 
+- Use `==` for **comparisons** (in `if`, `elif`, and `while` conditions)
+- Use `=` for **assignments** (setting variables)
+
 ```py
-def update(self):
-    # Update self.active based on self.neighbors
-    
-    if self.neighbors == 3:
-        self.active = True
-
-    elif self.neighbors == 2 and self.active:
-        self.active = True
-
-    else:
-        self.active = False
+if n % 2 == 0:
+    message = "n is even"
+elif n % 2 == 1:
+    message = "n is odd"
+else:
+    message = "n is not an integer"
 ```
 
----
+## `=` vs `==`
 
-## Rule Strings
-
-`B3/S23`
-
-Kellie Evans "Larger than Life" thesis paper:
-
-https://www.csun.edu/~kme52026/thesis.html
-
-## Variants
-
-Highlife:
-
-https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
-
-Bugs:
-
-https://www.youtube.com/watch?v=RZyy5bwXrn8
-
-Lenia:
-
-https://www.youtube.com/watch?v=HT49wpyux-k
-
-## Implementation
+DON'T DO THIS:
 
 ```py
-class Cell:
-    def __init__(self, active):
-        self.active = active  # Whether the cell is active
-        self.neighbors = 0  # Number of active neighbors to the cell
+if n % 2 == 0:
+    message == "n is even" # NO!!!
+elif n % 2 == 1:
+    message == "n is odd" # NO!!!
+else:
+    message == "n is not an integer" # NO!!!
+```
 
-    def update(self):
-        # Update self.active based on self.neighbors
-        pass
+DON'T DO THIS:
 
-    def __str__(self):
-        # Return "██" if the cell is active, "░░" otherwise
-        pass
+```py
+if n % 2 = 0: # NO!!!
+    message = "n is even"
+elif n % 2 = 1: # NO!!!
+    message = "n is odd"
+else:
+    message = "n is not an integer"
 ```
 
 ## Implementation
@@ -116,6 +97,47 @@ class Board:
 - Make patterns wrap around the board
 - Experiment with different update rules
 - Use pygame to visualize the board instead of text
+
+---
+
+## Rule Strings
+
+`B3/S23`
+
+Kellie Evans "Larger than Life" thesis paper:
+
+https://www.csun.edu/~kme52026/thesis.html
+
+## Variants
+
+Highlife:
+
+https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
+
+Bugs:
+
+https://www.youtube.com/watch?v=RZyy5bwXrn8
+
+Lenia:
+
+https://www.youtube.com/watch?v=HT49wpyux-k
+
+## Implementation
+
+```py
+class Cell:
+    def __init__(self, active):
+        self.active = active  # Whether the cell is active
+        self.neighbors = 0  # Number of active neighbors to the cell
+
+    def update(self):
+        # Update self.active based on self.neighbors
+        pass
+
+    def __str__(self):
+        # Return "██" if the cell is active, "░░" otherwise
+        pass
+```
 
 ---
 
