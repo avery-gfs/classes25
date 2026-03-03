@@ -202,6 +202,53 @@ $ objdump -d C/factorial
 ...
 ```
 
+## GFSsembly
+
+```txt
+jne    1165 <main+0x1c>
+mov    -0x4(%rbp),%eax
+mov    %eax,%esi
+lea    0xe7f(%rip),%rax        # 2004 <_IO_stdin_used+0x4>
+mov    %rax,%rdi
+mov    $0x0,%eax
+call   1050 <printf@plt>
+
+set r0 10
+set r1 1
+jeq 4 r0 0
+mul r1 r0
+sub r0 1
+jmp -3
+log r1
+halt
+```
+
+<img src="assets/tmnt.png" height="250px" />
+
+## Assembly vs Machine Code
+
+```txt
+1155:   c7 45 f8 0a 00 00 00    movl   $0xa,-0x8(%rbp)
+```
+
+C:
+
+```c
+int r0 = 10;
+```
+
+Assembly:
+
+```txt
+movl $0xa,-0x8(%rbp)
+```
+
+Machine Code:
+
+```txt
+c7 45 f8 0a 00 00 00
+```
+
 ## Compiled vs Interpreted Languages
 
 Compiled Languages (C):
