@@ -138,8 +138,10 @@ https://playgameoflife.com/
 
 - If a cell has _exactly_ `3` active neighbors, then it will be active in the
   next step
+
 - If a cell has _exactly_ `2` active neighbors, and it is currently active, then
   it will be active in the next step
+
 - Otherwise, the cell will be inactive in the next step
 
 <img src="assets/minesweeper.png" style="height: 400px;" />
@@ -148,8 +150,10 @@ https://playgameoflife.com/
 
 - If a cell has _exactly_ `3` active neighbors, then it will be active in the
   next step
+
 - If a cell has _exactly_ `2` active neighbors, and it is currently active, then
   it will be active in the next step
+
 - Otherwise, the cell will be inactive in the next step
 
 ```txt
