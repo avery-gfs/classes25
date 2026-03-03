@@ -41,9 +41,6 @@ else:
 ```py
 class Board:
     def __init__(self, initial):
-        # Convert the starting board string to a grid (list of lists) of cells
-        # Save the width and height of the board
-
         lines = initial.strip().splitlines()
 
         self.cells = []
@@ -54,17 +51,94 @@ class Board:
             assert len(line) == self.width
             row = [Cell(sym != ".") for sym in line]
             self.cells.append(row)
+```
+
+```py
+blinker = """
+.....
+..#..
+..#..
+..#..
+.....
+"""
+
+board = Board(blinker)
+```
+
+```py
+board.width # 5
+board.height # 5
+```
+
+## Implementation
+
+```py
+blinker = """
+.....
+..#..
+..#..
+..#..
+.....
+"""
+
+board = Board(blinker)
+```
+
+```py
+board.cells
+```
+
+```py
+[
+    [Cell(False), Cell(False), Cell(False), Cell(False), Cell(False)],
+    [Cell(False), Cell(False), Cell(True), Cell(False), Cell(False)],
+    [Cell(False), Cell(False), Cell(True), Cell(False), Cell(False)],
+    [Cell(False), Cell(False), Cell(True), Cell(False), Cell(False)],
+    [Cell(False), Cell(False), Cell(False), Cell(False), Cell(False)],
+]
+```
+
+```py
+board.cells[1] # [Cell(False), Cell(False), Cell(True), Cell(False), Cell(False)]
+board.cells[1][2] # Cell(True)
+```
+
+## Implementation
+
+Outside the class:
+
+```py
+board.cells
+board.cells[2]
+board.cells[2][1]
+board.width
+board.height
+```
+
+Inside the class:
+
+```py
+self.cells
+self.cells[2]
+self.cells[2][1]
+self.width
+self.height
+```
+
+## Implementation
+
+```py
+class Board:
+    # ...
 
     def get_state(self, r, c):
         # Return the active state of the cell at row `r` and column `c`,
         # or `False` if `r` or `c` are outside the bounds of the board
-
         pass
 
     def sum_neighbors(self, r, c):
         # Get the cell at row `r` and column `c`
         # Reset the cell's neighbor count to `0`
-
         pass
 
         # Then, or each active neighbor of the cell, add `1` to the cell's
@@ -78,16 +152,10 @@ class Board:
         # First call sum_neighbors on each `(r, c)` coordinate of the board
         # where `r` is between `0` and `self.height - 1` and `c` is between
         # `0` and `self.width - 1`
-
         pass
 
         # Then, call `cell.update()` for each cell on the board
-
         pass
-
-    def __str__(self):
-        # Visualize the cells in a 2D grid
-        return "\n".join("".join(str(cell) for cell in row) for row in self.cells)
 ```
 
 ## Challenges:
