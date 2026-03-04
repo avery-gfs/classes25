@@ -165,11 +165,11 @@ int main() {
 ```
 
 ```txt
-$ gcc -g -O0 C/factorial.c -o C/factorial
+$ gcc -g -O0 factorial.c -o factorial
 ```
 
 ```txt
-$ ./C/factorial
+$ ./factorial
 3628800
 ```
 
@@ -225,7 +225,7 @@ log r1
 halt
 ```
 
-<img src="assets/tmnt.png" height="250px" />
+<img src="assets/tmnt.png" height="400px" style="margin-top: -150px; z-index: 1; position: absolute; right: 10px" />
 
 ## Assembly vs Machine Code
 
@@ -290,20 +290,101 @@ Where the virtual machine is (usually) written in a compiled language like C.
 
 ## Tradeoffs
 
-In general:
+In general, compiled languages:
 
-- Compiled languages are faster
+- Are faster
 
-- Compiled languages give you more control (lower level)
+- Give you more control (lower level)
 
-- Compiled languages can be used with embedded systems
+- Can be used with embedded systems
 
-- Interpreted languages are more flexible (dynamic types, data structures,
-  closures)
+In general, interpreted languages:
 
-- Interpreted language code is more portable
+- Are more flexible (dynamic types, data structures, closures)
 
-- Interpreted language code is easier to debug
+- Are more portable
+
+- Are easier to debug
+
+## Speed
+
+```py
+n = 1000000000001
+d = 2
+
+while n > 1:
+  if n % d:
+    d += 1
+  else:
+    print(d)
+    n //= d
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+  long n = 1000000000001;
+  int d = 2;
+
+  while (n > 1) {
+    if (n % d) {
+      d += 1;
+    } else {
+      printf("%d\n", d);
+      n /= d;
+    }
+  }
+
+}
+```
+
+## Speed
+
+_**PLUG IN YOUR COMPUTER**_
+
+```txt
+Run Python:
+
+73
+137
+99990001
+
+real  0m6.065s
+user  0m6.056s
+sys 0m0.007s
+
+Compile C:
+
+real  0m0.040s
+user  0m0.026s
+sys 0m0.013s
+
+Run C:
+
+73
+137
+99990001
+
+real  0m0.272s
+user  0m0.269s
+sys 0m0.003s
+```
+
+## Segmentation Fault
+
+```c
+#include <stdio.h>
+
+int main() {
+  int numbers[4] = { 1, 2, 3, 4 };
+  printf("%d\n", numbers[1000000]);
+}
+```
+
+```txt
+Segmentation fault (core dumped)
+```
 
 ## Writing Assembly
 
