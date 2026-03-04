@@ -1,3 +1,28 @@
+## Conway Video
+
+https://www.youtube.com/watch?v=R9Plq-D1gEk
+
+- Robots on mars?
+- Halting problem?
+- DNA?
+- Conway doesn't like Conway's game of life?
+
+What is this guy talking about?
+
+## 
+
+quine self replication life quine godel turing machines halting problem collatz
+
+## Challenges:
+
+- Increase board size by adding padding to the initial pattern string
+- Implement complex structures like a glider gun or puffer or max
+- Make patterns wrap around the board
+- Experiment with different update rules
+- Use pygame to visualize the board instead of text
+
+---
+
 ## `=` vs `==`
 
 - Use `==` for **comparisons** (in `if`, `elif`, and `while` conditions)
@@ -35,6 +60,36 @@ elif n % 2 = 1: # NO!!!
 else:
     message = "n is not an integer"
 ```
+
+## Boolean Expressions
+
+```py
+def update(self):
+    # Update self.active based on self.neighbors
+    self.active = self.neighbors == 3 or self.active and self.neighbors == 2
+```
+
+## Operator Precedence
+
+The code
+
+```py
+self.neighbors == 3 or self.active and self.neighbors == 2
+```
+
+Means
+
+```py
+self.neighbors == 3 or (self.active and self.neighbors == 2)
+```
+
+Rather than
+
+```py
+(self.neighbors == 3 or self.active) and self.neighbors == 2
+```
+
+Due to Python's operator precedence rules
 
 ## Implementation
 
@@ -158,25 +213,15 @@ class Board:
         pass
 ```
 
-## Challenges:
-
-- Increase board size by adding padding to the initial pattern string
-- Implement complex structures like a glider gun or puffer or max
-- Make patterns wrap around the board
-- Experiment with different update rules
-- Use pygame to visualize the board instead of text
-
 ---
 
-## Rule Strings
+## Variants
 
-`B3/S23`
+Rule Strings: `B3/S23`
 
 Kellie Evans "Larger than Life" thesis paper:
 
 https://www.csun.edu/~kme52026/thesis.html
-
-## Variants
 
 Highlife:
 
@@ -287,10 +332,6 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Analysis
 > speed at which any pattern can move. -- wikipedia
 
 https://en.wikipedia.org/wiki/Speed_of_light_(cellular_automaton)
-
-## Conway Video
-
-https://www.youtube.com/watch?v=R9Plq-D1gEk
 
 ---
 
