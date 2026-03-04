@@ -3,15 +3,51 @@
 https://www.youtube.com/watch?v=R9Plq-D1gEk
 
 - Robots on mars?
+- Rust?
 - Halting problem?
 - DNA?
 - Conway doesn't like Conway's game of life?
 
 What is this guy talking about?
 
-## 
+## Quines
 
-quine self replication life quine godel turing machines halting problem collatz
+Can you write a Python program that prints its own source code?
+
+```py
+>>> print("Hello world!")
+Hello world!
+
+>>> print('print("Hello world!")')
+print("Hello world!")
+
+>>> print("""print('print("Hello world!")')""")
+print('print("Hello world!")')
+```
+
+We're always missing the outermost print statement
+
+A program that prints its own source code is called a "quine"
+
+https://en.wikipedia.org/wiki/Quine_(computing)
+
+## Self Replication is Hard
+
+https://www.youtube.com/watch?v=OSfUUqNkrOQ
+
+## Self Replication is Life
+
+**Self replication** is fundamental to **life**
+
+Humans and other organisms can self replicate
+
+If you think about it, our DNA is a self-replicating program
+
+## Self Replication in Game of Life
+
+https://www.youtube.com/watch?v=A8B5MbHPlH0
+
+godel turing machines halting problem collatz
 
 ## Challenges:
 
