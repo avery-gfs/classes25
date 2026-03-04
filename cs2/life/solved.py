@@ -119,11 +119,15 @@ assert board.get_state(1, 2) == True
 assert board.get_state(0, 5) == False
 assert board.get_state(-1, 0) == False
 
-board.update()
+board.sum_neighbors(0, 0)
+board.sum_neighbors(1, 1)
+board.sum_neighbors(2, 1)
 
 assert board.cells[0][0].neighbors == 0
 assert board.cells[1][1].neighbors == 2
 assert board.cells[2][1].neighbors == 3
+
+board.update()
 
 assert str(board) == "░░░░░░░░░░\n░░░░░░░░░░\n░░██████░░\n░░░░░░░░░░\n░░░░░░░░░░"
 
