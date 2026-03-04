@@ -176,7 +176,8 @@ $ ./factorial
 ## Compiling C
 
 ```txt
-$ objdump -d C/factorial
+$ gcc -g -O0 factorial.c -o factorial
+$ objdump -d factorial
 ...
 0000000000001149 <main>:
     1149:   f3 0f 1e fa             endbr64 
@@ -341,7 +342,8 @@ int main() {
 
 ## Speed
 
-_**PLUG IN YOUR COMPUTER**_
+- Plug in your computer
+- Watch out for clever optimizations when profiling
 
 ```txt
 Run Python:
