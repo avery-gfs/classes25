@@ -37,13 +37,17 @@ class Board:
         # Return the active state of the cell at row `r` and column `c`,
         # or `False` if `r` or `c` are outside the bounds of the board
 
-        pass
+        if r < 0 or r >= self.height or c < 0 or c >= self.width:
+            return False
+
+        return self.cells[r][c].active
 
     def sum_neighbors(self, r, c):
         # Get the cell at row `r` and column `c`
         # Reset the cell's neighbor count to `0`
 
-        pass
+        cell = self.cells[r][c]
+        cell.neighbors = 0
 
         # Then, or each active neighbor of the cell, add `1` to the cell's
         # neighbor count, using `self.get_state`
