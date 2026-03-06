@@ -1,1 +1,2 @@
 change numbered registers to named
+add symbol to load memory length (@)
