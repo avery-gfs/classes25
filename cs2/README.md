@@ -1,14 +1,6 @@
-## Conway Video
+## Quines
 
-https://www.youtube.com/watch?v=R9Plq-D1gEk
-
-- Robots on mars?
-- Rust?
-- Halting problem?
-- DNA?
-- Conway doesn't like Conway's game of life?
-
-What is this guy talking about?
+Can you write a Python program that prints its own source code?
 
 ## Quines
 
@@ -31,9 +23,40 @@ A program that prints its own source code is called a "quine"
 
 https://en.wikipedia.org/wiki/Quine_(computing)
 
-## Self Replication is Hard
+## Conway Video
+
+https://www.youtube.com/watch?v=R9Plq-D1gEk
+
+- Robots on mars?
+- Rust?
+- Halting problem?
+- DNA?
+- Conway doesn't like Conway's game of life?
+
+What is this guy talking about?
+
+## Self Replication is Hard in Game of Life
 
 https://www.youtube.com/watch?v=OSfUUqNkrOQ
+
+Replication in Game of Life
+
+https://cp4space.hatsya.com/2018/11/12/fully-self-directed-replication/
+
+https://www.youtube.com/watch?v=CfRSVPhzN5M
+
+## Self Replication is Easy in Highlife
+
+Rule Strings:
+
+- Game of life `B3/S23`
+- Highife `B36/S23`
+
+Highlife:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Highlife_replicator.gif" style="height: 360px;" />
+
+https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
 
 ## Self Replication is Life
 
@@ -43,11 +66,88 @@ Humans and other organisms can self replicate
 
 If you think about it, our DNA is a self-replicating program
 
-## Self Replication in Game of Life
+> Avery's axiom: the fastest growing pattern in a given system must be
+> self-replicating
 
-https://www.youtube.com/watch?v=A8B5MbHPlH0
+## Turing Machines
 
-godel turing machines halting problem collatz
+Turing machine: A universal computer
+
+Anything that can be computed can be computed by a Turing machine
+
+https://www.youtube.com/watch?v=E3keLeMwfHY
+
+If you can make a Turing machine under some constraints, you can program
+anything under those constraints
+
+Tetris in game of life:
+
+https://codegolf.stackexchange.com/questions/11880/build-a-working-game-of-tetris-in-conways-game-of-life
+
+## Turing Machines
+
+Question for Avery
+
+> Does Turing completeness of CA rule imply existence of true replicator?
+
+## More on Complexity
+
+(Mind-bending theoretical CS stuff)
+
+Halting problem:
+
+> The halting problem is a fundamental, unsolvable problem in computer science,
+> proven by Alan Turing in 1936, which states that no general algorithm can
+> determine whether any arbitrary program will eventually stop running or loop
+> forever
+
+Also means that it's generally impossible to tell if two programs are equivalent
+
+## More on Complexity
+
+(Mind-bending theoretical CS stuff)
+
+Halting problem:
+
+> The halting problem is a fundamental, unsolvable problem in computer science,
+> proven by Alan Turing in 1936, which states that no general algorithm can
+> determine whether any arbitrary program will eventually stop running or loop
+> forever
+
+Also means that it's generally impossible to tell if two programs are equivalent
+
+## More on Complexity
+
+Can every mathematical / logical statement be proven or disproven?
+
+## Collatz Conjecture
+
+- If `n -> n / 2` if `n` is even
+- If `n -> 3 * n + 1` if `n` is odd
+
+Do these rules eventually reach `1` from any starting positive integer?
+
+Nobody can prove this?!?
+
+## More on Complexity
+
+(Mind-bending theoretical CS stuff)
+
+Gödel's incompleteness theorem
+
+> There are some mathematical statements that can neither be proven or disproven
+
+## More on Complexity
+
+Game of life is a beautiful mix of different theoretical CS concepts:
+
+- Self replication
+- Chaos
+- Emergence
+- Computability
+- Fractals
+
+If you find this stuff interesting you should read the book Godel, Escher, Bach
 
 ## Challenges:
 
@@ -253,15 +353,9 @@ class Board:
 
 ## Variants
 
-Rule Strings: `B3/S23`
-
 Kellie Evans "Larger than Life" thesis paper:
 
 https://www.csun.edu/~kme52026/thesis.html
-
-Highlife:
-
-https://en.wikipedia.org/wiki/Highlife_(cellular_automaton)
 
 Bugs:
 
