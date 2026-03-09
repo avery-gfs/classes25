@@ -2,10 +2,6 @@
 
 ---
 
-## Morse Radio
-
----
-
 ## Morse Code
 
 https://www.youtube.com/watch?v=QmNNjH8e4G8
@@ -14,15 +10,14 @@ https://www.youtube.com/watch?v=QmNNjH8e4G8
 
 ## Morse Worksheet
 
+## Morse Exercises
+
+- Everyone transmit names vocally
+- Everyone decode transmitted word
+
 ## Morse Brainstorm
 
 What commands do we need to make microbit display morse code?
-
-## Morse Demo
-
-## Telegraph Exercise
-
-I'll transmit a word, see who can decode it first
 
 ---
 
