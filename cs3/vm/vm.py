@@ -43,6 +43,11 @@ class VM:
 
         return int(regName[1:])
 
+    def convertToken(self, token):
+        if token != "@":
+            return int(token)
+        return len(self.memory)
+
     def binOp(self, op, a, b):
         match op:
             case "add":
@@ -80,7 +85,7 @@ class VM:
         args = [
             self.registers[self.regIndex(token)]
             if token.startswith("r")
-            else int(token)
+            else self.convertToken(token)
             for token in tokens[1:]
         ]
 
