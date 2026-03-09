@@ -22,7 +22,11 @@ class VM:
 
         while not self.halted:
             self.steps += 1
-            os.system("clear")
+
+            if os.name == 'nt': #windows
+                os.system('cls')  
+            else: #linux / mac
+                os.system('clear')
 
             if logging:
                 self.runLog()
