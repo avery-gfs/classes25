@@ -50,6 +50,7 @@
 - Turtle? p5? Other libraries
 - Random, math libraries
 - Comments
+- Box drawing chars / block chars
 
 ## Projects
 
@@ -85,6 +86,15 @@
 - Collatz
 - Typewriter
 - Rock paper scissors
+- Dice simulator
+- Line equation from points
+- 99 bottles of beer lyrics
+- Running sum inputs
+- Running average inputs
+- Hello (name)
+- I (verb) Philly
+- ASCII circle
+- Times table
 
 ## Tech
 
