@@ -22,7 +22,6 @@
 - In operator
 - List append
 - List indexing
-- Length function
 - List concatenation
 - List slicing
 - List methods (sort, append, pop, index)
@@ -33,6 +32,7 @@
 - For loops with list
 - For loops with range
 - Break and continue?
+- List comprehensions
 - Calling functions
 - Defining functions
 - Return semantics
