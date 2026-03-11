@@ -172,4 +172,4 @@ class VM:
         print(f"\nmemory: [{memStr} ]\n")
 
 
-VM().run("test.gfss", 20)
+VM().run("factorial/demo.gfss", 5)

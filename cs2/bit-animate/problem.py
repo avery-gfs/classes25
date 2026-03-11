@@ -45,10 +45,10 @@ def animate(frames, fps):
 import demos
 
 # animate(demos.smile, 2)
-# animate(demos.gfs, 4)
+animate(demos.gfs, 4)
 # animate(demos.arrow, 10)
 # animate(demos.bounce, 10)
-animate(demos.snake, 12)
+# animate(demos.snake, 12)
 
 custom = [
     "0042001800427e00",
