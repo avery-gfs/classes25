@@ -228,6 +228,10 @@ halt
 
 <img src="assets/tmnt.png" height="400px" style="margin-top: -150px; z-index: 1; position: absolute; right: 10px" />
 
+## Punch Cards
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Used_Punchcard_%285151286161%29.jpg/1920px-Used_Punchcard_%285151286161%29.jpg" height="400px" />
+
 ## Assembly vs Machine Code
 
 ```txt
@@ -340,6 +344,21 @@ int main() {
 }
 ```
 
+## Segmentation Fault
+
+```c
+#include <stdio.h>
+
+int main() {
+  int numbers[4] = { 1, 2, 3, 4 };
+  printf("%d\n", numbers[1000000]);
+}
+```
+
+```txt
+Segmentation fault (core dumped)
+```
+
 ## Speed
 
 - Plug in your computer
@@ -371,21 +390,6 @@ Run C:
 real  0m0.272s
 user  0m0.269s
 sys 0m0.003s
-```
-
-## Segmentation Fault
-
-```c
-#include <stdio.h>
-
-int main() {
-  int numbers[4] = { 1, 2, 3, 4 };
-  printf("%d\n", numbers[1000000]);
-}
-```
-
-```txt
-Segmentation fault (core dumped)
 ```
 
 ## Writing Assembly
