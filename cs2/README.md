@@ -8,6 +8,25 @@
 - How did we use CSV files in Python?
 - What were some of the challenges we faced working with CSV?
 
+## Data Analysis
+
+https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+
+```txt
+city,state,pop2024,pop2020,area
+New York,NY,8478072,8804190,300.5
+Los Angeles,CA,3878704,3898747,469.5
+Chicago,IL,2721308,2746388,227.7
+Houston,TX,2390125,2304580,640.4
+Phoenix,AZ,1673164,1608139,518
+Philadelphia,PA,1573916,1603797,134.4
+San Antonio,TX,1526656,1434625,498.8
+San Diego,CA,1404452,1386932,325.9
+Dallas,TX,1326087,1304379,339.6
+```
+
+What sort of questions can we ask about this data?
+
 ## A Better Approach
 
 ```py
@@ -28,25 +47,6 @@ chart.save("city-counts.png", scale_factor = 2)
 ```
 
 <img src="assets/city-counts.png" style="height: 300px;" />
-
-## Data Analysis
-
-https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
-
-```txt
-city,state,pop2024,pop2020,area
-New York,NY,8478072,8804190,300.5
-Los Angeles,CA,3878704,3898747,469.5
-Chicago,IL,2721308,2746388,227.7
-Houston,TX,2390125,2304580,640.4
-Phoenix,AZ,1673164,1608139,518
-Philadelphia,PA,1573916,1603797,134.4
-San Antonio,TX,1526656,1434625,498.8
-San Diego,CA,1404452,1386932,325.9
-Dallas,TX,1326087,1304379,339.6
-```
-
-What sort of questions can we ask about this data?
 
 ## Polars
 

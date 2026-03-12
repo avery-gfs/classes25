@@ -61,6 +61,16 @@ Use `pl.Config(tbl_rows=-1)` to show all rows
 
 > How many rows are in this table? How many columns?
 
+### Length
+
+```py
+print(len(cities))
+```
+
+```
+346
+```
+
 ### Get Rows
 
 #### From the Start
@@ -301,6 +311,53 @@ shape: (346, 5)
 └─────────────┴───────┴─────────┴─────────┴─────────────┘
 ```
 
+### Immutability
+
+```py
+print(cities.drop("pop2020", "area"))
+print(cities)
+```
+
+```
+shape: (346, 3)
+┌─────────────┬───────┬─────────┐
+│ city        ┆ state ┆ pop2024 │
+│ ---         ┆ ---   ┆ ---     │
+│ str         ┆ str   ┆ i64     │
+╞═════════════╪═══════╪═════════╡
+│ New York    ┆ NY    ┆ 8478072 │
+│ Los Angeles ┆ CA    ┆ 3878704 │
+│ Chicago     ┆ IL    ┆ 2721308 │
+│ Houston     ┆ TX    ┆ 2390125 │
+│ Phoenix     ┆ AZ    ┆ 1673164 │
+│ …           ┆ …     ┆ …       │
+│ Deltona     ┆ FL    ┆ 100513  │
+│ Federal Way ┆ WA    ┆ 100252  │
+│ San Angelo  ┆ TX    ┆ 100159  │
+│ Tracy       ┆ CA    ┆ 100136  │
+│ Sunrise     ┆ FL    ┆ 100128  │
+└─────────────┴───────┴─────────┘
+
+shape: (346, 5)
+┌─────────────┬───────┬─────────┬─────────┬───────┐
+│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞═════════════╪═══════╪═════════╪═════════╪═══════╡
+│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
+│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
+│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 │
+│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 │
+│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 │
+│ …           ┆ …     ┆ …       ┆ …       ┆ …     │
+│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3  │
+│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3  │
+│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7  │
+│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9  │
+│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  │
+└─────────────┴───────┴─────────┴─────────┴───────┘
+```
+
 ### Add Columns
 
 #### Population Density
@@ -364,6 +421,10 @@ shape: (346, 6)
 │ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  ┆ 2.87      │
 └─────────────┴───────┴─────────┴─────────┴───────┴───────────┘
 ```
+
+You can think of
+`(pl.col("pop2024") / pl.col("pop2020") * 100 - 100).round(2).alias("pctChange")`
+as a _formula_ for making new columns.
 
 ### Filter Rows
 
