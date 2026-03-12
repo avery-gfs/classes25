@@ -39,7 +39,7 @@ class VM:
 
     def regIndex(self, regName):
         if not regName.startswith("r"):
-            raise Error(f"Invalid register name {regName}")
+            raise ValueError(f"Invalid register name {regName}")
 
         return int(regName[1:])
 
@@ -172,4 +172,4 @@ class VM:
         print(f"\nmemory: [{memStr} ]\n")
 
 
-VM().run("factorial/demo.gfss", 5)
+VM().run("fibonacci/solved.gfss", 5)
