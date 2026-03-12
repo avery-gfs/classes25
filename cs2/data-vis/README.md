@@ -1,6 +1,6 @@
 ## Setup
 
-```
+```txt
 pip install polars
 pip install altair
 pip install vl-convert-python
@@ -57,13 +57,16 @@ shape: (346, 5)
 └─────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
+Use `pl.Config(tbl_rows=-1)` to show all rows
+
+> How many rows are in this table? How many columns?
+
 ### Get Rows
 
 #### From the Start
 
 ```py
-first5 = cities.head(5)
-print(first5)
+print(cities.head(5))
 ```
 
 ```
@@ -84,8 +87,7 @@ shape: (5, 5)
 #### From the End
 
 ```py
-last5 = cities.tail(5)
-print(last5)
+print(cities.tail(5))
 ```
 
 ```
@@ -103,6 +105,56 @@ shape: (5, 5)
 └─────────────┴───────┴─────────┴─────────┴──────┘
 ```
 
+> How do we get rows `6` through `10` using `head` and `tail`?
+
+#### Slicing
+
+```py
+print(cities[5:10])
+```
+
+```
+shape: (5, 5)
+┌──────────────┬───────┬─────────┬─────────┬───────┐
+│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
+│ San Antonio  ┆ TX    ┆ 1526656 ┆ 1434625 ┆ 498.8 │
+│ San Diego    ┆ CA    ┆ 1404452 ┆ 1386932 ┆ 325.9 │
+│ Dallas       ┆ TX    ┆ 1326087 ┆ 1304379 ┆ 339.6 │
+│ Jacksonville ┆ FL    ┆ 1009833 ┆ 949611  ┆ 747.3 │
+└──────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+#### Single-Row Table
+
+```py
+print(cities[5])
+```
+
+```
+shape: (1, 5)
+┌──────────────┬───────┬─────────┬─────────┬───────┐
+│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
+└──────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+#### Single Row
+
+```py
+print(cities.row(5, named=True))
+```
+
+```
+{'city': 'Philadelphia', 'state': 'PA', 'pop2024': 1573916, 'pop2020': 1603797, 'area': 134.4}
+```
+
 ### Get Column Names
 
 ```py
@@ -116,8 +168,7 @@ print(cities.columns)
 ### Select Columns
 
 ```py
-twoColumns = cities.select("city", "pop2024")
-print(twoColumns)
+print(cities.select("city", "pop2024"))
 ```
 
 ```
@@ -141,13 +192,29 @@ shape: (346, 2)
 └─────────────┴─────────┘
 ```
 
+> How do we get the name and 2024 population of the first 10 cities? (two ways)
+
+### Chaining Order
+
+The following two methods are equivalent
+
+```py
+cities.select("city", "pop2024").head(5)
+cities.head(5).select("city", "pop2024")
+```
+
 ### Get Single Column
 
 #### As a Polars Series
 
 ```py
-states = cities.get_column("state")
-print(states)
+print(cities.get_column("state"))
+```
+
+or
+
+```py
+print(cities["state"])
 ```
 
 ```
@@ -171,12 +238,67 @@ Series: 'state' [str]
 #### As a List
 
 ```py
-states = cities.get_column("state").to_list()
-print(states)
+print(cities.get_column("state").to_list())
 ```
 
 ```
 ['NY', 'CA', 'IL', 'TX', 'AZ', ...]
+```
+
+> How do we get the name of the 10th most populous city? (two ways)
+
+### Remove Columns
+
+```py
+print(cities.drop("pop2020", "area"))
+```
+
+```
+shape: (346, 3)
+┌─────────────┬───────┬─────────┐
+│ city        ┆ state ┆ pop2024 │
+│ ---         ┆ ---   ┆ ---     │
+│ str         ┆ str   ┆ i64     │
+╞═════════════╪═══════╪═════════╡
+│ New York    ┆ NY    ┆ 8478072 │
+│ Los Angeles ┆ CA    ┆ 3878704 │
+│ Chicago     ┆ IL    ┆ 2721308 │
+│ Houston     ┆ TX    ┆ 2390125 │
+│ Phoenix     ┆ AZ    ┆ 1673164 │
+│ …           ┆ …     ┆ …       │
+│ Deltona     ┆ FL    ┆ 100513  │
+│ Federal Way ┆ WA    ┆ 100252  │
+│ San Angelo  ┆ TX    ┆ 100159  │
+│ Tracy       ┆ CA    ┆ 100136  │
+│ Sunrise     ┆ FL    ┆ 100128  │
+└─────────────┴───────┴─────────┘
+```
+
+### Rename Columns
+
+```py
+print(cities.rename({"area": "areaSqMiles"}))
+```
+
+```
+shape: (346, 5)
+┌─────────────┬───────┬─────────┬─────────┬─────────────┐
+│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ areaSqMiles │
+│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---         │
+│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64         │
+╞═════════════╪═══════╪═════════╪═════════╪═════════════╡
+│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5       │
+│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5       │
+│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7       │
+│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4       │
+│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0       │
+│ …           ┆ …     ┆ …       ┆ …       ┆ …           │
+│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3        │
+│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3        │
+│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7        │
+│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9        │
+│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2        │
+└─────────────┴───────┴─────────┴─────────┴─────────────┘
 ```
 
 ### Add Columns
@@ -243,69 +365,12 @@ shape: (346, 6)
 └─────────────┴───────┴─────────┴─────────┴───────┴───────────┘
 ```
 
-### Remove Columns
-
-```py
-threeColumns = cities.drop("pop2020", "area")
-print(threeColumns)
-```
-
-```
-shape: (346, 3)
-┌─────────────┬───────┬─────────┐
-│ city        ┆ state ┆ pop2024 │
-│ ---         ┆ ---   ┆ ---     │
-│ str         ┆ str   ┆ i64     │
-╞═════════════╪═══════╪═════════╡
-│ New York    ┆ NY    ┆ 8478072 │
-│ Los Angeles ┆ CA    ┆ 3878704 │
-│ Chicago     ┆ IL    ┆ 2721308 │
-│ Houston     ┆ TX    ┆ 2390125 │
-│ Phoenix     ┆ AZ    ┆ 1673164 │
-│ …           ┆ …     ┆ …       │
-│ Deltona     ┆ FL    ┆ 100513  │
-│ Federal Way ┆ WA    ┆ 100252  │
-│ San Angelo  ┆ TX    ┆ 100159  │
-│ Tracy       ┆ CA    ┆ 100136  │
-│ Sunrise     ┆ FL    ┆ 100128  │
-└─────────────┴───────┴─────────┘
-```
-
-### Rename Columns
-
-```py
-renamed = cities.rename({"area": "areaSqMiles"})
-print(renamed)
-```
-
-```
-shape: (346, 5)
-┌─────────────┬───────┬─────────┬─────────┬─────────────┐
-│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ areaSqMiles │
-│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---         │
-│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64         │
-╞═════════════╪═══════╪═════════╪═════════╪═════════════╡
-│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5       │
-│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5       │
-│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7       │
-│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4       │
-│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0       │
-│ …           ┆ …     ┆ …       ┆ …       ┆ …           │
-│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3        │
-│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3        │
-│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7        │
-│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9        │
-│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2        │
-└─────────────┴───────┴─────────┴─────────┴─────────────┘
-```
-
 ### Filter Rows
 
 #### Texas States
 
 ```py
-txCities = cities.filter(pl.col("state") == "TX")
-print(txCities)
+print(cities.filter(pl.col("state") == "TX"))
 ```
 
 ```
@@ -329,41 +394,14 @@ shape: (44, 5)
 └───────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-#### Big Cities
-
-```py
-bigCities = cities.filter(pl.col("pop2024") > 1000000)
-print(bigCities)
-```
-
-```
-shape: (11, 5)
-┌──────────────┬───────┬─────────┬─────────┬───────┐
-│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
-│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
-│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
-╞══════════════╪═══════╪═════════╪═════════╪═══════╡
-│ New York     ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
-│ Los Angeles  ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
-│ Chicago      ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 │
-│ Houston      ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 │
-│ Phoenix      ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 │
-│ …            ┆ …     ┆ …       ┆ …       ┆ …     │
-│ San Antonio  ┆ TX    ┆ 1526656 ┆ 1434625 ┆ 498.8 │
-│ San Diego    ┆ CA    ┆ 1404452 ┆ 1386932 ┆ 325.9 │
-│ Dallas       ┆ TX    ┆ 1326087 ┆ 1304379 ┆ 339.6 │
-│ Jacksonville ┆ FL    ┆ 1009833 ┆ 949611  ┆ 747.3 │
-│ Fort Worth   ┆ TX    ┆ 1008106 ┆ 918915  ┆ 347.3 │
-└──────────────┴───────┴─────────┴─────────┴───────┘
-```
+> How do we get a table of cities with population greater than one million?
 
 ### Sort Rows
 
 #### Alphabetically Ascending
 
 ```py
-alphabetical = cities.sort("city")
-print(alphabetical)
+print(cities.sort("city"))
 ```
 
 ```
@@ -390,8 +428,7 @@ shape: (346, 5)
 #### Numerically Descending
 
 ```py
-byArea = cities.sort("area", descending=True)
-print(byArea)
+print(cities.sort("area", descending=True))
 ```
 
 ```
@@ -414,6 +451,8 @@ shape: (346, 5)
 │ Cambridge     ┆ MA    ┆ 121186  ┆ 118403  ┆ 6.4    │
 └───────────────┴───────┴─────────┴─────────┴────────┘
 ```
+
+> How do we get the cities that start with the letters `a-j`?
 
 ### Aggregation
 

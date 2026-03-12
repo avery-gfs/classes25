@@ -1,7 +1,0 @@
-chaining: cities.head(10).tail(5)
-chaining: 
-	cities.select("city", "pop2024").head(5)
-	cities.head(5).select("city", "pop2024")
-popDensity: do first w/ no alias, no rounding
-pctChange: do first w/ raw ratio, no rounding
-give pop > 1m as question

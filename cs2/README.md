@@ -1,6 +1,14 @@
-### Data Analysis
+## Data Analysis in Ptls
 
-Guide: [data-vis/README.md](data-vis/README.md)
+---
+
+## Review CSV
+
+- How does CSV format work?
+- How did we use CSV files in Python?
+- What were some of the challenges we faced working with CSV?
+
+## A Better Approach
 
 ```py
 import polars as pl
@@ -19,7 +27,74 @@ chart = alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort = "-y"), alt
 chart.save("city-counts.png", scale_factor = 2)
 ```
 
-<img src="assets/city-counts.png" style="height: 240px;" />
+<img src="assets/city-counts.png" style="height: 300px;" />
+
+## Data Analysis
+
+https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+
+```txt
+city,state,pop2024,pop2020,area
+New York,NY,8478072,8804190,300.5
+Los Angeles,CA,3878704,3898747,469.5
+Chicago,IL,2721308,2746388,227.7
+Houston,TX,2390125,2304580,640.4
+Phoenix,AZ,1673164,1608139,518
+Philadelphia,PA,1573916,1603797,134.4
+San Antonio,TX,1526656,1434625,498.8
+San Diego,CA,1404452,1386932,325.9
+Dallas,TX,1326087,1304379,339.6
+```
+
+What sort of questions can we ask about this data?
+
+## Polars
+
+> Polars is a blazingly fast DataFrame library for manipulating structured data.
+> The core is written in Rust, and available for Python, R and NodeJS.
+
+https://docs.pola.rs/
+
+## The Missing Data Structure
+
+What are dataframes? (tables)
+
+Why doesn't Python have this built in?
+
+```txt
+shape: (346, 5)
+┌─────────────┬───────┬─────────┬─────────┬───────┐
+│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞═════════════╪═══════╪═════════╪═════════╪═══════╡
+│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
+│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
+│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 │
+│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 │
+│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 │
+│ …           ┆ …     ┆ …       ┆ …       ┆ …     │
+│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3  │
+│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3  │
+│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7  │
+│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9  │
+│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  │
+└─────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+## Altair
+
+> Vega-Altair is a declarative visualization library for Python. Its simple,
+> friendly and consistent API, built on top of the powerful Vega-Lite grammar,
+> empowers you to spend less time writing code and more time exploring your
+> data.
+
+https://altair-viz.github.io/
+
+## Data Analysis Notes
+
+Avery's helpful guide:
+[data-vis/README.md](https://github.com/avery-gfs/classes25/blob/master/cs2/data-vis/README.md)
 
 ---
 
