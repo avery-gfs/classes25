@@ -32,7 +32,6 @@
 - For loops with list
 - For loops with range
 - Break and continue?
-- List comprehensions
 - Calling functions
 - Defining functions
 - Return semantics
@@ -102,6 +101,7 @@
 
 ## Hold for CS 2
 
+- List comprehensions
 - Dictionaries
 - Tuples
 - Exceptions
