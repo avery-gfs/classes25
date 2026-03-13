@@ -8,21 +8,15 @@ pip install vl-convert-python
 
 ## Links
 
-https://altair-viz.github.io/altair-tutorial/README.html
+- https://altair-viz.github.io/altair-tutorial/README.html
+- https://docs.pola.rs/
+- https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
+- https://wikitable2csv.ggor.de/
+- https://survey.stackoverflow.co/2018
+- https://ww2.amstat.org/censusatschool/RandomSampleForm.cfm
+- https://matplotlib.org/
 
-https://docs.pola.rs/
-
-https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population
-
-https://wikitable2csv.ggor.de/
-
-https://survey.stackoverflow.co/2018
-
-https://ww2.amstat.org/censusatschool/RandomSampleForm.cfm
-
-https://matplotlib.org/
-
-## Polars Cheatsheet
+## Setup
 
 ```py
 import polars as pl
@@ -30,7 +24,7 @@ import polars as pl
 cities = pl.read_csv("cities.csv") # Load dataframe from CSV
 ```
 
-### View Data
+## View Data
 
 ```py
 cities
@@ -61,7 +55,35 @@ Use `pl.Config(tbl_rows=-1)` to show all rows
 
 > How many rows are in this table? How many columns?
 
-### Length
+## Data Shape
+
+```
+shape: (346, 5)
+┌─────────────┬───────┬─────────┬─────────┬───────┐
+│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞═════════════╪═══════╪═════════╪═════════╪═══════╡
+│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
+│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
+│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 │
+│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 │
+│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 │
+│ …           ┆ …     ┆ …       ┆ …       ┆ …     │
+│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3  │
+│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3  │
+│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7  │
+│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9  │
+│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  │
+└─────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+<details>
+  <summary>How many rows are in this table? How many columns?</summary>
+  <p>346 rows, 5 columns</p>
+</details>
+
+## Length
 
 ```py
 print(len(cities))
@@ -71,9 +93,7 @@ print(len(cities))
 346
 ```
 
-### Get Rows
-
-#### From the Start
+## Get Rows From the Start
 
 ```py
 print(cities.head(5))
@@ -94,7 +114,7 @@ shape: (5, 5)
 └─────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-#### From the End
+## Get Rows From the End
 
 ```py
 print(cities.tail(5))
@@ -117,7 +137,34 @@ shape: (5, 5)
 
 > How do we get rows `6` through `10` using `head` and `tail`?
 
-#### Slicing
+## Single Row as a Table
+
+```py
+print(cities[5])
+```
+
+```
+shape: (1, 5)
+┌──────────────┬───────┬─────────┬─────────┬───────┐
+│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
+└──────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+## Single Row as a Dictionary
+
+```py
+print(cities.row(5, named=True))
+```
+
+```
+{'city': 'Philadelphia', 'state': 'PA', 'pop2024': 1573916, 'pop2020': 1603797, 'area': 134.4}
+```
+
+## Slicing
 
 ```py
 print(cities[5:10])
@@ -138,34 +185,7 @@ shape: (5, 5)
 └──────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-#### Single-Row Table
-
-```py
-print(cities[5])
-```
-
-```
-shape: (1, 5)
-┌──────────────┬───────┬─────────┬─────────┬───────┐
-│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
-│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
-│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
-╞══════════════╪═══════╪═════════╪═════════╪═══════╡
-│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
-└──────────────┴───────┴─────────┴─────────┴───────┘
-```
-
-#### Single Row
-
-```py
-print(cities.row(5, named=True))
-```
-
-```
-{'city': 'Philadelphia', 'state': 'PA', 'pop2024': 1573916, 'pop2020': 1603797, 'area': 134.4}
-```
-
-### Get Column Names
+## Get Column Names
 
 ```py
 print(cities.columns)
@@ -175,7 +195,7 @@ print(cities.columns)
 ['city', 'state', 'pop2024', 'pop2020', 'area']
 ```
 
-### Select Columns
+## Select Columns
 
 ```py
 print(cities.select("city", "pop2024"))
@@ -204,7 +224,7 @@ shape: (346, 2)
 
 > How do we get the name and 2024 population of the first 10 cities? (two ways)
 
-### Chaining Order
+## Chaining Order
 
 The following two methods are equivalent
 
@@ -213,9 +233,7 @@ cities.select("city", "pop2024").head(5)
 cities.head(5).select("city", "pop2024")
 ```
 
-### Get Single Column
-
-#### As a Polars Series
+## Get Column a Polars Series
 
 ```py
 print(cities.get_column("state"))
@@ -245,7 +263,7 @@ Series: 'state' [str]
 ]
 ```
 
-#### As a List
+## Get Column a List
 
 ```py
 print(cities.get_column("state").to_list())
@@ -257,7 +275,7 @@ print(cities.get_column("state").to_list())
 
 > How do we get the name of the 10th most populous city? (two ways)
 
-### Remove Columns
+## Remove Columns
 
 ```py
 print(cities.drop("pop2020", "area"))
@@ -284,7 +302,7 @@ shape: (346, 3)
 └─────────────┴───────┴─────────┘
 ```
 
-### Rename Columns
+## Rename Columns
 
 ```py
 print(cities.rename({"area": "areaSqMiles"}))
@@ -311,7 +329,11 @@ shape: (346, 5)
 └─────────────┴───────┴─────────┴─────────┴─────────────┘
 ```
 
-### Immutability
+## Immutability
+
+Polars operations don't modify the original dataframe: they produce a new
+dataframe with the changes applied. In the example below, calling `cities.drop`
+doesn't change the data in the `cities` dataframe.
 
 ```py
 print(cities.drop("pop2020", "area"))
@@ -358,9 +380,7 @@ shape: (346, 5)
 └─────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-### Add Columns
-
-#### Population Density
+## Making New Columns: Population Density
 
 ```py
 withPopDensity = cities.with_columns(
@@ -391,7 +411,42 @@ shape: (346, 6)
 └─────────────┴───────┴─────────┴─────────┴───────┴────────────┘
 ```
 
-#### Population Change
+You can think of
+`(pl.col("pop2024") / pl.col("area")).round(1).alias("popDensity")` as a
+_formula_ for making a new column.
+
+## Making New Columns: Population Change Number
+
+```py
+withPopChange = cities.with_columns(
+    (pl.col("pop2024") - pl.col("pop2020")).alias("change")
+)
+
+print(withPopChange)
+```
+
+```
+shape: (346, 6)
+┌─────────────┬───────┬─────────┬─────────┬───────┬─────────┐
+│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  ┆ change  │
+│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---   ┆ ---     │
+│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64   ┆ i64     │
+╞═════════════╪═══════╪═════════╪═════════╪═══════╪═════════╡
+│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 ┆ -326118 │
+│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 ┆ -20043  │
+│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 ┆ -25080  │
+│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 ┆ 85545   │
+│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 ┆ 65025   │
+│ …           ┆ …     ┆ …       ┆ …       ┆ …     ┆ …       │
+│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3  ┆ 6821    │
+│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3  ┆ -778    │
+│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7  ┆ 266     │
+│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9  ┆ 7136    │
+│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  ┆ 2793    │
+└─────────────┴───────┴─────────┴─────────┴───────┴─────────┘
+```
+
+## Making New Columns: Population Change Percentage
 
 ```py
 withPctChange = cities.with_columns(
@@ -421,10 +476,6 @@ shape: (346, 6)
 │ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  ┆ 2.87      │
 └─────────────┴───────┴─────────┴─────────┴───────┴───────────┘
 ```
-
-You can think of
-`(pl.col("pop2024") / pl.col("pop2020") * 100 - 100).round(2).alias("pctChange")`
-as a _formula_ for making new columns.
 
 ### Filter Rows
 
