@@ -57,7 +57,9 @@ Use `pl.Config(tbl_rows=-1)` to show all rows
   <summary>
 How many rows are in this table? How many columns?
 </summary>
+
 346 rows, 5 columns
+
 </details>
 
 ## Length
@@ -113,8 +115,12 @@ shape: (5, 5)
 ```
 
 <details>
-  <summary>How many rows are in this table? How many columns?</summary>
-  <p>346 rows, 5 columns</p>
+  <summary>
+How do we get rows `6` through `10` using `head` and `tail`?
+</summary>
+
+346 rows, 5 columns
+
 </details>
 
 ## Single Row as a Table
