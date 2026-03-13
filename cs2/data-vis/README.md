@@ -53,34 +53,15 @@ shape: (346, 5)
 
 Use `pl.Config(tbl_rows=-1)` to show all rows
 
-> How many rows are in this table? How many columns?
-
-## Data Shape
-
-```
-shape: (346, 5)
-┌─────────────┬───────┬─────────┬─────────┬───────┐
-│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
-│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
-│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64   │
-╞═════════════╪═══════╪═════════╪═════════╪═══════╡
-│ New York    ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
-│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
-│ Chicago     ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 │
-│ Houston     ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 │
-│ Phoenix     ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 │
-│ …           ┆ …     ┆ …       ┆ …       ┆ …     │
-│ Deltona     ┆ FL    ┆ 100513  ┆ 93692   ┆ 37.3  │
-│ Federal Way ┆ WA    ┆ 100252  ┆ 101030  ┆ 22.3  │
-│ San Angelo  ┆ TX    ┆ 100159  ┆ 99893   ┆ 59.7  │
-│ Tracy       ┆ CA    ┆ 100136  ┆ 93000   ┆ 25.9  │
-│ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  │
-└─────────────┴───────┴─────────┴─────────┴───────┘
-```
-
 <details>
-  <summary>How many rows are in this table? How many columns?</summary>
-  <p>346 rows, 5 columns</p>
+  <summary>
+
+How many rows are in this table? How many columns?
+
+</summary>
+
+346 rows, 5 columns
+
 </details>
 
 ## Length
@@ -135,7 +116,10 @@ shape: (5, 5)
 └─────────────┴───────┴─────────┴─────────┴──────┘
 ```
 
-> How do we get rows `6` through `10` using `head` and `tail`?
+<details>
+  <summary>How many rows are in this table? How many columns?</summary>
+  <p>346 rows, 5 columns</p>
+</details>
 
 ## Single Row as a Table
 
