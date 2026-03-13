@@ -144,6 +144,27 @@ shape: (5, 5)
 └──────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
+## Slicing
+
+```py
+cities[5:10]
+```
+
+```
+shape: (5, 5)
+┌──────────────┬───────┬─────────┬─────────┬───────┐
+│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
+│ San Antonio  ┆ TX    ┆ 1526656 ┆ 1434625 ┆ 498.8 │
+│ San Diego    ┆ CA    ┆ 1404452 ┆ 1386932 ┆ 325.9 │
+│ Dallas       ┆ TX    ┆ 1326087 ┆ 1304379 ┆ 339.6 │
+│ Jacksonville ┆ FL    ┆ 1009833 ┆ 949611  ┆ 747.3 │
+└──────────────┴───────┴─────────┴─────────┴───────┘
+```
+
 ## Single Row as a Table
 
 ```py
@@ -169,27 +190,6 @@ cities.row(5, named=True)
 
 ```
 {'city': 'Philadelphia', 'state': 'PA', 'pop2024': 1573916, 'pop2020': 1603797, 'area': 134.4}
-```
-
-## Slicing
-
-```py
-cities[5:10]
-```
-
-```
-shape: (5, 5)
-┌──────────────┬───────┬─────────┬─────────┬───────┐
-│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
-│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
-│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
-╞══════════════╪═══════╪═════════╪═════════╪═══════╡
-│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
-│ San Antonio  ┆ TX    ┆ 1526656 ┆ 1434625 ┆ 498.8 │
-│ San Diego    ┆ CA    ┆ 1404452 ┆ 1386932 ┆ 325.9 │
-│ Dallas       ┆ TX    ┆ 1326087 ┆ 1304379 ┆ 339.6 │
-│ Jacksonville ┆ FL    ┆ 1009833 ┆ 949611  ┆ 747.3 │
-└──────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
 ## Get Column Names
@@ -248,15 +248,6 @@ cities.select(["city", "pop2024"]).head(10)
 
 </details>
 
-## Chaining Order
-
-The following two methods are equivalent
-
-```py
-cities.select(["city", "pop2024"]).head(5)
-cities.head(5).select("city", "pop2024")
-```
-
 ## Get Column as a Polars Series
 
 ```py
@@ -311,7 +302,7 @@ cities["city"][9]
 ## Remove Columns
 
 ```py
-cities.drop("pop2020", "area")
+cities.drop(["pop2020", "area"])
 ```
 
 ```
@@ -369,7 +360,7 @@ dataframe with the changes applied. In the example below, calling `cities.drop`
 doesn't change the data in the `cities` dataframe.
 
 ```py
-cities.drop("pop2020", "area")
+cities.drop(["pop2020", "area"])
 ```
 
 ```
@@ -574,6 +565,55 @@ shape: (11, 5)
 │ Dallas       ┆ TX    ┆ 1326087 ┆ 1304379 ┆ 339.6 │
 │ Jacksonville ┆ FL    ┆ 1009833 ┆ 949611  ┆ 747.3 │
 │ Fort Worth   ┆ TX    ┆ 1008106 ┆ 918915  ┆ 347.3 │
+└──────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+## Boolean Operators
+
+- Use `&` for `and`
+- Use `|` for `or`
+- Use `~` for `not`
+
+```py
+cities.filter((pl.col("state") == "CA") & (pl.col("pop2024") > 1000000))
+```
+
+```
+shape: (2, 5)
+┌─────────────┬───────┬─────────┬─────────┬───────┐
+│ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---         ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str         ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞═════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Los Angeles ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
+│ San Diego   ┆ CA    ┆ 1404452 ┆ 1386932 ┆ 325.9 │
+└─────────────┴───────┴─────────┴─────────┴───────┘
+```
+
+## `is_in`
+
+```py
+cities.filter(pl.col("state").is_in(["MA", "PA"]))
+```
+
+```
+shape: (12, 5)
+┌──────────────┬───────┬─────────┬─────────┬───────┐
+│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
+│ Boston       ┆ MA    ┆ 673458  ┆ 675647  ┆ 48.3  │
+│ Pittsburgh   ┆ PA    ┆ 307668  ┆ 302971  ┆ 55.4  │
+│ Worcester    ┆ MA    ┆ 211286  ┆ 206518  ┆ 37.4  │
+│ Springfield  ┆ MA    ┆ 154888  ┆ 155929  ┆ 31.9  │
+│ …            ┆ …     ┆ …       ┆ …       ┆ …     │
+│ Lowell       ┆ MA    ┆ 120418  ┆ 115554  ┆ 13.6  │
+│ Brockton     ┆ MA    ┆ 105788  ┆ 105643  ┆ 21.3  │
+│ Lynn         ┆ MA    ┆ 103489  ┆ 101253  ┆ 10.7  │
+│ Quincy       ┆ MA    ┆ 103434  ┆ 101636  ┆ 16.6  │
+│ New Bedford  ┆ MA    ┆ 101318  ┆ 101079  ┆ 20.0  │
 └──────────────┴───────┴─────────┴─────────┴───────┘
 ```
 

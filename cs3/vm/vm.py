@@ -172,4 +172,4 @@ class VM:
         print(f"\nmemory: [{memStr} ]\n")
 
 
-VM().run("fibonacci/solved.gfss", 5)
+VM().run("factorial/demo.gfss", 5)
