@@ -2,6 +2,8 @@ import polars as pl
 
 cities = pl.read_csv("cities.csv")  # Load dataframe from CSV
 
-withPopDensity = cities.with_columns((pl.col("pop2024") / pl.col("area")))
+withPopChange = cities.with_columns(
+    (pl.col("pop2024") - pl.col("pop2020")).alias("change")
+)
 
-print(len(cities))
+print(withPopChange)
