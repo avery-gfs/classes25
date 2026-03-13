@@ -724,7 +724,7 @@ shape: (46, 5)
 ```py
 cities
     .group_by("state")
-    .count()
+    .len()
     .sort("count", descending=True)
 ```
 
