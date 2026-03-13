@@ -23,7 +23,7 @@ pip install vl-convert-python
 ```py
 import polars as pl
 
-cities = pl.read_csv("cities.csv") # Load dataframe from CSV
+cities = pl.read_csv("data/cities.csv") # Load dataframe from CSV
 ```
 
 ## View Data
@@ -787,7 +787,7 @@ Note that `pl.sum("pop2024")` is shorthand for `pl.col("pop2024").sum()`.
 import polars as pl
 import altair as alt
 
-cities = pl.read_csv("cities.csv") # Load dataframe from CSV
+cities = pl.read_csv("data/cities.csv") # Load dataframe from CSV
 ```
 
 ## Bar Charts
