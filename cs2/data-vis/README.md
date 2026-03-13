@@ -58,7 +58,7 @@ _How many rows are in this table? How many columns?_
 <details>
   <summary>Click to show answer</summary>
 
-346 rows, 5 columns
+`346` rows, `5` columns
 
 </details>
 
@@ -210,7 +210,22 @@ shape: (346, 2)
 └─────────────┴─────────┘
 ```
 
-> How do we get the name and 2024 population of the first 10 cities? (two ways)
+_How do we get the name and 2024 population of the first 10 cities? (two ways)_
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+cities.head(10).select("city", "pop2024")
+```
+
+Or, equivalently:
+
+```py
+cities.select("city", "pop2024").head(10)
+```
+
+</details>
 
 ## Chaining Order
 
@@ -224,13 +239,13 @@ cities.head(5).select("city", "pop2024")
 ## Get Column a Polars Series
 
 ```py
-print(cities.get_column("state"))
+print(cities["state"])
 ```
 
 or
 
 ```py
-print(cities["state"])
+print(cities.get_column("state"))
 ```
 
 ```
@@ -254,14 +269,23 @@ Series: 'state' [str]
 ## Get Column a List
 
 ```py
-print(cities.get_column("state").to_list())
+print(cities["state"].to_list())
 ```
 
 ```
 ['NY', 'CA', 'IL', 'TX', 'AZ', ...]
 ```
 
-> How do we get the name of the 10th most populous city? (two ways)
+_How do we get the name of the 10th most populous city?_
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+cities["city"][9]
+```
+
+</details>
 
 ## Remove Columns
 
