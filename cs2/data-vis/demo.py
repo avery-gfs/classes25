@@ -7,11 +7,4 @@ withPopChange = cities.with_columns(
 )
 
 
-print(
-    cities.group_by("state")
-    .agg(
-        pl.sum("pop2024"),
-        pl.sum("area"),
-    )
-    .sort("pop2024", descending=True)
-)
+print(cities.filter(pl.col("state").is_in(["MA", "PA"])))
