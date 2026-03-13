@@ -7,4 +7,4 @@ withPopChange = cities.with_columns(
 )
 
 
-print(cities.head(10).tail(5))
+print(cities.sort("area", descending=True).head(5))

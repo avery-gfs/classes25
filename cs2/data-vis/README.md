@@ -227,34 +227,7 @@ shape: (346, 2)
 └─────────────┴─────────┘
 ```
 
-## Select Columns
-
-```py
-print(cities.select("city", "pop2024"))
-```
-
-```
-shape: (346, 2)
-┌─────────────┬─────────┐
-│ city        ┆ pop2024 │
-│ ---         ┆ ---     │
-│ str         ┆ i64     │
-╞═════════════╪═════════╡
-│ New York    ┆ 8478072 │
-│ Los Angeles ┆ 3878704 │
-│ Chicago     ┆ 2721308 │
-│ Houston     ┆ 2390125 │
-│ Phoenix     ┆ 1673164 │
-│ …           ┆ …       │
-│ Deltona     ┆ 100513  │
-│ Federal Way ┆ 100252  │
-│ San Angelo  ┆ 100159  │
-│ Tracy       ┆ 100136  │
-│ Sunrise     ┆ 100128  │
-└─────────────┴─────────┘
-```
-
-## Select Columns
+## Selection and Slicing
 
 Get the name and 2024 population of the first 10 cities (two ways)
 
@@ -506,8 +479,7 @@ shape: (346, 6)
 
 ## Making New Columns: Population Change Percentage
 
-_How do we make a table with population change as percentage change from 2020 to
-2024?_
+Get a table with population change as percentage change from 2020 to 2024
 
 <details>
   <summary>Click to show answer</summary>
@@ -570,7 +542,7 @@ shape: (44, 5)
 
 ## Filter Rows: Largest Cities
 
-_Get a table of cities with a 2024 population of at least one million?_
+Get a table of cities with a 2024 population of at least one million
 
 <details>
   <summary>Click to show answer</summary>
@@ -602,7 +574,7 @@ shape: (11, 5)
 └──────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-## Sort Rows: Numerically Ascending
+## Sort Rows: Ascending 2020 Population
 
 ```py
 print(cities.sort("pop2020"))
@@ -629,7 +601,7 @@ shape: (346, 5)
 └───────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-## Sort Rows: Alphabetically Descending
+## Sort Rows: Descending Names
 
 ```py
 print(cities.sort("city", descending=True))
@@ -656,16 +628,16 @@ shape: (346, 5)
 └───────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
-## Sort Rows: Numerically Descending
+## Sort Rows: Descending Area
 
-*How
+Get a table with the largest `5` cities, by area.
 
 ```py
-print(cities.sort("area", descending=True))
+cities.sort("area", descending=True).head(5)
 ```
 
 ```
-shape: (346, 5)
+shape: (5, 5)
 ┌───────────────┬───────┬─────────┬─────────┬────────┐
 │ city          ┆ state ┆ pop2024 ┆ pop2020 ┆ area   │
 │ ---           ┆ ---   ┆ ---     ┆ ---     ┆ ---    │
@@ -676,12 +648,6 @@ shape: (346, 5)
 │ Houston       ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4  │
 │ Oklahoma City ┆ OK    ┆ 712919  ┆ 681054  ┆ 606.2  │
 │ Phoenix       ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0  │
-│ …             ┆ …     ┆ …       ┆ …       ┆ …      │
-│ El Monte      ┆ CA    ┆ 104639  ┆ 109450  ┆ 9.6    │
-│ Inglewood     ┆ CA    ┆ 102774  ┆ 107762  ┆ 9.1    │
-│ Paterson      ┆ NJ    ┆ 160463  ┆ 159732  ┆ 8.4    │
-│ Daly City     ┆ CA    ┆ 101418  ┆ 104901  ┆ 7.6    │
-│ Cambridge     ┆ MA    ┆ 121186  ┆ 118403  ┆ 6.4    │
 └───────────────┴───────┴─────────┴─────────┴────────┘
 ```
 
