@@ -691,6 +691,9 @@ shape: (5, 5)
 
 ## Aggregation: First
 
+Aggregations list:
+https://docs.pola.rs/api/python/stable/reference/dataframe/group_by.html
+
 ```py
 cities.sort("pop2024", descending=True).group_by("state").first()
 ```
