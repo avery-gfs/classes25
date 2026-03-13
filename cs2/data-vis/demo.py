@@ -6,4 +6,4 @@ withPopChange = cities.with_columns(
     (pl.col("pop2024") - pl.col("pop2020")).alias("change")
 )
 
-print(withPopChange)
+print(cities["city"][9])
