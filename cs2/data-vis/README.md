@@ -1,3 +1,5 @@
+# Data Analysis and Visualization
+
 ## Setup
 
 ```txt
@@ -16,7 +18,7 @@ pip install vl-convert-python
 - https://ww2.amstat.org/censusatschool/RandomSampleForm.cfm
 - https://matplotlib.org/
 
-## Setup
+## Load Data
 
 ```py
 import polars as pl
@@ -27,7 +29,7 @@ cities = pl.read_csv("cities.csv") # Load dataframe from CSV
 ## View Data
 
 ```py
-print(cities)
+cities
 ```
 
 ```
@@ -65,7 +67,7 @@ _How many rows are in this table? How many columns?_
 ## Length
 
 ```py
-print(len(cities))
+len(cities)
 ```
 
 ```
@@ -75,7 +77,7 @@ print(len(cities))
 ## Get Rows From the Start
 
 ```py
-print(cities.head(5))
+cities.head(5)
 ```
 
 ```
@@ -96,7 +98,7 @@ shape: (5, 5)
 ## Get Rows From the End
 
 ```py
-print(cities.tail(5))
+cities.tail(5)
 ```
 
 ```
@@ -145,7 +147,7 @@ shape: (5, 5)
 ## Single Row as a Table
 
 ```py
-print(cities[5])
+cities[5]
 ```
 
 ```
@@ -162,7 +164,7 @@ shape: (1, 5)
 ## Single Row as a Dictionary
 
 ```py
-print(cities.row(5, named=True))
+cities.row(5, named=True)
 ```
 
 ```
@@ -172,7 +174,7 @@ print(cities.row(5, named=True))
 ## Slicing
 
 ```py
-print(cities[5:10])
+cities[5:10]
 ```
 
 ```
@@ -193,7 +195,7 @@ shape: (5, 5)
 ## Get Column Names
 
 ```py
-print(cities.columns)
+cities.columns
 ```
 
 ```
@@ -203,7 +205,7 @@ print(cities.columns)
 ## Select Columns
 
 ```py
-print(cities.select("city", "pop2024"))
+cities.select(["city", "pop2024"])
 ```
 
 ```
@@ -241,7 +243,7 @@ cities.head(10).select("city", "pop2024")
 Or, equivalently:
 
 ```py
-cities.select("city", "pop2024").head(10)
+cities.select(["city", "pop2024"]).head(10)
 ```
 
 </details>
@@ -251,20 +253,20 @@ cities.select("city", "pop2024").head(10)
 The following two methods are equivalent
 
 ```py
-cities.select("city", "pop2024").head(5)
+cities.select(["city", "pop2024"]).head(5)
 cities.head(5).select("city", "pop2024")
 ```
 
-## Get Column a Polars Series
+## Get Column as a Polars Series
 
 ```py
-print(cities["state"])
+cities["state"]
 ```
 
 or
 
 ```py
-print(cities.get_column("state"))
+cities.get_column("state")
 ```
 
 ```
@@ -288,14 +290,14 @@ Series: 'state' [str]
 ## Get Column a List
 
 ```py
-print(cities["state"].to_list())
+cities["state"].to_list()
 ```
 
 ```
 ['NY', 'CA', 'IL', 'TX', 'AZ', ...]
 ```
 
-_How do we get the name of the 10th most populous city?_
+_How do we get the name of the 10th city in the dataframe?_
 
 <details>
   <summary>Click to show answer</summary>
@@ -309,7 +311,7 @@ cities["city"][9]
 ## Remove Columns
 
 ```py
-print(cities.drop("pop2020", "area"))
+cities.drop("pop2020", "area")
 ```
 
 ```
@@ -336,7 +338,7 @@ shape: (346, 3)
 ## Rename Columns
 
 ```py
-print(cities.rename({"area": "areaSqMiles"}))
+cities.rename({"area": "areaSqMiles"})
 ```
 
 ```
@@ -367,8 +369,7 @@ dataframe with the changes applied. In the example below, calling `cities.drop`
 doesn't change the data in the `cities` dataframe.
 
 ```py
-print(cities.drop("pop2020", "area"))
-print(cities)
+cities.drop("pop2020", "area")
 ```
 
 ```
@@ -390,7 +391,13 @@ shape: (346, 3)
 │ Tracy       ┆ CA    ┆ 100136  │
 │ Sunrise     ┆ FL    ┆ 100128  │
 └─────────────┴───────┴─────────┘
+```
 
+```py
+cities
+```
+
+```
 shape: (346, 5)
 ┌─────────────┬───────┬─────────┬─────────┬───────┐
 │ city        ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
@@ -414,11 +421,9 @@ shape: (346, 5)
 ## Making New Columns: Population Density
 
 ```py
-withPopDensity = cities.with_columns(
+cities.with_columns(
     (pl.col("pop2024") / pl.col("area")).round(1).alias("popDensity")
 )
-
-print(withPopDensity)
 ```
 
 ```
@@ -449,11 +454,9 @@ _formula_ for making a new column.
 ## Making New Columns: Population Change Number
 
 ```py
-withPopChange = cities.with_columns(
+cities.with_columns(
     (pl.col("pop2024") - pl.col("pop2020")).alias("change")
 )
-
-print(withPopChange)
 ```
 
 ```
@@ -513,10 +516,10 @@ shape: (346, 6)
 └─────────────┴───────┴─────────┴─────────┴───────┴───────────┘
 ```
 
-## Filter Rows: Texas States
+## Filter Rows: Texas Cities
 
 ```py
-print(cities.filter(pl.col("state") == "TX"))
+cities.filter(pl.col("state") == "TX")
 ```
 
 ```
@@ -574,10 +577,40 @@ shape: (11, 5)
 └──────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
+## Concatenate Rows
+
+```py
+pl.concat([
+    cities.filter(pl.col("state") == "MA"),
+    cities.filter(pl.col("state") == "PA"),
+])
+```
+
+```
+shape: (12, 5)
+┌──────────────┬───────┬─────────┬─────────┬───────┐
+│ city         ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---          ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ str          ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ Boston       ┆ MA    ┆ 673458  ┆ 675647  ┆ 48.3  │
+│ Worcester    ┆ MA    ┆ 211286  ┆ 206518  ┆ 37.4  │
+│ Springfield  ┆ MA    ┆ 154888  ┆ 155929  ┆ 31.9  │
+│ Cambridge    ┆ MA    ┆ 121186  ┆ 118403  ┆ 6.4   │
+│ Lowell       ┆ MA    ┆ 120418  ┆ 115554  ┆ 13.6  │
+│ …            ┆ …     ┆ …       ┆ …       ┆ …     │
+│ Quincy       ┆ MA    ┆ 103434  ┆ 101636  ┆ 16.6  │
+│ New Bedford  ┆ MA    ┆ 101318  ┆ 101079  ┆ 20.0  │
+│ Philadelphia ┆ PA    ┆ 1573916 ┆ 1603797 ┆ 134.4 │
+│ Pittsburgh   ┆ PA    ┆ 307668  ┆ 302971  ┆ 55.4  │
+│ Allentown    ┆ PA    ┆ 127138  ┆ 125845  ┆ 17.6  │
+└──────────────┴───────┴─────────┴─────────┴───────┘
+```
+
 ## Sort Rows: Ascending 2020 Population
 
 ```py
-print(cities.sort("pop2020"))
+cities.sort("pop2020")
 ```
 
 ```
@@ -604,7 +637,7 @@ shape: (346, 5)
 ## Sort Rows: Descending Names
 
 ```py
-print(cities.sort("city", descending=True))
+cities.sort("city", descending=True)
 ```
 
 ```
@@ -632,9 +665,14 @@ shape: (346, 5)
 
 Get a table with the largest `5` cities, by area.
 
+<details>
+  <summary>Click to show answer</summary>
+
 ```py
 cities.sort("area", descending=True).head(5)
 ```
+
+</details>
 
 ```
 shape: (5, 5)
@@ -651,19 +689,10 @@ shape: (5, 5)
 └───────────────┴───────┴─────────┴─────────┴────────┘
 ```
 
-### Aggregation
-
-#### Sum
+## Aggregation: Sum
 
 ```py
-cityCounts = (
-    cities
-        .group_by("state")
-        .agg(pl.col("pop2024").sum())
-        .sort("pop2024", descending=True)
-)
-
-print(cityCounts)
+cities.group_by("state").agg(pl.sum("pop2024")).sort("pop2024", descending=True)
 ```
 
 ```
@@ -687,20 +716,15 @@ shape: (46, 2)
 └───────┴──────────┘
 ```
 
-Note that `pl.sum("pop2024")` can be used as a shorthand for
-`pl.col("pop2024").sum()`.
+Note that `pl.sum("pop2024")` is shorthand for `pl.col("pop2024").sum()`.
 
-#### Counts
+## Aggregation: City Counts
 
 ```py
-cityCounts = (
-    cities
-        .group_by("state")
-        .agg(pl.len().alias("count"))
-        .sort("count", descending=True)
-)
-
-print(cityCounts)
+cities
+    .group_by("state")
+    .agg(pl.len().alias("count"))
+    .sort("count", descending=True)
 ```
 
 ```
@@ -724,16 +748,40 @@ shape: (46, 2)
 └───────┴───────┘
 ```
 
-Note that we could also solve the previous example using the `value_counts()`
-function.
+Note that we could also do this using the `value_counts()` function.
 
 ```py
-cityCounts = (
-    cities
-        .get_column("state")
-        .value_counts()
-        .sort("count", descending=True)
-)
+cities
+    .get_column("state")
+    .value_counts()
+    .sort("count", descending=True)
+```
+
+## Aggregation: First
+
+```py
+cities.sort("pop2024", descending=True).group_by("state").first()
+```
+
+```
+shape: (46, 5)
+┌───────┬─────────────┬─────────┬─────────┬───────┐
+│ state ┆ city        ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---   ┆ ---         ┆ ---     ┆ ---     ┆ ---   │
+│ str   ┆ str         ┆ i64     ┆ i64     ┆ f64   │
+╞═══════╪═════════════╪═════════╪═════════╪═══════╡
+│ NY    ┆ New York    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
+│ CA    ┆ Los Angeles ┆ 3878704 ┆ 3898747 ┆ 469.5 │
+│ IL    ┆ Chicago     ┆ 2721308 ┆ 2746388 ┆ 227.7 │
+│ TX    ┆ Houston     ┆ 2390125 ┆ 2304580 ┆ 640.4 │
+│ AZ    ┆ Phoenix     ┆ 1673164 ┆ 1608139 ┆ 518.0 │
+│ …     ┆ …           ┆ …       ┆ …       ┆ …     │
+│ CT    ┆ Bridgeport  ┆ 151599  ┆ 148654  ┆ 16.1  │
+│ MS    ┆ Jackson     ┆ 141449  ┆ 153701  ┆ 111.7 │
+│ ND    ┆ Fargo       ┆ 136285  ┆ 125990  ┆ 49.8  │
+│ MT    ┆ Billings    ┆ 121483  ┆ 117116  ┆ 44.8  │
+│ NH    ┆ Manchester  ┆ 116386  ┆ 115644  ┆ 33.1  │
+└───────┴─────────────┴─────────┴─────────┴───────┘
 ```
 
 ## Graphing Tutorial
