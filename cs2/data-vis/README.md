@@ -27,7 +27,7 @@ cities = pl.read_csv("cities.csv") # Load dataframe from CSV
 ## View Data
 
 ```py
-cities
+print(cities)
 ```
 
 ```
@@ -53,10 +53,10 @@ shape: (346, 5)
 
 Use `pl.Config(tbl_rows=-1)` to show all rows
 
+_How many rows are in this table? How many columns?_
+
 <details>
-  <summary>
-How many rows are in this table? How many columns?
-</summary>
+  <summary>Click to show answer</summary>
 
 346 rows, 5 columns
 
@@ -114,12 +114,14 @@ shape: (5, 5)
 └─────────────┴───────┴─────────┴─────────┴──────┘
 ```
 
-<details>
-  <summary>
-How do we get rows `6` through `10` using `head` and `tail`?
-</summary>
+_How do we get rows `6` through `10` using `head` and `tail`?_
 
-346 rows, 5 columns
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+cities.head(10).tail(5)
+```
 
 </details>
 
