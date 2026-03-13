@@ -460,13 +460,8 @@ shape: (346, 6)
 
 ## Making New Columns: Population Change Percentage
 
-```py
-withPctChange = cities.with_columns(
-    (pl.col("pop2024") / pl.col("pop2020") * 100 - 100).round(2).alias("pctChange")
-)
-
-print(withPctChange)
-```
+_How do we make a table with population change as percentage change from 2020 to
+2024?_
 
 ```
 shape: (346, 6)
@@ -488,6 +483,17 @@ shape: (346, 6)
 │ Sunrise     ┆ FL    ┆ 100128  ┆ 97335   ┆ 16.2  ┆ 2.87      │
 └─────────────┴───────┴─────────┴─────────┴───────┴───────────┘
 ```
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+cities.with_columns(
+    (pl.col("pop2024") / pl.col("pop2020") * 100 - 100).round(2).alias("pctChange")
+)
+```
+
+</details>
 
 ### Filter Rows
 
