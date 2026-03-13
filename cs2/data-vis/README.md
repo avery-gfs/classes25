@@ -55,13 +55,9 @@ Use `pl.Config(tbl_rows=-1)` to show all rows
 
 <details>
   <summary>
-
 How many rows are in this table? How many columns?
-
 </summary>
-
 346 rows, 5 columns
-
 </details>
 
 ## Length
