@@ -969,6 +969,26 @@ chart.save("city-counts.png", scale_factor = 1.5)
 
 ![](city-counts.png)
 
+## Chart: Population Growth
+
+Chart the top 10 cities by population growth percentage.
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+pctChange = cities.with_columns(
+    (pl.col("pop2024") / pl.col("pop2020") * 100 - 100).alias("pctChange")
+).sort("pctChange", descending=True).head(10)
+
+chart = alt.Chart(pctChange).mark_bar().encode(alt.X("pctChange"), alt.Y("city", sort="-x"))
+chart.save("pct-change.png", scale_factor = 1.5)
+```
+
+</details>
+
+![](pct-change.png)
+
 ## Scatter Plot
 
 ```py
