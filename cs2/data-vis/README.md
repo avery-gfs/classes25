@@ -676,6 +676,8 @@ shape: (346, 5)
 
 ## Add Rank Column
 
+Make sure to add the ranking column _after_ sorting.
+
 ```py
 cities.sort("pop2020").with_row_index(name="rank", offset=1)
 ```
@@ -833,7 +835,7 @@ shape: (46, 5)
 ```py
 (cities
     .group_by("state")
-    .len()
+    .count()
     .sort("count", descending=True))
 ```
 
@@ -908,7 +910,8 @@ a `rank` column.
     .agg(
         (pl.sum("pop2024") - pl.sum("pop2020")).alias("popChange"),
     )
-    .sort("popChange", descending=True))
+    .sort("popChange", descending=True)
+    .with_row_index(name="rank", offset=1))
 ```
 
 </details>
@@ -932,47 +935,6 @@ shape: (46, 3)
 │ 45   ┆ LA    ┆ -37968    │
 │ 46   ┆ NY    ┆ -332855   │
 └──────┴───────┴───────────┘
-```
-
-## Aggregation: Density Change
-
-Calculate the population total population _density_ change across all the large
-cities in each state. Sort the resulting table in descending order by this
-value.
-
-<details>
-  <summary>Click to show answer</summary>
-
-```py
-(cities
-    .with_columns(
-        ((pl.col("pop2024") - pl.col("pop2020")) / pl.col("area")).alias("densityChange"),
-    )
-    .sort("densityChange", descending=True)
-    .with_row_index(name="rank", offset=1))
-```
-
-</details>
-
-```
-shape: (46, 3)
-┌──────┬───────┬───────────────┐
-│ rank ┆ state ┆ densityChange │
-│ ---  ┆ ---   ┆ ---           │
-│ u32  ┆ str   ┆ f64           │
-╞══════╪═══════╪═══════════════╡
-│ 1    ┆ ID    ┆ 272.175623    │
-│ 2    ┆ NV    ┆ 245.862487    │
-│ 3    ┆ NJ    ┆ 230.218023    │
-│ 4    ┆ SD    ┆ 212.035398    │
-│ 5    ┆ DC    ┆ 207.937807    │
-│ …    ┆ …     ┆ …             │
-│ 42   ┆ HI    ┆ -99.123967    │
-│ 43   ┆ MS    ┆ -109.686661   │
-│ 44   ┆ PA    ┆ -115.192864   │
-│ 45   ┆ MD    ┆ -215.537701   │
-│ 46   ┆ NY    ┆ -754.431097   │
-└──────┴───────┴───────────────┘
 ```
 
 ## Graphing Setup
@@ -999,7 +961,7 @@ cityCounts = (
     cities
         .group_by("state")
         .count()
-        .sort("cities", descending = True)
+        .sort("count", descending = True)
 )
 
 chart = alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort = "-y"), alt.Y("cities"))
