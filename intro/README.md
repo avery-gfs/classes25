@@ -1,3 +1,5 @@
+## Wave Example
+
 ## Final Projects
 
 ---

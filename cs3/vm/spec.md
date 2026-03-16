@@ -16,32 +16,33 @@ The VM has:
 - A fixed-length memory array (a list of numbers).
 - An output stream, which can be used to log numbers or print characters.
 
-All numbers in the VM are integers (division results are truncated).
+All numbers in the VM are integers (division results are rounded down).
 
 ## Instructions List
 
-| Instruction       | Action                                                                |
-| ----------------- | --------------------------------------------------------------------- |
-| `add rX n`        | Add `n` to `rX` and store the result in `rX`                          |
-| `sub rX n`        | Subtract `n` from `rX` and store the result in `rX`                   |
-| `mul rX n`        | Multiply `rX` by `n` and store the result in `rX`                     |
-| `div rX n`        | Divide `rX` by `n` (truncating decimals) and store the result in `rX` |
-| `mod rX n`        | Compute `rX` modulo `n` and store the result in `rX`                  |
-| `eq rX n`         | Check if `rX` equals `n` and store the result in `rX`                 |
-| `lt rX n`         | Check if `rX` is less than `n` and store the result in `rX`           |
-| `gt rX n`         | Check if `rX` is greater than `n` and store the result in `rX`        |
-| `and rX n`        | Compute logical 'and' of `rX` and `n` and store the result in `rX`    |
-| `or rX n`         | Compute logical 'or' of `rX` and `n` and store the result in `rX`     |
-| `not rX`          | Compute logical 'not' of `rX` and store the result in `rX`            |
-| `jmp n`           | Jump by `n` instructions                                              |
-| `jeq n a b`       | Jump by `n` instructions if `a` equals `b`                            |
-| `jne n a b`       | Jump by `n` instructions if `a` does not equal `b`                    |
-| `set rX n`        | Set the value of `rX` to `n`                                          |
-| `log n`           | Print `n` as a number                                                 |
-| `print n`         | Print `n` as a character in the current line, converting to unicode   |
-| `read rX index`   | Load the number at memory location `index` into `rX`                  |
-| `store src index` | Store `src` in memory at location `index`                             |
-| `mem values...`   | Set memory array to a given sequence of values                        |
+| Instruction       | Action                                                              |
+| ----------------- | ------------------------------------------------------------------- |
+| `add rX n`        | Add `n` to `rX` and store the result in `rX`                        |
+| `sub rX n`        | Subtract `n` from `rX` and store the result in `rX`                 |
+| `mul rX n`        | Multiply `rX` by `n` and store the result in `rX`                   |
+| `div rX n`        | Divide `rX` by `n` (rounding down) and store the result in `rX`     |
+| `mod rX n`        | Compute `rX` modulo `n` and store the result in `rX`                |
+| `eq rX n`         | Check if `rX` equals `n` and store the result in `rX`               |
+| `lt rX n`         | Check if `rX` is less than `n` and store the result in `rX`         |
+| `gt rX n`         | Check if `rX` is greater than `n` and store the result in `rX`      |
+| `and rX n`        | Compute logical 'and' of `rX` and `n` and store the result in `rX`  |
+| `or rX n`         | Compute logical 'or' of `rX` and `n` and store the result in `rX`   |
+| `not rX`          | Compute logical 'not' of `rX` and store the result in `rX`          |
+| `jmp n`           | Jump by `n` instructions                                            |
+| `jeq n a b`       | Jump by `n` instructions if `a` equals `b`                          |
+| `jne n a b`       | Jump by `n` instructions if `a` does not equal `b`                  |
+| `set rX n`        | Set the value of `rX` to `n`                                        |
+| `log n`           | Print `n` as a number                                               |
+| `print n`         | Print `n` as a character in the current line, converting to unicode |
+| `read rX index`   | Load the number at memory location `index` into `rX`                |
+| `store src index` | Store `src` in memory at location `index`                           |
+| `mem values...`   | Set memory array to a given sequence of values                      |
+| `halt`            | Stop the program                                                    |
 
 Notes:
 
@@ -54,6 +55,9 @@ Notes:
   other value as true.
 - Jumps are applied relative to the instruction position. Conditional jumps
   whose condition is false proceed to the next instruction.
+- Empty lines are ignored. Lines starting with `--` are comments and are
+  ignored.
+- The token `@` evaluates to the current length of memory.
 
 ## `add`
 
@@ -119,7 +123,7 @@ Example: `mul r2 7`
 
 Instruction: `div rX n`
 
-Action: Divide `rX` by `n` (truncating decimals) and store the result in `rX`
+Action: Divide `rX` by `n` (rounding down) and store the result in `rX`
 
 Example: `div r2 r1`
 
@@ -318,7 +322,7 @@ Example: `set r2 r3`
 
 Instruction: `log n`
 
-Action: Print `n` as a number on a new line
+Action: Print `n` as a number
 
 Example: `log r2`
 
