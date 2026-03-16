@@ -1,2 +1,1 @@
-don't make log add newline, use explicit print 10
 add dest register for comparisons
