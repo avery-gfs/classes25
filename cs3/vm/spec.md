@@ -36,11 +36,10 @@ All numbers in the VM are integers (division results are truncated).
 | `jmp n`           | Jump by `n` instructions                                              |
 | `jeq n a b`       | Jump by `n` instructions if `a` equals `b`                            |
 | `jne n a b`       | Jump by `n` instructions if `a` does not equal `b`                    |
-| `halt`            | Stop program execution immediately                                    |
 | `set rX n`        | Set the value of `rX` to `n`                                          |
-| `log n`           | Print `n` as a number on a new line                                   |
+| `log n`           | Print `n` as a number                                                 |
 | `print n`         | Print `n` as a character in the current line, converting to unicode   |
-| `load rX index`   | Load the number at memory location `index` into `rX`                  |
+| `read rX index`   | Load the number at memory location `index` into `rX`                  |
 | `store src index` | Store `src` in memory at location `index`                             |
 | `mem values...`   | Set memory array to a given sequence of values                        |
 
@@ -295,12 +294,6 @@ Example: `jne 10 r2 0`
 
 > Jump forward by `10` instructions if the value in `r2` does not equal `0`
 
-## `halt`
-
-Instruction: `halt`
-
-Action: Stop program execution immediately
-
 ## `set`
 
 Instruction: `set rX n`
@@ -361,20 +354,20 @@ Example: `print 64`
 | before | `0` | `0` | `0` | `0` | `[]`   |        |
 | after  | `0` | `0` | `0` | `0` | `[]`   | @      |
 
-## `load`
+## `read`
 
-Instruction: `load rX index`
+Instruction: `read rX index`
 
 Action: Load the number at memory location `index` into `rX`
 
-Example: `load r2 1`
+Example: `read r2 1`
 
 |        |  r0 |  r1 |  r2 |  r3 | memory      | output |
 | ------ | --: | --: | --: | --: | ----------- | ------ |
 | before | `0` | `0` | `0` | `0` | `[4, 3, 0]` |        |
 | after  | `0` | `0` | `3` | `0` | `[4, 3, 0]` |        |
 
-Example: `load r2 r1`
+Example: `read r2 r1`
 
 |        |  r0 |  r1 |  r2 |  r3 | memory      | output |
 | ------ | --: | --: | --: | --: | ----------- | ------ |
