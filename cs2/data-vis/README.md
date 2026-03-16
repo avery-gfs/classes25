@@ -1016,4 +1016,4 @@ chart = alt.Chart(top10).mark_circle(size = 40).encode(
 chart.save("pop-scatter.png", scale_factor = 1.5)
 ```
 
-![](pop-area-scatter.png)
+![](pop-scatter.png)
