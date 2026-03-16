@@ -71,7 +71,7 @@ class VM:
             case "or":
                 return int(a != 0 or b != 0)
 
-        raise Error(f"Unreachable operation {op}")
+        assert False
 
     def convertToken(self, token):
         if token == "@":
@@ -89,7 +89,7 @@ class VM:
         def setReg(value):
             self.registers[self.regIndex(tokens[1])] = value
 
-        # Resolve instruction argument, loading values from registers
+        # Resolve instruction argument, reading values from registers
         # and parsing constants to numbers
         args = [self.convertToken(token) for token in tokens[1:]]
 
@@ -133,7 +133,7 @@ class VM:
                 self.memory = args
                 self.ip += 1
 
-            case "load":
+            case "read":
                 setReg(self.memory[args[1]])
                 self.lastMem = args[1]
                 self.ip += 1
@@ -152,7 +152,7 @@ class VM:
                 self.ip += 1
 
             case _:
-                raise Error(f"Invalid instruction {op}")
+                raise ValueError(f"Invalid instruction {op}")
 
     def runLog(self):
         for index, inst in enumerate(self.instrs):
