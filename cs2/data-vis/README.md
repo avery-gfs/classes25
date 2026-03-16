@@ -951,7 +951,7 @@ cities = pl.read_csv("data/cities.csv") # Load dataframe from CSV
 ```py
 topCities = cities.head(20)
 chart = alt.Chart(topCities).mark_bar().encode(alt.X("pop2024"), alt.Y("city", sort="-x"))
-chart.save("pop-bars.png", scale_factor = 2)
+chart.save("pop-bars.png", scale_factor = 1.5)
 ```
 
 ![](pop-bars.png)
@@ -961,11 +961,10 @@ cityCounts = (
     cities
         .group_by("state")
         .count()
-        .sort("count", descending = True)
 )
 
-chart = alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort = "-y"), alt.Y("cities"))
-chart.save("city-counts.png", scale_factor = 2)
+chart = alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort = "-y"), alt.Y("count"))
+chart.save("city-counts.png", scale_factor = 1.5)
 ```
 
 ![](city-counts.png)
@@ -981,7 +980,7 @@ chart = alt.Chart(top25).mark_circle(size = 40).encode(
     alt.Color("state"),
 )
 
-chart.save("pop-area-scatter.png", scale_factor = 2)
+chart.save("pop-area-scatter.png", scale_factor = 1.5)
 ```
 
 ![](pop-area-scatter.png)
