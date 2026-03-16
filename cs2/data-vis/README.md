@@ -674,6 +674,33 @@ shape: (346, 5)
 └───────────────┴───────┴─────────┴─────────┴───────┘
 ```
 
+## Add Rank Column
+
+```py
+cities.sort("pop2020").with_row_index(name="rank", offset=1)
+```
+
+```
+shape: (346, 6)
+┌──────┬───────────────┬───────┬─────────┬─────────┬───────┐
+│ rank ┆ city          ┆ state ┆ pop2024 ┆ pop2020 ┆ area  │
+│ ---  ┆ ---           ┆ ---   ┆ ---     ┆ ---     ┆ ---   │
+│ u32  ┆ str           ┆ str   ┆ i64     ┆ i64     ┆ f64   │
+╞══════╪═══════════════╪═══════╪═════════╪═════════╪═══════╡
+│ 1    ┆ Georgetown    ┆ TX    ┆ 101344  ┆ 67176   ┆ 57.3  │
+│ 2    ┆ Palm Coast    ┆ FL    ┆ 106729  ┆ 89258   ┆ 95.4  │
+│ 3    ┆ Conroe        ┆ TX    ┆ 114581  ┆ 89956   ┆ 72.0  │
+│ 4    ┆ New Braunfels ┆ TX    ┆ 116477  ┆ 90403   ┆ 45.2  │
+│ 5    ┆ Buckeye       ┆ AZ    ┆ 114334  ┆ 91502   ┆ 393.0 │
+│ …    ┆ …             ┆ …     ┆ …       ┆ …       ┆ …     │
+│ 342  ┆ Phoenix       ┆ AZ    ┆ 1673164 ┆ 1608139 ┆ 518.0 │
+│ 343  ┆ Houston       ┆ TX    ┆ 2390125 ┆ 2304580 ┆ 640.4 │
+│ 344  ┆ Chicago       ┆ IL    ┆ 2721308 ┆ 2746388 ┆ 227.7 │
+│ 345  ┆ Los Angeles   ┆ CA    ┆ 3878704 ┆ 3898747 ┆ 469.5 │
+│ 346  ┆ New York      ┆ NY    ┆ 8478072 ┆ 8804190 ┆ 300.5 │
+└──────┴───────────────┴───────┴─────────┴─────────┴───────┘
+```
+
 ## Sort Rows: Descending Names
 
 ```py
@@ -729,6 +756,48 @@ shape: (5, 5)
 └───────────────┴───────┴─────────┴─────────┴────────┘
 ```
 
+## Sorting: Density Change
+
+Challenge: recreate the table below.
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+(cities
+    .select(
+        pl.col("city"),
+        pl.col("state"),
+        (pl.col("pop2024") - pl.col("pop2020")).alias("popChange"),
+        ((pl.col("pop2024") - pl.col("pop2020")) / pl.col("area")).alias("densityChange"),
+    )
+    .sort("densityChange", descending=True)
+    .head(10)
+    .with_row_index(name="rank", offset=1))
+```
+
+</details>
+
+```
+shape: (10, 5)
+┌──────┬───────────────┬───────┬───────────┬───────────────┐
+│ rank ┆ city          ┆ state ┆ popChange ┆ densityChange │
+│ ---  ┆ ---           ┆ ---   ┆ ---       ┆ ---           │
+│ u32  ┆ str           ┆ str   ┆ i64       ┆ f64           │
+╞══════╪═══════════════╪═══════╪═══════════╪═══════════════╡
+│ 1    ┆ Miami         ┆ FL    ┆ 44773     ┆ 1243.694444   │
+│ 2    ┆ Jersey City   ┆ NJ    ┆ 10375     ┆ 705.782313    │
+│ 3    ┆ Lewisville    ┆ TX    ┆ 24161     ┆ 653.0         │
+│ 4    ┆ Meridian      ┆ ID    ┆ 22105     ┆ 629.77208     │
+│ 5    ┆ Georgetown    ┆ TX    ┆ 34168     ┆ 596.300175    │
+│ 6    ┆ New Braunfels ┆ TX    ┆ 26074     ┆ 576.858407    │
+│ 7    ┆ Hialeah       ┆ FL    ┆ 12279     ┆ 568.472222    │
+│ 8    ┆ Seattle       ┆ WA    ┆ 43980     ┆ 524.821002    │
+│ 9    ┆ Nampa         ┆ ID    ┆ 17150     ┆ 511.940299    │
+│ 10   ┆ Frisco        ┆ TX    ┆ 34699     ┆ 505.816327    │
+└──────┴───────────────┴───────┴───────────┴───────────────┘
+```
+
 ## Aggregation: First
 
 Aggregations list:
@@ -762,10 +831,10 @@ shape: (46, 5)
 ## Aggregation: Count
 
 ```py
-cities
+(cities
     .group_by("state")
     .len()
-    .sort("count", descending=True)
+    .sort("count", descending=True))
 ```
 
 ```
@@ -792,13 +861,13 @@ shape: (46, 2)
 ## Aggregation: Sum
 
 ```py
-cities
+(cities
     .group_by("state")
     .agg(
         pl.sum("pop2024"),
         pl.sum("area"),
     )
-    .sort("pop2024", descending=True)
+    .sort("pop2024", descending=True))
 ```
 
 ```
@@ -823,6 +892,88 @@ shape: (46, 3)
 ```
 
 Note that `pl.sum("pop2024")` is shorthand for `pl.col("pop2024").sum()`.
+
+## Aggregation: State Change
+
+Calculate the population total population change across all the large cities in
+each state. Sort the resulting table in descending order by this value. Include
+a `rank` column.
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+(cities
+    .group_by("state")
+    .agg(
+        (pl.sum("pop2024") - pl.sum("pop2020")).alias("popChange"),
+    )
+    .sort("popChange", descending=True))
+```
+
+</details>
+
+```
+shape: (46, 3)
+┌──────┬───────┬───────────┐
+│ rank ┆ state ┆ popChange │
+│ ---  ┆ ---   ┆ ---       │
+│ u32  ┆ str   ┆ i64       │
+╞══════╪═══════╪═══════════╡
+│ 1    ┆ TX    ┆ 682767    │
+│ 2    ┆ FL    ┆ 431452    │
+│ 3    ┆ AZ    ┆ 226662    │
+│ 4    ┆ NC    ┆ 164454    │
+│ 5    ┆ NV    ┆ 121579    │
+│ …    ┆ …     ┆ …         │
+│ 42   ┆ MD    ┆ -17437    │
+│ 43   ┆ PA    ┆ -23891    │
+│ 44   ┆ IL    ┆ -24017    │
+│ 45   ┆ LA    ┆ -37968    │
+│ 46   ┆ NY    ┆ -332855   │
+└──────┴───────┴───────────┘
+```
+
+## Aggregation: Density Change
+
+Calculate the population total population _density_ change across all the large
+cities in each state. Sort the resulting table in descending order by this
+value.
+
+<details>
+  <summary>Click to show answer</summary>
+
+```py
+(cities
+    .with_columns(
+        ((pl.col("pop2024") - pl.col("pop2020")) / pl.col("area")).alias("densityChange"),
+    )
+    .sort("densityChange", descending=True)
+    .with_row_index(name="rank", offset=1))
+```
+
+</details>
+
+```
+shape: (46, 3)
+┌──────┬───────┬───────────────┐
+│ rank ┆ state ┆ densityChange │
+│ ---  ┆ ---   ┆ ---           │
+│ u32  ┆ str   ┆ f64           │
+╞══════╪═══════╪═══════════════╡
+│ 1    ┆ ID    ┆ 272.175623    │
+│ 2    ┆ NV    ┆ 245.862487    │
+│ 3    ┆ NJ    ┆ 230.218023    │
+│ 4    ┆ SD    ┆ 212.035398    │
+│ 5    ┆ DC    ┆ 207.937807    │
+│ …    ┆ …     ┆ …             │
+│ 42   ┆ HI    ┆ -99.123967    │
+│ 43   ┆ MS    ┆ -109.686661   │
+│ 44   ┆ PA    ┆ -115.192864   │
+│ 45   ┆ MD    ┆ -215.537701   │
+│ 46   ┆ NY    ┆ -754.431097   │
+└──────┴───────┴───────────────┘
+```
 
 ## Graphing Setup
 
