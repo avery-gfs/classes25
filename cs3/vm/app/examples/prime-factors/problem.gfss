@@ -1,0 +1,11 @@
+-- Compute and display the prime factors of the number in r0
+--
+-- For r0: 60 the output should be:
+--
+-- 2
+-- 2
+-- 3
+-- 5
+
+set r0 60 
+halt
