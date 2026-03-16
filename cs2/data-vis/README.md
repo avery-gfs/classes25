@@ -950,7 +950,12 @@ cities = pl.read_csv("data/cities.csv") # Load dataframe from CSV
 
 ```py
 topCities = cities.head(20)
-chart = alt.Chart(topCities).mark_bar().encode(alt.X("pop2024"), alt.Y("city", sort="-x"))
+
+chart = alt.Chart(topCities).mark_bar().encode(
+  alt.X("pop2024"),
+  alt.Y("city", sort="-x"),
+)
+
 chart.save("pop-bars.png", scale_factor = 1.5)
 ```
 
@@ -963,7 +968,11 @@ cityCounts = (
         .count()
 )
 
-chart = alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort = "-y"), alt.Y("count"))
+chart = alt.Chart(cityCounts).mark_bar().encode(
+  alt.X("state", sort = "-y"),
+  alt.Y("count"),
+)
+
 chart.save("city-counts.png", scale_factor = 1.5)
 ```
 
@@ -981,7 +990,11 @@ pctChange = cities.with_columns(
     (pl.col("pop2024") / pl.col("pop2020") * 100 - 100).alias("pctChange")
 ).sort("pctChange", descending=True).head(10)
 
-chart = alt.Chart(pctChange).mark_bar().encode(alt.X("pctChange"), alt.Y("city", sort="-x"))
+chart = alt.Chart(pctChange).mark_bar().encode(
+  alt.X("pctChange"),
+  alt.Y("city", sort="-x"),
+)
+
 chart.save("pct-change.png", scale_factor = 1.5)
 ```
 
@@ -992,15 +1005,15 @@ chart.save("pct-change.png", scale_factor = 1.5)
 ## Scatter Plot
 
 ```py
-top25 = cities.head(25)
+top10 = cities.head(10)
 
-chart = alt.Chart(top25).mark_circle(size = 40).encode(
+chart = alt.Chart(top10).mark_circle(size = 40).encode(
     alt.X("area"),
     alt.Y("pop2024"),
-    alt.Color("state"),
+    alt.Color("city"),
 )
 
-chart.save("pop-area-scatter.png", scale_factor = 1.5)
+chart.save("pop-scatter.png", scale_factor = 1.5)
 ```
 
 ![](pop-area-scatter.png)
