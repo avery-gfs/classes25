@@ -15,11 +15,12 @@
 -- 34
 
 set r2 1
-jeq 7 r0 10
+jeq 8 r0 10
 log r1
+print 10
 set r3 r2
 add r2 r1
 set r1 r3
 add r0 1
-jmp -6
+jmp -7
 halt

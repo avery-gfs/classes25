@@ -1,5 +1,6 @@
 import time
 import os
+import sys
 
 
 class VM:
@@ -23,10 +24,10 @@ class VM:
         while not self.halted:
             self.steps += 1
 
-            if os.name == 'nt': #windows
-                os.system('cls')  
-            else: #linux / mac
-                os.system('clear')
+            if os.name == "nt":  # windows
+                os.system("cls")
+            else:  # linux / mac
+                os.system("clear")
 
             if logging:
                 self.runLog()
@@ -46,11 +47,6 @@ class VM:
             raise ValueError(f"Invalid register name {regName}")
 
         return int(regName[1:])
-
-    def convertToken(self, token):
-        if token != "@":
-            return int(token)
-        return len(self.memory)
 
     def binOp(self, op, a, b):
         match op:
@@ -77,6 +73,15 @@ class VM:
 
         raise Error(f"Unreachable operation {op}")
 
+    def convertToken(self, token):
+        if token == "@":
+            return len(self.memory)
+
+        if token.startswith("r"):
+            return self.registers[self.regIndex(token)]
+
+        return int(token)
+
     def runInst(self):
         tokens = self.instrs[self.ip].split()
         op = tokens[0]
@@ -86,12 +91,7 @@ class VM:
 
         # Resolve instruction argument, loading values from registers
         # and parsing constants to numbers
-        args = [
-            self.registers[self.regIndex(token)]
-            if token.startswith("r")
-            else self.convertToken(token)
-            for token in tokens[1:]
-        ]
+        args = [self.convertToken(token) for token in tokens[1:]]
 
         match op:
             case (
@@ -144,9 +144,6 @@ class VM:
                 self.ip += 1
 
             case "log":
-                if self.output:
-                    self.output += "\n"
-
                 self.output += str(args[0])
                 self.ip += 1
 
@@ -181,4 +178,7 @@ class VM:
         print(f"\nmemory: [{memStr} ]\n")
 
 
-VM().run("factorial/demo.gfss", 5)
+path = sys.argv[1] if len(sys.argv) > 1 else "test.gfss"
+fps = int(sys.argv[2]) if len(sys.argv) > 2 else 5
+
+VM().run(path, fps)
