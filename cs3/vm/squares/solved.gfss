@@ -14,10 +14,11 @@
 -- 81
 -- 100
 
-jeq 6 r0 10
+jeq 7 r0 10
 add r0 1
 set r1 r0
 mul r1 r1
 log r1
-jmp -5
+print 10
+jmp -6
 halt
