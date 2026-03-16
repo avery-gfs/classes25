@@ -1,7 +1,7 @@
 {
   "scripts": {
     "push": "./push",
-    "fmt": "deno fmt .; ruff format . --no-respect-gitignore --no-cache",
+    "fmt": "deno fmt .; ruff format . --no-respect-gitignore --no-cache --exclude *.ipynb",
     "slides": "node ../../slides/serve.js"
   },
   "dependencies": {
