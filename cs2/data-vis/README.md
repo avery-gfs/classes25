@@ -941,11 +941,7 @@ chart.save("pop-bars.png", scale_factor = 1.5)
 ![](pop-bars.png)
 
 ```py
-cityCounts = (
-    cities
-        .group_by("state")
-        .count()
-)
+cityCounts = cities.group_by("state").count()
 
 chart = alt.Chart(cityCounts).mark_bar().encode(
   alt.X("state", sort = "-y"),
