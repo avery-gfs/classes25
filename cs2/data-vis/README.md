@@ -184,7 +184,7 @@ cities.columns
 ## Select Columns
 
 ```py
-cities.select(["city", "pop2024"])
+cities.select("city", "pop2024")
 ```
 
 ```
@@ -222,7 +222,7 @@ cities.head(10).select("city", "pop2024")
 Or, equivalently:
 
 ```py
-cities.select(["city", "pop2024"]).head(10)
+cities.select("city", "pop2024").head(10)
 ```
 
 </details>
@@ -281,7 +281,7 @@ cities["city"][9]
 ## Remove Columns
 
 ```py
-cities.drop(["pop2020", "area"])
+cities.drop("pop2020", "area")
 ```
 
 ```
@@ -339,7 +339,7 @@ dataframe with the changes applied. In the example below, calling `cities.drop`
 doesn't change the data in the `cities` dataframe.
 
 ```py
-cities.drop(["pop2020", "area"])
+cities.drop("pop2020", "area")
 ```
 
 ```
