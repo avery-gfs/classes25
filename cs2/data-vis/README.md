@@ -750,9 +750,8 @@ Challenge: recreate the table below.
         pl.col("city"),
         pl.col("state"),
         (pl.col("pop2024") - pl.col("pop2020")).alias("popChange"),
-        ((pl.col("pop2024") / pl.col("pop2020")) * 100 - 100).round(1).alias("pctChange"),
     )
-    .sort("pctChange", descending=True)
+    .sort("popChange", descending=True)
     .head(10)
     .with_row_index(name="rank", offset=1))
 ```
@@ -760,23 +759,23 @@ Challenge: recreate the table below.
 </details>
 
 ```
-shape: (10, 5)
-┌──────┬────────────────┬───────┬───────────┬───────────┐
-│ rank ┆ city           ┆ state ┆ popChange ┆ pctChange │
-│ ---  ┆ ---            ┆ ---   ┆ ---       ┆ ---       │
-│ u32  ┆ str            ┆ str   ┆ i64       ┆ f64       │
-╞══════╪════════════════╪═══════╪═══════════╪═══════════╡
-│ 1    ┆ Georgetown     ┆ TX    ┆ 34168     ┆ 50.9      │
-│ 2    ┆ New Braunfels  ┆ TX    ┆ 26074     ┆ 28.8      │
-│ 3    ┆ Conroe         ┆ TX    ┆ 24625     ┆ 27.4      │
-│ 4    ┆ Port St. Lucie ┆ FL    ┆ 53724     ┆ 26.2      │
-│ 5    ┆ Buckeye        ┆ AZ    ┆ 22832     ┆ 25.0      │
-│ 6    ┆ Goodyear       ┆ AZ    ┆ 22892     ┆ 24.0      │
-│ 7    ┆ Lewisville     ┆ TX    ┆ 24161     ┆ 21.6      │
-│ 8    ┆ Cape Coral     ┆ FL    ┆ 39009     ┆ 20.1      │
-│ 9    ┆ Palm Coast     ┆ FL    ┆ 17471     ┆ 19.6      │
-│ 10   ┆ Meridian       ┆ ID    ┆ 22105     ┆ 18.8      │
-└──────┴────────────────┴───────┴───────────┴───────────┘
+shape: (10, 4)
+┌──────┬────────────────┬───────┬───────────┐
+│ rank ┆ city           ┆ state ┆ popChange │
+│ ---  ┆ ---            ┆ ---   ┆ ---       │
+│ u32  ┆ str            ┆ str   ┆ i64       │
+╞══════╪════════════════╪═══════╪═══════════╡
+│ 1    ┆ San Antonio    ┆ TX    ┆ 92031     │
+│ 2    ┆ Fort Worth     ┆ TX    ┆ 89191     │
+│ 3    ┆ Houston        ┆ TX    ┆ 85545     │
+│ 4    ┆ Charlotte      ┆ NC    ┆ 68897     │
+│ 5    ┆ Phoenix        ┆ AZ    ┆ 65025     │
+│ 6    ┆ Jacksonville   ┆ FL    ┆ 60222     │
+│ 7    ┆ Port St. Lucie ┆ FL    ┆ 53724     │
+│ 8    ┆ Miami          ┆ FL    ┆ 44773     │
+│ 9    ┆ Seattle        ┆ WA    ┆ 43980     │
+│ 10   ┆ Cape Coral     ┆ FL    ┆ 39009     │
+└──────┴────────────────┴───────┴───────────┘
 ```
 
 ## Aggregation: Sum
