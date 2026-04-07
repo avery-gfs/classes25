@@ -1,3 +1,27 @@
+## Example: Getting Over It
+
+Gameplay: https://www.youtube.com/watch?v=ttvZULCi-eA
+
+Links:
+
+[Final Ninja](https://www.youtube.com/watch?v=nLVy7GfOX58)
+
+[Wiss](https://www.google.com/maps/@40.0166851,-75.2057049,2a,75y,249.72h,75.67t/data=!3m7!1e1!3m5!1sSTDh48mswbjCx-l7NcrGeg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D14.331612462893304%26panoid%3DSTDh48mswbjCx-l7NcrGeg%26yaw%3D249.71929767131365!7i13312!8i6656?entry=ttu&g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D)
+
+[Free Solo](https://www.newyorker.com/recommends/watch/free-solo-a-documentary-about-the-hardest-climb-in-history)
+
+[Free Solo Route](https://i0.wp.com/daisychung.com/wp-content/uploads/2019/01/NGM_1802_Honnold_RouteGraphic_Web-e1546380238796.jpg?ssl=1)
+
+## Game Plan
+
+- Elevator Pitch
+- Mechanics: what is fun, challenging, unique?
+- Style and Aesthetics
+- Technical plan, anticipated challenges
+- Timeline, minimal viable product
+
+---
+
 ## Variables
 
 ```txt

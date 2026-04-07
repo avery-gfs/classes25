@@ -246,9 +246,7 @@ update this code so i can click outside and drag to box select multiple cards an
       }
 
       function deselectAllCards() {
-        selectedCards.forEach((card) =>
-          card.classList.remove("selected")
-        );
+        selectedCards.forEach((card) => card.classList.remove("selected"));
         selectedCards.clear();
       }
 
@@ -395,9 +393,7 @@ update this code so i can click outside and drag to box select multiple cards an
       // Cleans up after dragging cards
       function dragEnd() {
         isDraggingCards = false;
-        selectedCards.forEach((card) =>
-          card.classList.remove("dragging")
-        );
+        selectedCards.forEach((card) => card.classList.remove("dragging"));
 
         document.removeEventListener("mousemove", dragMove);
         document.removeEventListener("mouseup", dragEnd);

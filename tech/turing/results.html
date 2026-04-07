@@ -192,9 +192,7 @@ looks good, increase font size for submission content a bit, show cards (will st
           }
 
           results.forEach((sub, index) => {
-            const cardClass = sub.type === "human"
-              ? "human-card"
-              : "ai-card";
+            const cardClass = sub.type === "human" ? "human-card" : "ai-card";
             const promptSection = sub.type === "ai"
               ? `
                         <div class="mt-4 pt-4 border-t border-gray-300">

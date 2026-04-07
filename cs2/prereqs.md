@@ -103,5 +103,6 @@
 
 - List comprehensions
 - Dictionaries
+- Sets
 - Tuples
 - Exceptions

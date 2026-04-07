@@ -34,10 +34,7 @@ class VM:
             else:
                 self.runInst()
 
-            if self.halted:
-                print(self.output)
-            else:
-                print(self.output, end="", flush=True)
+            print(self.output, end="", flush=True)
 
             # Pause to visualize execution
             time.sleep(1 / fps)

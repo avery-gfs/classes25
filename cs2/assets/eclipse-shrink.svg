@@ -10,14 +10,16 @@
     r="700"
     fill="rgb(255, 0, 0)"
     id="mainCircle"
-  ><animate
+  >
+    <animate
       attributeName="r"
       from="700"
       to="0"
       begin="15s"
       dur="70s"
       fill="freeze"
-    /></circle>
+    />
+  </circle>
   <rect x="798" y="798" width="4" height="4" fill="white" />
 
   <rect x="0" y="0" width="20" height="1600" fill="black">

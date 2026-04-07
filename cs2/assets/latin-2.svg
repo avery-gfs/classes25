@@ -8,8 +8,7 @@
   role="graphics-document document"
   aria-roledescription="flowchart-v2"
 >
-  <style>
-  #mermaid-1770830445175-a3ictta59 {
+  <style>#mermaid-1770830445175-a3ictta59 {
     font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     fill: #333;
@@ -216,8 +215,9 @@
   }
   #mermaid-1770830445175-a3ictta59 :root {
     --mermaid-font-family: "trebuchet ms",verdana,arial,sans-serif;
-  }
-  </style><g><marker
+  }</style>
+  <g>
+    <marker
       id="mermaid-1770830445175-a3ictta59_flowchart-v2-pointEnd"
       class="marker flowchart-v2"
       viewBox="0 0 10 10"
@@ -227,11 +227,15 @@
       markerWidth="8"
       markerHeight="8"
       orient="auto"
-    ><path
+    >
+      <path
         d="M 0 0 L 10 5 L 0 10 z"
         class="arrowMarkerPath"
         style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
-      ></path></marker><marker
+      >
+      </path>
+    </marker>
+    <marker
       id="mermaid-1770830445175-a3ictta59_flowchart-v2-pointStart"
       class="marker flowchart-v2"
       viewBox="0 0 10 10"
@@ -241,11 +245,15 @@
       markerWidth="8"
       markerHeight="8"
       orient="auto"
-    ><path
+    >
+      <path
         d="M 0 5 L 10 10 L 10 0 z"
         class="arrowMarkerPath"
         style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
-      ></path></marker><marker
+      >
+      </path>
+    </marker>
+    <marker
       id="mermaid-1770830445175-a3ictta59_flowchart-v2-circleEnd"
       class="marker flowchart-v2"
       viewBox="0 0 10 10"
@@ -255,13 +263,17 @@
       markerWidth="11"
       markerHeight="11"
       orient="auto"
-    ><circle
+    >
+      <circle
         cx="5"
         cy="5"
         r="5"
         class="arrowMarkerPath"
         style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
-      ></circle></marker><marker
+      >
+      </circle>
+    </marker>
+    <marker
       id="mermaid-1770830445175-a3ictta59_flowchart-v2-circleStart"
       class="marker flowchart-v2"
       viewBox="0 0 10 10"
@@ -271,13 +283,17 @@
       markerWidth="11"
       markerHeight="11"
       orient="auto"
-    ><circle
+    >
+      <circle
         cx="5"
         cy="5"
         r="5"
         class="arrowMarkerPath"
         style="stroke-width: 1px; stroke-dasharray: 1px, 0px"
-      ></circle></marker><marker
+      >
+      </circle>
+    </marker>
+    <marker
       id="mermaid-1770830445175-a3ictta59_flowchart-v2-crossEnd"
       class="marker cross flowchart-v2"
       viewBox="0 0 11 11"
@@ -287,11 +303,15 @@
       markerWidth="11"
       markerHeight="11"
       orient="auto"
-    ><path
+    >
+      <path
         d="M 1,1 l 9,9 M 10,1 l -9,9"
         class="arrowMarkerPath"
         style="stroke-width: 2px; stroke-dasharray: 1px, 0px"
-      ></path></marker><marker
+      >
+      </path>
+    </marker>
+    <marker
       id="mermaid-1770830445175-a3ictta59_flowchart-v2-crossStart"
       class="marker cross flowchart-v2"
       viewBox="0 0 11 11"
@@ -301,70 +321,117 @@
       markerWidth="11"
       markerHeight="11"
       orient="auto"
-    ><path
+    >
+      <path
         d="M 1,1 l 9,9 M 10,1 l -9,9"
         class="arrowMarkerPath"
         style="stroke-width: 2px; stroke-dasharray: 1px, 0px"
-      ></path></marker><g class="root"><g class="clusters"></g><g
+      >
+      </path>
+    </marker>
+    <g class="root">
+      <g class="clusters"></g>
+      <g
         class="edgePaths"
-      ><path
+      >
+        <path
           d="M99.15,35L124.15,35L145.15,35"
           id="L_A_E_0"
           class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
           style=""
           marker-end="url(#mermaid-1770830445175-a3ictta59_flowchart-v2-pointEnd)"
-        ></path></g><g class="edgeLabels"><g class="edgeLabel"><g
+        >
+        </path>
+      </g>
+      <g class="edgeLabels">
+        <g class="edgeLabel">
+          <g
             class="label"
             transform="translate(0, 0)"
-          ><foreignObject width="0" height="0"><div
+          >
+            <foreignObject width="0" height="0">
+              <div
                 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center"
                 xmlns="http://www.w3.org/1999/xhtml"
                 class="labelBkg"
-              ><span
+              >
+                <span
                   class="edgeLabel"
-                ></span></div></foreignObject></g></g></g><g class="nodes"><g
+                >
+                </span>
+              </div>
+            </foreignObject>
+          </g>
+        </g>
+      </g>
+      <g class="nodes">
+        <g
           class="node default"
           id="flowchart-A-0"
           transform="translate(53.57499694824219, 35)"
-        ><rect
+        >
+          <rect
             class="basic label-container"
             style=""
             x="-45.57499694824219"
             y="-27"
             width="91.14999389648438"
             height="54"
-          ></rect><g
+          >
+          </rect>
+          <g
             class="label"
             style=""
             transform="translate(-15.574996948242188, -12)"
-          ><rect></rect><foreignObject
+          >
+            <rect></rect>
+            <foreignObject
               width="31.149993896484375"
               height="24"
-            ><div
+            >
+              <div
                 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center"
                 xmlns="http://www.w3.org/1999/xhtml"
-              ><span class="nodeLabel"><p
-                  >Idea</p></span></div></foreignObject></g></g><g
+              >
+                <span class="nodeLabel"><p>Idea</p></span>
+              </div>
+            </foreignObject>
+          </g>
+        </g>
+        <g
           class="node default"
           id="flowchart-E-1"
           transform="translate(216.0583267211914, 35)"
-        ><rect
+        >
+          <rect
             class="basic label-container"
             style=""
             x="-66.90833282470703"
             y="-27"
             width="133.81666564941406"
             height="54"
-          ></rect><g
+          >
+          </rect>
+          <g
             class="label"
             style=""
             transform="translate(-36.90833282470703, -12)"
-          ><rect></rect><foreignObject
+          >
+            <rect></rect>
+            <foreignObject
               width="73.81666564941406"
               height="24"
-            ><div
+            >
+              <div
                 style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center"
                 xmlns="http://www.w3.org/1999/xhtml"
-              ><span class="nodeLabel"><p
-                  >Final Latin</p></span></div></foreignObject></g></g></g></g></g>
+              >
+                <span class="nodeLabel"><p>Final Latin</p></span>
+              </div>
+            </foreignObject>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>
