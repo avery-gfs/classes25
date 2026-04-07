@@ -38,8 +38,6 @@
       text-anchor="middle"
       dominant-baseline="middle"
       style="font-size: 10px; font-family: monospace"
-    >
-      10 mm
-    </text>
+    >10 mm</text>
   </g>
 </svg>

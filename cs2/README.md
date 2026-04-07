@@ -1,4 +1,195 @@
-## Data Analysis in Ptls
+## Motion Equations
+
+$$
+a_x = \Delta v_x
+$$
+
+$$
+a_y = \Delta v_y
+$$
+
+$$
+v_x = \Delta x
+$$
+
+$$
+v_y = \Delta y
+$$
+
+<img src="assets/rocket.webp" style="height: 360px;" />
+
+## Euler Method
+
+https://en.wikipedia.org/wiki/Euler_method
+
+- Update position based on velocity
+
+|  t |   x |   y | vx | vy |
+| -: | --: | --: | -: | -: |
+|  0 |   0 |   0 | 20 | 30 |
+|  1 |  20 |  30 | 20 | 30 |
+|  2 |  40 |  60 | 20 | 30 |
+|  3 |  60 |  90 | 20 | 30 |
+|  4 |  80 | 120 | 20 | 30 |
+|  5 | 100 | 150 | 20 | 30 |
+
+## Euler Method
+
+https://en.wikipedia.org/wiki/Euler_method
+
+- Update velocity based on acceleration
+- Update position based on velocity
+
+|  t |   x |  y | vx |  vy | ax |  ay |
+| -: | --: | -: | -: | --: | -: | --: |
+|  0 |   0 |  0 | 20 |  30 |  0 | -10 |
+|  1 |  20 | 20 | 20 |  20 |  0 | -10 |
+|  2 |  40 | 30 | 20 |  10 |  0 | -10 |
+|  3 |  60 | 30 | 20 |   0 |  0 | -10 |
+|  4 |  80 | 20 | 20 | -10 |  0 | -10 |
+|  5 | 100 |  0 | 20 | -20 |  0 | -10 |
+
+## Euler Method
+
+```py
+class Projectile():
+    def __init__(self, x, y, vx, vy):
+        self.x = x
+        self.y = y
+        self.vx = vx
+        self.vy = vy
+        self.ax = 0.2
+        self.ay = -0.5
+
+    def draw(self):
+        pygame.draw.circle(screen, "#ff9c7a", (self.x, self.y), 10)
+
+    def move(self):
+        # Update position and velocty based on acceleration
+        pass
+```
+
+```py
+proj = Projectile(50, 550, 0, 0)
+```
+
+## Euler Method
+
+```py
+class Projectile():
+    def __init__(self, x, y, vx, vy):
+        self.x = x
+        self.y = y
+        self.vx = vx
+        self.vy = vy
+        self.ax = 0.2
+        self.ay = -0.5
+
+    def draw(self):
+        pygame.draw.circle(screen, "#ff9c7a", (self.x, self.y), 10)
+
+    def move(self):
+        # Update position and velocty based on acceleration
+        self.vx += self.ax
+        self.vy += self.ay
+        self.x += self.vx
+        self.y += self.vy
+```
+
+## Orbital Equations
+
+For orbits, when $G = 1$ we have the equations:
+
+$$
+\Delta x = x_{\mathrm{other}} - x_{\mathrm{self}}
+$$
+
+$$
+\Delta y = y_{\mathrm{other}} - y_{\mathrm{self}}
+$$
+
+$$
+r = \sqrt{\Delta x^2 + \Delta y^2}
+$$
+
+$$
+a_x = \frac{\Delta x \cdot \mathrm{mass}_{\mathrm{other}}}{r^3}
+$$
+
+$$
+a_y = \frac{\Delta y \cdot \mathrm{mass}_{\mathrm{other}}}{r^3}
+$$
+
+## Simple Orbit
+
+```py
+class Planet():
+    def __init__(self, x, y, vx, vy, mass):
+        self.x = x
+        self.y = y
+        self.vx = vx
+        self.vy = vy
+        self.mass = mass
+
+    def draw(self):
+        # Scale formula is kinda arbitrary, for aesthetics
+        radius = 2 * self.mass ** 0.3
+        pygame.draw.circle(screen, "#ff9c7a", (self.x, self.y), radius)
+
+    def updateAcceleration(self):
+        # ...
+
+    def move(self):
+        # Update position and velocty based on acceleration
+        self.vx += self.ax
+        self.vy += self.ay
+        self.x += self.vx
+        self.y += self.vy
+```
+
+```py
+sun = Planet(300, 300, 0, 0, 1000)
+planet = Planet(100, 300, 0, -1.5, 20)
+```
+
+## Simple Orbit
+
+Visualization requires pygame. I recommend using VSCode or Idle instead of
+Pickcode for this assignment.
+
+<img src="assets/simple-orbit.gif" style="height: 400px;" />
+
+---
+
+## Full System
+
+Every object moves, including sun. Gravitational acceleration is the sum of the
+gravitational pull on an object from each of its neighbors.
+
+```py
+# What's special about these velocities?
+
+planets = [
+    Planet(300, 300, 0.012, -0.0432, 1000),
+    Planet(300, 400, -2.4, 0, 5),
+    Planet(550, 300, 0, 2, 20),
+    Planet(565, 300, 0, 3.2, 1),
+]
+```
+
+<img src="assets/full-system.gif" style="height: 300px;" />
+
+## L1 Lagrange Point
+
+```py
+planets = [
+    Planet(300, 300, 0, 0, 1000),
+    Planet(550, 300, 0, 2, 20),
+    Planet(..., 0.1),
+]
+```
+
+<img src="assets/l1.gif" style="height: 400px;" />
 
 ---
 

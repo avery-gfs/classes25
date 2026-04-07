@@ -74,6 +74,418 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 
  -->
 
+## Coding?
+
+## 7 Languages in 7 Weeks
+
+<img src="assets/7-langs.jpg" height="600px" />
+
+## C is Legendary
+
+<img src="assets/c.webp" height="600px" />
+
+## C is c̴̡͔͇̜͕̖̮̜̻͙̪͍͔̻͛̃̿̏̈̈́̉̔͘ŭ̸͕͊ŗ̸̢̮͓̖̮͔͉̯͙̯͒̈́s̵̢̻̲̼͎̬̪̥̳̱̳̮͉͐͋̈́́̃̃̕̚ȩ̷̟̳̳̝̖̟̝̬̅͗́͂̃́̽̓̈̀͠d̶̺̙̟͙̭̪̹̭̏͂̉͛̑
+
+## 
+
+```c
+#include <stdio.h>
+```
+
+```c
+int main() {
+    printf("Hello world!\n");
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 20;
+    printf("%d\n", n * 7);
+}
+```
+
+## 
+
+```c
+int main() {
+    printf("%d\n");
+}
+```
+
+## 
+
+```c
+int main() {
+    int n;
+    printf("%d\n", n);
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 20;
+    printf("%d\n", n / 7);
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 1000000;
+    printf("%d\n", n * n);
+}
+```
+
+## C Operators
+
+```txt
++
+-
+*
+/
+%
+<
+>
+<=
+>=
+==
+!=
++=
+-=
+*=
+/=
+%=
+++
+--
+```
+
+```c
+int main() {
+    int n = 1;
+    printf("%d\n", n++);
+    printf("%d\n", n);
+}
+```
+
+## 
+
+```c
+int main() {
+    float n = 20;
+    printf("%f\n", n / 7);
+}
+```
+
+## 
+
+```c
+int main() {
+    char name[] = "Avery";
+    printf("Hello %s!\n", name);
+}
+```
+
+## 
+
+```c
+int main() {
+    char letter = 'A';
+    printf("%c\n", letter);
+}
+```
+
+## 
+
+```c
+int main() {
+    // char letter = 'A';
+    int letter = 'A';
+    printf("%d\n", letter);
+}
+```
+
+## 
+
+```c
+int main() {
+    char name[] = "Avery";
+    printf("%d\n", name[0]);
+    printf("%d\n", name[1]);
+    printf("%d\n", name[2]);
+    printf("%d\n", name[3]);
+    printf("%d\n", name[4]);
+    printf("%d\n", name[5]);
+}
+```
+
+## 
+
+```c
+int main() {
+    char name[] = "Avery";
+    printf("%d\n", name[-1]);
+}
+```
+
+## 
+
+```c
+int main() {
+    char greeting[] = "Hello";
+    char name[] = "Avery";
+    printf("%s %s!\n", greeting, name);
+}
+```
+
+## 
+
+```c
+int main() {
+    char greeting[] = "Hello";
+    char name[] = "Avery";
+
+    greeting[10] = '$';
+
+    printf("%s %s!\n", greeting, name);
+}
+```
+
+## 
+
+```c
+int main() {
+    char greeting[] = "Hello";
+    char name[] = "Avery";
+
+    greeting[5] = '$';
+
+    printf("%s %s!\n", greeting, name);
+}
+```
+
+## 
+
+```c
+int main() {
+    int french = 1;
+
+    if (french) {
+        printf("Bonjour\n");
+    } else {
+        printf("Hello\n");
+    }
+}
+
+#include <stdbool.h>
+```
+
+## 
+
+```c
+int main() {
+    bool french = true;
+
+    if (french) {
+        printf("Bonjour\n");
+    } else {
+        printf("Hello\n");
+    }
+}
+```
+
+## Boolean Operators
+
+```txt
+&&
+||
+!
+```
+
+```c
+int main() {
+    bool french = true;
+    bool isEvening = true;
+
+    if (french && isEvening) {
+        printf("Bonne soirée\n");
+    } else {
+        printf("Hello\n");
+    }
+}
+```
+
+## Parity
+
+```c
+int main() {
+    int n = 11;
+
+    // ...
+}
+```
+
+## Parity
+
+```c
+int main() {
+    int n = 11;
+
+    if (n % 2) {
+        printf("Odd\n");
+    } else {
+        printf("Even\n");
+    }
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 17;
+
+    if (n < 0) {
+        printf("negative\n");
+    } else if (n > 0) {
+        printf("positive\n");
+    } else {
+        printf("zero\n");
+    }
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 17;
+    printf("%d is %s\n", n, n % 2 == 0 ? "even" : "odd");
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 1;
+
+    while (n < 1000) {
+        printf("%d\n", n);
+        n *= 2;
+    }
+}
+```
+
+## Factorial
+
+```c
+int main() {
+    int n = 10;
+    int result = 1;
+
+    // ...
+}
+```
+
+## Factorial
+
+```c
+int main() {
+    int n = 10;
+    int result = 1;
+
+    while (n > 0) {
+        result *= n;
+        n -= 1;
+    }
+
+    printf("%d\n", result);
+}
+```
+
+## Prime Factors
+
+```c
+int main() {
+    int n = 840;
+    int divisor = 2;
+
+    // ...
+}
+```
+
+## Prime Factors
+
+```c
+int main() {
+    int n = 840;
+    int divisor = 2;
+
+    while (n > 1) {
+        while (n % divisor == 0) {
+            printf("%d\n", divisor);
+            n /= divisor;
+        }
+
+        divisor += 1;
+    }
+}
+```
+
+## 
+
+```c
+int main() {
+    for (int n = 1; n <= 10; n++) {
+        printf("%d\n", n * n);
+    }
+}
+```
+
+## Fizz Buzz
+
+```c
+int main() {
+    for (int n = 1; n <= 100; n++) {
+        if (n % 15 == 0) {
+            printf("fizz buzz\n");
+        } else if (n % 3 == 0) {
+            printf("fizz\n");
+        } else if (n % 5 == 0) {
+            printf("buzz\n");
+        } else {
+            printf("%d\n", n);
+        }
+    }
+}
+```
+
+## Fizz Buzz
+
+```c
+int main() {
+    for (int n = 1; n <= 100; n++) {
+        if (n % 15 == 0) {
+            printf("fizz buzz\n");
+        } else if (n % 3 == 0) {
+            printf("fizz\n");
+        } else if (n % 5 == 0) {
+            printf("buzz\n");
+        } else {
+            printf("%d\n", n);
+        }
+    }
+}
+```
+
+---
+
 ## Compiling Code
 
 How would we write this code using GFSsembly?
