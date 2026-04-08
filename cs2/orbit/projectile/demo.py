@@ -40,8 +40,8 @@ while running:
     # Draw background to clear screen
     screen.fill("#111111")
 
-    proj.draw()
     proj.move()
+    proj.draw()
 
     # Limit to 50 fps
     clock.tick(50)
