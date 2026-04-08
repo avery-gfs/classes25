@@ -281,11 +281,13 @@ int main() {
         printf("Hello\n");
     }
 }
-
-#include <stdbool.h>
 ```
 
 ## 
+
+```c
+#include <stdbool.h>
+```
 
 ```c
 int main() {
