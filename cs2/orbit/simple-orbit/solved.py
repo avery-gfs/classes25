@@ -14,6 +14,8 @@ class Planet:
         self.vx = vx
         self.vy = vy
         self.mass = mass
+        self.ax = 0
+        self.ay = 0
 
     def draw(self):
         # Scale formula is kinda arbitrary, for aesthetics
