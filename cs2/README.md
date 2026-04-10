@@ -1,5 +1,7 @@
 ## Motion Equations
 
+https://www.youtube.com/watch?v=W7LrAC2Yt88&list=RDW7LrAC2Yt88
+
 $$
 a_x = \Delta v_x
 $$
@@ -58,8 +60,8 @@ class Projectile():
         self.y = y
         self.vx = vx
         self.vy = vy
-        self.ax = 0.2
-        self.ay = -0.5
+        self.ax = ax
+        self.ay = ay
 
     def draw(self):
         pygame.draw.circle(screen, "#ff9c7a", (self.x, self.y), 10)
@@ -70,7 +72,7 @@ class Projectile():
 ```
 
 ```py
-proj = Projectile(50, 550, 0, 0)
+proj = Projectile(50, 550, 10, -25, 0, 1)
 ```
 
 ## Euler Method
@@ -82,8 +84,8 @@ class Projectile():
         self.y = y
         self.vx = vx
         self.vy = vy
-        self.ax = 0.2
-        self.ay = -0.5
+        self.ax = ax
+        self.ay = ay
 
     def draw(self):
         pygame.draw.circle(screen, "#ff9c7a", (self.x, self.y), 10)
@@ -101,11 +103,11 @@ class Projectile():
 For orbits, when $G = 1$ we have the equations:
 
 $$
-\Delta x = x_{\mathrm{other}} - x_{\mathrm{self}}
+\Delta x = x_{\mathrm{sun}} - x_{\mathrm{self}}
 $$
 
 $$
-\Delta y = y_{\mathrm{other}} - y_{\mathrm{self}}
+\Delta y = y_{\mathrm{sun}} - y_{\mathrm{self}}
 $$
 
 $$
@@ -113,11 +115,11 @@ r = \sqrt{\Delta x^2 + \Delta y^2}
 $$
 
 $$
-a_x = \frac{\Delta x \cdot \mathrm{mass}_{\mathrm{other}}}{r^3}
+a_x = \frac{\Delta x \cdot \mathrm{mass}_{\mathrm{sun}}}{r^3}
 $$
 
 $$
-a_y = \frac{\Delta y \cdot \mathrm{mass}_{\mathrm{other}}}{r^3}
+a_y = \frac{\Delta y \cdot \mathrm{mass}_{\mathrm{sun}}}{r^3}
 $$
 
 ## Simple Orbit
@@ -130,6 +132,8 @@ class Planet():
         self.vx = vx
         self.vy = vy
         self.mass = mass
+        self.ax = 0
+        self.ay = 0
 
     def draw(self):
         # Scale formula is kinda arbitrary, for aesthetics
@@ -159,9 +163,17 @@ Pickcode for this assignment.
 
 <img src="assets/simple-orbit.gif" style="height: 400px;" />
 
+## Challenge
+
+Add a second planet closer to the sun, moving counterclockwise.
+
+<img src="assets/satellite.gif" style="height: 500px;" />
+
 ---
 
 ## Full System
+
+https://www.youtube.com/watch?v=lQaYmBHJLzY
 
 Every object moves, including sun. Gravitational acceleration is the sum of the
 gravitational pull on an object from each of its neighbors.
@@ -179,6 +191,18 @@ planets = [
 
 <img src="assets/full-system.gif" style="height: 300px;" />
 
+## Full System
+
+$$
+a_x = \sum{\frac{\Delta x \cdot \mathrm{mass}_{\mathrm{other}}}{r^3}}
+$$
+
+$$
+a_y = \sum{\frac{\Delta y \cdot \mathrm{mass}_{\mathrm{other}}}{r^3}}
+$$
+
+<img src="assets/full-system.gif" style="height: 400px;" />
+
 ## L1 Lagrange Point
 
 ```py
@@ -189,7 +213,7 @@ planets = [
 ]
 ```
 
-<img src="assets/l1.gif" style="height: 400px;" />
+<img src="assets/l1.gif" style="height: 450px;" />
 
 ---
 

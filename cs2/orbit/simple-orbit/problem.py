@@ -23,6 +23,7 @@ class Planet:
         pygame.draw.circle(screen, "#ff9c7a", (self.x, self.y), radius)
 
     def updateAcceleration(self):
+        # hints
         pass
 
     def move(self):
