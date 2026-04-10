@@ -14,6 +14,8 @@ class Planet:
         self.vx = vx
         self.vy = vy
         self.mass = mass
+        self.ax = 0
+        self.ay = 0
 
     def draw(self):
         # Scale formula is kinda arbitrary, for aesthetics
@@ -48,6 +50,8 @@ planets = [
     Planet(550, 300, 0, 2, 20),
     Planet(565, 300, 0, 3.2, 1),
 ]
+
+# L1 Lagrange Point
 
 # planets = [
 #     Planet(300, 300, 0, 0, 1000),

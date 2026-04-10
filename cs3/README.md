@@ -486,6 +486,169 @@ int main() {
 }
 ```
 
+## Arrays
+
+```c
+int main() {
+    int nums[] = { 0, 0, 0 };
+
+    printf("%d\n", nums[1]);
+
+    nums[1] = 2;
+
+    printf("%d\n", nums[1]);
+
+    nums[1] += 3;
+
+    printf("%d\n", nums[1]);
+}
+```
+
+## Sum
+
+```c
+int main() {
+    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
+    int result = 0;
+
+    // ...
+}
+```
+
+## Sum
+
+```c
+int main() {
+    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
+    int result = 0;
+
+    for (int i = 0; i < 10; i++) {
+        result += nums[i];
+    }
+
+    printf("%d\n", result);
+}
+```
+
+## 
+
+```c
+int main() {
+    int a = 1;
+
+    printf("%d\n", a);
+    printf("%p\n", &a);
+}
+```
+
+## 
+
+```c
+int main() {
+    int a = 1;
+    int* b = &a;
+
+    printf("%d\n", a);
+    printf("%d\n", *b);
+    
+    *b += 1;
+
+    printf("%d\n", a);
+    printf("%d\n", *b);
+}
+```
+
+## 
+
+```c
+int main() {
+    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
+    int* p = &nums[0];
+
+    printf("%d\n", *p);
+
+    p += 1;
+
+    printf("%d\n", *p);
+    
+    p += 1;
+
+    printf("%d\n", *p);
+}
+```
+
+## 
+
+```c
+p += 1;
+```
+
+vs
+
+```c
+*p += 1;
+```
+
+## 
+
+```c
+&nums[0]
+```
+
+==
+
+```c
+nums
+```
+
+## Print Chars
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    // ...
+}
+```
+
+## Print Chars
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    for (char* p = message; *p != '\0'; p++) {
+        printf("%c\n", *p);
+    }
+}
+```
+
+## Uppercase
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    // ...
+}
+```
+
+## Uppercase
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    for (char* p = message; *p != '\0'; p++) {
+        if (*p >= 97 && *p <= 122) {
+            printf("%c\n", *p - 32);
+        } else {
+            printf("%c\n", *p);
+        }
+    }
+}
+```
+
 ---
 
 ## Compiling Code

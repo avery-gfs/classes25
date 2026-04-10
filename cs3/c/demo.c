@@ -1,8 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    char greeting[] = "Hello";
-    char name[] = "Avery";
-    greeting[5] = '$';
-    printf("%s %s!\n", greeting, name);
+    char message[] = "Hello world!";
+
+    for (char* p = message; *p != '\0'; p++) {
+        if (*p >= 97 && *p <= 122) {
+            printf("%c\n", *p - 32);
+        } else {
+            printf("%c\n", *p);
+        }
+    }
 }
