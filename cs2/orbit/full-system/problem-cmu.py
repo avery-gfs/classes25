@@ -16,14 +16,9 @@ class Planet:
         # Calculate acceleration from gravity equation
         self.ax = 0
         self.ay = 0
+        
         for planet in planets:
-            if planet == self:
-                continue
-            dx = planet.x - self.x 
-            dy = planet.y - self.y 
-            r = math.sqrt(dx**2 + dy **2)
-            self.ax += (dx * planet.mass) / r**3
-            self.ay += (dy * planet.mass) / r**3
+            pass
 
     def move(self):
         # Update position and velocty based on acceleration
