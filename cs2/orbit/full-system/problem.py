@@ -50,7 +50,7 @@ planets = [
 # planets = [
 #     Planet(300, 300, 0, 0, 1000),
 #     Planet(550, 300, 0, 2, 20),
-#     Planet(??, ??, ??, ??, 0.1),
+#     Planet(505, 300, ??, ??, ??),
 # ]
 
 running = True
