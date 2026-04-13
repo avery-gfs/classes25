@@ -352,10 +352,10 @@ int main() {
 int main() {
     int n = 17;
 
-    if (n < 0) {
-        printf("negative\n");
-    } else if (n > 0) {
+    if (n > 0) {
         printf("positive\n");
+    } else if (n < 0) {
+        printf("negative\n");
     } else {
         printf("zero\n");
     }
@@ -392,6 +392,8 @@ int main() {
     int result = 1;
 
     // ...
+
+    printf("%d\n", result);
 }
 ```
 
@@ -411,35 +413,6 @@ int main() {
 }
 ```
 
-## Prime Factors
-
-```c
-int main() {
-    int n = 840;
-    int divisor = 2;
-
-    // ...
-}
-```
-
-## Prime Factors
-
-```c
-int main() {
-    int n = 840;
-    int divisor = 2;
-
-    while (n > 1) {
-        while (n % divisor == 0) {
-            printf("%d\n", divisor);
-            n /= divisor;
-        }
-
-        divisor += 1;
-    }
-}
-```
-
 ## 
 
 ```c
@@ -454,17 +427,7 @@ int main() {
 
 ```c
 int main() {
-    for (int n = 1; n <= 100; n++) {
-        if (n % 15 == 0) {
-            printf("fizz buzz\n");
-        } else if (n % 3 == 0) {
-            printf("fizz\n");
-        } else if (n % 5 == 0) {
-            printf("buzz\n");
-        } else {
-            printf("%d\n", n);
-        }
-    }
+    // ...
 }
 ```
 
@@ -574,6 +537,10 @@ int main() {
     p += 1;
 
     printf("%d\n", *p);
+
+    *p += 1;
+
+    printf("%d\n", *p);
 }
 ```
 
@@ -601,23 +568,23 @@ vs
 nums
 ```
 
-## Print Chars
+## 
 
 ```c
 int main() {
     char message[] = "Hello world!";
 
-    // ...
+    for (int i = 0; i < 12; i++) {
+        printf("%c\n", message[i]);
+    }
 }
 ```
 
-## Print Chars
-
 ```c
 int main() {
     char message[] = "Hello world!";
 
-    for (char* p = message; *p != '\0'; p++) {
+    for (char* p = &message[0]; *p != '\0'; p++) {
         printf("%c\n", *p);
     }
 }

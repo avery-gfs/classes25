@@ -1,13 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    char message[] = "Hello world!";
-
-    for (char* p = message; *p != '\0'; p++) {
-        if (*p >= 97 && *p <= 122) {
-            printf("%c\n", *p - 32);
+    for (int n = 1; n <= 100; n++) {
+        if (n % 15 == 0) {
+            printf("fizz buzz\n");
+        } else if (n % 3 == 0) {
+            printf("fizz\n");
+        } else if (n % 5 == 0) {
+            printf("buzz\n");
         } else {
-            printf("%c\n", *p);
+            printf("%d\n", n);
         }
     }
 }
