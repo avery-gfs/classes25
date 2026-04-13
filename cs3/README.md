@@ -74,6 +74,114 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 
  -->
 
+## Scope
+
+```py
+x = 0
+
+def myFunc():
+  x = 1
+
+myFunc()
+print(x)
+```
+
+## Scope
+
+```py
+def myFunc():
+  x = 1
+
+myFunc()
+print(x)
+```
+
+## Scope
+
+```py
+l = [0]
+
+def myFunc():
+  l[0] = 1
+
+myFunc()
+print(l)
+```
+
+## Scope
+
+```py
+x = 0
+
+def myFunc():
+  global x
+  x = 1
+
+myFunc()
+print(x)
+```
+
+## Closures
+
+```py
+c = 0
+
+def increment():
+  global c
+  c += 1
+  return c
+
+print(increment())
+print(increment())
+print(increment())
+print(increment())
+print(increment())
+```
+
+## Closures
+
+```py
+def makeCounter():
+  c = 0
+
+  def increment():
+      nonlocal c
+      c += 1
+      return c
+
+  return increment
+
+incA = makeCounter()
+incB = makeCounter()
+
+print(incA())
+print(incA())
+print(incA())
+
+print(incB())
+print(incB())
+```
+
+## Closures
+
+```py
+funcs = []
+
+for n in range(5):
+  def getNum():
+      return n
+
+  funcs.append(getNum)
+
+print(funcs[0]())
+print(funcs[1]())
+print(funcs[2]())
+print(funcs[3]())
+print(funcs[4]())
+```
+
+---
+
 ## Coding?
 
 ## 7 Languages in 7 Weeks
