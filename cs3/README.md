@@ -82,7 +82,7 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 x = 0
 
 def myFunc():
-  x = 1
+    x = 1
 
 myFunc()
 print(x)
@@ -92,7 +92,7 @@ print(x)
 
 ```py
 def myFunc():
-  x = 1
+    x = 1
 
 myFunc()
 print(x)
@@ -104,7 +104,7 @@ print(x)
 l = [0]
 
 def myFunc():
-  l[0] = 1
+    l[0] = 1
 
 myFunc()
 print(l)
@@ -116,11 +116,35 @@ print(l)
 x = 0
 
 def myFunc():
-  global x
-  x = 1
+    global x
+    x = 1
 
 myFunc()
 print(x)
+```
+
+## Scope
+
+```js
+let x = 0;
+
+function myFunc() {
+  x = 1;
+}
+
+myFunc();
+console.log(x);
+```
+
+```js
+let x = 0;
+
+function myFunc() {
+  let x = 1;
+}
+
+myFunc();
+console.log(x);
 ```
 
 ## Closures
@@ -129,9 +153,9 @@ print(x)
 c = 0
 
 def increment():
-  global c
-  c += 1
-  return c
+    global c
+    c += 1
+    return c
 
 print(increment())
 print(increment())
@@ -144,14 +168,14 @@ print(increment())
 
 ```py
 def makeCounter():
-  c = 0
+    c = 0
 
-  def increment():
-      nonlocal c
-      c += 1
-      return c
+    def increment():
+        nonlocal c
+        c += 1
+        return c
 
-  return increment
+    return increment
 
 incA = makeCounter()
 incB = makeCounter()
@@ -170,10 +194,10 @@ print(incB())
 funcs = []
 
 for n in range(5):
-  def getNum():
-      return n
+    def getNum():
+        return n
 
-  funcs.append(getNum)
+    funcs.append(getNum)
 
 print(funcs[0]())
 print(funcs[1]())
