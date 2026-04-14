@@ -74,6 +74,8 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 
  -->
 
+---
+
 ## Scope
 
 ```py
@@ -178,6 +180,415 @@ print(funcs[1]())
 print(funcs[2]())
 print(funcs[3]())
 print(funcs[4]())
+```
+
+---
+
+## Arrays
+
+```c
+int main() {
+    int nums[] = { 0, 0, 0 };
+
+    printf("%d\n", nums[1]);
+
+    nums[1] = 2;
+
+    printf("%d\n", nums[1]);
+
+    nums[1] += 3;
+
+    printf("%d\n", nums[1]);
+}
+```
+
+## Sum
+
+```c
+int main() {
+    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
+    int result = 0;
+
+    // ...
+}
+```
+
+## Sum
+
+```c
+int main() {
+    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
+    int result = 0;
+
+    for (int i = 0; i < 10; i++) {
+        result += nums[i];
+    }
+
+    printf("%d\n", result);
+}
+```
+
+## 
+
+```c
+int main() {
+    int a = 1;
+
+    printf("%d\n", a);
+    printf("%p\n", &a);
+}
+```
+
+## 
+
+```c
+int main() {
+    int a = 1;
+    int* b = &a;
+
+    printf("%d\n", a);
+    printf("%d\n", *b);
+    
+    *b += 1;
+
+    printf("%d\n", a);
+    printf("%d\n", *b);
+}
+```
+
+## 
+
+```c
+int main() {
+    int a = 1;
+    int* b = &a;
+
+    printf("%d\n", a);
+    printf("%d\n", *b);
+    
+    *b += 1;
+
+    printf("%d\n", a);
+    printf("%d\n", *b);
+}
+```
+
+```py
+a = 1
+b = 1
+
+print(a)
+print(b)
+
+b += 1
+
+print(a)
+print(b)
+```
+
+## 
+
+```c
+int main() {
+    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
+    int* p = &nums[0];
+
+    printf("%d\n", *p);
+
+    p += 1;
+
+    printf("%d\n", *p);
+    
+    p += 1;
+
+    printf("%d\n", *p);
+
+    *p += 1;
+
+    printf("%d\n", *p);
+}
+```
+
+## 
+
+```c
+p += 1;
+```
+
+vs
+
+```c
+*p += 1;
+```
+
+## 
+
+```c
+&nums[0]
+```
+
+==
+
+```c
+nums
+```
+
+## 
+
+```c
+nums[5]
+```
+
+==
+
+```c
+*(nums + 5)
+```
+
+## 
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    for (int i = 0; i < 12; i++) {
+        printf("%c\n", message[i]);
+    }
+}
+```
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    for (char* p = &message[0]; *p != '\0'; p++) {
+        printf("%c\n", *p);
+    }
+}
+```
+
+## Uppercase
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    // ...
+
+    // Hint: 'A' == 65, 'a' == 97
+}
+```
+
+## Uppercase
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    for (int i = 0; message[i] != '\0'; i++) {
+        if (message[i] >= 97 && message[i] <= 122) {
+            printf("%c\n", message[i] - 32);
+        } else {
+            printf("%c\n", message[i]);
+        }
+    }
+}
+```
+
+```c
+int main() {
+    char message[] = "Hello world!";
+
+    for (char* p = message; *p != '\0'; p++) {
+        if (*p >= 97 && *p <= 122) {
+            printf("%c\n", *p - 32);
+        } else {
+            printf("%c\n", *p);
+        }
+    }
+}
+```
+
+---
+
+## 
+
+```c
+int main() {
+    int french = 1;
+
+    if (french) {
+        printf("Bonjour\n");
+    } else {
+        printf("Hello\n");
+    }
+}
+```
+
+## 
+
+```c
+#include <stdbool.h>
+```
+
+```c
+int main() {
+    bool french = true;
+
+    if (french) {
+        printf("Bonjour\n");
+    } else {
+        printf("Hello\n");
+    }
+}
+```
+
+## Boolean Operators
+
+```txt
+&&
+||
+!
+```
+
+```c
+int main() {
+    bool french = true;
+    bool isEvening = true;
+
+    if (french && isEvening) {
+        printf("Bonne soirée\n");
+    } else {
+        printf("Hello\n");
+    }
+}
+```
+
+## Parity
+
+```c
+int main() {
+    int n = 11;
+
+    // ...
+}
+```
+
+## Parity
+
+```c
+int main() {
+    int n = 11;
+
+    if (n % 2) {
+        printf("Odd\n");
+    } else {
+        printf("Even\n");
+    }
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 17;
+
+    if (n > 0) {
+        printf("positive\n");
+    } else if (n < 0) {
+        printf("negative\n");
+    } else {
+        printf("zero\n");
+    }
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 17;
+    printf("%d is %s\n", n, n % 2 == 0 ? "even" : "odd");
+}
+```
+
+## 
+
+```c
+int main() {
+    int n = 1;
+
+    while (n < 1000) {
+        printf("%d\n", n);
+        n *= 2;
+    }
+}
+```
+
+## Factorial
+
+```c
+int main() {
+    int n = 10;
+    int result = 1;
+
+    // ...
+
+    printf("%d\n", result);
+}
+```
+
+## Factorial
+
+```c
+int main() {
+    int n = 10;
+    int result = 1;
+
+    while (n > 0) {
+        result *= n;
+        n -= 1;
+    }
+
+    printf("%d\n", result);
+}
+```
+
+## 
+
+```c
+int main() {
+    for (int n = 1; n <= 10; n++) {
+        printf("%d\n", n * n);
+    }
+}
+```
+
+## Fizz Buzz
+
+```c
+int main() {
+    // ...
+}
+```
+
+## Fizz Buzz
+
+```c
+int main() {
+    for (int n = 1; n <= 100; n++) {
+        if (n % 15 == 0) {
+            printf("fizz buzz\n");
+        } else if (n % 3 == 0) {
+            printf("fizz\n");
+        } else if (n % 5 == 0) {
+            printf("buzz\n");
+        } else {
+            printf("%d\n", n);
+        }
+    }
+}
 ```
 
 ---
@@ -374,353 +785,6 @@ int main() {
     greeting[5] = '$';
 
     printf("%s %s!\n", greeting, name);
-}
-```
-
-## 
-
-```c
-int main() {
-    int french = 1;
-
-    if (french) {
-        printf("Bonjour\n");
-    } else {
-        printf("Hello\n");
-    }
-}
-```
-
-## 
-
-```c
-#include <stdbool.h>
-```
-
-```c
-int main() {
-    bool french = true;
-
-    if (french) {
-        printf("Bonjour\n");
-    } else {
-        printf("Hello\n");
-    }
-}
-```
-
-## Boolean Operators
-
-```txt
-&&
-||
-!
-```
-
-```c
-int main() {
-    bool french = true;
-    bool isEvening = true;
-
-    if (french && isEvening) {
-        printf("Bonne soirée\n");
-    } else {
-        printf("Hello\n");
-    }
-}
-```
-
-## Parity
-
-```c
-int main() {
-    int n = 11;
-
-    // ...
-}
-```
-
-## Parity
-
-```c
-int main() {
-    int n = 11;
-
-    if (n % 2) {
-        printf("Odd\n");
-    } else {
-        printf("Even\n");
-    }
-}
-```
-
-## 
-
-```c
-int main() {
-    int n = 17;
-
-    if (n > 0) {
-        printf("positive\n");
-    } else if (n < 0) {
-        printf("negative\n");
-    } else {
-        printf("zero\n");
-    }
-}
-```
-
-## 
-
-```c
-int main() {
-    int n = 17;
-    printf("%d is %s\n", n, n % 2 == 0 ? "even" : "odd");
-}
-```
-
-## 
-
-```c
-int main() {
-    int n = 1;
-
-    while (n < 1000) {
-        printf("%d\n", n);
-        n *= 2;
-    }
-}
-```
-
-## Factorial
-
-```c
-int main() {
-    int n = 10;
-    int result = 1;
-
-    // ...
-
-    printf("%d\n", result);
-}
-```
-
-## Factorial
-
-```c
-int main() {
-    int n = 10;
-    int result = 1;
-
-    while (n > 0) {
-        result *= n;
-        n -= 1;
-    }
-
-    printf("%d\n", result);
-}
-```
-
-## 
-
-```c
-int main() {
-    for (int n = 1; n <= 10; n++) {
-        printf("%d\n", n * n);
-    }
-}
-```
-
-## Fizz Buzz
-
-```c
-int main() {
-    // ...
-}
-```
-
-## Fizz Buzz
-
-```c
-int main() {
-    for (int n = 1; n <= 100; n++) {
-        if (n % 15 == 0) {
-            printf("fizz buzz\n");
-        } else if (n % 3 == 0) {
-            printf("fizz\n");
-        } else if (n % 5 == 0) {
-            printf("buzz\n");
-        } else {
-            printf("%d\n", n);
-        }
-    }
-}
-```
-
-## Arrays
-
-```c
-int main() {
-    int nums[] = { 0, 0, 0 };
-
-    printf("%d\n", nums[1]);
-
-    nums[1] = 2;
-
-    printf("%d\n", nums[1]);
-
-    nums[1] += 3;
-
-    printf("%d\n", nums[1]);
-}
-```
-
-## Sum
-
-```c
-int main() {
-    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
-    int result = 0;
-
-    // ...
-}
-```
-
-## Sum
-
-```c
-int main() {
-    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
-    int result = 0;
-
-    for (int i = 0; i < 10; i++) {
-        result += nums[i];
-    }
-
-    printf("%d\n", result);
-}
-```
-
-## 
-
-```c
-int main() {
-    int a = 1;
-
-    printf("%d\n", a);
-    printf("%p\n", &a);
-}
-```
-
-## 
-
-```c
-int main() {
-    int a = 1;
-    int* b = &a;
-
-    printf("%d\n", a);
-    printf("%d\n", *b);
-    
-    *b += 1;
-
-    printf("%d\n", a);
-    printf("%d\n", *b);
-}
-```
-
-## 
-
-```c
-int main() {
-    int nums[] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 4 };
-    int* p = &nums[0];
-
-    printf("%d\n", *p);
-
-    p += 1;
-
-    printf("%d\n", *p);
-    
-    p += 1;
-
-    printf("%d\n", *p);
-
-    *p += 1;
-
-    printf("%d\n", *p);
-}
-```
-
-## 
-
-```c
-p += 1;
-```
-
-vs
-
-```c
-*p += 1;
-```
-
-## 
-
-```c
-&nums[0]
-```
-
-==
-
-```c
-nums
-```
-
-## 
-
-```c
-int main() {
-    char message[] = "Hello world!";
-
-    for (int i = 0; i < 12; i++) {
-        printf("%c\n", message[i]);
-    }
-}
-```
-
-```c
-int main() {
-    char message[] = "Hello world!";
-
-    for (char* p = &message[0]; *p != '\0'; p++) {
-        printf("%c\n", *p);
-    }
-}
-```
-
-## Uppercase
-
-```c
-int main() {
-    char message[] = "Hello world!";
-
-    // ...
-}
-```
-
-## Uppercase
-
-```c
-int main() {
-    char message[] = "Hello world!";
-
-    for (char* p = message; *p != '\0'; p++) {
-        if (*p >= 97 && *p <= 122) {
-            printf("%c\n", *p - 32);
-        } else {
-            printf("%c\n", *p);
-        }
-    }
 }
 ```
 
