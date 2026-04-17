@@ -1,3 +1,82 @@
+## Caesar Cipher
+
+A Caesar cipher is one of the simplest and most widely known encryption
+techniques used in cryptography. It is a type of substitution cipher in which
+each letter in the plaintext is replaced by a letter some fixed number of
+positions along the alphabet. For example, with a left shift of 3, D would be
+replaced by A, E would become B, and so on. The method is named after Julius
+Caesar, who used it in his private correspondence.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/250px-Caesar_cipher_left_shift_of_3.svg.png" style="height: 200px;" />
+
+https://en.wikipedia.org/wiki/Caesar_cipher
+
+## Caesar Cipher
+
+Decode `Jvkpun pz jvvs :)` (shifted 7 places)
+
+## ROT13
+
+`Hello world!` -> `Uryyb jbeyq!` -> `Hello world!`
+
+## Caesar Cipher
+
+```py
+# Shift a single letter `n` places
+
+def shift(letter, n):
+    # ...
+
+
+# Encode or decode a message with the Caesar cipher
+# https://en.wikipedia.org/wiki/Caesar_cipher
+
+def encode(message, offset):
+    # ...
+```
+
+## Vigenère Cipher
+
+The Vigenère cipher is a method of encrypting alphabetic text where each letter
+of the plaintext is encoded with a different Caesar cipher, whose increment is
+determined by the corresponding letter of another text, the key.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Vigen%C3%A8re_square_shading.svg/960px-Vigen%C3%A8re_square_shading.svg.png" style="height: 450px;" />
+
+https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+
+## Vigenère Cipher
+
+Decode `Dtvpfvklom` (key `bird`)
+
+<img src="https://preview.redd.it/code-review-v0-5g8tkdec92c51.jpg?width=1080&crop=smart&auto=webp&s=c97b8fda7ed2efdc67fa1ad57ad9267f96379540" style="height: 450px;" />
+
+## Caesar Cipher
+
+```py
+# Shift a single letter `n` places
+
+def shift(letter, n):
+    # ...
+
+
+# Encode or decode a message with the Vigenère cipher
+# https://en.wikipedia.org/wiki/Vigenere_cipher
+
+def translate(message, key, sign):
+    # ...
+
+
+def encode(message, key):
+    return translate(message, key, 1)
+
+
+def decode(message, key):
+    return translate(message, key, -1)
+```
+
+---
+
 ## Motion Equations
 
 https://www.youtube.com/watch?v=W7LrAC2Yt88&list=RDW7LrAC2Yt88

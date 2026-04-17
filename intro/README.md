@@ -118,6 +118,7 @@ What is a variable?
 - Formats (chapbook)
   https://klembot.github.io/chapbook/guide/text-and-links/text-formatting.html
 - Text styles
+- Timing
 - Images
 
 ---
@@ -137,6 +138,8 @@ What is a variable?
 https://twinery.org/
 
 https://twinery.org/reference/en/
+
+Use menu to insert markup
 
 - Rooms (passages)
 - Links
