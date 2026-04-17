@@ -22,9 +22,9 @@ Decode `Jvkpun pz jvvs :)` (shifted 7 places)
 ## Caesar Cipher
 
 ```py
-# Shift a single letter `n` places
+# Shift a single letter `offset` places
 
-def shift(letter, n):
+def shift(letter, offset):
     # ...
 
 
@@ -33,6 +33,39 @@ def shift(letter, n):
 
 def encode(message, offset):
     # ...
+```
+
+## Caesar Cipher
+
+Get the position of a letter in a string:
+
+```py
+i = alphabet.index(letter)
+```
+
+Read a character at a give position in a string:
+
+```py
+alphabet[i]
+```
+
+Wrap a value to stay within the range `[0, 25]`:
+
+```py
+n % 26
+```
+
+Check if a letter is in a string:
+
+```py
+if letter in alphabet:
+```
+
+Convert a letter to lowercase/uppercase:
+
+```py
+letter.lower()
+letter.upper()
 ```
 
 ## Vigenère Cipher
@@ -54,9 +87,9 @@ Decode `Dtvpfvklom` (key `bird`)
 ## Caesar Cipher
 
 ```py
-# Shift a single letter `n` places
+# Shift a single letter `offset` places
 
-def shift(letter, n):
+def shift(letter, offset):
     # ...
 
 

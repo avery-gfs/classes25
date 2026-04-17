@@ -1,13 +1,14 @@
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-# Shift a single letter `n` places
+# Shift a single letter `offset` places
 
 
-def shift(letter, n):
+def shift(letter, offset):
     lower = letter.lower()
 
     if lower in alphabet:
-        shifted = alphabet[(alphabet.index(lower) + n) % 26]
+        shift = (alphabet.index(lower) + offset) % 26
+        shifted = alphabet[shift]
 
         if letter.isupper():
             return shifted.upper()
