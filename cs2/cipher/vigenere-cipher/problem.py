@@ -1,9 +1,9 @@
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-# Shift a single letter `n` places
+# Shift a single letter `offset` places
 
 
-def shift(letter, n):
+def shift(letter, offset):
     pass
 
 
