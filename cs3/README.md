@@ -82,7 +82,7 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 x = 0
 
 def myFunc():
-    x = 1
+    print(x)
 
 myFunc()
 print(x)
@@ -93,6 +93,7 @@ print(x)
 ```py
 def myFunc():
     x = 1
+    print(x)
 
 myFunc()
 print(x)
@@ -101,13 +102,62 @@ print(x)
 ## Scope
 
 ```py
-l = [0]
+x = 0
 
 def myFunc():
-    l[0] = 1
+    x = 1
+    print(x)
+
+myFunc()
+print(x)
+```
+
+## Scope
+
+```py
+x = 0
+
+def myFunc():
+    print(x)
+    x = 1
+    print(x)
+
+myFunc()
+print(x)
+```
+
+## Scope
+
+```py
+l = ["a"]
+
+def myFunc():
+    l[0] = "b"
 
 myFunc()
 print(l)
+```
+
+## Scope
+
+```py
+l = ["a"]
+
+def myFunc():
+    l[0] = "b"
+
+myFunc()
+print(l)
+```
+
+```py
+x = 0
+
+def myFunc():
+    x = 1
+
+myFunc()
+print(x)
 ```
 
 ## Scope
@@ -130,6 +180,9 @@ let x = 0;
 
 function myFunc() {
   x = 1;
+  console.log(x);
+  x = 2;
+  console.log(x);
 }
 
 myFunc();
@@ -141,10 +194,28 @@ let x = 0;
 
 function myFunc() {
   let x = 1;
+  console.log(x);
+  x = 2;
+  console.log(x);
 }
 
 myFunc();
 console.log(x);
+```
+
+## Closures
+
+```py
+x = 0
+
+def myFunc():
+    print(x)
+
+myFunc()
+x = 1
+myFunc()
+x = 2
+myFunc()
 ```
 
 ## Closures
@@ -191,19 +262,25 @@ print(incB())
 ## Closures
 
 ```py
-funcs = []
+def makeCounter():
+    c = 0
 
-for n in range(5):
-    def getNum():
-        return n
+    def increment():
+        nonlocal c
+        c += 1
+        return c
 
-    funcs.append(getNum)
+    return increment
 
-print(funcs[0]())
-print(funcs[1]())
-print(funcs[2]())
-print(funcs[3]())
-print(funcs[4]())
+incA = makeCounter()
+incB = makeCounter()
+
+print(incA())
+print(incA())
+print(incA())
+
+print(incB())
+print(incB())
 ```
 
 ---
