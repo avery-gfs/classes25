@@ -1,3 +1,52 @@
+## Vigenère Cipher
+
+The Vigenère cipher is a method of encrypting alphabetic text where each letter
+of the plaintext is encoded with a different Caesar cipher, whose increment is
+determined by the corresponding letter of another text, the key.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Vigen%C3%A8re_square_shading.svg/960px-Vigen%C3%A8re_square_shading.svg.png" style="height: 450px;" />
+
+https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+
+## Vigenère Cipher
+
+Decode `Dtvpfvklom` (key `bird`)
+
+<img src="https://preview.redd.it/code-review-v0-5g8tkdec92c51.jpg?width=1080&crop=smart&auto=webp&s=c97b8fda7ed2efdc67fa1ad57ad9267f96379540" style="height: 450px;" />
+
+## Vigenère Cipher
+
+```py
+# Shift a single letter `offset` places
+
+def shift(letter, offset):
+    # ...
+
+
+# Encode or decode a message with the Vigenère cipher
+# https://en.wikipedia.org/wiki/Vigenere_cipher
+
+def translate(message, key, sign):
+    # ...
+
+
+def encode(message, key):
+    return translate(message, key, 1)
+
+
+def decode(message, key):
+    return translate(message, key, -1)
+```
+
+## Challenge: Code Breaking
+
+This message was encoded with the Vigenère cipher using a four-letter alphabetic
+key. Crack the code to reveal the original message.
+
+`Eg ranr xtbck bt qa wvqrwaf kwam, nhgdr Wiezz'f dizkfbnzawa. Q nwie lpr jmnr, gngctn nnx wsl plsf, zzig zivrk gnw ako pxwigogv. Sjbbw gnw gaecyz iaj buk agxanr, Q nwie lpr ecfou eofovty. Ol fumvqy ia wkuu qa eg ygcy; pbc knt Q qwmc xzbs avtyqam?`
+
+---
+
 ## Caesar Cipher
 
 A Caesar cipher is one of the simplest and most widely known encryption
@@ -68,45 +117,12 @@ letter.lower()
 letter.upper()
 ```
 
-## Vigenère Cipher
+## Challenge: Code Breaking
 
-The Vigenère cipher is a method of encrypting alphabetic text where each letter
-of the plaintext is encoded with a different Caesar cipher, whose increment is
-determined by the corresponding letter of another text, the key.
+This message was encoded with the Caesar cipher. Crack the code to reveal the
+original message.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Vigen%C3%A8re_square_shading.svg/960px-Vigen%C3%A8re_square_shading.svg.png" style="height: 450px;" />
-
-https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
-
-## Vigenère Cipher
-
-Decode `Dtvpfvklom` (key `bird`)
-
-<img src="https://preview.redd.it/code-review-v0-5g8tkdec92c51.jpg?width=1080&crop=smart&auto=webp&s=c97b8fda7ed2efdc67fa1ad57ad9267f96379540" style="height: 450px;" />
-
-## Caesar Cipher
-
-```py
-# Shift a single letter `offset` places
-
-def shift(letter, offset):
-    # ...
-
-
-# Encode or decode a message with the Vigenère cipher
-# https://en.wikipedia.org/wiki/Vigenere_cipher
-
-def translate(message, key, sign):
-    # ...
-
-
-def encode(message, key):
-    return translate(message, key, 1)
-
-
-def decode(message, key):
-    return translate(message, key, -1)
-```
+`Ylb ufcl uc dglb mspqcjtcq gl y njyac hsqr pgefr, gr ugjj zc gl rfc tyjjcw md jmtc ylb bcjgefr.`
 
 ---
 
