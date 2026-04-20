@@ -27,7 +27,12 @@ def shift(letter, offset):
 # https://en.wikipedia.org/wiki/Vigenere_cipher
 
 def translate(message, key, sign):
+    result = ""
+    index = 0
+
     # ...
+
+    return result
 
 
 def encode(message, key):

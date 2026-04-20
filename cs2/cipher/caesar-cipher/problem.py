@@ -4,7 +4,11 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
 def shift(letter, offset):
-    pass
+    result = ""
+
+    # ...
+
+    return result
 
 
 # Encode or decode a message with the Caesar cipher
