@@ -17,7 +17,10 @@ def shift(letter, offset):
 
 def encode(message, offset):
     result = ""
-    pass
+
+    # ...
+
+    return result
 
 
 print(shift("a", 1) == "b")

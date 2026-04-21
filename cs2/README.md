@@ -45,8 +45,8 @@ def decode(message, key):
 
 ## Challenge: Code Breaking
 
-This message was encoded with the Vigenère cipher using a four-letter alphabetic
-key. Crack the code to reveal the original message.
+This message was encoded with the Vigenère cipher using a **four-letter**
+alphabetic key. Crack the code to reveal the original message.
 
 `Eg ranr xtbck bt qa wvqrwaf kwam, nhgdr Wiezz'f dizkfbnzawa. Q nwie lpr jmnr, gngctn nnx wsl plsf, zzig zivrk gnw ako pxwigogv. Sjbbw gnw gaecyz iaj buk agxanr, Q nwie lpr ecfou eofovty. Ol fumvqy ia wkuu qa eg ygcy; pbc knt Q qwmc xzbs avtyqam?`
 
@@ -86,7 +86,11 @@ def shift(letter, offset):
 # https://en.wikipedia.org/wiki/Caesar_cipher
 
 def encode(message, offset):
+    result = ""
+
     # ...
+
+    return result
 ```
 
 ## Caesar Cipher
