@@ -4,12 +4,7 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
 def shift(letter, offset):
-    result = ""
-    index = 0
-
-    # ...
-
-    return result
+    pass
 
 
 # Encode or decode a message with the Vigenère cipher

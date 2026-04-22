@@ -88,7 +88,8 @@ def shift(letter, offset):
 def encode(message, offset):
     result = ""
 
-    # ...
+    for letter in message:
+        result += shift(letter, offset)
 
     return result
 ```
