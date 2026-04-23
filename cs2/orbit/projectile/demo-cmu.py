@@ -1,5 +1,7 @@
 import math 
 from cmu_graphics import * 
+app.height = 600 
+app.width = 600
 
 class Projectile:
     def __init__(self, x, y, vx, vy, ax, ay):

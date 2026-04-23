@@ -1,5 +1,7 @@
 import math 
 from cmu_graphics import * 
+app.width = 600
+app.height = 600
 class Planet:
     def __init__(self, x, y, vx, vy, mass):
         self.x = x
