@@ -99,10 +99,16 @@
 
 - Pickcode
 
-## Hold for CS 2
+## Hold for later
 
 - List comprehensions
 - Dictionaries
 - Sets
 - Tuples
 - Exceptions
+
+## Resources
+
+- JM materials
+- MI materials
+- Runestone
