@@ -74,6 +74,13 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 
  -->
 
+## Rants
+
+- Hacker News
+- Ubuntu
+- Firefox
+- Ublock Origin
+
 ---
 
 ## Scope
