@@ -1,3 +1,34 @@
+## Godot Tutorial Review
+
+- What do the `$` and `%` symbols do in scripts?
+
+- What is the `Path2D` node used for in this game?
+
+- How do you set the window size for the game?
+
+- How do you set up keyboard inputs for the game?
+
+- Where would you adjust the settings for a timer node? What do the settings do?
+
+- What is the node tree?
+
+- What's the difference between `CharacterBody2D` and `Area2D`?
+
+- What is a scene?
+
+- How do you spawn a scene? How do you remove a scene?
+
+- Why do we move some nodes by settings their position and others by setting
+  velocity?
+
+- What are signals?
+
+- How do you have an event happen when a timer goes off?
+
+- How would you edit the animation for a sprite?
+
+---
+
 ## Example: Getting Over It
 
 Gameplay: https://www.youtube.com/watch?v=ttvZULCi-eA

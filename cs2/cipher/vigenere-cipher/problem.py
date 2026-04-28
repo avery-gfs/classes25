@@ -4,6 +4,7 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
 def shift(letter, offset):
+    # Copy code from Caesar cipher problem
     pass
 
 
