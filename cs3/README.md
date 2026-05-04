@@ -78,6 +78,7 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 
 - Hacker News
 - Ubuntu
+- Sublime
 - Firefox
 - Ublock Origin
 

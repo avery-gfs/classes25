@@ -2,33 +2,45 @@
 
 ## Concepts
 
-- Basic types (strings, booleans, integers, floats, lists)
-- Difference between ints and floats
-- Basic numerical operators (+ - * / ** %)
-- Inequality operators
-- Basic numerical functions (round, abs, print, len, input)
 - Printing strings
+- Variables
 - Printing variables
 - Reading string input
-- Reading and converting numerical input
-- Reading and writing text files
+
+- Comments
+
 - String interpolation (format strings)
 - String methods (join, split, lower, upper, strip)
+
+- Basic types (strings, booleans, integers, floats, lists)
+- Difference between ints and floats
+- Equality
+- Reading and converting numerical input
+
+- Basic numerical operators (+ - * / ** %)
+- Inequality operators
+- Basic numerical functions (round, abs, print, len)
+
+- Boolean operators (and, or, not)
+
+- Conditionals
+
+- While loops
+- While True
+
+- Conditional expressions
+
 - String indexing
 - String slicing
 - String concatenation
-- Equality
-- Boolean operators (and, or, not)
+
+- Reading and writing text files
 - In operator
 - List append
 - List indexing
 - List concatenation
 - List slicing
 - List methods (sort, append, pop, index)
-- Conditionals
-- Conditional expressions
-- While loops
-- While True
 - For loops with list
 - For loops with range
 - Break and continue?
@@ -48,7 +60,6 @@
 - Nested lists
 - Turtle? p5? Other libraries
 - Random, math libraries
-- Comments
 - Box drawing chars / block chars
 
 ## Projects
