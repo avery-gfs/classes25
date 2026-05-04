@@ -107,11 +107,11 @@ https://en.wikipedia.org/wiki/Simpson%27s_paradox
 > medical-science statistics, and is particularly problematic when frequency
 > data are unduly given causal interpretations.
 
-|          |             Avery |        Steph Curry |
-| -------- | ----------------: | -----------------: |
-| Saturday |  **`1/1 = 100%`** |     `90/99 = ~90%` |
-| Sunday   | **`6/99 = ~16%`** |         `0/1 = 0%` |
-| Combined |      `7/100 = 7%` | **`90/100 = 90%`** |
+|          |              Avery |        Steph Curry |
+| -------- | -----------------: | -----------------: |
+| Saturday |   **`1/1 = 100%`** |     `90/99 = ~90%` |
+| Sunday   | **`16/99 = ~16%`** |         `0/1 = 0%` |
+| Combined |     `17/100 = 17%` | **`90/100 = 90%`** |
 
 ## Simpsons Paradox
 
