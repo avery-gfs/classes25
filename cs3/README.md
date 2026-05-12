@@ -74,6 +74,322 @@ https://www.youtube.com/watch?v=aoag03mSuXQ
 
  -->
 
+## Purity
+
+A pure function is a function without side effects (mutation, IO), that always
+returns the same value for the same input and doesn't depend on external state.
+
+Impure:
+
+```py
+def printFactorial(n):
+    result = 1
+
+    while n > 0:
+        result *= n
+        n -= 1
+
+    print("10 factorial is", result)
+
+printFactorial(10)
+```
+
+Pure:
+
+```py
+def factorial(n):
+    result = 1
+
+    while n > 0:
+        result *= n
+        n -= 1
+
+    return result
+
+print("10 factorial is", factorial(10))
+```
+
+## Purity
+
+Stateful:
+
+```py
+def setLocation(x, y):
+    #...
+
+def setColor(color):
+    #...
+
+def drawCircle(radius):
+    #...
+
+setLocation(10, 15)
+setColor("blue")
+drawCircle(7)
+```
+
+Stateless:
+
+```py
+def drawCircle(x, y, radius, color):
+    #...
+
+drawCircle(10, 15, 7, "blue")
+```
+
+## Modularity
+
+Modular code is code that is separated into independent, reusable components.
+
+Not modular:
+
+```py
+def showRoute(src, dest):
+    queue = [src]
+    parents = {src: None}
+
+    while queue:
+        station = queue.pop(0)
+
+        if station == dest:
+            path = []
+
+            while dest:
+                path.append(dest)
+                dest = parents[dest]
+
+            return "\n│\n".join("• " + station for station in path[::-1])
+
+        for child in links[station]:
+            if child not in parents:
+                queue.append(child)
+                parents[child] = station
+
+
+print(showRoute("jarry", "namur"))
+```
+
+## Modularity
+
+```txt
+• jarry
+│
+• jean-talon
+│
+• de castelnau
+│
+• parc
+│
+• acadie
+│
+• outremont
+│
+• edouard-montpetit
+│
+• university-of-montreal
+│
+• cote-des-neiges
+│
+• snowdon
+│
+• cote-sainte-catherine
+│
+• plamondon
+│
+• namur
+```
+
+## Modularity
+
+More modular:
+
+```py
+def showRoute(stations):
+    return "\n│\n".join("• " + station for station in stations)
+
+
+def search(src, dest):
+    queue = [src]
+    parents = {src: None}
+
+    while queue:
+        station = queue.pop(0)
+
+        if station == dest:
+            path = []
+
+            while dest:
+                path.append(dest)
+                dest = parents[dest]
+
+            return path[::-1]
+
+        for child in links[station]:
+            if child not in parents:
+                queue.append(child)
+                parents[child] = station
+
+
+print(showRoute(["A", "B", "C"]))
+print(showRoute(search("jarry", "namur")))
+```
+
+## Modularity
+
+```txt
+• A
+│
+• B
+│
+• C
+```
+
+```txt
+• jarry
+│
+• jean-talon
+│
+• de castelnau
+│
+• parc
+│
+• acadie
+│
+• outremont
+│
+• edouard-montpetit
+│
+• university-of-montreal
+│
+• cote-des-neiges
+│
+• snowdon
+│
+• cote-sainte-catherine
+│
+• plamondon
+│
+• namur
+```
+
+## Composability
+
+Composable functions are functions that can be used in combination with each
+other.
+
+```py
+def getNegs(nums):
+    return [-n for n in nums]
+
+def getSquares(nums):
+    return [n ** 2 for n in nums]
+
+nums = range(10)
+
+print(getNegs(nums))
+print(getSquares(nums))
+```
+
+```txt
+[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+## Composability
+
+```py
+def getNegs(nums):
+    return [-n for n in nums]
+
+def getSquares(nums):
+    return [n ** 2 for n in nums]
+
+def myRange(limit):
+    n = 0
+
+    while n < limit:
+        yield n
+        n += 1
+
+nums = myRange(10)
+
+print(getNegs(nums))
+print(getSquares(nums))
+```
+
+## Composability
+
+```py
+def getNegs(nums):
+    return [-n for n in nums]
+
+def getSquares(nums):
+    return [n ** 2 for n in nums]
+
+def myRange(limit):
+    n = 0
+
+    while n < limit:
+        yield n
+        n += 1
+
+nums = myRange(10)
+
+print(getNegs(nums))
+print(getSquares(nums))
+```
+
+```txt
+[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+[]
+```
+
+## Orthogonality
+
+Orthogonal functions are functions whose behaviors don't overlap.
+
+Not orthogonal:
+
+```py
+def replaceAll(string, substring, new):
+    # ...
+
+def replaceN(string, count, substring, new):
+    # ...
+
+def replaceFirst(string, substring, new):
+    # ...
+
+replaceAll("abracadabra", "a", "o")   # obrocodobro
+replaceN("abracadabra", 2, "a", "o")  # obrocadabra
+replaceFirst("abracadabra", "a", "o") # obracadabra
+```
+
+## Orthogonality
+
+```py
+replaceFirst("abracadabra", "a", "o") # obracadabra
+replaceN("abracadabra", 1, "a", "o")  # obracadabra
+```
+
+## Idempotency
+
+## Don't Repeat Yourself
+
+## Zero One Infinity
+
+## Immutability
+
+## Least Surprise
+
+## Fail Fast
+
+## Single Source of Truth
+
+## Declarativity
+
+---
+
 ## Rants
 
 - Hacker News
