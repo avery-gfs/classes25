@@ -4,6 +4,10 @@ with open("connections.json") as file:
     links = json.load(file)
 
 
+def showRoute(stations):
+    return "\n│\n".join("• " + station for station in stations)
+
+
 def search(src, dest):
     queue = [src]
     parents = {src: None}
@@ -26,4 +30,5 @@ def search(src, dest):
                 parents[child] = station
 
 
-print(search("jarry", "namur"))
+route = search("jarry", "namur")
+print(showRoute(route))
