@@ -192,7 +192,7 @@ https://en.wikipedia.org/wiki/Euler_method
 ## Euler Method
 
 ```py
-class Projectile():
+class Projectile:
     def __init__(self, x, y, vx, vy):
         self.x = x
         self.y = y
@@ -216,7 +216,7 @@ proj = Projectile(50, 550, 10, -25, 0, 1)
 ## Euler Method
 
 ```py
-class Projectile():
+class Projectile:
     def __init__(self, x, y, vx, vy):
         self.x = x
         self.y = y
@@ -386,17 +386,19 @@ What sort of questions can we ask about this data?
 import polars as pl
 import altair as alt
 
-cities = pl.read_csv("cities.csv") # Load dataframe from CSV
+cities = pl.read_csv("cities.csv")  # Load dataframe from CSV
 
 cityCounts = (
     cities
-        .group_by("state")
-        .agg(pl.len().alias("cities"))
-        .sort("cities", descending = True)
+    .group_by("state")
+    .agg(pl.len().alias("cities"))
+    .sort("cities", descending=True)
 )
 
-chart = alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort = "-y"), alt.Y("cities"))
-chart.save("city-counts.png", scale_factor = 2)
+chart = (
+    alt.Chart(cityCounts).mark_bar().encode(alt.X("state", sort="-y"), alt.Y("cities"))
+)
+chart.save("city-counts.png", scale_factor=2)
 ```
 
 <img src="assets/city-counts.png" style="height: 300px;" />
@@ -632,11 +634,11 @@ DON'T DO THIS:
 
 ```py
 if n % 2 == 0:
-    message == "n is even" # NO!!!
+    message == "n is even"  # NO!!!
 elif n % 2 == 1:
-    message == "n is odd" # NO!!!
+    message == "n is odd"  # NO!!!
 else:
-    message == "n is not an integer" # NO!!!
+    message == "n is not an integer"  # NO!!!
 ```
 
 DON'T DO THIS:
@@ -710,8 +712,8 @@ board = Board(blinker)
 ```
 
 ```py
-board.width # 5
-board.height # 5
+board.width  # 5
+board.height  # 5
 ```
 
 ## Implementation
@@ -743,8 +745,8 @@ board.cells
 ```
 
 ```py
-board.cells[1] # [Cell(False), Cell(False), Cell(True), Cell(False), Cell(False)]
-board.cells[1][2] # Cell(True)
+board.cells[1]  # [Cell(False), Cell(False), Cell(True), Cell(False), Cell(False)]
+board.cells[1][2]  # Cell(True)
 ```
 
 ## Implementation
@@ -1171,13 +1173,13 @@ b2e
 ## DEADBEEF
 
 ```py
-0xdeadbeef      # 3735928559
-bin(3735928559) # "0b11011110101011011011111011101111"
+0xDEADBEEF  # 3735928559
+bin(3735928559)  # "0b11011110101011011011111011101111"
 ```
 
 ```py
-0b11011110101011011011111011101111 # 3735928559
-hex(3735928559)                    # 0xdeadbeef
+0b11011110101011011011111011101111  # 3735928559
+hex(3735928559)  # 0xdeadbeef
 ```
 
 ---
@@ -1198,6 +1200,7 @@ def getInput(maxNum):
                 print("Not in range")
             else:
                 return choice
+
 
 selection = getInput(10)
 print(selection)
@@ -1403,10 +1406,12 @@ grouped = combined.group_by("team").agg(
 # Sort the team data by win percentage, highest to lowest
 
 finalStats = grouped.with_columns(
-    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames")).round(3).alias("winPct"),
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
+    .round(3)
+    .alias("winPct"),
     (pl.col("scored") / pl.col("numGames")).round(1).alias("scoredPerGame"),
     (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
-).sort("winPct", descending = True)
+).sort("winPct", descending=True)
 ```
 
 ## Project Planning Slides
@@ -1490,7 +1495,12 @@ stats["Philadlphia Eagles"] =
 ```
 
 ```py
-game = { "away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24 }
+game = {
+    "away_team": "Dallas Cowboys",
+    "away_score": 20,
+    "home_team": "Philadelphia Eagles",
+    "home_score": 24,
+}
 stats["Philadlphia Eagles"].addStats(game)
 ```
 
@@ -1523,7 +1533,12 @@ stats["Philadlphia Eagles"] =
 ```
 
 ```py
-game = { "away_team": "Denver Broncos", "away_score": 21, "home_team": "Philadelphia Eagles", "home_score": 17 }
+game = {
+    "away_team": "Denver Broncos",
+    "away_score": 21,
+    "home_team": "Philadelphia Eagles",
+    "home_score": 17,
+}
 stats["Philadlphia Eagles"].addStats(game)
 ```
 
@@ -1556,8 +1571,8 @@ stats["Philadlphia Eagles"] =
 ```
 
 ```py
-stats["Philadlphia Eagles"].winPercent()            # 0.5
-stats["Philadlphia Eagles"].pointsScoredPerGame()   # 20.5
+stats["Philadlphia Eagles"].winPercent()  # 0.5
+stats["Philadlphia Eagles"].pointsScoredPerGame()  # 20.5
 stats["Philadlphia Eagles"].pointsAllowedPerGame()  # 20.5
 ```
 
@@ -1627,7 +1642,7 @@ for word in words:
         score += letterPoints[letter]
 
     firstLetter = word[0]
-    bestScores.setdefault(firstLetter, 0) 
+    bestScores.setdefault(firstLetter, 0)
 
     if bestScores[firstLetter] < score:
         bestWords[firstLetter] = word
@@ -1662,13 +1677,13 @@ ties = {}
 ## `setdefault`
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 votes.setdefault("mint", 0)
 votes.setdefault("vanilla", 0)
 ```
 
 ```py
-{ 'strawberry': 1, 'chocolate': 1, 'vanilla': 1, 'mint': 0 }
+{"strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 0}
 ```
 
 ## `setdefault`
@@ -1759,11 +1774,36 @@ with open("games.csv") as file:
 
 ```py
 [
-    { "away_team": "Dallas Cowboys", "away_score": "20", "home_team": "Philadelphia Eagles", "home_score": "24" },
-    { "away_team": "Kansas City Chiefs", "away_score": "21", "home_team": "Los Angeles Chargers", "home_score": "27" },
-    { "away_team": "Arizona Cardinals", "away_score": "20", "home_team": "New Orleans Saints", "home_score": "13" },
-    { "away_team": "Pittsburgh Steelers", "away_score": "34", "home_team": "New York Jets", "home_score": "32" },
-    { "away_team": "Miami Dolphins", "away_score": "8", "home_team": "Indianapolis Colts", "home_score": "33" },
+    {
+        "away_team": "Dallas Cowboys",
+        "away_score": "20",
+        "home_team": "Philadelphia Eagles",
+        "home_score": "24",
+    },
+    {
+        "away_team": "Kansas City Chiefs",
+        "away_score": "21",
+        "home_team": "Los Angeles Chargers",
+        "home_score": "27",
+    },
+    {
+        "away_team": "Arizona Cardinals",
+        "away_score": "20",
+        "home_team": "New Orleans Saints",
+        "home_score": "13",
+    },
+    {
+        "away_team": "Pittsburgh Steelers",
+        "away_score": "34",
+        "home_team": "New York Jets",
+        "home_score": "32",
+    },
+    {
+        "away_team": "Miami Dolphins",
+        "away_score": "8",
+        "home_team": "Indianapolis Colts",
+        "home_score": "33",
+    },
     # ...
 ]
 ```
@@ -1799,11 +1839,36 @@ for game in games:
 
 ```py
 [
-    { "away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24 },
-    { "away_team": "Kansas City Chiefs", "away_score": 21, "home_team": "Los Angeles Chargers", "home_score": 27 },
-    { "away_team": "Arizona Cardinals", "away_score": 20, "home_team": "New Orleans Saints", "home_score": 13 },
-    { "away_team": "Pittsburgh Steelers", "away_score": 34, "home_team": "New York Jets", "home_score": 32 },
-    { "away_team": "Miami Dolphins", "away_score": 8, "home_team": "Indianapolis Colts", "home_score": 33 },
+    {
+        "away_team": "Dallas Cowboys",
+        "away_score": 20,
+        "home_team": "Philadelphia Eagles",
+        "home_score": 24,
+    },
+    {
+        "away_team": "Kansas City Chiefs",
+        "away_score": 21,
+        "home_team": "Los Angeles Chargers",
+        "home_score": 27,
+    },
+    {
+        "away_team": "Arizona Cardinals",
+        "away_score": 20,
+        "home_team": "New Orleans Saints",
+        "home_score": 13,
+    },
+    {
+        "away_team": "Pittsburgh Steelers",
+        "away_score": 34,
+        "home_team": "New York Jets",
+        "home_score": 32,
+    },
+    {
+        "away_team": "Miami Dolphins",
+        "away_score": 8,
+        "home_team": "Indianapolis Colts",
+        "home_score": 33,
+    },
     # ...
 ]
 ```
@@ -1819,9 +1884,9 @@ for game in games:
 ```py
 n = 123456
 
-print(n % 100)            # 56
-print(n // 100 % 100)     # 34
-print(n // 10000)         # 12
+print(n % 100)  # 56
+print(n // 100 % 100)  # 34
+print(n // 10000)  # 12
 ```
 
 ## Modulo and Floor Division for Height
@@ -1829,8 +1894,8 @@ print(n // 10000)         # 12
 ```py
 inches = 76
 
-print(inches % 12)     # 4
-print(inches // 12)    # 6
+print(inches % 12)  # 4
+print(inches // 12)  # 6
 ```
 
 ## Modulo and Floor Division for Duration
@@ -1838,9 +1903,9 @@ print(inches // 12)    # 6
 ```py
 seconds = 7000
 
-print(seconds % 60)        # 40
+print(seconds % 60)  # 40
 print(seconds // 60 % 60)  # 56
-print(seconds // 3600)     # 1
+print(seconds // 3600)  # 1
 ```
 
 ## `abs`
@@ -1866,34 +1931,34 @@ abs(5)
 <div style="font-size: 20px">
 
 ```py
-str(Height(5, 10))              # 5'10"
+str(Height(5, 10))  # 5'10"
 
 Height(5, 10) == Height(5, 10)  # True
 Height(5, 10) <= Height(5, 10)  # True
-Height(5, 10) < Height(6, 0)    # True
-Height(5, 10) > Height(4, 11)   # True
+Height(5, 10) < Height(6, 0)  # True
+Height(5, 10) > Height(4, 11)  # True
 Height(5, 10) <= Height(5, 10)  # True
-Height(5, 10) <= Height(6, 0)   # True
+Height(5, 10) <= Height(6, 0)  # True
 Height(5, 10) >= Height(4, 11)  # True
 Height(5, 10) >= Height(5, 10)  # True
 
-Height(5, 10) + Height(1, 0)    # 6'10"
-Height(5, 10) + Height(0, 1)    # 5'11"
-Height(5, 10) + Height(0, 4)    # 6'02"
-Height(5, 10) + Height(1, 4)    # 7'02"
+Height(5, 10) + Height(1, 0)  # 6'10"
+Height(5, 10) + Height(0, 1)  # 5'11"
+Height(5, 10) + Height(0, 4)  # 6'02"
+Height(5, 10) + Height(1, 4)  # 7'02"
 
-Height(5, 10) - Height(1, 0)    # 4'10"
-Height(5, 10) - Height(0, 1)    # 5'09"
-Height(5, 10) - Height(0, 11)   # 4'11"
-Height(5, 10) - Height(1, 11)   # 3'11"
+Height(5, 10) - Height(1, 0)  # 4'10"
+Height(5, 10) - Height(0, 1)  # 5'09"
+Height(5, 10) - Height(0, 11)  # 4'11"
+Height(5, 10) - Height(1, 11)  # 3'11"
 
-Height(5, 10) * 2               # 11'08"
-Height(5, 10) * 10              # 58'04"
+Height(5, 10) * 2  # 11'08"
+Height(5, 10) * 10  # 58'04"
 
-Height(5, 10) / 2               # 2'11"
-Height(5, 10) / 10              # 0'07"
+Height(5, 10) / 2  # 2'11"
+Height(5, 10) / 10  # 0'07"
 
--Height(5, 10)                  # -5'10"
+-Height(5, 10)  # -5'10"
 ```
 
 </div>
@@ -1986,9 +2051,9 @@ print(a * b)
 ## `isinstance`
 
 ```py
-isinstance(3, int)                     # True
-isinstance(3, Fraction)                # False
-isinstance(Fraction(7, 20), int)       # False
+isinstance(3, int)  # True
+isinstance(3, Fraction)  # False
+isinstance(Fraction(7, 20), int)  # False
 isinstance(Fraction(7, 20), Fraction)  # True
 ```
 
@@ -2132,13 +2197,16 @@ def __rmul__(self, other):
     # Make `other * self` work
     return self * other
 
+
 def __radd__(self, other):
     # Make `other + self` work
     return self + other
 
+
 def __rtruediv__(self, other):
     # Make `other / self` work
     return self.inverse() * other
+
 
 def __rsub__(self, other):
     # Make `other - self` work
@@ -2358,19 +2426,21 @@ https://www.w3schools.com/python/python_functions.asp
 
 ```py
 def greeting(name, school):
-  return f"Hello {name} from {school}!"
+    return f"Hello {name} from {school}!"
 
-print(greeting("Avery", "gfs")) # "Hello Avery from gfs!"
+
+print(greeting("Avery", "gfs"))  # "Hello Avery from gfs!"
 ```
 
 Early returns
 
 ```py
 def smallest(a, b):
-  if a < b:
-    return a
+    if a < b:
+        return a
 
-  return b
+    return b
+
 
 print(smallest(3, 4))
 ```
@@ -2381,13 +2451,13 @@ Objects are **data** + **functionality**.
 
 ```py
 nums = [1, 2, 3, 4]
-print(nums)          # [1, 2, 3, 4]
-print(nums[0])       # [1]
+print(nums)  # [1, 2, 3, 4]
+print(nums[0])  # [1]
 
 nums.append(5)
-print(nums)          # [1, 2, 3, 4, 5]
+print(nums)  # [1, 2, 3, 4, 5]
 
-print(nums.index(2)) # 1
+print(nums.index(2))  # 1
 ```
 
 We use classes to make objects.
@@ -2398,15 +2468,15 @@ https://www.w3schools.com/python/python_classes.asp
 
 ```py
 class Rectangle:
-  def __init__(self, width, height):
-    self.width = width
-    self.height = height
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
 ```
 
 ```py
 r = Rectangle(3, 4)
 print(r.width)  # 3
-print(r.height) # 4
+print(r.height)  # 4
 ```
 
 <img src="assets/init-meme.png" height="200" />
@@ -2424,41 +2494,41 @@ print(r.height) # 4
 
 ```py
 class Rectangle:
-  def __init__(self, width, height):
-    self.width = width
-    self.height = height
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
 
-  def __repr__(self):
-    return f"Rectangle({self.width}, {self.height})"
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
 ```
 
 ```py
 r = Rectangle(3, 4)
-print(r) # Rectangle(3, 4)
+print(r)  # Rectangle(3, 4)
 ```
 
 ## Methods
 
 ```py
 class Rectangle:
-  def __init__(self, width, height):
-    self.width = width
-    self.height = height
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
 
-  def __repr__(self):
-    return f"Rectangle({self.width}, {self.height})"
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
 
-  def area(self):
-    return self.width * self.height
+    def area(self):
+        return self.width * self.height
 
-  def perimeter(self):
-    return 2 * (self.width + self.height)
+    def perimeter(self):
+        return 2 * (self.width + self.height)
 ```
 
 ```py
 r = Rectangle(3, 4)
-print(r.area())      # 12
-print(r.perimeter()) # 14
+print(r.area())  # 12
+print(r.perimeter())  # 14
 ```
 
 Why use methods vs extra fields?
@@ -2468,25 +2538,25 @@ Why use methods vs extra fields?
 ```py
 r = Rectangle(3, 4)
 r.width = 5
-print(r.area()) # ??
+print(r.area())  # ??
 ```
 
 ## Self
 
 ```py
 class Rectangle:
-  def __init__(self, width, height):
-    self.width = width
-    self.height = height
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
 
-  def __repr__(self):
-    return f"Rectangle({self.width}, {self.height})"
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
 
-  def area(self):
-    return self.width * self.height
+    def area(self):
+        return self.width * self.height
 
-  def perimeter(self):
-    return 2 * (self.width + self.height)
+    def perimeter(self):
+        return 2 * (self.width + self.height)
 ```
 
 The `self` variable helps us keep track of which data and functionality is
@@ -2511,33 +2581,33 @@ https://www.w3schools.com/python/python_ref_dictionary.asp
 ## `setdefault`
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 votes.setdefault("mint", 0)
 votes.setdefault("vanilla", 0)
 ```
 
 ```py
-{ 'strawberry': 1, 'chocolate': 1, 'vanilla': 1, 'mint': 0 }
+{"strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 0}
 ```
 
 ## Using `setdefault`
 
 ```py
-votes = { "strawberry": 1 }
+votes = {"strawberry": 1}
 
 while True:
-  flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter for your favorite flavor: ")
 
-  if flavor in votes:
-      votes[flavor] += 1
-  else:
-      votes[flavor] = 1
+    if flavor in votes:
+        votes[flavor] += 1
+    else:
+        votes[flavor] = 1
 
-  print(votes)
+    print(votes)
 ```
 
 ```py
-votes = { "strawberry": 1 }
+votes = {"strawberry": 1}
 
 while True:
     flavor = input("Enter for your favorite flavor: ")
@@ -2549,30 +2619,30 @@ while True:
 ## `get`
 
 ```py
-votes = { "strawberry": 7 }
+votes = {"strawberry": 7}
 
-votes.get("strawberry", 0) # 7
-votes.get("banana", 0)     # 0
+votes.get("strawberry", 0)  # 7
+votes.get("banana", 0)  # 0
 ```
 
 ## Using `get`
 
 ```py
-votes = { "strawberry": 1 }
+votes = {"strawberry": 1}
 
 while True:
-  flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter for your favorite flavor: ")
 
-  if flavor in votes:
-      votes[flavor] += 1
-  else:
-      votes[flavor] = 1
+    if flavor in votes:
+        votes[flavor] += 1
+    else:
+        votes[flavor] = 1
 
-  print(votes)
+    print(votes)
 ```
 
 ```py
-votes = { "strawberry": 1 }
+votes = {"strawberry": 1}
 
 while True:
     flavor = input("Enter for your favorite flavor: ")
@@ -2629,39 +2699,39 @@ value associated with each key.
 https://runestone.academy/ns/books/published/fopp/Dictionaries/toctree.html?mode=browsing
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 ```
 
 ## Look up a value
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 ```
 
 ```py
-votes["strawberry"] # 1
+votes["strawberry"]  # 1
 ```
 
 ## Add a value
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 votes["mint"] = 1
 ```
 
 ```py
-{ "strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1 }
+{"strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1}
 ```
 
 ## Update a value
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 votes["strawberry"] = 2
 ```
 
 ```py
-{ "strawberry": 2, "chocolate": 1, "vanilla": 1 }
+{"strawberry": 2, "chocolate": 1, "vanilla": 1}
 ```
 
 A dictionary can only contain a single entry for a given key.
@@ -2669,12 +2739,12 @@ A dictionary can only contain a single entry for a given key.
 ## Increment a value
 
 ```py
-votes = { "strawberry": 1, "chocolate": 1, "vanilla": 1 }
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 votes["chocolate"] += 1
 ```
 
 ```py
-{ "strawberry": 1, "chocolate": 2, "vanilla": 1 }
+{"strawberry": 1, "chocolate": 2, "vanilla": 1}
 ```
 
 ## Iterate over keys
@@ -2694,24 +2764,24 @@ for flavor in votes:
 ## Check membership
 
 ```py
-"mint" in votes # True
-"pineapple" in votes # False
+"mint" in votes  # True
+"pineapple" in votes  # False
 ```
 
 ## Ice cream flavor voting
 
 ```py
-votes = { "strawberry": 1 }
+votes = {"strawberry": 1}
 
-while True: # Loop forever
-  flavor = input("Enter for your favorite flavor: ")
+while True:  # Loop forever
+    flavor = input("Enter for your favorite flavor: ")
 
-  if flavor in votes:
-      votes[flavor] += 1 # Increase vote count by one
-  else:
-      votes[flavor] = 1 # Set initial vote count to one
+    if flavor in votes:
+        votes[flavor] += 1  # Increase vote count by one
+    else:
+        votes[flavor] = 1  # Set initial vote count to one
 
-  print(votes) # Print out vote data after each new vote
+    print(votes)  # Print out vote data after each new vote
 ```
 
 ## Scrabble
@@ -2752,7 +2822,7 @@ You can use a `for` loop to loop over the characters in a string.
 word = "chapter"
 
 for c in word:
-  print(c)
+    print(c)
 
 # Prints:
 #
@@ -2899,12 +2969,12 @@ im = Image.open("bird.png")
 output = Image.new(im.mode, (im.width, im.height))
 
 for y in range(im.height):
-  for x in range(im.width):
-    (r, g, b) = im.getpixel((x, y))
+    for x in range(im.width):
+        (r, g, b) = im.getpixel((x, y))
 
-    # Your code goes here
+        # Your code goes here
 
-    output.putpixel((x, y), (r, g, b))
+        output.putpixel((x, y), (r, g, b))
 
 # Save output image
 output.save("grayscale.png")

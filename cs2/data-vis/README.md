@@ -23,7 +23,7 @@ pip install vl-convert-python
 ```py
 import polars as pl
 
-cities = pl.read_csv("cities.csv") # Load dataframe from CSV
+cities = pl.read_csv("cities.csv")  # Load dataframe from CSV
 ```
 
 ## View Data
@@ -391,9 +391,7 @@ shape: (346, 5)
 ## Making New Columns: Population Density
 
 ```py
-cities.with_columns(
-    (pl.col("pop2024") / pl.col("area")).round(1).alias("popDensity")
-)
+cities.with_columns((pl.col("pop2024") / pl.col("area")).round(1).alias("popDensity"))
 ```
 
 ```
@@ -424,9 +422,7 @@ _formula_ for making a new column.
 ## Making New Columns: Population Change Number
 
 ```py
-cities.with_columns(
-    (pl.col("pop2024") - pl.col("pop2020")).alias("change")
-)
+cities.with_columns((pl.col("pop2024") - pl.col("pop2020")).alias("change"))
 ```
 
 ```
@@ -745,7 +741,8 @@ Challenge: recreate the table below.
   <summary>Click to show answer</summary>
 
 ```py
-(cities
+(
+    cities
     .select(
         pl.col("city"),
         pl.col("state"),
@@ -753,7 +750,8 @@ Challenge: recreate the table below.
     )
     .sort("popChange", descending=True)
     .head(10)
-    .with_row_index(name="rank", offset=1))
+    .with_row_index(name="rank", offset=1)
+)
 ```
 
 </details>
@@ -781,13 +779,15 @@ shape: (10, 4)
 ## Aggregation: Sum
 
 ```py
-(cities
+(
+    cities
     .group_by("state")
     .agg(
         pl.sum("pop2024"),
         pl.sum("area"),
     )
-    .sort("pop2024", descending=True))
+    .sort("pop2024", descending=True)
+)
 ```
 
 ```
@@ -846,10 +846,7 @@ shape: (46, 5)
 ## Aggregation: Count
 
 ```py
-(cities
-    .group_by("state")
-    .count()
-    .sort("count", descending=True))
+(cities.group_by("state").count().sort("count", descending=True))
 ```
 
 ```
@@ -883,13 +880,15 @@ a `rank` column.
   <summary>Click to show answer</summary>
 
 ```py
-(cities
+(
+    cities
     .group_by("state")
     .agg(
         (pl.sum("pop2024") - pl.sum("pop2020")).alias("popChange"),
     )
     .sort("popChange", descending=True)
-    .with_row_index(name="rank", offset=1))
+    .with_row_index(name="rank", offset=1)
+)
 ```
 
 </details>
@@ -921,7 +920,7 @@ shape: (46, 3)
 import polars as pl
 import altair as alt
 
-cities = pl.read_csv("cities.csv") # Load dataframe from CSV
+cities = pl.read_csv("cities.csv")  # Load dataframe from CSV
 ```
 
 ## Bar Charts
@@ -929,12 +928,17 @@ cities = pl.read_csv("cities.csv") # Load dataframe from CSV
 ```py
 topCities = cities.head(20)
 
-chart = alt.Chart(topCities).mark_bar().encode(
-  alt.X("pop2024"),
-  alt.Y("city", sort="-x"),
+chart = (
+    alt
+    .Chart(topCities)
+    .mark_bar()
+    .encode(
+        alt.X("pop2024"),
+        alt.Y("city", sort="-x"),
+    )
 )
 
-chart.save("pop-bars.png", scale_factor = 1.5)
+chart.save("pop-bars.png", scale_factor=1.5)
 ```
 
 ![](pop-bars.png)
@@ -942,12 +946,17 @@ chart.save("pop-bars.png", scale_factor = 1.5)
 ```py
 cityCounts = cities.group_by("state").count()
 
-chart = alt.Chart(cityCounts).mark_bar().encode(
-  alt.X("state", sort = "-y"),
-  alt.Y("count"),
+chart = (
+    alt
+    .Chart(cityCounts)
+    .mark_bar()
+    .encode(
+        alt.X("state", sort="-y"),
+        alt.Y("count"),
+    )
 )
 
-chart.save("city-counts.png", scale_factor = 1.5)
+chart.save("city-counts.png", scale_factor=1.5)
 ```
 
 ![](city-counts.png)
@@ -960,16 +969,26 @@ Chart the top 10 cities by population growth percentage.
   <summary>Click to show answer</summary>
 
 ```py
-pctChange = cities.with_columns(
-    (pl.col("pop2024") / pl.col("pop2020") * 100 - 100).alias("pctChange")
-).sort("pctChange", descending=True).head(10)
-
-chart = alt.Chart(pctChange).mark_bar().encode(
-  alt.X("pctChange"),
-  alt.Y("city", sort="-x"),
+pctChange = (
+    cities
+    .with_columns(
+        (pl.col("pop2024") / pl.col("pop2020") * 100 - 100).alias("pctChange")
+    )
+    .sort("pctChange", descending=True)
+    .head(10)
 )
 
-chart.save("pct-change.png", scale_factor = 1.5)
+chart = (
+    alt
+    .Chart(pctChange)
+    .mark_bar()
+    .encode(
+        alt.X("pctChange"),
+        alt.Y("city", sort="-x"),
+    )
+)
+
+chart.save("pct-change.png", scale_factor=1.5)
 ```
 
 </details>
@@ -981,13 +1000,18 @@ chart.save("pct-change.png", scale_factor = 1.5)
 ```py
 top10 = cities.head(10)
 
-chart = alt.Chart(top10).mark_circle(size = 40).encode(
-    alt.X("area"),
-    alt.Y("pop2024"),
-    alt.Color("city"),
+chart = (
+    alt
+    .Chart(top10)
+    .mark_circle(size=40)
+    .encode(
+        alt.X("area"),
+        alt.Y("pop2024"),
+        alt.Color("city"),
+    )
 )
 
-chart.save("pop-scatter.png", scale_factor = 1.5)
+chart.save("pop-scatter.png", scale_factor=1.5)
 ```
 
 ![](pop-scatter.png)

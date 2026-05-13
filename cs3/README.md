@@ -91,6 +91,7 @@ def printFactorial(n):
 
     print("10 factorial is", result)
 
+
 printFactorial(10)
 ```
 
@@ -105,6 +106,7 @@ def factorial(n):
         n -= 1
 
     return result
+
 
 print("10 factorial is", factorial(10))
 ```
@@ -272,78 +274,6 @@ print(showRoute(search("jarry", "namur")))
 • namur
 ```
 
-## Composability
-
-Composable functions are functions that can be used in combination with each
-other.
-
-```py
-def getNegs(nums):
-    return [-n for n in nums]
-
-def getSquares(nums):
-    return [n ** 2 for n in nums]
-
-nums = range(10)
-
-print(getNegs(nums))
-print(getSquares(nums))
-```
-
-```txt
-[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-```
-
-## Composability
-
-```py
-def getNegs(nums):
-    return [-n for n in nums]
-
-def getSquares(nums):
-    return [n ** 2 for n in nums]
-
-def myRange(limit):
-    n = 0
-
-    while n < limit:
-        yield n
-        n += 1
-
-nums = myRange(10)
-
-print(getNegs(nums))
-print(getSquares(nums))
-```
-
-## Composability
-
-```py
-def getNegs(nums):
-    return [-n for n in nums]
-
-def getSquares(nums):
-    return [n ** 2 for n in nums]
-
-def myRange(limit):
-    n = 0
-
-    while n < limit:
-        yield n
-        n += 1
-
-nums = myRange(10)
-
-print(getNegs(nums))
-print(getSquares(nums))
-```
-
-```txt
-[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
-[]
-```
-
 ## Orthogonality
 
 Orthogonal functions are functions whose behaviors don't overlap.
@@ -368,15 +298,174 @@ replaceFirst("abracadabra", "a", "o") # obracadabra
 ## Orthogonality
 
 ```py
-replaceFirst("abracadabra", "a", "o") # obracadabra
+replaceFirst("abracadabra", "a", "o")  # obracadabra
 replaceN("abracadabra", 1, "a", "o")  # obracadabra
+```
+
+## Composability
+
+```py
+def callTwice(func):
+    func()
+    func()
+
+
+def sayHello():
+    print("Hello")
+
+
+def sayGreeting(name):
+    print("Greetings", name)
+
+
+callTwice(sayHello)
+callTwice(sayGreeting)
+```
+
+## Composability
+
+```py
+def callTwice(func, *args):
+    func(*args)
+    func(*args)
+
+
+def sayHello():
+    print("Hello")
+
+
+def sayGreeting(name):
+    print("Greetings", name)
+
+
+callTwice(sayHello)
+callTwice(sayGreeting, "Avery")
 ```
 
 ## Idempotency
 
+> An idempotent operation is one that has no additional effect if it is called
+> more than once with the same input parameters. (Stack Overflow)
+
+Not idempotent:
+
+```py
+tasks = []
+
+
+def addTask(task):
+    tasks.append(task)
+
+
+addTask("walk dog")
+addTask("walk dog")
+```
+
+## Idempotency
+
+Idempotent:
+
+```py
+tasks = []
+
+
+def addTask(task):
+    if task not in tasks:
+        tasks.append(task)
+
+
+addTask("walk dog")
+addTask("walk dog")
+```
+
+## Idempotency
+
+Idempotent:
+
+```py
+tasks = set()
+
+
+def addTask(task):
+    tasks.add(task)
+
+
+addTask("walk dog")
+addTask("walk dog")
+```
+
 ## Don't Repeat Yourself
 
 ## Zero One Infinity
+
+> The zero-one-infinity (ZOI) rule is a rule of thumb in software design
+> proposed by early computing pioneer Willem van der Poel. It argues that
+> arbitrary limits on the number of instances of a particular type of data or
+> structure should not be allowed. Instead, an entity should either be forbidden
+> entirely, only one should be allowed, or any number of them should be allowed.
+> (Wikipedia)
+
+```py
+class Song:
+    def __init__(self, title, artist1, artist2=None, artist3=None):
+        self.title = title
+        self.artist1 = artist1
+        self.artist2 = artist2
+        self.artist3 = artist3
+
+
+Song("I Was Neon", "Julia Jacklin")
+
+Song(
+    "Wat's Wrong (feat. Zacari & Kendrick Lamar)",
+    "Isaiah Rashad",
+    "Zacari",
+    "Kendrick Lamar",
+)
+
+Song(
+    "White Landscapes, Op. 47a: I. Divination by Snow. Adagio",
+    "Takashi Yoshimatsu",
+    "Sachio Fujioka",
+    "Manchester Camerata",
+    "John Barrow",
+    "Kate Wilson",
+    "Jonathan Price",
+)
+```
+
+## Zero One Infinity
+
+```py
+class Song:
+    def __init__(self, title, artists):
+        self.title = title
+        self.artists = artists
+
+
+Song("I Was Neon", ["Julia Jacklin"])
+
+Song(
+    "Wat's Wrong (feat. Zacari & Kendrick Lamar)",
+    [
+        "Isaiah Rashad",
+        "Zacari",
+        "Kendrick Lamar",
+    ],
+)
+
+Song(
+    "White Landscapes, Op. 47a: I. Divination by Snow. Adagio",
+    [
+        "Takashi Yoshimatsu",
+        "Sachio Fujioka",
+        "Manchester Camerata",
+        "John Barrow",
+        "Kate Wilson",
+        "Jonathan Price",
+    ],
+)
+```
 
 ## Immutability
 
@@ -405,8 +494,10 @@ replaceN("abracadabra", 1, "a", "o")  # obracadabra
 ```py
 x = 0
 
+
 def myFunc():
     print(x)
+
 
 myFunc()
 print(x)
@@ -419,18 +510,6 @@ def myFunc():
     x = 1
     print(x)
 
-myFunc()
-print(x)
-```
-
-## Scope
-
-```py
-x = 0
-
-def myFunc():
-    x = 1
-    print(x)
 
 myFunc()
 print(x)
@@ -441,10 +520,27 @@ print(x)
 ```py
 x = 0
 
+
+def myFunc():
+    x = 1
+    print(x)
+
+
+myFunc()
+print(x)
+```
+
+## Scope
+
+```py
+x = 0
+
+
 def myFunc():
     print(x)
     x = 1
     print(x)
+
 
 myFunc()
 print(x)
@@ -455,8 +551,10 @@ print(x)
 ```py
 l = ["a"]
 
+
 def myFunc():
     l[0] = "b"
+
 
 myFunc()
 print(l)
@@ -467,8 +565,10 @@ print(l)
 ```py
 l = ["a"]
 
+
 def myFunc():
     l[0] = "b"
+
 
 myFunc()
 print(l)
@@ -477,8 +577,10 @@ print(l)
 ```py
 x = 0
 
+
 def myFunc():
     x = 1
+
 
 myFunc()
 print(x)
@@ -488,10 +590,12 @@ print(x)
 
 ```py
 x = 0
+
 
 def myFunc():
     global x
     x = 1
+
 
 myFunc()
 print(x)
@@ -532,8 +636,10 @@ console.log(x);
 ```py
 x = 0
 
+
 def myFunc():
     print(x)
+
 
 myFunc()
 x = 1
@@ -547,10 +653,12 @@ myFunc()
 ```py
 c = 0
 
+
 def increment():
     global c
     c += 1
     return c
+
 
 print(increment())
 print(increment())
@@ -571,6 +679,7 @@ def makeCounter():
         return c
 
     return increment
+
 
 incA = makeCounter()
 incB = makeCounter()
@@ -595,6 +704,7 @@ def makeCounter():
         return c
 
     return increment
+
 
 incA = makeCounter()
 incB = makeCounter()
@@ -1459,11 +1569,11 @@ n = 1000000000001
 d = 2
 
 while n > 1:
-  if n % d:
-    d += 1
-  else:
-    print(d)
-    n //= d
+    if n % d:
+        d += 1
+    else:
+        print(d)
+        n //= d
 ```
 
 ```c
@@ -2331,8 +2441,8 @@ def sign(num):
     return "negative"
 
 
-print(sign(8))   # 1
-print(sign(0))   # 0
+print(sign(8))  # 1
+print(sign(0))  # 0
 print(sign(-7))  # -1
 ```
 
@@ -2417,18 +2527,16 @@ https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
 ## Formatting
 
 ```py
-def factorial(
-  n):
-   result  = 1
+def factorial(n):
+    result = 1
 
-   for i in range(1,n+1):
+    for i in range(1, n + 1):
+        result *= i
 
-        result*= i
+    return result
 
-   return result
 
-print(
- factorial(10))
+print(factorial(10))
 ```
 
 ```txt
@@ -2444,6 +2552,7 @@ def factorial(n):
 
     return result
 
+
 print(factorial(10))
 ```
 
@@ -2457,6 +2566,7 @@ def factorial(n):
         resutl *= i
 
     return result
+
 
 print(factorial(0))
 ```
@@ -2803,7 +2913,8 @@ def getTrue():
     print("Called getTrue")
     return True
 
-True or getTrue()   # Doesn't call getTrue
+
+True or getTrue()  # Doesn't call getTrue
 False or getTrue()  # Calls getTrue
 ```
 
@@ -2966,7 +3077,7 @@ Get and remove the first value from a list:
 ```py
 l = [10, 11, 12]
 print(l.pop(0))  # 10
-print(l)         # [11, 12]
+print(l)  # [11, 12]
 ```
 
 Add items to the end of a list:
@@ -3143,12 +3254,12 @@ Worksheet
 ## Tiling String Generation
 
 ```py
-getTilings(0) # [""]
-getTilings(1) # ["1"]
-getTilings(2) # ["11", "2"]
-getTilings(3) # ["111", "12", "21"]
-getTilings(4) # ["1111", "112", "121", "211", "22"]
-getTilings(5) # ["11111", "1112", "1121", "1211", "122", "2111", "212", "221"]
+getTilings(0)  # [""]
+getTilings(1)  # ["1"]
+getTilings(2)  # ["11", "2"]
+getTilings(3)  # ["111", "12", "21"]
+getTilings(4)  # ["1111", "112", "121", "211", "22"]
+getTilings(5)  # ["11111", "1112", "1121", "1211", "122", "2111", "212", "221"]
 # ...
 ```
 
@@ -3267,34 +3378,37 @@ A S
 
 ```py
 def greet(name, greeting="Hello"):
-  print(f"{greeting} {name}!")
+    print(f"{greeting} {name}!")
 
-greet("Avery")       # Prints "Hello Avery!"
-greet("Avery", "Hi") # Prints "Hi Avery!"
+
+greet("Avery")  # Prints "Hello Avery!"
+greet("Avery", "Hi")  # Prints "Hi Avery!"
 ```
 
 ## Recursive Factorial
 
 ```py
 def factorial(n):
-  if n == 0:
-    return 1
+    if n == 0:
+        return 1
 
-  return n * factorial(n - 1)
+    return n * factorial(n - 1)
 
-print(factorial(10)) # Prints 3628800
+
+print(factorial(10))  # Prints 3628800
 ```
 
 ## Tail Recursion
 
 ```py
 def factorial(n, result):
-  if n == 0:
-    return result
+    if n == 0:
+        return result
 
-  return factorial(n - 1, n * result)
+    return factorial(n - 1, n * result)
 
-print(factorial(10, 1)) # Prints 3628800
+
+print(factorial(10, 1))  # Prints 3628800
 ```
 
 - Still has base case and recursive case
@@ -3320,12 +3434,13 @@ factorial(0, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 * 1)
 
 ```py
 def factorial(n, result=1):
-  if n == 0:
-    return result
+    if n == 0:
+        return result
 
-  return factorial(n - 1, n * result)
+    return factorial(n - 1, n * result)
 
-print(factorial(10)) # Prints 3628800
+
+print(factorial(10))  # Prints 3628800
 ```
 
 ## Tail Recursion with Lists
@@ -3367,7 +3482,8 @@ What does this code do?
 
 ```py
 def hello():
-  print("Hello world!")
+    print("Hello world!")
+
 
 hello()
 ```
@@ -3378,8 +3494,9 @@ What does this code do?
 
 ```py
 def hello():
-  print("Hello world!")
-  hello()
+    print("Hello world!")
+    hello()
+
 
 hello()
 ```
@@ -3390,8 +3507,9 @@ What does this code do?
 
 ```py
 def hello():
-  hello()
-  print("Hello world!")
+    hello()
+    print("Hello world!")
+
 
 hello()
 ```
@@ -3402,9 +3520,10 @@ What does this code do?
 
 ```py
 def hello(n):
-  if n < 10:
-    print("Hello world!")
-    hello(n + 1)
+    if n < 10:
+        print("Hello world!")
+        hello(n + 1)
+
 
 hello(0)
 ```
@@ -3415,11 +3534,12 @@ What does this code do?
 
 ```py
 def hello(n):
-  if n < 10:
-    print("Hello world!")
-    hello(n + 1)
-  else:
-    print("Done")
+    if n < 10:
+        print("Hello world!")
+        hello(n + 1)
+    else:
+        print("Done")
+
 
 hello(0)
 ```
@@ -3430,10 +3550,11 @@ What does this code do?
 
 ```py
 def hello(n):
-  if n < 10:
-    print("Hello world!")
-    hello(n + 1)
-    print("Goodbye")
+    if n < 10:
+        print("Hello world!")
+        hello(n + 1)
+        print("Goodbye")
+
 
 hello(0)
 ```
@@ -3470,26 +3591,28 @@ factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
 
 ```py
 def factorial(n):
-  result = 1
+    result = 1
 
-  for i in range(1, n + 1):
-    result *= i
+    for i in range(1, n + 1):
+        result *= i
 
-  return result
+    return result
 
-print(factorial(10)) # Prints 3628800
+
+print(factorial(10))  # Prints 3628800
 ```
 
 ## Recursive Functions
 
 ```py
 def factorial(n):
-  if n == 0:
-    return 1
+    if n == 0:
+        return 1
 
-  return n * factorial(n - 1)
+    return n * factorial(n - 1)
 
-print(factorial(10)) # Prints 3628800
+
+print(factorial(10))  # Prints 3628800
 ```
 
 Recursive functions: functions which call themselves
@@ -3513,12 +3636,13 @@ factorial(10)
 
 ```py
 def factorial(n):
-  if n == 0:
-    return 1
+    if n == 0:
+        return 1
 
-  return n * factorial(n - 1)
+    return n * factorial(n - 1)
 
-print(factorial(10)) # Prints 3628800
+
+print(factorial(10))  # Prints 3628800
 ```
 
 Case in which the function doesn't call itself recursively
@@ -3529,19 +3653,20 @@ Case in which the function doesn't call itself recursively
 
 ```py
 if n == 0:
-  return 1
+    return 1
 ```
 
 ## Recursive Case
 
 ```py
 def factorial(n):
-  if n == 0:
-    return 1
+    if n == 0:
+        return 1
 
-  return n * factorial(n - 1)
+    return n * factorial(n - 1)
 
-print(factorial(10)) # Prints 3628800
+
+print(factorial(10))  # Prints 3628800
 ```
 
 Case in which the function calls itself recursively
@@ -3562,12 +3687,13 @@ https://pythontutor.com/render.html#mode=display
 
 ```py
 def summation(n):
-  if n == 0:
-    return 0
+    if n == 0:
+        return 0
 
-  return n + summation(n - 1)
+    return n + summation(n - 1)
 
-print(summation(10)) # Prints 55
+
+print(summation(10))  # Prints 55
 ```
 
 ```txt

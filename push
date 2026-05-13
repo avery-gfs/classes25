@@ -3,6 +3,7 @@ shopt -s globstar
 
 rm -f **/.~lock*
 rm -r **/__pycache__
+rm -r **/.ipynb_checkpoints
 npm run fmt
 git checkout solutions
 git add --all .
