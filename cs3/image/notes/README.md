@@ -65,12 +65,12 @@ im = Image.open("bird.png")
 output = Image.new(im.mode, (im.width, im.height))
 
 for y in range(im.height):
-  for x in range(im.width):
-    (r, g, b) = im.getpixel((x, y))
+    for x in range(im.width):
+        (r, g, b) = im.getpixel((x, y))
 
-    # Your code goes here
+        # Your code goes here
 
-    output.putpixel((x, y), (r, g, b))
+        output.putpixel((x, y), (r, g, b))
 
 # Save output image
 output.save("grayscale.png")
@@ -104,8 +104,8 @@ $$distance =\sqrt{(R_2 - R_1)^{2} + (G_2 - G_1)^{2} + (B_2 - B_1)^{2}}$$
 ## Scrabble Code
 
 ```py
-bestWord = None # Keep track of the highest scoring word
-bestScore = 0   # Keep track of the score of bestWord
+bestWord = None  # Keep track of the highest scoring word
+bestScore = 0  # Keep track of the score of bestWord
 
 # Find the word with the highest Scrabble score
 

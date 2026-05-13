@@ -6,7 +6,8 @@ cities = pl.read_csv("cities.csv")  # Load dataframe from CSV
 cityCounts = cities.group_by("state").count()
 
 chart = (
-    alt.Chart(cityCounts)
+    alt
+    .Chart(cityCounts)
     .mark_bar()
     .encode(
         alt.X("state", sort="-y"),
